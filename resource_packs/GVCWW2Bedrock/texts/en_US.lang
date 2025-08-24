@@ -7,6 +7,16 @@ item.zex:556p=Pistol ammo
 item.zex:762p=MG ammo
 item.zex:9p=SMG Bullet BOX
 
+script.gvcv5:zex:12m.name=§412Gauge§r
+script.gvcv5:zex:556m.name=§6.22Cal§r
+script.gvcv5:zex:762m.name=§3.30Cal§r
+script.gvcv5:zex:mm9.name=§99mmHG§r
+script.gvcv5:ex:btm.name=§aBattery§r
+script.gvcv5:zex:1270m.name=§c.50Cal§r
+script.gvcv5:zex:rocketm.name=§276mmRocket§r
+script.gvcv5:zex:missilem.name=§576mmMissile§r
+script.gvcv5:zex:40m.name=§e40mmGrenade§r
+script.gvcv5:zex:12m.name=§412Gauge§r
 
 item.gun:mosin=Mosin Nagant
 item.gun:mosine=Mosin Nagant §4[Empty]
