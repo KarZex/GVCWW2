@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "craft2"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "BDB",
+      "BCB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:planks",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "addon:b2_spawn_egg",
+      "count": 1
+    }
+  }
+  
+}

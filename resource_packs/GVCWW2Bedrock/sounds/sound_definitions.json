@@ -1,0 +1,65 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"empty.a1": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/empty"
+			]
+		},
+"fire.ping": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/ping"
+			]
+		},
+"fire.reload": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload"
+			]
+		},
+"fire.sg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sg"
+			]
+		},
+"fire.hg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/hg"
+			]
+		},
+"fire.famas": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/famas"
+			]
+		},
+"fire.mg2": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mg2"
+			]
+		},
+"fire.tank": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/tank"
+			]
+		},
+"fire.p90": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/rpg"
+			]
+		},
+		"fire.ak47": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/fire/ak47"
+			]
+		}
+  	}
+}

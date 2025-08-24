@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fire:tbomb",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/models/an94"
+      },
+      "geometry": {
+        "default": "geometry.gtbomb"
+      },
+ 		"scripts": {
+			"animate": [ 
+				"fly"
+			]
+		},
+		"animations": {
+			"fly": "animation.tbomb.new"
+		},
+"spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 21
+      },
+      
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

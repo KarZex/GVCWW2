@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:d4b",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/a4"
+      },
+      "geometry": {
+        "default": "geometry.block"
+      },
+	  "spawn_egg":{
+	  "texture":"d4b",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

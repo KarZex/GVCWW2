@@ -1,0 +1,221 @@
+{
+  "fire": {
+    "damage": 1,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "mosin": {
+    "damage": 20,
+    "speed": 3.2,
+    "maxGunAmmo": 5,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "ppsh": {
+    "damage": 5,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 72,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "dp28": {
+    "damage": 8,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 47,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "tt33": {
+    "damage": 10,
+    "speed": 0.6000000000000001,
+    "maxGunAmmo": 8,
+    "reloadTime": 50,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "k98": {
+    "damage": 10,
+    "speed": 0.6000000000000001,
+    "maxGunAmmo": 5,
+    "reloadTime": 50,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "mp40": {
+    "damage": 4,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 20,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "p90": {
+    "damage": 50,
+    "speed": 1.8,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "m870": {
+    "damage": 2,
+    "speed": 0.6000000000000001,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "vmg": {
+    "damage": 5,
+    "damageType": "override"
+  },
+  "76mm": {
+    "damage": 60,
+    "damageType": "entityExplosion"
+  },
+  "85mm": {
+    "damage": 80,
+    "damageType": "entityExplosion"
+  },
+  "100mm": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  },
+  "105mm": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  },
+  "120mm": {
+    "damage": 180,
+    "damageType": "entityExplosion"
+  },
+  "125mm": {
+    "damage": 200,
+    "damageType": "entityExplosion"
+  },
+  "152mm": {
+    "damage": 250,
+    "damageType": "entityExplosion"
+  },
+  "20mm": {
+    "damage": 10,
+    "damageType": "entityExplosion"
+  },
+  "23mm": {
+    "damage": 12,
+    "damageType": "entityExplosion"
+  },
+  "ads_dp28": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "ads_m60": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "ads_pkm": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "76mmrocket": {
+    "damage": 60,
+    "damageType": "entityExplosion"
+  },
+  "agmissile": {
+    "damage": 120,
+    "damageType": "entityExplosion"
+  },
+  "vmgiir": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "vmgiil": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "vmgi": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "aamissile": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  },
+  "bomb": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  },
+  "hmg": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "7.62mmmgsr": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "7.62mmmgsl": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "7.62mmmg": {
+    "damage": 5,
+    "damageType": "override"
+  },
+  "12.7mmmg": {
+    "damage": 5,
+    "damageType": "override"
+  },
+  "14.5mmhmg": {
+    "damage": 6,
+    "damageType": "override"
+  },
+  "20mmmc": {
+    "damage": 10,
+    "damageType": "entityExplosion"
+  },
+  "20mmmcheri": {
+    "damage": 10,
+    "damageType": "override"
+  },
+  "23mmmc": {
+    "damage": 12,
+    "damageType": "entityExplosion"
+  },
+  "25mmmc": {
+    "damage": 20,
+    "damageType": "entityExplosion"
+  },
+  "30mmmc": {
+    "damage": 16,
+    "damageType": "entityExplosion"
+  },
+  "23mmmcairr": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "23mmmcairl": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "20mmmcairr": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "20mmmcairl": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "30mmmcair": {
+    "damage": 12,
+    "damageType": "override"
+  },
+  "bombii": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  }
+}

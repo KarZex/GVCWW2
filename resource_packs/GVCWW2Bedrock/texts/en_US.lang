@@ -1,0 +1,189 @@
+item.zex:9m=SMG Bullet
+item.zex:127m=
+item.zex:556m=Ryfle ammo
+item.zex:762m=Rocket
+item.zex:rocketm=Rocket
+item.zex:556p=Pistol ammo
+item.zex:762p=MG ammo
+item.zex:9p=SMG Bullet BOX
+
+
+item.gun:mosin=Mosin Nagant
+item.gun:mosine=Mosin Nagant §4[Empty]
+item.gun:mosina=Mosin Nagant Magazine
+
+item.gun:mosins=Mosin Nagant -Sniper
+item.gun:mosinse=Mosin Nagant -Sniper §4[Empty]
+item.gun:mosinsa=Mosin Nagant -Sniper Magazine
+
+item.gun:k98=Karabiner 98 Kurz
+item.gun:k98e=Karabiner 98 Kurz §4[Empty]
+item.gun:k98a=Karabiner 98 Kurz Magazine
+
+item.gun:k98s=Karabiner 98 Kurz -Sniper
+item.gun:k98se=Karabiner 98 Kurz -Sniper §4[Empty]
+item.gun:k98sa=Karabiner 98 Kurz -Sniper Magazine
+
+item.item:e1.name=Soviet Helmet
+item.item:e2.name=German Helmet
+item.item:e3.name=US Helmet
+item.item:e4.name=Japanese Helmet
+
+item.gun:m1=M1 Garand
+item.gun:m1e=M1 Garand §4[Empty]
+item.gun:m1a=M1 Garand Magazine
+
+item.gun:spring=SpringField
+item.gun:springe=SpringField §4[Empty]
+item.gun:springa=SpringField Magazine
+
+item.gun:t38=Type 38
+item.gun:t38e=Type 38 §4[Empty]
+item.gun:t38a=Type 38 Magazine
+
+item.gun:t99s=Type 99-Sniper
+item.gun:t99se=Type 99-Sniper §4[Empty]
+item.gun:t99sa=Type 99-Sniper Magazine
+
+item.gun:mp40=MP40
+item.gun:mp40e=MP40 §4[Empty]
+item.gun:mp40a=MP40 Magazine
+
+item.gun:ppsh=PPSh-41
+item.gun:ppshe=PPSh-41 §4[Empty]
+item.gun:ppsha=PPSh-41 Magazine
+
+item.gun:thom=Thompson SMG
+item.gun:thome=Thompson SMG §4[Empty]
+item.gun:thoma=Thompson SMG Magazine
+
+item.gun:t100=Type 100 SMG
+item.gun:t100e=Type 100 SMG §4[Empty]
+item.gun:t100a=Type 100 SMG Magazine
+
+item.gun:fg42=FG-42
+item.gun:fg42e=FG-42 §4[Empty]
+item.gun:fg42a=FG-42 Magazine
+
+item.gun:dp28=DP-28
+item.gun:dp28e=DP-28 §4[Empty]
+item.gun:dp28a=DP-28 Magazine
+
+item.gun:bar=M1918 BAR
+item.gun:bare=M1918 BAR §4[Empty]
+item.gun:bara=M1918 BAR Magazine
+
+item.gun:t99=Type 99 LMG
+item.gun:t99e=Type 99 LMG §4[Empty]
+item.gun:t99a=Type 99 LMG Magazine
+
+item.gun:tt33=TT33
+item.gun:tt33e=TT33 §4[Empty]
+item.gun:tt33a=TT33 Magazine
+
+item.gun:p38=Walther P38
+item.gun:p38e=Walther P38 §4[Empty]
+item.gun:p38a=Walther P38 Magazine
+
+item.gun:m1911=M1911
+item.gun:m1911e=M1911 §4[Empty]
+item.gun:m1911a=M1911 Magazine
+
+item.gun:t14=Type 14 Nambu
+item.gun:t14e=Type 14 Nambu §4[Empty]
+item.gun:t14a=Type 14 Nambu Magazine
+
+item.gun:m1b=M1 Bazooka
+
+item.gun:rpzb=RPzB 54
+
+item.gun:t89=Type 89 Grenade Launcher
+
+item.item:red=Attack 
+item.item:blue=Follow
+item.item:green=Wait
+item.item:yellow=Take Flag
+
+item.item:soviet=Soviet Armor
+item.item:germany=German Armor
+item.item:usa=US Armor
+item.item:japan=Japanese Armor
+
+item.gun:bomb=Grenade
+item.gun:tbomb=AntiTankGrenade
+item.gun:kamikaze=Kamikaze Attack
+item.gun:tank=Aircraft Weapon
+item.gun:tank2=Fighter Weapon
+item.gun:tank3=Bomber Weapon
+item.gun:t1=Tank Weapon §4[Soviet]
+item.gun:t2=Tank Weapon §3[Germany]
+item.gun:t3=Tank Weapon §2[USA]
+item.gun:t4=Tank Weapon §f[Japan]
+item.spawn_egg.entity.addon:a1.name=Japanese Base
+item.spawn_egg.entity.addon:a2.name=US Base
+item.spawn_egg.entity.addon:a3.name=German Base
+item.spawn_egg.entity.addon:a4.name=Soviet Base
+item.spawn_egg.entity.addon:a1a.name=Japanese Factory
+item.spawn_egg.entity.addon:a2a.name=US Factory
+item.spawn_egg.entity.addon:a3a.name=German Factory
+item.spawn_egg.entity.addon:a4a.name=Soviet Factory
+item.spawn_egg.entity.addon:a1b.name=Japanese Airport
+item.spawn_egg.entity.addon:a2b.name=US Airport
+item.spawn_egg.entity.addon:a3b.name=German Airport
+item.spawn_egg.entity.addon:a4b.name=Soviet Airport
+item.spawn_egg.entity.addon:c1.name=Soviet Infantry
+item.spawn_egg.entity.addon:c2.name=German Infantry
+item.spawn_egg.entity.addon:c3.name=US Infantry
+item.spawn_egg.entity.addon:c4.name=Japanese Infantry
+item.spawn_egg.entity.addon:d1a.name=Soviet Base
+item.spawn_egg.entity.addon:d2a.name=German Base
+item.spawn_egg.entity.addon:d3a.name=US Base
+item.spawn_egg.entity.addon:d4a.name=Japanese Base
+item.spawn_egg.entity.addon:d1b.name=Soviet Factory
+item.spawn_egg.entity.addon:d2b.name=German Factory
+item.spawn_egg.entity.addon:d3b.name=US Factory
+item.spawn_egg.entity.addon:d4b.name=Japanese Factory
+item.spawn_egg.entity.addon:d1c.name=Soviet Airport
+item.spawn_egg.entity.addon:d2c.name=German Airport
+item.spawn_egg.entity.addon:d3c.name=US Airport
+item.spawn_egg.entity.addon:d4c.name=Japanese Airport
+entity.addon:c1.name=Soviet Infantry
+entity.addon:c2.name=German Infantry
+entity.addon:c3.name=US Infantry
+entity.addon:c4.name=Japanese Infantry
+entity.addon:c1a.name=Soviet Infantry
+entity.addon:c2a.name=German Infantry
+entity.addon:c3a.name=US Infantry
+entity.addon:c4a.name=Japanese Infantry
+entity.addon:c1b.name=Soviet Infantry
+entity.addon:c2b.name=German Infantry
+entity.addon:c3b.name=US Infantry
+entity.addon:c4b.name=Japanese Infantry
+item.spawn_egg.entity.addon:b1.name=Ammo Crafter
+item.spawn_egg.entity.addon:b2.name=German Gun Crafter
+item.spawn_egg.entity.addon:b3.name=US Gun Crafter
+item.spawn_egg.entity.addon:b4.name=Japanese Gun Crafter
+
+item.item:soviet.name=Soviet Armor
+item.item:germany.name=German Armor
+item.item:usa.name=US Armor
+item.item:japan.name=Japanese Armor
+item.spawn_egg.entity.addon:e1.name=T34
+item.spawn_egg.entity.addon:e2.name=Panzer IV
+item.spawn_egg.entity.addon:e3.name=M18
+item.spawn_egg.entity.addon:e4.name=Type 98
+
+item.spawn_egg.entity.addon:f1.name=Yak-9
+item.spawn_egg.entity.addon:f2.name=Bf 109
+item.spawn_egg.entity.addon:f3.name=F4U
+item.spawn_egg.entity.addon:f4.name=Zero
+
+item.spawn_egg.entity.addon:h1.name=IL-2
+item.spawn_egg.entity.addon:h2.name=Ju87
+item.spawn_egg.entity.addon:h3.name=SBD
+item.spawn_egg.entity.addon:h4.name=Ryuusei
+
+item.item:red=Attack 
+item.item:blue=Follow
+item.item:green=Wait
+item.item:yellow=Take Flag

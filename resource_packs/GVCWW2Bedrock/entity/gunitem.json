@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:gunitem",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+        "ak47": "textures/models/ak47",
+		"lewis": "textures/models/lewis",
+		"an94": "textures/models/an94",
+        "m249": "textures/models/m249"
+			},
+			"geometry": {
+		"mosin": "geometry.mosin",
+"k98": "geometry.k98",
+"m1": "geometry.m1",
+"t38": "geometry.t38",
+"mosins": "geometry.mosins",
+"k98s": "geometry.k98s",
+"spring": "geometry.spring",
+"t99s": "geometry.t99s",
+"ppsh": "geometry.ppsh",
+"thom": "geometry.thom",
+"mp40": "geometry.mp40",
+"t100": "geometry.t100",
+"dp28": "geometry.dp28",
+"fg42": "geometry.fg42",
+"bar": "geometry.bar",
+"t99": "geometry.t99",
+"tt33": "geometry.tt33",
+"p38": "geometry.p38",
+"m1911": "geometry.m1911",
+"t14": "geometry.t14"
+			},
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.gunitem.ak"
+			},
+			"render_controllers": [
+				"controller.render.gunitem"
+			]
+		}
+	}
+}

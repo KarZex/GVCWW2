@@ -1,0 +1,97 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.s1": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/summon addon:e1",
+   "/ride @e[c=1,type=addon:e1] summon_rider addon:c1 T",
+   "/event entity @s A"
+          ]
+                }
+            }
+        },
+        "controller.animation.s2": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/summon addon:e2",
+   "/ride @e[c=1,type=addon:e2] summon_rider addon:c2 T",
+   "/event entity @s A"
+          ]
+                }
+            }
+        },
+        "controller.animation.s3": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/summon addon:e3",
+   "/ride @e[c=1,type=addon:e3] summon_rider addon:c3 T",
+   "/event entity @s A"
+          ]
+                }
+            }
+        },
+        "controller.animation.s4": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/summon addon:e4",
+   "/ride @e[c=1,type=addon:e4] summon_rider addon:c4 T",
+   "/event entity @s A"
+          ]
+                }
+            }
+        }
+    }
+}

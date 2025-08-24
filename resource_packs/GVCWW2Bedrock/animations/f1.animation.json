@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.f1r": {
+			"animation_length": 0.04,
+			"bones": {
+				"bone19": {
+					"scale": 3
+				},
+				"root": {
+					"position": [0, 13, 47],
+					"scale": {
+						"0.0": {
+							"post": [4, 4, 4],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"leftLeg": {
+					"rotation": [-90, -45, 0],
+					"position": [-12, -18, 11]
+				},
+				"rightLeg": {
+					"rotation": [-90, 45, 0],
+					"position": [12, -18, 11]
+				}
+			}
+		}
+	}
+}

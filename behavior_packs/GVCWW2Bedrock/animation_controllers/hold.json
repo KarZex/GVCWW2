@@ -1,0 +1,130 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.hold": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "query.get_equipped_item_name == 'fire'"
+            },
+            {
+              "mosin": "query.get_equipped_item_name == 'mosin'"
+            },
+            {
+              "ppsh": "query.get_equipped_item_name == 'ppsh'"
+            },
+            {
+              "dp28": "query.get_equipped_item_name == 'dp28'"
+            },
+            {
+              "tt33": "query.get_equipped_item_name == 'tt33'"
+            },
+            {
+              "k98": "query.get_equipped_item_name == 'k98'"
+            },
+            {
+              "mp40": "query.get_equipped_item_name == 'mp40'"
+            },
+            {
+              "p90": "query.get_equipped_item_name == 'p90'"
+            },
+            {
+              "m870": "query.get_equipped_item_name == 'm870'"
+            }
+          ]
+        },
+        "fire": {
+          "on_entry": [
+            "/function hold/fireh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "mosin": {
+          "on_entry": [
+            "/function hold/mosinh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "ppsh": {
+          "on_entry": [
+            "/function hold/ppshh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "dp28": {
+          "on_entry": [
+            "/function hold/dp28h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "tt33": {
+          "on_entry": [
+            "/function hold/tt33h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "k98": {
+          "on_entry": [
+            "/function hold/k98h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "mp40": {
+          "on_entry": [
+            "/function hold/mp40h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "p90": {
+          "on_entry": [
+            "/function hold/p90h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m870": {
+          "on_entry": [
+            "/function hold/m870h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

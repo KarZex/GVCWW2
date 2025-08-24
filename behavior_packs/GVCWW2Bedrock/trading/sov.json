@@ -1,0 +1,312 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1911a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:p38a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:t14a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:tt33a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ppsha",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 40
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mp40a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 50
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:thoma",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:t100a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 20
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:bara",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:fg42a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 50
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:t99a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 50
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:dp28a",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mosina",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mosinsa",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:k98a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:k98sa",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:springa",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:t38a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:t99sa",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

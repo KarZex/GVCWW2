@@ -1,0 +1,113 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.keyaki": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "S": "query.skin_id == 1" },
+			{ "NS": "query.skin_id != 1" },
+			{ "G": "query.skin_id == 2" },
+			{ "NG": "query.skin_id != 2" },
+            { "U": "query.skin_id == 3" },
+			{ "NU": "query.skin_id != 3" },
+			{ "J": "query.skin_id == 4" },
+			{ "NJ": "query.skin_id != 4" },
+			{ "RED": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10" },
+			{ "BLUE": "query.get_equipped_item_name == 'blue' && query.item_remaining_use_duration > 0.10" },
+			{ "GREEN": "query.get_equipped_item_name == 'green' && query.item_remaining_use_duration > 0.10" },
+			{ "YELLOW": "query.get_equipped_item_name == 'yellow' && query.item_remaining_use_duration > 0.10" }
+          ]
+        },
+        "S": {
+          "on_entry": [            
+            "/tag @e[family=SOV,tag=free] remove free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "NS": {
+          "on_entry": [            
+            "/event entity @e[family=SOV,tag=!free] free",
+			"/tag @e[family=SOV,tag=!free] add free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"G": {
+          "on_entry": [            
+            "/tag @e[family=GER,tag=free] remove free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"NG": {
+          "on_entry": [            
+            "/event entity @e[family=GER,tag=!free] free",
+			"/tag @e[family=GER,tag=!free] add free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "U": {
+          "on_entry": [            
+            "/tag @e[family=USA,tag=free] remove free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "NU": {
+          "on_entry": [            
+            "/event entity @e[family=USA,tag=!free] free",
+			"/tag @e[family=USA,tag=!free] add free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "J": {
+          "on_entry": [            
+           "/tag @e[family=JAP,tag=free] remove free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "NJ": {
+          "on_entry": [            
+            "/event entity @e[family=JAP,tag=!free] free",
+			"/tag @e[family=JAP,tag=!free] add free"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "YELLOW": {
+          "on_entry": [            
+            "/event entity @e[family=SOV,r=15,tag=!free] flag",
+			"/event entity @e[family=GER,r=15,tag=!free] flag",
+			"/event entity @e[family=USA,r=15,tag=!free] flag",
+			"/event entity @e[family=JAP,r=15,tag=!free] flag"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "RED": {
+          "on_entry": [            
+            "/event entity @e[family=SOV,r=15,tag=!free] attack",
+			"/event entity @e[family=GER,r=15,tag=!free] attack",
+			"/event entity @e[family=USA,r=15,tag=!free] attack",
+			"/event entity @e[family=JAP,r=15,tag=!free] attack"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "GREEN": {
+          "on_entry": [            
+            "/event entity @e[family=SOV,r=15,tag=!free] wait",
+			"/event entity @e[family=GER,r=15,tag=!free] wait",
+			"/event entity @e[family=USA,r=15,tag=!free] wait",
+			"/event entity @e[family=JAP,r=15,tag=!free] wait"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "BLUE": {
+          "on_entry": [            
+            "/event entity @e[family=SOV,r=15,tag=!free] follow",
+			"/event entity @e[family=GER,r=15,tag=!free] follow",
+			"/event entity @e[family=USA,r=15,tag=!free] follow",
+			"/event entity @e[family=JAP,r=15,tag=!free] follow"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:a3",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "runtime_identifier": "minecraft:bat"
+    },
+
+	"component_groups": {
+	  "minecraft:ignite": {
+	    "minecraft:transformation": {
+		  "into": "raigen:dynamite_ignited"
+		}
+	  },
+      "become_USA": {
+        "minecraft:transformation": {
+          "into": "addon:a2"
+        }
+      },
+      "become_GER": {
+        "minecraft:transformation": {
+          "into": "addon:a3"
+        }
+      },
+      "become_JAP": {
+        "minecraft:transformation": {
+          "into": "addon:a1"
+        }
+      },
+      "become_SOV": {
+        "minecraft:transformation": {
+          "into": "addon:a4"
+        }
+      }
+    },
+
+    "components": {
+     "minecraft:boss": {
+        "name": "§3§lGerman Base",
+        "should_darken_sky": false,
+        "hud_range": 50
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+		{
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "USA"
+          },
+          "max_dist": 64
+		}
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "10000"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/a3.json"
+      },
+      "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+        "any_of": [
+          {"test": "is_family", "subject": "other", "value": "JAP"}
+        ],
+        "all_of": [
+          {"test": "has_damage", "value": "fatal"}
+        ]
+            },
+            "event": "become_JAP"
+          }
+        },
+        {
+          "on_damage": {
+            "filters": {
+        "any_of": [
+          {"test": "is_family", "subject": "other", "value": "GER"}
+        ],
+        "all_of": [
+          {"test": "has_damage", "value": "fatal"}
+        ]
+            },
+            "event": "become_GER"
+          }
+        },
+        {
+          "on_damage": {
+            "filters": {
+        "any_of": [
+          {"test": "is_family", "subject": "other", "value": "USA"}
+        ],
+        "all_of": [
+          {"test": "has_damage", "value": "fatal"}
+        ]
+            },
+            "event": "become_USA"
+          }
+        },
+        {
+          "on_damage": {
+            "filters": {
+        "any_of": [
+          {"test": "is_family", "subject": "other", "value": "SOV"}
+        ],
+        "all_of": [
+          {"test": "has_damage", "value": "fatal"}
+        ]
+            },
+            "event": "become_SOV"
+          }
+        }
+      ],
+      "minecraft:type_family": {
+        "family": [ "GERflag","fascismflag","mob" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:behavior.send_event": {
+        "priority": 3,
+        "event_choices": [
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 16.0,
+            "cooldown_time": 5.0,
+            "cast_duration": 3.0,
+            "particle_color": "#FFB38033",
+            "weight": 3,
+            "filters": { 
+                "all_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "sheep"},
+                  { "test" :  "is_color", "subject" : "other", "value" :  "blue"}
+                ] 
+            },
+            "start_sound_event": "cast.spell",
+            "sequence": [
+              {
+                "base_delay": 12.0,
+                "event": "wololo",
+                "sound_event": "prepare.wololo"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {  
+                "any_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "SOV"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "JAP"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "USA"}
+                ] 
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true
+      },
+
+
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob" }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+	
+	"events": {
+      "become_USA": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_USA"
+              ]
+            }
+          }
+        ]
+      },
+      "become_JAP": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_JAP"
+              ]
+            }
+          }
+        ]
+      },
+      "become_GER": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_GER"
+              ]
+            }
+          }
+        ]
+      },
+      "become_SOV": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_SOV"
+              ]
+            }
+          }
+        ]
+      },
+      "become_democratic": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_democratic"
+              ]
+            }
+          }
+        ]
+      },
+      "become_monarchism": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_monarchism"
+              ]
+            }
+          }
+        ]
+      },
+      "become_fascism": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_fascism"
+              ]
+            }
+          }
+        ]
+      },
+      "become_communism": {
+        "sequence": [
+          {
+             
+            "add": {
+              "component_groups": [
+                "become_communism"
+              ]
+            }
+          }
+        ]
+      }
+	}
+  }
+}

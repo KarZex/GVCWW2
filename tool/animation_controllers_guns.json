@@ -1,0 +1,137 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.guns": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tag @s remove subattack"
+          ],
+          "transitions": [
+            { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
+            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item" },
+            { "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'" },
+            { "shield": "query.is_sneaking && query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:shield')" },
+            {
+              "fire": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && query.is_using_item"
+            },
+            {
+              "fire_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && (variable.attack_time > 0.0)"
+            }
+          ]
+        },
+        "no_use": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+
+          ],
+          "transitions": [ {"default":"1.0"}]
+        },
+        "tank": {
+          "on_entry": [
+            "/execute as @s[tag=!reload] run function vmain"
+
+          ],
+          "transitions": [ {"default":"(variable.attack_time <= 0.0)"}]
+        },
+        "mgg_1": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_using_item || !query.is_riding"},
+            {"mgg_2": "query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
+          ]
+        },
+        "mgg_2": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_using_item || !query.is_riding"},
+            {"mgg_1":"query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
+          ]
+        },
+        "mgj_1": {
+          "on_entry": [
+            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_jumping || !query.is_riding"},
+            {"mgj_2":"query.is_jumping && query.is_riding"}
+          ]
+        },
+        "mgj_2": {
+          "on_entry": [
+            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_jumping || !query.is_riding"},
+            {"mgj_1":"query.is_jumping && query.is_riding"}
+          ]
+        },
+        "shield": {
+          "on_entry": [
+            "/effect @s resistance 99999 1 true"
+
+          ],
+          "on_exit": [
+            "/effect @s resistance 0"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_sneaking"}
+          ]
+        },
+        "fire_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload fire"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "fire": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse fire"
+          ],
+          "transitions": [
+            {
+              "no_use": "!query.is_using_item"
+            },
+            {
+              "fireii": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+            }
+          ]
+        },
+        "fireii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse fire"
+          ],
+          "transitions": [
+            {
+              "no_use": "!query.is_using_item"
+            },
+            {
+              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+            }
+          ]
+        },
+        "nouse": {
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

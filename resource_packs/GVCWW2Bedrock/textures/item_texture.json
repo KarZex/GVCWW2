@@ -1,0 +1,483 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "d4a": {
+      "textures": "textures/items/d4a"
+    },
+    "d3a": {
+      "textures": "textures/items/d3a"
+    },
+    "d2a": {
+      "textures": "textures/items/d2a"
+    },
+    "d1a": {
+      "textures": "textures/items/d1a"
+    },
+    "d4b": {
+      "textures": "textures/items/d4b"
+    },
+    "d3b": {
+      "textures": "textures/items/d3b"
+    },
+    "d2b": {
+      "textures": "textures/items/d2b"
+    },
+    "d1b": {
+      "textures": "textures/items/d1b"
+    },
+    "d4c": {
+      "textures": "textures/items/d4c"
+    },
+    "d3c": {
+      "textures": "textures/items/d3c"
+    },
+    "d2c": {
+      "textures": "textures/items/d2c"
+    },
+    "d1c": {
+      "textures": "textures/items/d1c"
+    },
+    "bomb": {
+      "textures": "textures/items/bomb"
+    },
+    "tbomb": {
+      "textures": "textures/items/tbomb"
+    },
+    "tank": {
+      "textures": "textures/items/tank"
+    },
+    "tank2": {
+      "textures": "textures/items/tank2"
+    },
+    "tank3": {
+      "textures": "textures/items/tank3"
+    },
+    "tank4": {
+      "textures": "textures/items/tank4"
+    },
+    "b4": {
+      "textures": "textures/items/b4"
+    },
+    "b3": {
+      "textures": "textures/items/b3"
+    },
+    "b2": {
+      "textures": "textures/items/b2"
+    },
+    "b1": {
+      "textures": "textures/items/b1"
+    },
+    "BLUE": {
+      "textures": "textures/flag/blue"
+    },
+    "RED": {
+      "textures": "textures/flag/red"
+    },
+    "YELLOW": {
+      "textures": "textures/flag/yellow"
+    },
+    "GREEN": {
+      "textures": "textures/flag/green"
+    },
+    "USA": {
+      "textures": "textures/cod/USA"
+    },
+    "GER": {
+      "textures": "textures/cod/GER"
+    },
+    "SOV": {
+      "textures": "textures/cod/SOV"
+    },
+    "JAP": {
+      "textures": "textures/cod/JAP"
+    },
+    "f4": {
+      "textures": "textures/items/f4"
+    },
+    "f3": {
+      "textures": "textures/items/f3"
+    },
+    "f2": {
+      "textures": "textures/items/f2"
+    },
+    "f1": {
+      "textures": "textures/items/f1"
+    },
+    "t4": {
+      "textures": "textures/items/t4"
+    },
+    "t3": {
+      "textures": "textures/items/t3"
+    },
+    "t2": {
+      "textures": "textures/items/t2"
+    },
+    "t1": {
+      "textures": "textures/items/t1"
+    },
+    "fe4": {
+      "textures": "textures/items/fe4"
+    },
+    "fe3": {
+      "textures": "textures/items/fe3"
+    },
+    "fe2": {
+      "textures": "textures/items/fe2"
+    },
+    "fe1": {
+      "textures": "textures/items/fe1"
+    },
+    "japan": {
+      "textures": "textures/items/a4"
+    },
+    "america": {
+      "textures": "textures/items/a3"
+    },
+    "germany": {
+      "textures": "textures/items/a2"
+    },
+    "soviet": {
+      "textures": "textures/items/a1"
+    },
+    "cw4": {
+      "textures": "textures/items/cw4"
+    },
+    "c3": {
+      "textures": "textures/items/c3"
+    },
+    "c2": {
+      "textures": "textures/items/c2"
+    },
+    "c1": {
+      "textures": "textures/items/c1"
+    },
+    "a4a": {
+      "textures": "textures/items/a1a"
+    },
+    "a3a": {
+      "textures": "textures/items/a2a"
+    },
+    "a2a": {
+      "textures": "textures/items/a3a"
+    },
+    "a1a": {
+      "textures": "textures/items/a4a"
+    },
+    "a4b": {
+      "textures": "textures/items/a1b"
+    },
+    "a3b": {
+      "textures": "textures/items/a2b"
+    },
+    "a2b": {
+      "textures": "textures/items/a3b"
+    },
+    "a1b": {
+      "textures": "textures/items/a4b"
+    },
+    "h4": {
+      "textures": "textures/items/h4"
+    },
+    "h3": {
+      "textures": "textures/items/h3"
+    },
+    "h2": {
+      "textures": "textures/items/h2"
+    },
+    "h1": {
+      "textures": "textures/items/h1"
+    },
+    "e4": {
+      "textures": "textures/items/e4"
+    },
+    "e3": {
+      "textures": "textures/items/e3"
+    },
+    "e2": {
+      "textures": "textures/items/e2"
+    },
+    "e1": {
+      "textures": "textures/items/e1"
+    },
+    "mosin": {
+      "textures": "textures/items/gun/mosin"
+    },
+    "mosina": {
+      "textures": "textures/ammo/mosin"
+    },
+    "mosins": {
+      "textures": "textures/gun/mosins"
+    },
+    "mosinsa": {
+      "textures": "textures/ammo/mosins"
+    },
+    "k98": {
+      "textures": "textures/items/gun/k98"
+    },
+    "t89": {
+      "textures": "textures/gun/t89"
+    },
+    "rpzb": {
+      "textures": "textures/gun/rpzb"
+    },
+    "m1b": {
+      "textures": "textures/gun/m1b"
+    },
+    "k98a": {
+      "textures": "textures/ammo/k98"
+    },
+    "k98s": {
+      "textures": "textures/gun/k98s"
+    },
+    "k98sa": {
+      "textures": "textures/ammo/k98s"
+    },
+    "m1": {
+      "textures": "textures/gun/m1"
+    },
+    "m1a": {
+      "textures": "textures/ammo/m1"
+    },
+    "spring": {
+      "textures": "textures/gun/spring"
+    },
+    "springa": {
+      "textures": "textures/ammo/spring"
+    },
+    "t38": {
+      "textures": "textures/gun/t38"
+    },
+    "t38a": {
+      "textures": "textures/ammo/t38"
+    },
+    "t99s": {
+      "textures": "textures/gun/t99s"
+    },
+    "t99sa": {
+      "textures": "textures/ammo/t99s"
+    },
+    "ppsh": {
+      "textures": "textures/items/gun/ppsh"
+    },
+    "ppsha": {
+      "textures": "textures/ammo/ppsh"
+    },
+    "mp40": {
+      "textures": "textures/items/gun/mp40"
+    },
+    "mp40a": {
+      "textures": "textures/ammo/mp40"
+    },
+    "thom": {
+      "textures": "textures/gun/thom"
+    },
+    "thoma": {
+      "textures": "textures/ammo/thom"
+    },
+    "t100": {
+      "textures": "textures/gun/t100"
+    },
+    "t100a": {
+      "textures": "textures/ammo/t100"
+    },
+    "dp28": {
+      "textures": "textures/items/gun/dp28"
+    },
+    "dp28a": {
+      "textures": "textures/ammo/dp28"
+    },
+    "fg42": {
+      "textures": "textures/gun/fg42"
+    },
+    "fg42a": {
+      "textures": "textures/ammo/fg42"
+    },
+    "bar": {
+      "textures": "textures/gun/bar"
+    },
+    "bara": {
+      "textures": "textures/ammo/bar"
+    },
+    "t99": {
+      "textures": "textures/gun/t99"
+    },
+    "t99a": {
+      "textures": "textures/ammo/t99"
+    },
+    "tt33": {
+      "textures": "textures/items/gun/tt33"
+    },
+    "tt33a": {
+      "textures": "textures/ammo/pistol"
+    },
+    "p38": {
+      "textures": "textures/gun/p38"
+    },
+    "p38a": {
+      "textures": "textures/ammo/pistol"
+    },
+    "m1911": {
+      "textures": "textures/gun/m1911"
+    },
+    "m1911a": {
+      "textures": "textures/ammo/pistol"
+    },
+    "t14": {
+      "textures": "textures/gun/t14"
+    },
+    "t14a": {
+      "textures": "textures/ammo/pistol"
+    },
+    "556m": {
+      "textures": "textures/items/556m"
+    },
+    "127m": {
+      "textures": "textures/items/127m"
+    },
+    "762m": {
+      "textures": "textures/items/762m"
+    },
+    "762p": {
+      "textures": "textures/items/762p"
+    },
+    "9m": {
+      "textures": "textures/items/9m"
+    },
+    "stand": {
+      "textures": "textures/items/stand"
+    },
+    "9p": {
+      "textures": "textures/items/9p"
+    },
+    "btm": {
+      "textures": "textures/items/btm"
+    },
+    "556p": {
+      "textures": "textures/items/556p"
+    },
+    "aifv": {
+      "textures": "textures/items/aifv"
+    },
+    "lav25": {
+      "textures": "textures/items/lav25"
+    },
+    "m113": {
+      "textures": "textures/items/m113"
+    },
+    "m1126": {
+      "textures": "textures/items/m1126"
+    },
+    "m1128": {
+      "textures": "textures/items/m1128"
+    },
+    "btr60": {
+      "textures": "textures/items/btr60"
+    },
+    "kv2": {
+      "textures": "textures/items/kv2"
+    },
+    "m1a2": {
+      "textures": "textures/items/m1a2"
+    },
+    "m41": {
+      "textures": "textures/items/m41"
+    },
+    "fv101": {
+      "textures": "textures/items/fv101"
+    },
+    "m60a1": {
+      "textures": "textures/items/m60a1"
+    },
+    "pt76": {
+      "textures": "textures/items/pt76"
+    },
+    "t34": {
+      "textures": "textures/items/t34"
+    },
+    "t55": {
+      "textures": "textures/items/t55"
+    },
+    "t72": {
+      "textures": "textures/items/t72"
+    },
+    "r22": {
+      "textures": "textures/items/r22"
+    },
+    "ah1s": {
+      "textures": "textures/items/ah1s"
+    },
+    "ah6": {
+      "textures": "textures/items/ah6"
+    },
+    "g_heri": {
+      "textures": "textures/items/g_heri"
+    },
+    "ka50": {
+      "textures": "textures/items/ka50"
+    },
+    "ka60": {
+      "textures": "textures/items/ka60"
+    },
+    "mi24d": {
+      "textures": "textures/items/mi24d"
+    },
+    "20mmaa": {
+      "textures": "textures/items/20mmaa"
+    },
+    "flak18": {
+      "textures": "textures/items/flak18"
+    },
+    "pak40": {
+      "textures": "textures/items/pak40"
+    },
+    "zu23": {
+      "textures": "textures/items/zu23"
+    },
+    "dp28set": {
+      "textures": "textures/items/dp28set"
+    },
+    "m60set": {
+      "textures": "textures/items/m60set"
+    },
+    "pkmset": {
+      "textures": "textures/items/pkmset"
+    },
+    "mig17": {
+      "textures": "textures/items/mig17"
+    },
+    "su27": {
+      "textures": "textures/items/su27"
+    },
+    "f16": {
+      "textures": "textures/items/f16"
+    },
+    "su25": {
+      "textures": "textures/items/su25"
+    },
+    "f117": {
+      "textures": "textures/items/f117"
+    },
+    "p90": {
+      "textures": "textures/items/gun/p90"
+    },
+    "m870": {
+      "textures": "textures/items/gun/m870"
+    },
+    "usa_soldier": {
+      "textures": "textures/items/food/usa_soldier"
+    },
+    "sov_soldier": {
+      "textures": "textures/items/food/sov_soldier"
+    },
+    "jap_soldier": {
+      "textures": "textures/items/food/jap_soldier"
+    },
+    "eng_soldier": {
+      "textures": "textures/items/food/eng_soldier"
+    },
+    "ger_soldier": {
+      "textures": "textures/items/food/ger_soldier"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.gunitem": {
+			"geometry": "Array.item_geo[query.skin_id]",
+			"materials": [{"*":"material.default"}],
+			"textures": ["Array.item_texture[query.skin_id]"],
+			"arrays": {
+				"geometries": {
+					"Array.item_geo": [
+					"geometry.mosin",
+					"geometry.ppsh",
+					"geometry.dp28",
+					"geometry.tt33",
+					"geometry.k98",
+					"geometry.mp40",
+					"geometry.fg42",
+					"geometry.p38",
+					"geometry.m1",
+					"geometry.thom",
+					"geometry.bar",
+					"geometry.m1911",
+					"geometry.t38",
+					"geometry.t100",
+					"geometry.t99",
+					"geometry.t14",
+					"geometry.mosins",
+					"geometry.k98s",
+					"geometry.spring",
+					"geometry.t99s",
+					"geometry.empty",
+					"geometry.empty",
+					"geometry.m1b",
+					"geometry.rpzb",
+					"geometry.t89",
+					"geometry.tbomb"
+					]
+				},
+				"textures": {
+					"Array.item_texture": [
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94",
+					"texture.an94"
+					]
+				}
+			} 
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "resource_pack_name": "GVC",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "miss": {
+      "textures": "textures/ds"
+    },
+    "good1": {
+      "textures": "textures/blocks/good1"
+    },
+    "good2": {
+      "textures": "textures/blocks/good2"
+    },
+    "good3": {
+      "textures": "textures/blocks/good3"
+    },
+    "good4": {
+      "textures": "textures/blocks/good4"
+    }
+  }
+}

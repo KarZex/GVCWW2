@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "created by holy kar zex
+ ",
+    "name": "§g§lGVC WW2 Addon V4.0",
+    "uuid": "7440e900-8dc0-11ec-be25-11edb8a9df75",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "created by holy kar zex
+ ",
+      "type": "resources",
+      "uuid": "7441d360-8dc0-11ec-868c-1d79bd8653f7",
+      "version": [0, 0, 1]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "3D",
+      "name": "3D",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "2D",
+      "name": "2D",
+      "memory_tier": 2
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.keyaki": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "riding": "query.is_riding" },
+			{ "notriding": "!query.is_riding" }
+          ]
+        },
+        "riding": {
+          "on_entry": [
+            "/execute @e[family=ww2vehicle,r=2] ~~~ effect @p resistance 99999 255",
+			"/execute @e[family=ww2vehicle,r=2] ~~~ effect @p regeneration 99999 255",
+			"/execute @e[family=fighter,r=2] ~~~ tag @p add ride",
+            "/execute @s[tag=ride,rx=-36,rxm=-72] ~ ~ ~ execute @e[family=fighter,c=1] ~ ~ ~ effect @s levitation 1 7 true",
+            "/execute @s[tag=ride,rx=-18,rxm=-36] ~ ~ ~ execute @e[family=fighter,c=1] ~ ~ ~ effect @s levitation 1 6 true",
+            "/execute @s[tag=ride,rx=20,rxm=-18] ~ ~ ~ execute @e[family=fighter,c=1] ~ ~ ~ effect @s levitation 1 0 true",
+            "/execute @s[tag=ride,rx=90,rxm=20] ~ ~ ~ execute @e[family=fighter,c=1] ~ ~ ~ effect @s slow_falling 1 3 true"
+          ],
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ]
+        },
+        "notriding": {
+          "on_entry": [
+            "/effect @s resistance 0 0",
+			"/effect @s regeneration 0 0",
+			"/tag @s remove ride"
+          ],
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ]
+        }
+      }
+    }
+  }
+}

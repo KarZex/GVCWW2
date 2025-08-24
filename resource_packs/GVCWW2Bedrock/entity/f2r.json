@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:f2r",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/f2"
+      },
+      "geometry": {
+        "default": "geometry.f2"
+      },
+		"scripts": {
+			"animate": [ 
+				"fly"
+			]
+		},
+		"animations": {
+			"fly": "animation.wing"
+		},
+	  "spawn_egg":{
+	  "texture":"f2",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

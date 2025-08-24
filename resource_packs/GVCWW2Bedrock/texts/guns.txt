@@ -1,0 +1,8 @@
+item.gun:mosin=˜aMosin-Nagant˜r
+item.gun:ppsh=˜aPPSh-41˜r
+item.gun:dp28=˜bDP-28˜r
+item.gun:tt33=˜dTT33˜r
+item.gun:k98=˜dKar98k˜r
+item.gun:mp40=MP40˜r
+item.gun:p90=˜aPanzerfaust˜r
+item.gun:m870=˜aM870˜r

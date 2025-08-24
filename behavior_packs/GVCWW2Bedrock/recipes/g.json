@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_g"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+	  "AXA",
+	  "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:gunpowder",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_block",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "gun:bomb",
+      "count": 1
+    }
+  }
+  
+}

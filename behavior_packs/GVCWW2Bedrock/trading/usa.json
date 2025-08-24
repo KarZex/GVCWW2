@@ -1,0 +1,221 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 28
+                },
+                {
+                  "item": "minecraft:planks",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 5
+                },
+                {
+                  "item": "minecraft:gunpowder",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 38
+                },
+                {
+                  "item": "minecraft:planks",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:spring",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 5
+                },
+                {
+                  "item": "minecraft:gunpowder",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:springa",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 17
+                },
+                {
+                  "item": "minecraft:planks",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:thom",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 8
+                },
+                {
+                  "item": "minecraft:gunpowder",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:thoma",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 17
+                },
+                {
+                  "item": "minecraft:planks",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:bar",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 8
+                },
+                {
+                  "item": "minecraft:gunpowder",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:bara",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:planks",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1911",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:gunpowder",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1911a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 5
+                },
+                {
+                  "item": "minecraft:iron_block",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "item:usa",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

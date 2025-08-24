@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.fly": {
+			"initial_state": "walking",
+			"states": {
+				"flying": {
+					"animations": [
+						"fly"
+					],
+					"transitions": [
+						{
+							"nflying": "query.has_rider == 0"
+						}
+					]
+				},
+				"nflying": {
+					"transitions": [
+						{
+							"flying": "query.has_rider == 1"
+						}
+					]
+				}
+			}
+		}
+	}
+}

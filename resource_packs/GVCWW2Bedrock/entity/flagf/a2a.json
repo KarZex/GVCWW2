@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:a2b",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/a2b"
+      },
+      "geometry": {
+        "default": "geometry.flag"
+      },
+	  "spawn_egg":{
+	  "texture":"a2b",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

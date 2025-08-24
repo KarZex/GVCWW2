@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "created by holy kar zex",
+    "name": "§g§lGVC WW2 Addon V4.0",
+    "min_engine_version": [1, 21, 90 ],
+    "uuid": "a973f8de-5ae1-45e4-beac-f4a23e39c96d",
+    "version": [1, 21, 100]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "f3df9e83-bc1c-4dbe-8ffa-ce0326de22aa",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "e8d18318-dfc4-47c8-99ea-aacb13c24067",
+      "version": [2, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+      {
+          "module_name": "@minecraft/server",
+          "version": "2.2.0-beta"
+      },
+      {
+          "module_name": "@minecraft/server-ui",
+          "version": "2.0.0"
+      }
+  ]
+}

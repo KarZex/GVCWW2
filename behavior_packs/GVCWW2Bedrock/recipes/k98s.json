@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_Gk98s"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XCC",
+      "AAB",
+      "XDA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:planks",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:glass",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 6
+      }
+    },
+    "result": {
+      "item": "gun:k98s",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "craft_11"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+	  "ADA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 1
+      }
+    },
+    "result": {
+      "item": "item:e1",
+      "count": 1
+    }
+  }
+  
+}
