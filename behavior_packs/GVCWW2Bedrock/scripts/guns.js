@@ -8,7 +8,7 @@ export const gunData = {
     "damageType": "override"
   },
   "mosin": {
-    "damage": 20,
+    "damage": 14,
     "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -41,7 +41,7 @@ export const gunData = {
   },
   "k98": {
     "damage": 10,
-    "speed": 0.6000000000000001,
+    "speed": 3.6,
     "maxGunAmmo": 5,
     "reloadTime": 50,
     "bullet": "zex:762m",
@@ -55,20 +55,84 @@ export const gunData = {
     "bullet": "zex:mm9",
     "damageType": "override"
   },
+  "stg44": {
+    "damage": 5,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "mg42": {
+    "damage": 8,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 75,
+    "reloadTime": 100,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
   "p90": {
-    "damage": 50,
+    "damage": 20,
     "speed": 1.8,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
-  "m870": {
-    "damage": 2,
-    "speed": 0.6000000000000001,
-    "maxGunAmmo": 4,
-    "reloadTime": 80,
-    "bullet": "zex:12m",
+  "p38": {
+    "damage": 5,
+    "speed": 0.48,
+    "maxGunAmmo": 8,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m1": {
+    "damage": 7,
+    "speed": 2.4000000000000004,
+    "maxGunAmmo": 8,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "spring": {
+    "damage": 13,
+    "speed": 3.2,
+    "maxGunAmmo": 5,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m1918": {
+    "damage": 6,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 20,
+    "reloadTime": 45,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "thom": {
+    "damage": 4,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 30,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m1911": {
+    "damage": 5,
+    "speed": 0.48,
+    "maxGunAmmo": 8,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "leemk4": {
+    "damage": 11,
+    "speed": 2.8000000000000003,
+    "maxGunAmmo": 5,
+    "reloadTime": 40,
+    "bullet": "zex:762m",
     "damageType": "override"
   },
   "vmg": {

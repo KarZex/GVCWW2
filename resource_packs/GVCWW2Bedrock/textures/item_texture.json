@@ -234,13 +234,13 @@
       "textures": "textures/ammo/k98s"
     },
     "m1": {
-      "textures": "textures/gun/m1"
+      "textures": "textures/items/gun/m1"
     },
     "m1a": {
       "textures": "textures/ammo/m1"
     },
     "spring": {
-      "textures": "textures/gun/spring"
+      "textures": "textures/items/gun/spring"
     },
     "springa": {
       "textures": "textures/ammo/spring"
@@ -270,7 +270,7 @@
       "textures": "textures/ammo/mp40"
     },
     "thom": {
-      "textures": "textures/gun/thom"
+      "textures": "textures/items/gun/thom"
     },
     "thoma": {
       "textures": "textures/ammo/thom"
@@ -312,13 +312,13 @@
       "textures": "textures/ammo/pistol"
     },
     "p38": {
-      "textures": "textures/gun/p38"
+      "textures": "textures/items/gun/p38"
     },
     "p38a": {
       "textures": "textures/ammo/pistol"
     },
     "m1911": {
-      "textures": "textures/gun/m1911"
+      "textures": "textures/items/gun/m1911"
     },
     "m1911a": {
       "textures": "textures/ammo/pistol"
@@ -478,6 +478,24 @@
     },
     "ger_soldier": {
       "textures": "textures/items/food/ger_soldier"
+    },
+    "bf109": {
+      "textures": "textures/items/bf109"
+    },
+    "ju87": {
+      "textures": "textures/items/ju87"
+    },
+    "stg44": {
+      "textures": "textures/items/gun/stg44"
+    },
+    "mg42": {
+      "textures": "textures/items/gun/mg42"
+    },
+    "m1918": {
+      "textures": "textures/items/gun/m1918"
+    },
+    "leemk4": {
+      "textures": "textures/items/gun/leemk4"
     }
   }
 }

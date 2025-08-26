@@ -49,8 +49,24 @@ scoreboard objectives add k98 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s k98 5
 scoreboard objectives add mp40 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s mp40 20
+scoreboard objectives add stg44 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s stg44 30
+scoreboard objectives add mg42 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s mg42 75
 scoreboard objectives add p90 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s p90 1
-scoreboard objectives add m870 dummy
-execute as @a[tag=!startedv5] run scoreboard players set @s m870 4
+scoreboard objectives add p38 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s p38 8
+scoreboard objectives add m1 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s m1 8
+scoreboard objectives add spring dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s spring 5
+scoreboard objectives add m1918 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s m1918 20
+scoreboard objectives add thom dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s thom 30
+scoreboard objectives add m1911 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s m1911 8
+scoreboard objectives add leemk4 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s leemk4 5
 tag @a[tag=!startedv5] add startedv5

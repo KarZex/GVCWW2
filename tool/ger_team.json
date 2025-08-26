@@ -264,6 +264,14 @@
           },
           {
             "weight": 10,
+            "trigger": "stg44"
+          },
+          {
+            "weight": 10,
+            "trigger": "k98"
+          },
+          {
+            "weight": 10,
             "trigger": "p90"
           }
         ]

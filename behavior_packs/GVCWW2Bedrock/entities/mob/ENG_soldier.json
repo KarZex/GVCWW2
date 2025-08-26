@@ -138,7 +138,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.25,
+          "burst_interval": 0.8,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -170,6 +170,42 @@
           "table": "loot_tables/gun/mp40.json"
         }
       },
+      "stg44": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:stg44"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/stg44.json"
+        }
+      },
+      "mg42": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg42"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg42.json"
+        }
+      },
       "p90": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -188,11 +224,11 @@
           "table": "loot_tables/gun/p90.json"
         }
       },
-      "m870": {
+      "p38": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -200,10 +236,118 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:m870"
+          "def": "fire:p38"
         },
         "minecraft:equipment": {
-          "table": "loot_tables/gun/m870.json"
+          "table": "loot_tables/gun/p38.json"
+        }
+      },
+      "m1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.4,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1.json"
+        }
+      },
+      "spring": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:spring"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/spring.json"
+        }
+      },
+      "m1918": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1918"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1918.json"
+        }
+      },
+      "thom": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:thom"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/thom.json"
+        }
+      },
+      "m1911": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1911"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "leemk4": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:leemk4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/leemk4.json"
         }
       },
       "vmg": {
@@ -974,6 +1118,64 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
+                    "value": "gun:stg44"
+                  }
+                ]
+              },
+              "event": "stg44",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mg42"
+                  }
+                ]
+              },
+              "event": "mg42",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
                     "value": "gun:p90"
                   }
                 ]
@@ -1003,11 +1205,185 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
-                    "value": "gun:m870"
+                    "value": "gun:p38"
                   }
                 ]
               },
-              "event": "m870",
+              "event": "p38",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1"
+                  }
+                ]
+              },
+              "event": "m1",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:spring"
+                  }
+                ]
+              },
+              "event": "spring",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1918"
+                  }
+                ]
+              },
+              "event": "m1918",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:thom"
+                  }
+                ]
+              },
+              "event": "thom",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1911"
+                  }
+                ]
+              },
+              "event": "m1911",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "ENGteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:leemk4"
+                  }
+                ]
+              },
+              "event": "leemk4",
               "target": "self"
             }
           }
@@ -1393,6 +1769,20 @@
           ]
         }
       },
+      "stg44": {
+        "add": {
+          "component_groups": [
+            "stg44"
+          ]
+        }
+      },
+      "mg42": {
+        "add": {
+          "component_groups": [
+            "mg42"
+          ]
+        }
+      },
       "p90": {
         "add": {
           "component_groups": [
@@ -1400,10 +1790,52 @@
           ]
         }
       },
-      "m870": {
+      "p38": {
         "add": {
           "component_groups": [
-            "m870"
+            "p38"
+          ]
+        }
+      },
+      "m1": {
+        "add": {
+          "component_groups": [
+            "m1"
+          ]
+        }
+      },
+      "spring": {
+        "add": {
+          "component_groups": [
+            "spring"
+          ]
+        }
+      },
+      "m1918": {
+        "add": {
+          "component_groups": [
+            "m1918"
+          ]
+        }
+      },
+      "thom": {
+        "add": {
+          "component_groups": [
+            "thom"
+          ]
+        }
+      },
+      "m1911": {
+        "add": {
+          "component_groups": [
+            "m1911"
+          ]
+        }
+      },
+      "leemk4": {
+        "add": {
+          "component_groups": [
+            "leemk4"
           ]
         }
       },
@@ -1638,174 +2070,14 @@
           ]
         }
       },
-      "vehicle:aifv": {
+      "vehicle:bf109": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
+          "command": "ride @s summon_ride vehicle:bf109 no_ride_change summon_enemy"
         }
       },
-      "vehicle:lav25": {
+      "vehicle:ju87": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m113": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m113 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1126": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1126 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1128": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1128 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:btr60": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:kv2": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1a2": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1a2 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m41": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m41 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:fv101": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:fv101 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m60a1": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60a1 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pt76": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pt76 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t34": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t55": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t55 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t72": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:r22": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:r22 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ah1s": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah1s no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ah6": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah6 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:g_heri": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:g_heri no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ka50": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka50 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ka60": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka60 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:mi24d": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:mi24d no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:20mmaa": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:flak18": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:flak18 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pak40": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:zu23": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:zu23 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:dp28set": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:dp28set no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m60set": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60set no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pkmset": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:mig17": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:mig17 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:su27": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:su27 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:f16": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:f16 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:su25": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:su25 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:f117": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:f117 no_ride_change summon_enemy"
+          "command": "ride @s summon_ride vehicle:ju87 no_ride_change summon_enemy"
         }
       }
     }

@@ -1,0 +1,69 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tank": {
+			"loop": true,
+			"bones": {
+				"fire": {
+					"rotation": ["Math.max(-30, Math.min(30,query.target_x_rotation))", "0", 0]
+				},
+				"head": {
+					"rotation": [0, "query.target_y_rotation", 0]
+				}
+			}
+		},
+		"animation.herii": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": ["-query.target_x_rotation - 30", 0, 0]
+				}
+			}
+		},
+		"animation.heriii": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": ["query.target_x_rotation + 30", 0, 0]
+				}
+			}
+		},
+		"animation.heriix": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": ["query.target_x_rotation + 30", 0, 0]
+				}
+			}
+		},
+		"animation.air": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": ["-query.target_x_rotation * 3", 0, 0]
+				}
+			}
+		},
+		"animation.airmig17": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": ["query.target_x_rotation * 3", 0, 0]
+				}
+			}
+		},
+		"animation.herix": {
+			"loop": true,
+			"animation_length": 0.1667,
+			"bones": {
+				"bone5": {
+					"rotation": {
+						"0.0": [0, 0, -180],
+						"0.0833": [0, 0, 0],
+						"0.1667": [0, 0, 180]
+					}
+				}
+			}
+		}
+	}
+}

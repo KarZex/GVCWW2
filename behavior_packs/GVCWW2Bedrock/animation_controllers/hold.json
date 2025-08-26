@@ -27,10 +27,34 @@
               "mp40": "query.get_equipped_item_name == 'mp40'"
             },
             {
+              "stg44": "query.get_equipped_item_name == 'stg44'"
+            },
+            {
+              "mg42": "query.get_equipped_item_name == 'mg42'"
+            },
+            {
               "p90": "query.get_equipped_item_name == 'p90'"
             },
             {
-              "m870": "query.get_equipped_item_name == 'm870'"
+              "p38": "query.get_equipped_item_name == 'p38'"
+            },
+            {
+              "m1": "query.get_equipped_item_name == 'm1'"
+            },
+            {
+              "spring": "query.get_equipped_item_name == 'spring'"
+            },
+            {
+              "m1918": "query.get_equipped_item_name == 'm1918'"
+            },
+            {
+              "thom": "query.get_equipped_item_name == 'thom'"
+            },
+            {
+              "m1911": "query.get_equipped_item_name == 'm1911'"
+            },
+            {
+              "leemk4": "query.get_equipped_item_name == 'leemk4'"
             }
           ]
         },
@@ -104,6 +128,26 @@
             }
           ]
         },
+        "stg44": {
+          "on_entry": [
+            "/function hold/stg44h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "mg42": {
+          "on_entry": [
+            "/function hold/mg42h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "p90": {
           "on_entry": [
             "/function hold/p90h"
@@ -114,9 +158,69 @@
             }
           ]
         },
-        "m870": {
+        "p38": {
           "on_entry": [
-            "/function hold/m870h"
+            "/function hold/p38h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m1": {
+          "on_entry": [
+            "/function hold/m1h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "spring": {
+          "on_entry": [
+            "/function hold/springh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m1918": {
+          "on_entry": [
+            "/function hold/m1918h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "thom": {
+          "on_entry": [
+            "/function hold/thomh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m1911": {
+          "on_entry": [
+            "/function hold/m1911h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "leemk4": {
+          "on_entry": [
+            "/function hold/leemk4h"
           ],
           "transitions": [
             {

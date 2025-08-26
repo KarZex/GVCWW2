@@ -1955,6 +1955,74 @@
           ]
         }
       },
+      "fire:stg44": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_stg44"
+            }
+          ]
+        }
+      },
+      "fire:mg42": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:mg42"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_mg42"
+            }
+          ]
+        }
+      },
       "fire:p90": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -1989,7 +2057,7 @@
           ]
         }
       },
-      "fire:m870": {
+      "fire:p38": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -2002,9 +2070,9 @@
               ],
               "max_wait_time": 0,
               "min_wait_time": 0,
-              "num_to_spawn": 12,
+              "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:m870"
+              "spawn_entity": "fire:p38"
             },
             {
               "filters": [
@@ -2016,9 +2084,213 @@
               ],
               "max_wait_time": 0,
               "min_wait_time": 0,
-              "num_to_spawn": 12,
+              "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:ads_m870"
+              "spawn_entity": "fire:ads_p38"
+            }
+          ]
+        }
+      },
+      "fire:m1": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1"
+            }
+          ]
+        }
+      },
+      "fire:spring": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:spring"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_spring"
+            }
+          ]
+        }
+      },
+      "fire:m1918": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1918"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1918"
+            }
+          ]
+        }
+      },
+      "fire:thom": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:thom"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_thom"
+            }
+          ]
+        }
+      },
+      "fire:m1911": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1911"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1911"
+            }
+          ]
+        }
+      },
+      "fire:leemk4": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:leemk4"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_leemk4"
             }
           ]
         }
@@ -3024,6 +3296,20 @@
           ]
         }
       },
+      "fire:stg44": {
+        "add": {
+          "component_groups": [
+            "fire:stg44"
+          ]
+        }
+      },
+      "fire:mg42": {
+        "add": {
+          "component_groups": [
+            "fire:mg42"
+          ]
+        }
+      },
       "fire:p90": {
         "add": {
           "component_groups": [
@@ -3031,10 +3317,52 @@
           ]
         }
       },
-      "fire:m870": {
+      "fire:p38": {
         "add": {
           "component_groups": [
-            "fire:m870"
+            "fire:p38"
+          ]
+        }
+      },
+      "fire:m1": {
+        "add": {
+          "component_groups": [
+            "fire:m1"
+          ]
+        }
+      },
+      "fire:spring": {
+        "add": {
+          "component_groups": [
+            "fire:spring"
+          ]
+        }
+      },
+      "fire:m1918": {
+        "add": {
+          "component_groups": [
+            "fire:m1918"
+          ]
+        }
+      },
+      "fire:thom": {
+        "add": {
+          "component_groups": [
+            "fire:thom"
+          ]
+        }
+      },
+      "fire:m1911": {
+        "add": {
+          "component_groups": [
+            "fire:m1911"
+          ]
+        }
+      },
+      "fire:leemk4": {
+        "add": {
+          "component_groups": [
+            "fire:leemk4"
           ]
         }
       },
