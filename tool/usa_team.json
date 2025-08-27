@@ -276,6 +276,10 @@
           {
             "weight": 10,
             "trigger": "spring"
+          },
+          {
+            "weight": 10,
+            "trigger": "bar"
           }
         ]
       },

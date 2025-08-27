@@ -2,21 +2,21 @@
   "format_version": "1.16.100",
   "minecraft:attachable": {
     "description": {
-      "identifier": "gun:m1911",
+      "identifier": "gun:bar",
       "materials": {
         "default": "entity_alphatest",
         "enchanted": "armor_enchanted"
       },
       "textures": {
         "enchanted": "textures/misc/enchanted_item_glint",
-        "default": "textures/models/m1911.png"
+        "default": "textures/models/bar.png"
       },
       "geometry": {
-        "default": "geometry.m1911"
+        "default": "geometry.bar"
       },
       "animations": {
         "first": "animation.ak47.first2",
-        "ads": "animation.m10.ads",
+        "ads": "animation.ak47.ads2",
         "third": "animation.item.third2"
       },
       "scripts": {

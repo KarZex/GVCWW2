@@ -102,10 +102,10 @@
               "spring_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:spring') && (variable.attack_time > 0.0)"
             },
             {
-              "m1918": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1918') && query.is_using_item"
+              "bar": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:bar') && query.is_using_item"
             },
             {
-              "m1918_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1918') && (variable.attack_time > 0.0)"
+              "bar_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:bar') && (variable.attack_time > 0.0)"
             },
             {
               "thom": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:thom') && query.is_using_item"
@@ -118,6 +118,12 @@
             },
             {
               "m1911_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && (variable.attack_time > 0.0)"
+            },
+            {
+              "m1b": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1b') && query.is_using_item"
+            },
+            {
+              "m1b_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1b') && (variable.attack_time > 0.0)"
             },
             {
               "leemk4": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:leemk4') && query.is_using_item"
@@ -669,9 +675,9 @@
             }
           ]
         },
-        "m1918_reload": {
+        "bar_reload": {
           "on_entry": [
-            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1918"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload bar"
           ],
           "transitions": [
             {
@@ -679,26 +685,26 @@
             }
           ]
         },
-        "m1918": {
+        "bar": {
           "on_entry": [
-            "/scriptevent gvcv5:gunUse m1918"
+            "/scriptevent gvcv5:gunUse bar"
           ],
           "transitions": [
             {
-              "m1918ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "barii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
               "no_use": "(!query.is_using_item)"
             }
           ]
         },
-        "m1918ii": {
+        "barii": {
           "on_entry": [
-            "/scriptevent gvcv5:gunUse m1918"
+            "/scriptevent gvcv5:gunUse bar"
           ],
           "transitions": [
             {
-              "m1918": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "bar": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
               "no_use": "(!query.is_using_item)"
@@ -768,6 +774,36 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m1b_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1b"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m1b": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse m1b"
+          ],
+          "transitions": [
+            {
+              "m1b_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m1b_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

@@ -222,7 +222,7 @@
       "textures": "textures/gun/rpzb"
     },
     "m1b": {
-      "textures": "textures/gun/m1b"
+      "textures": "textures/items/gun/m1b"
     },
     "k98a": {
       "textures": "textures/ammo/k98"
@@ -294,7 +294,7 @@
       "textures": "textures/ammo/fg42"
     },
     "bar": {
-      "textures": "textures/gun/bar"
+      "textures": "textures/items/gun/bar"
     },
     "bara": {
       "textures": "textures/ammo/bar"

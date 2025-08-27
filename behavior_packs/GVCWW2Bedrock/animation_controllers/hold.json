@@ -45,13 +45,16 @@
               "spring": "query.get_equipped_item_name == 'spring'"
             },
             {
-              "m1918": "query.get_equipped_item_name == 'm1918'"
+              "bar": "query.get_equipped_item_name == 'bar'"
             },
             {
               "thom": "query.get_equipped_item_name == 'thom'"
             },
             {
               "m1911": "query.get_equipped_item_name == 'm1911'"
+            },
+            {
+              "m1b": "query.get_equipped_item_name == 'm1b'"
             },
             {
               "leemk4": "query.get_equipped_item_name == 'leemk4'"
@@ -200,9 +203,9 @@
             }
           ]
         },
-        "m1918": {
+        "bar": {
           "on_entry": [
-            "/function hold/m1918h"
+            "/function hold/barh"
           ],
           "transitions": [
             {
@@ -223,6 +226,16 @@
         "m1911": {
           "on_entry": [
             "/function hold/m1911h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m1b": {
+          "on_entry": [
+            "/function hold/m1bh"
           ],
           "transitions": [
             {

@@ -102,7 +102,7 @@
     "bullet": "zex:762m",
     "damageType": "override"
   },
-  "m1918": {
+  "bar": {
     "damage": 6,
     "speed": 0.7200000000000001,
     "maxGunAmmo": 20,
@@ -125,6 +125,14 @@
     "reloadTime": 30,
     "bullet": "zex:556m",
     "damageType": "override"
+  },
+  "m1b": {
+    "damage": 20,
+    "speed": 1.8,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
   },
   "leemk4": {
     "damage": 11,

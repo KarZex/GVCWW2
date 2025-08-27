@@ -2159,7 +2159,7 @@
           ]
         }
       },
-      "fire:m1918": {
+      "fire:bar": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -2174,7 +2174,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:m1918"
+              "spawn_entity": "fire:bar"
             },
             {
               "filters": [
@@ -2188,7 +2188,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:ads_m1918"
+              "spawn_entity": "fire:ads_bar"
             }
           ]
         }
@@ -2257,6 +2257,40 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m1911"
+            }
+          ]
+        }
+      },
+      "fire:m1b": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1b"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1b"
             }
           ]
         }
@@ -3474,10 +3508,10 @@
           ]
         }
       },
-      "fire:m1918": {
+      "fire:bar": {
         "add": {
           "component_groups": [
-            "fire:m1918"
+            "fire:bar"
           ]
         }
       },
@@ -3492,6 +3526,13 @@
         "add": {
           "component_groups": [
             "fire:m1911"
+          ]
+        }
+      },
+      "fire:m1b": {
+        "add": {
+          "component_groups": [
+            "fire:m1b"
           ]
         }
       },

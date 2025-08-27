@@ -32,8 +32,8 @@ execute as @s run scoreboard players set @s reloading 0
 scoreboard objectives add fire dummy
 execute as @s[tag=!startedv5] run scoreboard players set @s fire 30
 #suppies
-execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
+#execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
 #scriptevent
-scriptevent zex:start
-scriptevent gvcv5:phone
+#scriptevent zex:start
+#scriptevent gvcv5:phone
 #guns

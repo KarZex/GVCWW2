@@ -32,10 +32,10 @@ execute as @s run scoreboard players set @s reloading 0
 scoreboard objectives add fire dummy
 execute as @s[tag=!startedv5] run scoreboard players set @s fire 30
 #suppies
-execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
+#execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
 #scriptevent
-scriptevent zex:start
-scriptevent gvcv5:phone
+#scriptevent zex:start
+#scriptevent gvcv5:phone
 #guns
 scoreboard objectives add mosin dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s mosin 5
@@ -61,12 +61,14 @@ scoreboard objectives add m1 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s m1 8
 scoreboard objectives add spring dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s spring 5
-scoreboard objectives add m1918 dummy
-execute as @a[tag=!startedv5] run scoreboard players set @s m1918 20
+scoreboard objectives add bar dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s bar 20
 scoreboard objectives add thom dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s thom 30
 scoreboard objectives add m1911 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s m1911 8
+scoreboard objectives add m1b dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s m1b 1
 scoreboard objectives add leemk4 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s leemk4 5
 scoreboard objectives add piat dummy

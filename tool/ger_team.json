@@ -280,6 +280,10 @@
           {
             "weight": 10,
             "trigger": "mg42"
+          },
+          {
+            "weight": 10,
+            "trigger": "p38"
           }
         ]
       },

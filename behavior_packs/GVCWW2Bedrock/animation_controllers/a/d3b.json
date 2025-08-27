@@ -1,0 +1,97 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.d3b": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+            "/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~~~ ~30 ~10 ~30 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~~~ ~30 ~-5 ~30 dirt",	
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~1 ~15 ~5 ~9 stonebrick",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~1~2 ~14 ~4 ~9 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~6~1 ~15 ~6 ~9 wool 13",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~5~2 ~2 ~5 ~2 glowstone",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~14~5~2 ~14 ~5 ~2 glowstone",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~13 ~2 ~2 ~15 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~18 ~2 ~2 ~20 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~23 ~2 ~2 ~25 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~27 ~3 ~8 ~29 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~9~27 ~3 ~9 ~29 planks",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~9~26 ~2 ~9 ~26 wool 11",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~9~25 ~2 ~9 ~25 wool 14",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~10~27 ~3 ~10 ~29 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~10~28 ~2 ~10 ~28 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~1~1 ~29 ~8 ~3 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~9~1 ~29 ~9 ~3 planks",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~10~1 ~29 ~10 ~3 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~10~2 ~28 ~10 ~2 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~9~0 ~28 ~9 ~0 wool 13",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~9~-1 ~28 ~9 ~-1 wool 13",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~5 ~28 ~2 ~7 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~10 ~28 ~2 ~12 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~15 ~28 ~2 ~17 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:a2a ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d4b] positioned ~ ~2 ~ run summon addon:e3r ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d4b] positioned ~ ~2 ~ run summon addon:e3 ~20 ~1 ~15 ",
+   "/kill @e[type=addon:d3b]"
+          ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+            "/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~~~ ~30 ~10 ~30 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~~~ ~30 ~-5 ~30 dirt",	
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~1 ~15 ~5 ~9 stonebrick",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~1~2 ~14 ~4 ~9 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~6~1 ~15 ~6 ~9 wool 13",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~5~2 ~2 ~5 ~2 glowstone",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~14~5~2 ~14 ~5 ~2 glowstone",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~13 ~2 ~2 ~15 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~18 ~2 ~2 ~20 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~23 ~2 ~2 ~25 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~1~27 ~3 ~8 ~29 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~9~27 ~3 ~9 ~29 planks",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~9~26 ~2 ~9 ~26 wool 11",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~9~25 ~2 ~9 ~25 wool 14",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~1~10~27 ~3 ~10 ~29 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~2~10~28 ~2 ~10 ~28 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~1~1 ~29 ~8 ~3 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~9~1 ~29 ~9 ~3 planks",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~27~10~1 ~29 ~10 ~3 fence",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~10~2 ~28 ~10 ~2 air",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~9~0 ~28 ~9 ~0 wool 11",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~28~9~-1 ~28 ~9 ~-1 wool 14",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~5 ~28 ~2 ~7 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~10 ~28 ~2 ~12 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run fill ~29~1~15 ~28 ~2 ~17 iron_block",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:a2a ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d3b] positioned ~ ~2 ~ run summon addon:c3 ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d4b] positioned ~ ~2 ~ run summon addon:e3r ~15 ~1 ~15 ",
+	"/execute at @e[type=addon:d4b] positioned ~ ~2 ~ run summon addon:e3 ~20 ~1 ~15 ",
+   "/kill @e[type=addon:d3b]"
+          ]
+                }
+            }
+        }
+    }
+}

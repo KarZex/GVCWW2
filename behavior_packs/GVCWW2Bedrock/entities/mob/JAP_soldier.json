@@ -278,7 +278,7 @@
           "table": "loot_tables/gun/spring.json"
         }
       },
-      "m1918": {
+      "bar": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
@@ -290,10 +290,10 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:m1918"
+          "def": "fire:bar"
         },
         "minecraft:equipment": {
-          "table": "loot_tables/gun/m1918.json"
+          "table": "loot_tables/gun/bar.json"
         }
       },
       "thom": {
@@ -330,6 +330,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "m1b": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1b"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1b.json"
         }
       },
       "leemk4": {
@@ -1364,11 +1382,11 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
-                    "value": "gun:m1918"
+                    "value": "gun:bar"
                   }
                 ]
               },
-              "event": "m1918",
+              "event": "bar",
               "target": "self"
             }
           },
@@ -1427,6 +1445,35 @@
                 ]
               },
               "event": "m1911",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "JAPteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1b"
+                  }
+                ]
+              },
+              "event": "m1b",
               "target": "self"
             }
           },
@@ -2002,10 +2049,10 @@
           ]
         }
       },
-      "m1918": {
+      "bar": {
         "add": {
           "component_groups": [
-            "m1918"
+            "bar"
           ]
         }
       },
@@ -2020,6 +2067,13 @@
         "add": {
           "component_groups": [
             "m1911"
+          ]
+        }
+      },
+      "m1b": {
+        "add": {
+          "component_groups": [
+            "m1b"
           ]
         }
       },
