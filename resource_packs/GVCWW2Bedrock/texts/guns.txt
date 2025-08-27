@@ -14,3 +14,7 @@ item.gun:m1918=M1918A2§r
 item.gun:thom=M1A1Thompson§r
 item.gun:m1911=§aM1911§r
 item.gun:leemk4=§a§r
+item.gun:piat=§aパンツァーファウスト§r
+item.gun:lewis=§b§r
+item.gun:brengun=§b§r
+item.gun:stengun=MP40§r

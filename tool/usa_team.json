@@ -227,6 +227,9 @@
           }
         ]
       },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/skeleton_gear.json"
+      },
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
@@ -260,47 +263,19 @@
         "randomize": [
           {
             "weight": 20,
-            "trigger": "m16a1"
+            "trigger": "m1"
           },
           {
             "weight": 10,
-            "trigger": "m4"
+            "trigger": "thom"
           },
           {
             "weight": 10,
-            "trigger": "m72"
+            "trigger": "m1911"
           },
           {
             "weight": 10,
-            "trigger": "m110"
-          },
-          {
-            "weight": 10,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 10,
-            "trigger": "m60"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m113"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m41"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m60a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah1s"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah6"
+            "trigger": "spring"
           }
         ]
       },

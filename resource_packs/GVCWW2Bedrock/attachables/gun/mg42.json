@@ -4,18 +4,18 @@
     "description": {
       "identifier": "gun:mg42",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest","enchanted": "armor_enchanted"
       },
-      "textures": {
+      "textures": { "enchanted": "textures/misc/enchanted_item_glint",
         "default": "textures/models/mg42.png"
       },
       "geometry": {
         "default": "geometry.mg42"
       },
       "animations": {
-        "first": "animation.mg42.first",
-        "ads": "animation.mg42.ads",
-        "third": "animation.mg42.third"
+        "first": "animation.ak47.first2",
+        "ads": "animation.ak47.ads2",
+        "third": "animation.item.third2"
       },
       "scripts": {
         "pre_animation": [
@@ -34,7 +34,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+        "controller.render.armor"
       ]
     }
   }

@@ -116,7 +116,7 @@ export const gunData = {
     "speed": 0.7200000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 45,
-    "bullet": "zex:mm9",
+    "bullet": "zex:556m",
     "damageType": "override"
   },
   "m1911": {
@@ -124,7 +124,7 @@ export const gunData = {
     "speed": 0.48,
     "maxGunAmmo": 8,
     "reloadTime": 30,
-    "bullet": "zex:mm9",
+    "bullet": "zex:556m",
     "damageType": "override"
   },
   "leemk4": {
@@ -133,6 +133,38 @@ export const gunData = {
     "maxGunAmmo": 5,
     "reloadTime": 40,
     "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "piat": {
+    "damage": 25,
+    "speed": 1.8,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "lewis": {
+    "damage": 8,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 47,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "brengun": {
+    "damage": 6,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 30,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "stengun": {
+    "damage": 4,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 20,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
     "damageType": "override"
   },
   "vmg": {

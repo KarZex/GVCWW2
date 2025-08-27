@@ -69,4 +69,12 @@ scoreboard objectives add m1911 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s m1911 8
 scoreboard objectives add leemk4 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s leemk4 5
+scoreboard objectives add piat dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s piat 1
+scoreboard objectives add lewis dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s lewis 47
+scoreboard objectives add brengun dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s brengun 30
+scoreboard objectives add stengun dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s stengun 20
 tag @a[tag=!startedv5] add startedv5

@@ -260,47 +260,23 @@
         "randomize": [
           {
             "weight": 20,
-            "trigger": "m16a1"
+            "trigger": "leemk4"
           },
           {
             "weight": 10,
-            "trigger": "m4"
+            "trigger": "piat"
           },
           {
             "weight": 10,
-            "trigger": "m72"
+            "trigger": "lewis"
           },
           {
             "weight": 10,
-            "trigger": "m110"
+            "trigger": "brengun"
           },
           {
             "weight": 10,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 10,
-            "trigger": "m60"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m113"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m41"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m60a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah1s"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah6"
+            "trigger": "stengun"
           }
         ]
       },

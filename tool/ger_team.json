@@ -230,6 +230,9 @@
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/skeleton_gear.json"
+      },
       "minecraft:behavior.look_at_player": {
         "priority": 7,
         "look_distance": 8
@@ -273,6 +276,10 @@
           {
             "weight": 10,
             "trigger": "p90"
+          },
+          {
+            "weight": 10,
+            "trigger": "mg42"
           }
         ]
       },

@@ -55,6 +55,18 @@
             },
             {
               "leemk4": "query.get_equipped_item_name == 'leemk4'"
+            },
+            {
+              "piat": "query.get_equipped_item_name == 'piat'"
+            },
+            {
+              "lewis": "query.get_equipped_item_name == 'lewis'"
+            },
+            {
+              "brengun": "query.get_equipped_item_name == 'brengun'"
+            },
+            {
+              "stengun": "query.get_equipped_item_name == 'stengun'"
             }
           ]
         },
@@ -221,6 +233,46 @@
         "leemk4": {
           "on_entry": [
             "/function hold/leemk4h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "piat": {
+          "on_entry": [
+            "/function hold/piath"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "lewis": {
+          "on_entry": [
+            "/function hold/lewish"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "brengun": {
+          "on_entry": [
+            "/function hold/brengunh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "stengun": {
+          "on_entry": [
+            "/function hold/stengunh"
           ],
           "transitions": [
             {

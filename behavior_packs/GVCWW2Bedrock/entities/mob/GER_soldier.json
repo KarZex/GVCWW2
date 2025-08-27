@@ -246,7 +246,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.4,
+          "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -348,6 +348,78 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/leemk4.json"
+        }
+      },
+      "piat": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:piat"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/piat.json"
+        }
+      },
+      "lewis": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lewis"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lewis.json"
+        }
+      },
+      "brengun": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:brengun"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/brengun.json"
+        }
+      },
+      "stengun": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:stengun"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/stengun.json"
         }
       },
       "vmg": {
@@ -1386,6 +1458,122 @@
               "event": "leemk4",
               "target": "self"
             }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "GERteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:piat"
+                  }
+                ]
+              },
+              "event": "piat",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "GERteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:lewis"
+                  }
+                ]
+              },
+              "event": "lewis",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "GERteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:brengun"
+                  }
+                ]
+              },
+              "event": "brengun",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "GERteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:stengun"
+                  }
+                ]
+              },
+              "event": "stengun",
+              "target": "self"
+            }
           }
         ]
       },
@@ -1524,6 +1712,9 @@
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/skeleton_gear.json"
+      },
       "minecraft:behavior.look_at_player": {
         "priority": 7,
         "look_distance": 8
@@ -1564,6 +1755,10 @@
           {
             "weight": 10,
             "trigger": "p90"
+          },
+          {
+            "weight": 10,
+            "trigger": "mg42"
           }
         ]
       },
@@ -1808,6 +2003,34 @@
         "add": {
           "component_groups": [
             "leemk4"
+          ]
+        }
+      },
+      "piat": {
+        "add": {
+          "component_groups": [
+            "piat"
+          ]
+        }
+      },
+      "lewis": {
+        "add": {
+          "component_groups": [
+            "lewis"
+          ]
+        }
+      },
+      "brengun": {
+        "add": {
+          "component_groups": [
+            "brengun"
+          ]
+        }
+      },
+      "stengun": {
+        "add": {
+          "component_groups": [
+            "stengun"
           ]
         }
       },

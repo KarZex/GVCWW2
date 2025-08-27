@@ -496,6 +496,18 @@
     },
     "leemk4": {
       "textures": "textures/items/gun/leemk4"
+    },
+    "piat": {
+      "textures": "textures/items/gun/piat"
+    },
+    "lewis": {
+      "textures": "textures/items/gun/lewis"
+    },
+    "brengun": {
+      "textures": "textures/items/gun/brengun"
+    },
+    "stengun": {
+      "textures": "textures/items/gun/stengun"
     }
   }
 }

@@ -7,7 +7,7 @@
 				"default": "entity_alphablend",
 				"scope": "entity_alphablend"
 			},
-			"textures": {
+			"textures": { "enchanted": "textures/misc/enchanted_item_glint",
 				"default": "textures/models/mosin.png",
 				"scope": "textures/models/scope.png"
 			},
@@ -37,7 +37,7 @@
 				]
 			},
 			"render_controllers": [
-				{"controller.render.default":"!query.is_sneaking || !c.is_first_person"},
+				{"controller.render.armor":"!query.is_sneaking || !c.is_first_person"},
 				{ "controller.render.scope": "query.is_sneaking && c.is_first_person" }
 			]
 		}
