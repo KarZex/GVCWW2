@@ -1,0 +1,15 @@
+item.spawn_egg.entity.gvcww2:flag_barracks_sov.name=ソ連軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_barracks_ger.name=ドイツ軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_barracks_usa.name=アメリカ軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_barracks_jap.name=日本軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_barracks_eng.name=イギリス軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_factory_sov.name=ソ連軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_factory_ger.name=ドイツ軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_factory_usa.name=アメリカ軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_factory_jap.name=日本軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_factory_eng.name=イギリス軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_airbase_sov.name=ソ連軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_airbase_ger.name=ドイツ軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_airbase_usa.name=アメリカ軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_airbase_jap.name=日本軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_airbase_eng.name=イギリス軍拠点_飛行場

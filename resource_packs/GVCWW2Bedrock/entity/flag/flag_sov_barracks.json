@@ -2,7 +2,7 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcww2:flag_sov",
+      "identifier": "gvcww2:flag_sov_barracks",
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": true,
@@ -18,16 +18,12 @@
         "on_death": "0"
       },
       "minecraft:boss": {
-        "name": "entity.gvcww2:flag_garrison_sov.name",
+        "name": "entity.gvcww2:flag_sov_barracks.name",
         "should_darken_sky": false,
         "hud_range": 30
       },
       "minecraft:damage_sensor": {
         "triggers": [
-          {
-            "cause":"override",
-            "deals_damage":false
-          },
           {
             "on_damage": {
               "filters": {
@@ -183,21 +179,54 @@
             "on_interact": {
               "filters": {
                 "all_of": [
-                { "test": "is_family","subject": "other","value": "SOVteam"},
-                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "zex:rep"},
-                { "test": "is_missing_health" }
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "SOVteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "zex:rep"
+                  },
+                  {
+                    "test": "is_missing_health"
+                  }
                 ]
               }
+            }
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "SOVteam"
+                  }
+                ]
+              }
+            },
+            "cooldown": 300.0,
+            "swing": true,
+            "use_item": false,
+            "interact_text": "\u30a2\u30a4\u30c6\u30e0\u3092\u53d6\u5f97",
+            "spawn_items": {
+              "table": "loot_tables/boss/b6.json"
             }
           }
         ]
       },
       "minecraft:type_family": {
         "family": [
+          "SOVflag",
+          "flag",
+          "redteam",
+          "SOVteam",
           "allied_soldier",
-          "playerp",
-          "mob",
-          "SOVteam"
+          "inanimate"
         ]
       },
       "minecraft:breathable": {
@@ -301,9 +330,23 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other","operator":"!=", "value":"axis_soldier" },
-                { "test": "has_tag", "operator":"!=", "subject":"other", "value":"SOVSub" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "axis_soldier"
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "SOVSub"
+                }
               ]
             },
             "max_dist": 42
@@ -311,7 +354,11 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "axis_soldier" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "axis_soldier"
+                }
               ]
             },
             "max_dist": 42
@@ -319,7 +366,11 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "monster" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                }
               ]
             },
             "max_dist": 42
@@ -327,7 +378,7 @@
         ]
       },
       "minecraft:persistent": {},
-      "minecraft:physics":{
+      "minecraft:physics": {
         "has_collision": false,
         "has_gravity": false
       },
@@ -347,49 +398,57 @@
           ]
         }
       },
-      "become_R": {
+      "become_SOV": {
         "queue_command": {
-          "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+          "command": [
+            "summon gvcww2:flag_sov_barracks ~~~",
             "kill @s"
           ]
         }
       },
-      "become_B": {
+      "become_GER": {
         "queue_command": {
-          "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+          "command": [
+            "summon gvcww2:flag_ger_barracks ~~~",
             "kill @s"
           ]
         }
       },
-      "become_G": {
+      "become_USA": {
         "queue_command": {
-          "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+          "command": [
+            "summon gvcww2:flag_usa_barracks ~~~",
             "kill @s"
           ]
         }
       },
-      "become_Y": {
+      "become_JAP": {
         "queue_command": {
-          "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+          "command": [
+            "summon gvcww2:flag_jap_barracks ~~~",
             "kill @s"
           ]
         }
       },
-      "become_CA": {
+      "become_ENG": {
         "queue_command": {
-          "command":[ "summon gvcww2:flag_ ~~5~"]
+          "command": [
+            "summon gvcww2:flag_eng_barracks ~~~",
+            "kill @s"
+          ]
         }
       },
       "become_GA": {
         "queue_command": {
-          "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+          "command": [
+            "summon gvcv5:flag_garrison_ga ~~~",
             "kill @s"
           ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": []
         }
       }
     }

@@ -2,9 +2,9 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcww2:flag_sov",
+      "identifier": "gvcww2:flag_ger",
       "spawn_category": "creature",
-      "is_spawnable": false,
+      "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
     },
@@ -18,16 +18,12 @@
         "on_death": "0"
       },
       "minecraft:boss": {
-        "name": "entity.gvcww2:flag_garrison_sov.name",
+        "name": "entity.gvcww2:flag_garrison_ger.name",
         "should_darken_sky": false,
         "hud_range": 30
       },
       "minecraft:damage_sensor": {
         "triggers": [
-          {
-            "cause":"override",
-            "deals_damage":false
-          },
           {
             "on_damage": {
               "filters": {
@@ -157,12 +153,12 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "SOVteam"
+                    "value": "GERteam"
                   },
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "SOVSub"
+                    "value": "GERSub"
                   }
                 ]
               }
@@ -183,7 +179,7 @@
             "on_interact": {
               "filters": {
                 "all_of": [
-                { "test": "is_family","subject": "other","value": "SOVteam"},
+                { "test": "is_family","subject": "other","value": "GERteam"},
                 { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "zex:rep"},
                 { "test": "is_missing_health" }
                 ]
@@ -194,10 +190,10 @@
       },
       "minecraft:type_family": {
         "family": [
-          "allied_soldier",
+          "axis_soldier",
           "playerp",
           "mob",
-          "SOVteam"
+          "GERteam"
         ]
       },
       "minecraft:breathable": {
@@ -282,7 +278,7 @@
             "sequence": [
               {
                 "base_delay": 0,
-                "event": "gvcww2:become_SOVteam",
+                "event": "gvcww2:become_GERteam",
                 "sound_event": "prepare.wololo"
               }
             ]
@@ -302,8 +298,8 @@
             "filters": {
               "all_of": [
                 { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other","operator":"!=", "value":"axis_soldier" },
-                { "test": "has_tag", "operator":"!=", "subject":"other", "value":"SOVSub" }
+                { "test": "is_family", "subject": "other","operator":"!=", "value":"allied_soldier" },
+                { "test": "has_tag", "operator":"!=", "subject":"other", "value":"GERSub" }
               ]
             },
             "max_dist": 42
@@ -311,7 +307,7 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "axis_soldier" }
+                { "test": "is_family", "subject": "other", "value": "allied_soldier" }
               ]
             },
             "max_dist": 42
@@ -347,7 +343,7 @@
           ]
         }
       },
-      "become_R": {
+      "become_SOV": {
         "queue_command": {
           "command":[ 
             "summon gvcww2:flag_sov ~~5~",
@@ -355,7 +351,7 @@
           ]
         }
       },
-      "become_B": {
+      "become_GER": {
         "queue_command": {
           "command":[ 
             "summon gvcww2:flag_sov ~~5~",
@@ -363,7 +359,7 @@
           ]
         }
       },
-      "become_G": {
+      "become_USA": {
         "queue_command": {
           "command":[ 
             "summon gvcww2:flag_sov ~~5~",
@@ -371,7 +367,7 @@
           ]
         }
       },
-      "become_Y": {
+      "become_JAP": {
         "queue_command": {
           "command":[ 
             "summon gvcww2:flag_sov ~~5~",
@@ -379,15 +375,18 @@
           ]
         }
       },
-      "become_CA": {
+      "become_ENG": {
         "queue_command": {
-          "command":[ "summon gvcww2:flag_ ~~5~"]
+          "command":[ 
+            "summon gvcww2:flag_ ~~5~",
+            "kill @s"
+          ]
         }
       },
       "become_GA": {
         "queue_command": {
           "command":[ 
-            "summon gvcww2:flag_sov ~~5~",
+            "summon gvcv5:flag_ga ~~5~",
             "kill @s"
           ]
         }

@@ -2,6 +2,8 @@ import json
 import csv
 import shutil
 
+teams = ["eng", "sov", "ger", "usa", "jap"]
+
 def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
     interact = {
         "on_interact": {
@@ -27,6 +29,7 @@ def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
         flag_json = json.load(f)
         flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcww2:flag_{}_{}.name".format(team, structure_id)
         flag_json["minecraft:entity"]["description"]["identifier"] = "gvcww2:flag_{}_{}".format(team, structure_id)
+        flag_json["minecraft:entity"]["components"]["minecraft:behavior.summon_entity"]["summon_choices"][0]["sequence"][0]["entity_type"] = "gvcww2:{}_soldier".format(team)
         flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(interact)
         flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
             #BB#"say §c{} is spawned".format(structure_id),
@@ -97,6 +100,9 @@ csv_reader = csv.reader(csv_path)
 
 text = ""
 endtext = ""
+j_text = ""
+sj_text = ""
+
 e_text = ""
 se_text = ""
 
@@ -119,14 +125,27 @@ for row in csv_reader:
         
         if structure_flag_type != "":
 
-            e_text += "entity.gvcww2:flag_{0}_ca.name=§b{1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ca.name={1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
-            e_text += "entity.gvcww2:flag_{0}_ga.name=§8{1}\n".format(structure_id,row[0].replace("ダンジョン","ゲリラ拠点"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ga.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ゲリラ拠点"))
-            e_text += "entity.gvcww2:flag_red_{0}.name=§c{1}\n".format(structure_id,row[0].replace("ダンジョン","赤チーム拠点"))
-            e_text += "entity.gvcww2:flag_blue_{0}.name=§9{1}\n".format(structure_id,row[0].replace("ダンジョン","青チーム拠点"))
-            e_text += "entity.gvcww2:flag_green_{0}.name=§a{1}\n".format(structure_id,row[0].replace("ダンジョン","緑チーム拠点"))
-            e_text += "entity.gvcww2:flag_yellow_{0}.name=§e{1}\n".format(structure_id,row[0].replace("ダンジョン","黄チーム拠点"))
+            j_text += "entity.gvcww2:flag_sov_{0}.name=§c{1}\n".format(structure_id,row[0].replace("ダンジョン","ソ連軍拠点"))
+            j_text += "entity.gvcww2:flag_ger_{0}.name=§8{1}\n".format(structure_id,row[0].replace("ダンジョン","ドイツ軍拠点"))
+            j_text += "entity.gvcww2:flag_usa_{0}.name=§9{1}\n".format(structure_id,row[0].replace("ダンジョン","アメリカ軍拠点"))
+            j_text += "entity.gvcww2:flag_jap_{0}.name=§a{1}\n".format(structure_id,row[0].replace("ダンジョン","日本軍拠点"))
+            j_text += "entity.gvcww2:flag_eng_{0}.name=§e{1}\n".format(structure_id,row[0].replace("ダンジョン","イギリス軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_sov.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ソ連軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ger.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ドイツ軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_usa.name={1}\n".format(structure_id,row[0].replace("ダンジョン","アメリカ軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_jap.name={1}\n".format(structure_id,row[0].replace("ダンジョン","日本軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_eng.name={1}\n".format(structure_id,row[0].replace("ダンジョン","イギリス軍拠点"))
+
+            e_text += "entity.gvcww2:flag_sov_{0}.name=§c{1}\n".format(structure_id,row[1].replace("DDD","Soviet"))
+            e_text += "entity.gvcww2:flag_ger_{0}.name=§8{1}\n".format(structure_id,row[1].replace("DDD","German"))
+            e_text += "entity.gvcww2:flag_usa_{0}.name=§9{1}\n".format(structure_id,row[1].replace("DDD","US"))
+            e_text += "entity.gvcww2:flag_jap_{0}.name=§a{1}\n".format(structure_id,row[1].replace("DDD","Japanese"))
+            e_text += "entity.gvcww2:flag_eng_{0}.name=§e{1}\n".format(structure_id,row[1].replace("DDD","British"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_sov.name={1}\n".format(structure_id,row[1].replace("DDD","Soviet"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ger.name={1}\n".format(structure_id,row[1].replace("DDD","German"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_usa.name={1}\n".format(structure_id,row[1].replace("DDD","US"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_jap.name={1}\n".format(structure_id,row[1].replace("DDD","Japanese"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_eng.name={1}\n".format(structure_id,row[1].replace("DDD","British"))
 
             if structure_loot == "":
                 structure_loot = "flag"
@@ -142,7 +161,7 @@ for row in csv_reader:
             # "scriptevent zex:flagRem {} %COLOR%".format(structure_id),
 
             #GER - Nazi Germany
-            ger_family = [ "GERflag","flag","grayteam","GERteam","allied_soldier","inanimate" ]
+            ger_family = [ "GERflag","flag","grayteam","GERteam","axis_soldier","inanimate" ]
             create_flag_json("ger","GER",structure_id,structure_loot,ger_family)
 
             #USA - United States
@@ -150,17 +169,17 @@ for row in csv_reader:
             create_flag_json("usa","USA",structure_id,structure_loot,usa_family)
 
             #JAP - Imperial Japan
-            jap_family = [ "JAPflag","flag","greenteam","JAPteam","allied_soldier","inanimate" ]
+            jap_family = [ "JAPflag","flag","greenteam","JAPteam","axis_soldier","inanimate" ]
             create_flag_json("jap","JAP",structure_id,structure_loot,jap_family)
 
             #ENG - United Kingdom
             eng_family = [ "ENGflag","flag","yellowteam","ENGteam","allied_soldier","inanimate" ]
             create_flag_json("eng","ENG",structure_id,structure_loot,eng_family)
 
-            with open("behavior_packs/GVCWW2Bedrock/functions/flag/{}.mcfunction".format(structure_id),"w") as f:
-                if(structure_flag_type in "M"): f.write("summon gvcww2:flag_{}_{}\n".format(structure_id,structure_flag_type.replace("M","")))
-                elif(structure_flag_type in "L"): f.write("summon gvcww2:flag_{}_{}\n".format(structure_id,structure_flag_type.replace("L","")))
-                f.write("fill ~~~ ~~~ air\n")
+            for i in teams:
+                with open("behavior_packs/GVCWW2Bedrock/functions/flag/{0}_{1}.mcfunction".format(i,structure_id),"w") as f:
+                    f.write("summon gvcww2:flag_{0}_{1}\n".format(i,structure_id))
+                    f.write("fill ~~~ ~~~ air\n")
                 
 
             print("{}\n".format(structure_id))
@@ -171,11 +190,16 @@ for row in csv_reader:
     
     row_count += 1
 
-with open("resource_packs/GVCWW2Bedrock/texts/buildings.txt","w") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/buildings.txt","w",encoding="utf-8") as f:
     f.write(text)
-with open("resource_packs/GVCWW2Bedrock/texts/endtext.txt","w") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/endtext.txt","w",encoding="utf-8") as f:
     f.write(endtext)
-with open("resource_packs/GVCWW2Bedrock/texts/flag.txt","w") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/flag.txt","w",encoding="utf-8") as f:
     f.write(e_text)
-with open("resource_packs/GVCWW2Bedrock/texts/flag_s.txt","w") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/flag_s.txt","w",encoding="utf-8") as f:
     f.write(se_text)
+
+with open("resource_packs/GVCWW2Bedrock/texts/flag.txt","w",encoding="utf-8") as f:
+    f.write(j_text)
+with open("resource_packs/GVCWW2Bedrock/texts/flag_s.txt","w",encoding="utf-8") as f:
+    f.write(sj_text)

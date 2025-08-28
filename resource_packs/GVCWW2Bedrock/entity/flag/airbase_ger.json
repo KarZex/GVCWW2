@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gvcww2:flag_ger_airbase",
+      "materials": {
+        "default": "iron_golem"
+      },
+      "textures": {
+        "default": "textures/flag/gerteam"
+      },
+      "geometry": {
+        "default": "geometry.flagaa"
+      },
+      "spawn_egg": {
+        "texture": "a1",
+        "texture_index": 0
+      },
+      "render_controllers": [
+        "controller.render.iron_golem"
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+tile.gvcww2:building_barracks.name=ダンジョン_兵舎
+tile.gvcww2:building_factory.name=ダンジョン_工場
+tile.gvcww2:building_airbase.name=ダンジョン_飛行場
