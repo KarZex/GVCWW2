@@ -175,6 +175,38 @@ export const gunData = {
     "bullet": "zex:mm9",
     "damageType": "override"
   },
+  "t38": {
+    "damage": 13,
+    "speed": 3.2,
+    "maxGunAmmo": 5,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "t100": {
+    "damage": 4,
+    "speed": 0.7200000000000001,
+    "maxGunAmmo": 20,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "t99": {
+    "damage": 6,
+    "speed": 1.2000000000000002,
+    "maxGunAmmo": 30,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "t14": {
+    "damage": 5,
+    "speed": 0.48,
+    "maxGunAmmo": 8,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
   "vmg": {
     "damage": 5,
     "damageType": "override"

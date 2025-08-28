@@ -1,0 +1,43 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "gun:t99",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "enchanted": "textures/misc/enchanted_item_glint",
+        "default": "textures/models/t99.png"
+      },
+      "geometry": {
+        "default": "geometry.t99"
+      },
+      "animations": {
+        "first": "animation.t99.first",
+        "ads": "animation.ak47.ads2",
+        "third": "animation.t99.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          {
+            "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+          },
+          {
+            "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.armor"
+      ]
+    }
+  }
+}

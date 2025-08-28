@@ -246,7 +246,7 @@
       "textures": "textures/ammo/spring"
     },
     "t38": {
-      "textures": "textures/gun/t38"
+      "textures": "textures/items/gun/t38"
     },
     "t38a": {
       "textures": "textures/ammo/t38"
@@ -276,7 +276,7 @@
       "textures": "textures/ammo/thom"
     },
     "t100": {
-      "textures": "textures/gun/t100"
+      "textures": "textures/items/gun/t100"
     },
     "t100a": {
       "textures": "textures/ammo/t100"
@@ -300,7 +300,7 @@
       "textures": "textures/ammo/bar"
     },
     "t99": {
-      "textures": "textures/gun/t99"
+      "textures": "textures/items/gun/t99"
     },
     "t99a": {
       "textures": "textures/ammo/t99"
@@ -324,7 +324,7 @@
       "textures": "textures/ammo/pistol"
     },
     "t14": {
-      "textures": "textures/gun/t14"
+      "textures": "textures/items/gun/t14"
     },
     "t14a": {
       "textures": "textures/ammo/pistol"

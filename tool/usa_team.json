@@ -280,6 +280,10 @@
           {
             "weight": 10,
             "trigger": "bar"
+          },
+          {
+            "weight": 10,
+            "trigger": "m1b"
           }
         ]
       },

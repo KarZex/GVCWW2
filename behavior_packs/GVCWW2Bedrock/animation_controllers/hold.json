@@ -70,6 +70,18 @@
             },
             {
               "stengun": "query.get_equipped_item_name == 'stengun'"
+            },
+            {
+              "t38": "query.get_equipped_item_name == 't38'"
+            },
+            {
+              "t100": "query.get_equipped_item_name == 't100'"
+            },
+            {
+              "t99": "query.get_equipped_item_name == 't99'"
+            },
+            {
+              "t14": "query.get_equipped_item_name == 't14'"
             }
           ]
         },
@@ -286,6 +298,46 @@
         "stengun": {
           "on_entry": [
             "/function hold/stengunh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t38": {
+          "on_entry": [
+            "/function hold/t38h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t100": {
+          "on_entry": [
+            "/function hold/t100h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t99": {
+          "on_entry": [
+            "/function hold/t99h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t14": {
+          "on_entry": [
+            "/function hold/t14h"
           ],
           "transitions": [
             {

@@ -440,6 +440,78 @@
           "table": "loot_tables/gun/stengun.json"
         }
       },
+      "t38": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:t38"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/t38.json"
+        }
+      },
+      "t100": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:t100"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/t100.json"
+        }
+      },
+      "t99": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:t99"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/t99.json"
+        }
+      },
+      "t14": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:t14"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/t14.json"
+        }
+      },
       "vmg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1621,6 +1693,122 @@
               "event": "stengun",
               "target": "self"
             }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "USAteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:t38"
+                  }
+                ]
+              },
+              "event": "t38",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "USAteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:t100"
+                  }
+                ]
+              },
+              "event": "t100",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "USAteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:t99"
+                  }
+                ]
+              },
+              "event": "t99",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "USAteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:t14"
+                  }
+                ]
+              },
+              "event": "t14",
+              "target": "self"
+            }
           }
         ]
       },
@@ -1806,6 +1994,10 @@
           {
             "weight": 10,
             "trigger": "bar"
+          },
+          {
+            "weight": 10,
+            "trigger": "m1b"
           }
         ]
       },
@@ -2085,6 +2277,34 @@
         "add": {
           "component_groups": [
             "stengun"
+          ]
+        }
+      },
+      "t38": {
+        "add": {
+          "component_groups": [
+            "t38"
+          ]
+        }
+      },
+      "t100": {
+        "add": {
+          "component_groups": [
+            "t100"
+          ]
+        }
+      },
+      "t99": {
+        "add": {
+          "component_groups": [
+            "t99"
+          ]
+        }
+      },
+      "t14": {
+        "add": {
+          "component_groups": [
+            "t14"
           ]
         }
       },

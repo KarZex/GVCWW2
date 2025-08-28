@@ -79,4 +79,12 @@ scoreboard objectives add brengun dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s brengun 30
 scoreboard objectives add stengun dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s stengun 20
+scoreboard objectives add t38 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s t38 5
+scoreboard objectives add t100 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s t100 20
+scoreboard objectives add t99 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s t99 30
+scoreboard objectives add t14 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s t14 8
 tag @a[tag=!startedv5] add startedv5

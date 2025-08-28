@@ -19,3 +19,7 @@ item.gun:piat=§aパンツァーファウスト§r
 item.gun:lewis=§b§r
 item.gun:brengun=§b§r
 item.gun:stengun=MP40§r
+item.gun:t38=§aMP40§r
+item.gun:t100=§r
+item.gun:t99=§b§r
+item.gun:t14=§a§r

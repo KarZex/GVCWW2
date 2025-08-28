@@ -70,23 +70,6 @@
 				}
 			}
 		},
-		"animation.ak47.ads3": {
-			"loop": true,
-			"animation_length": 5,
-			"bones": {
-				"rightArm": {
-					"rotation": [0, 0, 0],
-					"position": [0, 1, 0]
-				},
-				"gun": {
-					"rotation": [8.70544, -62.08157, 668.65107],
-					"position": [93.69377, -50.41737, -16.21982]
-				},
-				"guncube": {
-					"rotation": [-1, 0, -0.375]
-				}
-			}
-		},
 		"animation.m10.ads": {
 			"loop": true,
 			"animation_length": 5,
@@ -641,6 +624,67 @@
 				}
 			}
 		},
+		"animation.t99.first": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [1, -8.6, 2],
+					"scale": 0.33
+				},
+				"guncube": {
+					"position": [0, 4, 0]
+				}
+			}
+		},
+		"animation.t99.third": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [1.5, -8, -0.5],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.m1b.first": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [2, -8.6, 4],
+					"scale": 0.33
+				},
+				"guncube": {
+					"position": [0, 39, 0]
+				}
+			}
+		},
+		"animation.ak47.ads3": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [93.69377, -50.41737, -16.21982]
+				},
+				"guncube": {
+					"rotation": [-1, 0, -0.375]
+				}
+			}
+		},
 		"animation.item.third2": {
 			"loop": true,
 			"animation_length": 0.5,
@@ -648,6 +692,19 @@
 				"gun": {
 					"position": [0.5, -8, -0.5],
 					"scale": 0.3
+				}
+			}
+		},
+		"animation.m1b.third": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [2.5, -11, 1.5],
+					"scale": 0.3
+				},
+				"guncube": {
+					"position": [0, 27, 0]
 				}
 			}
 		}
