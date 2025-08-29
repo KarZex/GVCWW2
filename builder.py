@@ -19,8 +19,8 @@ with open(data, "r", encoding="utf-8") as f:
 
     f.close()
 
-behavior = "behavior_packs/GVCWW2Bedrock/manifest.json"
-resource = "resource_packs/GVCWW2Bedrock/manifest.json"
+behavior = "behavior_packs/GVCWW2BedrockAddon/manifest.json"
+resource = "resource_packs/GVCWW2BedrockAddon/manifest.json"
 
 resource_uuid = generate_uuid()
 behavior_uuid = generate_uuid()
