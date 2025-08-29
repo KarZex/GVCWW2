@@ -2,29 +2,21 @@
 rd /S /Q output
 mkdir output
 cd behavior_packs
-mkdir GVCBedrockWTeam
-mkdir GVCBedrockWii
-xcopy /Y /E .\GVCBedrock .\GVCBedrockWTeam
-xcopy /Y /E .\GVCBedrock .\GVCBedrockWii
-xcopy /Y /E .\GVCBedrockTeam .\GVCBedrockWTeam
-xcopy /Y /E .\GVCBedrock\manifest.json .\GVCBedrockWTeam\manifest.json
+mkdir GVCWW2BedrockAddon
+xcopy /Y /E .\GVCWW2Bedrock .\GVCWW2BedrockAddon
 cd ..
 cd resource_packs
-mkdir GVCBedrockW
-xcopy /Y /E .\GVCBedrock .\GVCBedrockW
+mkdir GVCWW2BedrockAddon
+xcopy /Y /E .\GVCWW2Bedrock .\GVCWW2BedrockAddon
 cd ..
-python python/builder.py
-"C:\Program Files\7-Zip\7z.exe" a -tzip ./output/GVCBedrockAddonBTeam.zip .\behavior_packs\GVCBedrockWTeam
-"C:\Program Files\7-Zip\7z.exe" a -tzip ./output/GVCBedrockAddonB.zip .\behavior_packs\GVCBedrockWii
-"C:\Program Files\7-Zip\7z.exe" a -tzip ./output/GVCBedrockAddonR.zip .\resource_packs\GVCBedrockW
-rename output\GVCBedrockAddonBTeam.zip GVCBedrockAddonBTeam.mcaddon
-rename output\GVCBedrockAddonB.zip GVCBedrockAddonB.mcpack
-rename output\GVCBedrockAddonR.zip GVCBedrockAddonR.mcpack
-rd /S /Q behavior_packs\GVCBedrockWTeam
-rd /S /Q behavior_packs\GVCBedrockWii
-rd /S /Q resource_packs\GVCBedrockW
-del output\GVCBedrockAddonBTeam.zip
-del output\GVCBedrockAddonB.zip
-del output\GVCBedrockAddonR.zip
+python builder.py
+"C:\Program Files\7-Zip\7z.exe" a -tzip ./output/GVCWW2BedrockAddonB.zip .\behavior_packs\GVCWW2BedrockAddon
+"C:\Program Files\7-Zip\7z.exe" a -tzip ./output/GVCWW2BedrockAddonR.zip .\resource_packs\GVCWW2BedrockAddon
+rename output\GVCWW2BedrockAddonB.zip GVCWW2BedrockAddonB.mcpack
+rename output\GVCWW2BedrockAddonR.zip GVCWW2BedrockAddonR.mcpack
+rd /S /Q behavior_packs\GVCWW2BedrockAddon
+rd /S /Q resource_packs\GVCWW2BedrockAddon
+del output\GVCWW2BedrockAddonB.zip
+del output\GVCWW2BedrockAddonR.zip
 echo Addon files have been built and renamed successfully.
 pause
