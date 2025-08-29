@@ -23,7 +23,7 @@
         "hud_range": 30
       },
       "minecraft:damage_sensor": {
-        "trigjaps": [
+        "triggers": [
           {
             "on_damage": {
               "filters": {
