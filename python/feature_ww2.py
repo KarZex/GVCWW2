@@ -119,6 +119,7 @@ for row in csv_reader:
         structure_chance = float(row[7])
         structure_flag_type = row[8].replace("nf","")
         structure_is_ship = row[9]
+        structure_loot = row[10]
         for team in teams:
             jptext += "tile.gvcww2:building_{0}_{1}.name={2}\n".format(team,structure_id,row[0])
             jptext += "tile.gvcww2:structure_end_{0}_{1}.name={1}\n".format(team,structure_id,row[0])
