@@ -8,26 +8,3 @@ boss.gvcww2:flagger_barracks.name=§8ドイツ軍拠点_兵舎
 boss.gvcww2:flagusa_barracks.name=§9アメリカ軍拠点_兵舎
 boss.gvcww2:flagjap_barracks.name=§a日本軍拠点_兵舎
 boss.gvcww2:flageng_barracks.name=§eイギリス軍拠点_兵舎
-<<<<<<< HEAD
-=======
-entity.gvcww2:flag_sov_factory.name=§cソ連軍拠点_工場
-entity.gvcww2:flag_ger_factory.name=§8ドイツ軍拠点_工場
-entity.gvcww2:flag_usa_factory.name=§9アメリカ軍拠点_工場
-entity.gvcww2:flag_jap_factory.name=§a日本軍拠点_工場
-entity.gvcww2:flag_eng_factory.name=§eイギリス軍拠点_工場
-boss.gvcww2:flagsov_factory.name=§cソ連軍拠点_工場
-boss.gvcww2:flagger_factory.name=§8ドイツ軍拠点_工場
-boss.gvcww2:flagusa_factory.name=§9アメリカ軍拠点_工場
-boss.gvcww2:flagjap_factory.name=§a日本軍拠点_工場
-boss.gvcww2:flageng_factory.name=§eイギリス軍拠点_工場
-entity.gvcww2:flag_sov_airbase.name=§cソ連軍拠点_飛行場
-entity.gvcww2:flag_ger_airbase.name=§8ドイツ軍拠点_飛行場
-entity.gvcww2:flag_usa_airbase.name=§9アメリカ軍拠点_飛行場
-entity.gvcww2:flag_jap_airbase.name=§a日本軍拠点_飛行場
-entity.gvcww2:flag_eng_airbase.name=§eイギリス軍拠点_飛行場
-boss.gvcww2:flagsov_airbase.name=§cソ連軍拠点_飛行場
-boss.gvcww2:flagger_airbase.name=§8ドイツ軍拠点_飛行場
-boss.gvcww2:flagusa_airbase.name=§9アメリカ軍拠点_飛行場
-boss.gvcww2:flagjap_airbase.name=§a日本軍拠点_飛行場
-boss.gvcww2:flageng_airbase.name=§eイギリス軍拠点_飛行場
->>>>>>> 87ae1790c59ca5545241e4a2950fd90ed890d2c3

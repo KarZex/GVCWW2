@@ -8,26 +8,3 @@ tile.gvcww2:building_usa_barracks.name=DDD_barracks
 tile.gvcww2:structure_end_usa_barracks.name=barracks
 tile.gvcww2:building_jap_barracks.name=DDD_barracks
 tile.gvcww2:structure_end_jap_barracks.name=barracks
-<<<<<<< HEAD
-=======
-tile.gvcww2:building_eng_factory.name=DDD_factory
-tile.gvcww2:structure_end_eng_factory.name=factory
-tile.gvcww2:building_sov_factory.name=DDD_factory
-tile.gvcww2:structure_end_sov_factory.name=factory
-tile.gvcww2:building_ger_factory.name=DDD_factory
-tile.gvcww2:structure_end_ger_factory.name=factory
-tile.gvcww2:building_usa_factory.name=DDD_factory
-tile.gvcww2:structure_end_usa_factory.name=factory
-tile.gvcww2:building_jap_factory.name=DDD_factory
-tile.gvcww2:structure_end_jap_factory.name=factory
-tile.gvcww2:building_eng_airbase.name=DDD_airbase
-tile.gvcww2:structure_end_eng_airbase.name=airbase
-tile.gvcww2:building_sov_airbase.name=DDD_airbase
-tile.gvcww2:structure_end_sov_airbase.name=airbase
-tile.gvcww2:building_ger_airbase.name=DDD_airbase
-tile.gvcww2:structure_end_ger_airbase.name=airbase
-tile.gvcww2:building_usa_airbase.name=DDD_airbase
-tile.gvcww2:structure_end_usa_airbase.name=airbase
-tile.gvcww2:building_jap_airbase.name=DDD_airbase
-tile.gvcww2:structure_end_jap_airbase.name=airbase
->>>>>>> 87ae1790c59ca5545241e4a2950fd90ed890d2c3

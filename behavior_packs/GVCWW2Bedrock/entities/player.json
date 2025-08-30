@@ -179,7 +179,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     },
                     {
                       "test": "has_damage",
@@ -187,7 +187,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_red"
+                "event": "gvcv5:down_by_SOV"
               }
             },
             {
@@ -222,7 +222,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     },
                     {
                       "test": "has_damage",
@@ -230,7 +230,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_blue"
+                "event": "gvcv5:down_by_GER"
               }
             },
             {
@@ -265,7 +265,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     },
                     {
                       "test": "has_damage",
@@ -273,7 +273,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_green"
+                "event": "gvcv5:down_by_USA"
               }
             },
             {
@@ -308,7 +308,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     },
                     {
                       "test": "has_damage",
@@ -316,20 +316,65 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_yellow"
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "ENGteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
               }
             }
           ]
         }
       },
-      "gvcv5:team_red": {
+      "gvcv5:team_SOV": {
         "minecraft:type_family": {
           "family": [
             "player",
             "playerp",
             "mod",
             "redteam",
-            "red"
+            "red",
+            "SOVteam",
+            "SOV"
           ]
         },
         "minecraft:damage_sensor": {
@@ -379,7 +424,7 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     }
                   ]
                 },
@@ -457,7 +502,7 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     }
                   ]
                 }
@@ -495,7 +540,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     },
                     {
                       "test": "has_damage",
@@ -503,7 +548,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_red"
+                "event": "gvcv5:down_by_SOV"
               }
             },
             {
@@ -538,7 +583,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     },
                     {
                       "test": "has_damage",
@@ -546,7 +591,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_blue"
+                "event": "gvcv5:down_by_GER"
               }
             },
             {
@@ -581,7 +626,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     },
                     {
                       "test": "has_damage",
@@ -589,7 +634,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_green"
+                "event": "gvcv5:down_by_USA"
               }
             },
             {
@@ -624,7 +669,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     },
                     {
                       "test": "has_damage",
@@ -632,7 +677,50 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_yellow"
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "ENGteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
               }
             },
             {
@@ -676,14 +764,14 @@
           ]
         }
       },
-      "gvcv5:team_blue": {
+      "gvcv5:team_GER": {
         "minecraft:type_family": {
           "family": [
             "player",
             "playerp",
             "mod",
-            "blueteam",
-            "blue"
+            "GERteam",
+            "GER"
           ]
         },
         "minecraft:damage_sensor": {
@@ -733,7 +821,7 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     }
                   ]
                 },
@@ -811,182 +899,10 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     }
                   ]
                 }
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "nodownable"
-                    },
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_mob_effect",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "resistance"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "operator": "==",
-                      "value": "redteam"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:down_by_red"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "nodownable"
-                    },
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_mob_effect",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "resistance"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "operator": "==",
-                      "value": "blueteam"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:down_by_blue"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "nodownable"
-                    },
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_mob_effect",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "resistance"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "operator": "==",
-                      "value": "greenteam"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:down_by_green"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "nodownable"
-                    },
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_mob_effect",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "resistance"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "operator": "==",
-                      "value": "yellowteam"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:down_by_yellow"
               }
             },
             {
@@ -1030,14 +946,14 @@
           ]
         }
       },
-      "gvcv5:team_green": {
+      "gvcv5:team_USA": {
         "minecraft:type_family": {
           "family": [
             "player",
             "playerp",
             "mod",
-            "greenteam",
-            "green"
+            "USAteam",
+            "USA"
           ]
         },
         "minecraft:damage_sensor": {
@@ -1087,7 +1003,7 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     }
                   ]
                 },
@@ -1160,12 +1076,12 @@
                       "test": "has_tag",
                       "operator": "==",
                       "subject": "other",
-                      "value": "greenSub"
+                      "value": "blueSub"
                     },
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     }
                   ]
                 }
@@ -1203,7 +1119,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     },
                     {
                       "test": "has_damage",
@@ -1211,7 +1127,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_red"
+                "event": "gvcv5:down_by_SOV"
               }
             },
             {
@@ -1246,7 +1162,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     },
                     {
                       "test": "has_damage",
@@ -1254,7 +1170,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_blue"
+                "event": "gvcv5:down_by_GER"
               }
             },
             {
@@ -1289,7 +1205,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     },
                     {
                       "test": "has_damage",
@@ -1297,7 +1213,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_green"
+                "event": "gvcv5:down_by_USA"
               }
             },
             {
@@ -1332,7 +1248,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     },
                     {
                       "test": "has_damage",
@@ -1340,7 +1256,50 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_yellow"
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "ENGteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
               }
             },
             {
@@ -1384,14 +1343,14 @@
           ]
         }
       },
-      "gvcv5:team_yellow": {
+      "gvcv5:team_JAP": {
         "minecraft:type_family": {
           "family": [
             "player",
             "playerp",
             "mod",
-            "yellowteam",
-            "yellow"
+            "JAPteam",
+            "JAP"
           ]
         },
         "minecraft:damage_sensor": {
@@ -1441,7 +1400,7 @@
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     }
                   ]
                 },
@@ -1514,12 +1473,12 @@
                       "test": "has_tag",
                       "operator": "==",
                       "subject": "other",
-                      "value": "yellowSub"
+                      "value": "blueSub"
                     },
                     {
                       "test": "is_family",
                       "subject": "other",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     }
                   ]
                 }
@@ -1557,7 +1516,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "redteam"
+                      "value": "SOVteam"
                     },
                     {
                       "test": "has_damage",
@@ -1565,7 +1524,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_red"
+                "event": "gvcv5:down_by_SOV"
               }
             },
             {
@@ -1600,7 +1559,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "blueteam"
+                      "value": "GERteam"
                     },
                     {
                       "test": "has_damage",
@@ -1608,7 +1567,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_blue"
+                "event": "gvcv5:down_by_GER"
               }
             },
             {
@@ -1643,7 +1602,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "greenteam"
+                      "value": "USAteam"
                     },
                     {
                       "test": "has_damage",
@@ -1651,7 +1610,7 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_green"
+                "event": "gvcv5:down_by_USA"
               }
             },
             {
@@ -1686,7 +1645,7 @@
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
-                      "value": "yellowteam"
+                      "value": "JAPteam"
                     },
                     {
                       "test": "has_damage",
@@ -1694,7 +1653,447 @@
                     }
                   ]
                 },
-                "event": "gvcv5:down_by_yellow"
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "ENGteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:become_down",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+      "gvcv5:team_ENG": {
+        "minecraft:type_family": {
+          "family": [
+            "player",
+            "playerp",
+            "mod",
+            "ENGteam",
+            "ENG"
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "entity_explosion",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "value": "nobomb"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "cause": "block_explosion",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "value": "nobomb"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "cause": "entity_attack",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "ENGteam"
+                    }
+                  ]
+                },
+                "event": "gvcv5:become_rise",
+                "target": "self"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": "player"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:remove_down",
+                "target": "self"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "noteam"
+                    },
+                    {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "blueSub"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "ENGteam"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "SOVteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_SOV"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "GERteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_GER"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "USAteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_USA"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "JAPteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "ENGteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
               }
             },
             {
@@ -3361,63 +3760,83 @@
           ]
         }
       },
-      "gvcv5:become_redteam": {
+      "gvcv5:become_SOVteam": {
         "add": {
           "component_groups": [
-            "gvcv5:team_red"
+            "gvcv5:team_SOV"
           ]
         },
         "queue_command": {
           "command": [
-            "tag @s add red",
-            "tag @s remove blue",
-            "tag @s remove green",
-            "tag @s remove yellow"
+            "tag @s add SOV",
+            "tag @s remove GER",
+            "tag @s remove USA",
+            "tag @s remove JAP",
+            "tag @s remove ENG"
           ]
         }
       },
-      "gvcv5:become_blueteam": {
+      "gvcv5:become_GERteam": {
         "add": {
           "component_groups": [
-            "gvcv5:team_blue"
+            "gvcv5:team_GER"
           ]
         },
         "queue_command": {
           "command": [
-            "tag @s add blue",
-            "tag @s remove red",
-            "tag @s remove green",
-            "tag @s remove yellow"
+            "tag @s add GER",
+            "tag @s remove SOV",
+            "tag @s remove USA",
+            "tag @s remove JAP",
+            "tag @s remove ENG"
           ]
         }
       },
-      "gvcv5:become_greenteam": {
+      "gvcv5:become_USAteam": {
         "add": {
           "component_groups": [
-            "gvcv5:team_green"
+            "gvcv5:team_USA"
           ]
         },
         "queue_command": {
           "command": [
-            "tag @s add green",
-            "tag @s remove red",
-            "tag @s remove blue",
-            "tag @s remove yellow"
+            "tag @s add USA",
+            "tag @s remove GER",
+            "tag @s remove SOV",
+            "tag @s remove JAP",
+            "tag @s remove ENG"
           ]
         }
       },
-      "gvcv5:become_yellowteam": {
+      "gvcv5:become_JAPteam": {
         "add": {
           "component_groups": [
-            "gvcv5:team_yellow"
+            "gvcv5:team_JAP"
           ]
         },
         "queue_command": {
           "command": [
-            "tag @s add yellow",
-            "tag @s remove red",
-            "tag @s remove blue",
-            "tag @s remove green"
+            "tag @s add JAP",
+            "tag @s remove GER",
+            "tag @s remove USA",
+            "tag @s remove SOV",
+            "tag @s remove ENG"
+          ]
+        }
+      },
+      "gvcv5:become_ENGteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_ENG"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add ENG",
+            "tag @s remove GER",
+            "tag @s remove USA",
+            "tag @s remove SOV",
+            "tag @s remove JAP"
           ]
         }
       },
@@ -3429,10 +3848,11 @@
         },
         "queue_command": {
           "command": [
-            "tag @s remove yellow",
-            "tag @s remove red",
-            "tag @s remove blue",
-            "tag @s remove green"
+            "tag @s remove ENG",
+            "tag @s remove GER",
+            "tag @s remove USA",
+            "tag @s remove SOV",
+            "tag @s remove JAP"
           ]
         }
       },
@@ -3459,60 +3879,75 @@
           ]
         }
       },
-      "gvcv5:down_by_red": {
+      "gvcv5:down_by_SOV": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
             "effect @s resistance 4 255 true",
             "effect @s wither 99999 1 true",
             "tag @s add down",
-            "tag @s add downedbyred",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyred.name\" } ] }",
+            "tag @s add downedbySOV",
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbySOV.name\" } ] }",
             "inputpermission set @s jump disabled",
             "inputpermission set @s mount disabled",
             "scoreboard players set @s antiMining 999999"
           ]
         }
       },
-      "gvcv5:down_by_blue": {
+      "gvcv5:down_by_GER": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
             "effect @s resistance 4 255 true",
             "effect @s wither 99999 1 true",
             "tag @s add down",
-            "tag @s add downedbyblue",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyblue.name\" } ] }",
+            "tag @s add downedbyGER",
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyGER.name\" } ] }",
             "inputpermission set @s jump disabled",
             "inputpermission set @s mount disabled",
             "scoreboard players set @s antiMining 999999"
           ]
         }
       },
-      "gvcv5:down_by_green": {
+      "gvcv5:down_by_USA": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
             "effect @s resistance 4 255 true",
             "effect @s wither 99999 1 true",
             "tag @s add down",
-            "tag @s add downedbygreen",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbygreen.name\" } ] }",
+            "tag @s add downedbyUSA",
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyUSA.name\" } ] }",
             "inputpermission set @s jump disabled",
             "inputpermission set @s mount disabled",
             "scoreboard players set @s antiMining 999999"
           ]
         }
       },
-      "gvcv5:down_by_yellow": {
+      "gvcv5:down_by_JAP": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
             "effect @s resistance 4 255 true",
             "effect @s wither 99999 1 true",
             "tag @s add down",
-            "tag @s add downedbyyellow",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyyellow.name\" } ] }",
+            "tag @s add downedbyJAP",
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyJAP.name\" } ] }",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
+          ]
+        }
+      },
+      "gvcv5:down_by_ENG": {
+        "queue_command": {
+          "command": [
+            "effect @s instant_health 1 255 true",
+            "effect @s resistance 4 255 true",
+            "effect @s wither 99999 1 true",
+            "tag @s add down",
+            "tag @s add downedbyENG",
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyENG.name\" } ] }",
             "inputpermission set @s jump disabled",
             "inputpermission set @s mount disabled",
             "scoreboard players set @s antiMining 999999"
@@ -3526,10 +3961,12 @@
             "inputpermission set @s jump enabled",
             "inputpermission set @s mount enabled",
             "scoreboard players set @s antiMining 1",
-            "tag @s remove downedbyred",
-            "tag @s remove downedbyblue",
-            "tag @s remove downedbygreen",
-            "tag @s remove downedbyyellow"
+            "effect @s wither 0 1 true",
+            "tag @s remove downedbySOV",
+            "tag @s remove downedbyGER",
+            "tag @s remove downedbyUSA",
+            "tag @s remove downedbyJAP",
+            "tag @s remove downedbyENG"
           ]
         }
       },

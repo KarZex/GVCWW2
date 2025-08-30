@@ -20,6 +20,7 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:custom_components": [ "gvcv5:lootblock" ],
             "minecraft:geometry": "geometry.loot",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

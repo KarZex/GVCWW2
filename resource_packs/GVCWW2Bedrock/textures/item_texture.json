@@ -38,11 +38,23 @@
     "tank": {
       "textures": "textures/items/tank"
     },
-    "tank2": {
-      "textures": "textures/items/tank2"
+    "phone": {
+      "textures": "textures/items/phone"
     },
-    "tank3": {
-      "textures": "textures/items/tank3"
+    "phone_sov": {
+      "textures": "textures/items/phone_sov"
+    },
+    "phone_ger": {
+      "textures": "textures/items/phone_ger"
+    },
+    "phone_usa": {
+      "textures": "textures/items/phone_usa"
+    },
+    "phone_jap": {
+      "textures": "textures/items/phone_jap"
+    },
+    "phone_eng": {
+      "textures": "textures/items/phone_eng"
     },
     "tank4": {
       "textures": "textures/items/tank4"

@@ -8,26 +8,3 @@ entity.gvcww2:flag_ger_barracks.name=§8German_barracks
 entity.gvcww2:flag_usa_barracks.name=§9US_barracks
 entity.gvcww2:flag_jap_barracks.name=§aJapanese_barracks
 entity.gvcww2:flag_eng_barracks.name=§eBritish_barracks
-<<<<<<< HEAD
-=======
-boss.gvcww2:flagsov_factory.name=§cSoviet_factory
-boss.gvcww2:flagger_factory.name=§8German_factory
-boss.gvcww2:flagusa_factory.name=§9US_factory
-boss.gvcww2:flagjap_factory.name=§aJapanese_factory
-boss.gvcww2:flageng_factory.name=§eBritish_factory
-entity.gvcww2:flag_sov_factory.name=§cSoviet_factory
-entity.gvcww2:flag_ger_factory.name=§8German_factory
-entity.gvcww2:flag_usa_factory.name=§9US_factory
-entity.gvcww2:flag_jap_factory.name=§aJapanese_factory
-entity.gvcww2:flag_eng_factory.name=§eBritish_factory
-boss.gvcww2:flagsov_airbase.name=§cSoviet_airbase
-boss.gvcww2:flagger_airbase.name=§8German_airbase
-boss.gvcww2:flagusa_airbase.name=§9US_airbase
-boss.gvcww2:flagjap_airbase.name=§aJapanese_airbase
-boss.gvcww2:flageng_airbase.name=§eBritish_airbase
-entity.gvcww2:flag_sov_airbase.name=§cSoviet_airbase
-entity.gvcww2:flag_ger_airbase.name=§8German_airbase
-entity.gvcww2:flag_usa_airbase.name=§9US_airbase
-entity.gvcww2:flag_jap_airbase.name=§aJapanese_airbase
-entity.gvcww2:flag_eng_airbase.name=§eBritish_airbase
->>>>>>> 87ae1790c59ca5545241e4a2950fd90ed890d2c3

@@ -16,6 +16,11 @@
       }
     },
     "component_groups": {
+      "can_despawn": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        }
+      },
       "attack": {
         "minecraft:movement": {
           "value": 0.25
@@ -1966,6 +1971,15 @@
     },
     "events": {
       "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default",
+            "can_despawn"
+          ]
+        },
+        "trigger": "gvcv5:set_have_gun"
+      },
+      "minecraft:spawned_from_block": {
         "add": {
           "component_groups": [
             "default"
