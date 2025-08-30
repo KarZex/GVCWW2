@@ -5,6 +5,12 @@
     "mtype": {
       "textures": "textures/items/mtype"
     },
+    "smoke": {
+      "textures": "textures/items/smoke"
+    },
+    "flame": {
+      "textures": "textures/items/flame"
+    },
     "sp": {
       "textures": "textures/items/sp"
     },
