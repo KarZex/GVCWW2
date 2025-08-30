@@ -18,7 +18,7 @@
         "on_death": "0"
       },
       "minecraft:boss": {
-        "name": "entity.gvcww2:flag_ger_airbase.name",
+        "name": "boss.gvcww2:flagger_airbase.name",
         "should_darken_sky": false,
         "hud_range": 30
       },

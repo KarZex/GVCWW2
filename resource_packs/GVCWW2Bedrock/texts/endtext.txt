@@ -1,0 +1,10 @@
+tile.gvcww2:building_eng_barracks.name=DDD_barracks
+tile.gvcww2:structure_end_eng_barracks.name=barracks
+tile.gvcww2:building_sov_barracks.name=DDD_barracks
+tile.gvcww2:structure_end_sov_barracks.name=barracks
+tile.gvcww2:building_ger_barracks.name=DDD_barracks
+tile.gvcww2:structure_end_ger_barracks.name=barracks
+tile.gvcww2:building_usa_barracks.name=DDD_barracks
+tile.gvcww2:structure_end_usa_barracks.name=barracks
+tile.gvcww2:building_jap_barracks.name=DDD_barracks
+tile.gvcww2:structure_end_jap_barracks.name=barracks

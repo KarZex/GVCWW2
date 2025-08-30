@@ -18,7 +18,7 @@
         "on_death": "0"
       },
       "minecraft:boss": {
-        "name": "entity.gvcww2:flag_jap_barracks.name",
+        "name": "boss.gvcww2:flagjap_barracks.name",
         "should_darken_sky": false,
         "hud_range": 30
       },

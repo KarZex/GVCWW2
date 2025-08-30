@@ -235,7 +235,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
-    //e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
     e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
