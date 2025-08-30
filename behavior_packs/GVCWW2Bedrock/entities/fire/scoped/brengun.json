@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "mgbullet"
+          "lmgbullet"
         ]
       },
       "minecraft:explode": {
@@ -36,7 +36,7 @@
           },
           "stick_in_ground": {}
         },
-        "power": 1.2000000000000002,
+        "power": 0.8,
         "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 0,

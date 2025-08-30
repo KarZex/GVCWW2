@@ -1,0 +1,15 @@
+entity.gvcww2:flag_sov_barracks.name=§cSoviet_barracks
+entity.gvcww2:flag_ger_barracks.name=§8German_barracks
+entity.gvcww2:flag_usa_barracks.name=§9US_barracks
+entity.gvcww2:flag_jap_barracks.name=§aJapanese_barracks
+entity.gvcww2:flag_eng_barracks.name=§eBritish_barracks
+entity.gvcww2:flag_sov_factory.name=§cSoviet_factory
+entity.gvcww2:flag_ger_factory.name=§8German_factory
+entity.gvcww2:flag_usa_factory.name=§9US_factory
+entity.gvcww2:flag_jap_factory.name=§aJapanese_factory
+entity.gvcww2:flag_eng_factory.name=§eBritish_factory
+entity.gvcww2:flag_sov_airbase.name=§cSoviet_airbase
+entity.gvcww2:flag_ger_airbase.name=§8German_airbase
+entity.gvcww2:flag_usa_airbase.name=§9US_airbase
+entity.gvcww2:flag_jap_airbase.name=§aJapanese_airbase
+entity.gvcww2:flag_eng_airbase.name=§eBritish_airbase

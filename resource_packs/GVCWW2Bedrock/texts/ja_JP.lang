@@ -1,0 +1,202 @@
+item.zex:km=カロリーメイト
+item.zex:sp=スクラップ
+item.gun:tank=主砲
+item.gun:mgg=機関銃
+item.zex:mm9=9mmHG弾
+item.zex:1270m=.50Cal弾
+item.zex:12m=12ゲージ弾
+item.zex:40m=40mm擲弾
+item.zex:556m=.45ACP弾
+item.zex:762m=.30Cal弾
+item.zex:rocketm=76mmロケット弾
+item.zex:missilem=76mmミサイル
+item.gvcv5:bc_item=弾薬製造機
+tile.gvcv5:bc.name=弾薬製造機
+tile.gvcv5:gcsov.name=ソ連銃製造機
+tile.gvcv5:gcger.name=ドイツ銃製造機
+tile.gvcv5:gcusa.name=アメリカ銃製造機
+tile.gvcv5:gcjap.name=日本銃製造機
+tile.gvcv5:gceng.name=イギリス銃製造機
+script.gvcv5.minecraft:redstone.name=§4RS§r
+script.gvcv5.minecraft:emerald.name=§aEM§r
+script.gvcv5.minecraft:gunpowder.name=§8GP§r
+script.gvcv5.minecraft:iron_ingot.name=§6IR§r
+script.gvcv5.no_ma.name=§c素材が足りません!§r
+
+script.gvcww2:zex:12m.name=§412Gauge§r
+script.gvcww2:zex:556m.name=§6.45ACP§r
+script.gvcww2:zex:762m.name=§3.30Cal§r
+script.gvcww2:zex:mm9.name=§99mmHG§r
+script.gvcww2:ex:btm.name=§aBattery§r
+script.gvcww2:zex:1270m.name=§c.50Cal§r
+script.gvcww2:zex:rocketm.name=§276mmRocket§r
+script.gvcww2:zex:missilem.name=§576mmMissile§r
+script.gvcww2:zex:40m.name=§e40mmGrenade§r
+script.gvcww2:zex:12m.name=§412Gauge§r
+#### Guns ####
+
+## SOV
+item.gun:mosin=モシン・ナガン§r
+item.gun:ppsh=PPSh-41§r
+item.gun:dp28=DP-28§r
+item.gun:tt33=TT33§r
+
+## GER
+item.gun:k98=Kar98k§r
+item.gun:mp40=MP40§r
+item.gun:stg44=StG44§r
+item.gun:mg42=MG42§r
+item.gun:p90=パンツァーファウスト§r
+item.gun:p38=P38§r
+
+## USA
+item.gun:m1=M1ガーランド§r
+item.gun:spring=M1903スプリングフィールド§r
+item.gun:bar=ブローニングM1918§r
+item.gun:thom=M1A1トンプソン§r
+item.gun:m1911=M1911§r
+item.gun:m1b=M1バズーカ§r
+
+## ENG
+item.gun:leemk4=リー・エンフィールドNo.4§r
+item.gun:piat=PIAT§r
+item.gun:lewis=ルイス軽機関銃§r
+item.gun:brengun=ブレン軽機関銃§r
+item.gun:stengun=ステン短機関銃§r
+
+## JAP
+item.gun:t38=三八式歩兵銃§r
+item.gun:t100=一〇〇式機関短銃§r
+item.gun:t99=九九式軽機関銃§r
+item.gun:t14=十四年式拳銃§r
+
+#### FLAG ####
+entity.gvcww2:flag_sov_barracks.name=§cソ連軍拠点_兵舎
+entity.gvcww2:flag_ger_barracks.name=§8ドイツ軍拠点_兵舎
+entity.gvcww2:flag_usa_barracks.name=§9アメリカ軍拠点_兵舎
+entity.gvcww2:flag_jap_barracks.name=§a日本軍拠点_兵舎
+entity.gvcww2:flag_eng_barracks.name=§eイギリス軍拠点_兵舎
+entity.gvcww2:flag_sov_factory.name=§cソ連軍拠点_工場
+entity.gvcww2:flag_ger_factory.name=§8ドイツ軍拠点_工場
+entity.gvcww2:flag_usa_factory.name=§9アメリカ軍拠点_工場
+entity.gvcww2:flag_jap_factory.name=§a日本軍拠点_工場
+entity.gvcww2:flag_eng_factory.name=§eイギリス軍拠点_工場
+entity.gvcww2:flag_sov_airbase.name=§cソ連軍拠点_飛行場
+entity.gvcww2:flag_ger_airbase.name=§8ドイツ軍拠点_飛行場
+entity.gvcww2:flag_usa_airbase.name=§9アメリカ軍拠点_飛行場
+entity.gvcww2:flag_jap_airbase.name=§a日本軍拠点_飛行場
+entity.gvcww2:flag_eng_airbase.name=§eイギリス軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_sov_barracks.name=ソ連軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_ger_barracks.name=ドイツ軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_usa_barracks.name=アメリカ軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_jap_barracks.name=日本軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_eng_barracks.name=イギリス軍拠点_兵舎
+item.spawn_egg.entity.gvcww2:flag_sov_factory.name=ソ連軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_ger_factory.name=ドイツ軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_usa_factory.name=アメリカ軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_jap_factory.name=日本軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_eng_factory.name=イギリス軍拠点_工場
+item.spawn_egg.entity.gvcww2:flag_sov_airbase.name=ソ連軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_ger_airbase.name=ドイツ軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_usa_airbase.name=アメリカ軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_jap_airbase.name=日本軍拠点_飛行場
+item.spawn_egg.entity.gvcww2:flag_eng_airbase.name=イギリス軍拠点_飛行場
+entity.gvcww2:sov_soldier.name=ソ連兵
+entity.gvcww2:ger_soldier.name=ドイツ兵
+entity.gvcww2:usa_soldier.name=アメリカ兵
+entity.gvcww2:jap_soldier.name=日本兵
+entity.gvcww2:eng_soldier.name=イギリス兵
+item.spawn_egg.entity.gvcww2:sov_soldier.name=ソ連兵
+item.spawn_egg.entity.gvcww2:ger_soldier.name=ドイツ兵
+item.spawn_egg.entity.gvcww2:usa_soldier.name=アメリカ兵
+item.spawn_egg.entity.gvcww2:jap_soldier.name=日本兵
+item.spawn_egg.entity.gvcww2:eng_soldier.name=イギリス兵
+
+item.item:red=Attack 
+item.item:blue=Follow
+item.item:green=Wait
+item.item:yellow=Take Flag
+
+item.item:soviet=Soviet Armor
+item.item:germany=German Armor
+item.item:usa=US Armor
+item.item:japan=Japanese Armor
+
+item.gun:bomb=Grenade
+item.gun:tbomb=AntiTankGrenade
+item.gun:kamikaze=Kamikaze Attack
+item.gun:tank=Aircraft Weapon
+item.gun:tank2=Fighter Weapon
+item.gun:tank3=Bomber Weapon
+item.gun:t1=Tank Weapon §4[Soviet]
+item.gun:t2=Tank Weapon §3[Germany]
+item.gun:t3=Tank Weapon §2[USA]
+item.gun:t4=Tank Weapon §f[Japan]
+item.spawn_egg.entity.addon:a1.name=Japanese Base
+item.spawn_egg.entity.addon:a2.name=US Base
+item.spawn_egg.entity.addon:a3.name=German Base
+item.spawn_egg.entity.addon:a4.name=Soviet Base
+item.spawn_egg.entity.addon:a1a.name=Japanese Factory
+item.spawn_egg.entity.addon:a2a.name=US Factory
+item.spawn_egg.entity.addon:a3a.name=German Factory
+item.spawn_egg.entity.addon:a4a.name=Soviet Factory
+item.spawn_egg.entity.addon:a1b.name=Japanese Airport
+item.spawn_egg.entity.addon:a2b.name=US Airport
+item.spawn_egg.entity.addon:a3b.name=German Airport
+item.spawn_egg.entity.addon:a4b.name=Soviet Airport
+item.spawn_egg.entity.addon:c1.name=Soviet Infantry
+item.spawn_egg.entity.addon:c2.name=German Infantry
+item.spawn_egg.entity.addon:c3.name=US Infantry
+item.spawn_egg.entity.addon:c4.name=Japanese Infantry
+item.spawn_egg.entity.addon:d1a.name=Soviet Base
+item.spawn_egg.entity.addon:d2a.name=German Base
+item.spawn_egg.entity.addon:d3a.name=US Base
+item.spawn_egg.entity.addon:d4a.name=Japanese Base
+item.spawn_egg.entity.addon:d1b.name=Soviet Factory
+item.spawn_egg.entity.addon:d2b.name=German Factory
+item.spawn_egg.entity.addon:d3b.name=US Factory
+item.spawn_egg.entity.addon:d4b.name=Japanese Factory
+item.spawn_egg.entity.addon:d1c.name=Soviet Airport
+item.spawn_egg.entity.addon:d2c.name=German Airport
+item.spawn_egg.entity.addon:d3c.name=US Airport
+item.spawn_egg.entity.addon:d4c.name=Japanese Airport
+entity.addon:c1.name=Soviet Infantry
+entity.addon:c2.name=German Infantry
+entity.addon:c3.name=US Infantry
+entity.addon:c4.name=Japanese Infantry
+entity.addon:c1a.name=Soviet Infantry
+entity.addon:c2a.name=German Infantry
+entity.addon:c3a.name=US Infantry
+entity.addon:c4a.name=Japanese Infantry
+entity.addon:c1b.name=Soviet Infantry
+entity.addon:c2b.name=German Infantry
+entity.addon:c3b.name=US Infantry
+entity.addon:c4b.name=Japanese Infantry
+item.spawn_egg.entity.addon:b1.name=Ammo Crafter
+item.spawn_egg.entity.addon:b2.name=German Gun Crafter
+item.spawn_egg.entity.addon:b3.name=US Gun Crafter
+item.spawn_egg.entity.addon:b4.name=Japanese Gun Crafter
+
+item.item:soviet.name=Soviet Armor
+item.item:germany.name=German Armor
+item.item:usa.name=US Armor
+item.item:japan.name=Japanese Armor
+item.spawn_egg.entity.addon:e1.name=T34
+item.spawn_egg.entity.addon:e2.name=Panzer IV
+item.spawn_egg.entity.addon:e3.name=M18
+item.spawn_egg.entity.addon:e4.name=Type 98
+
+item.spawn_egg.entity.addon:f1.name=Yak-9
+item.spawn_egg.entity.addon:f2.name=Bf 109
+item.spawn_egg.entity.addon:f3.name=F4U
+item.spawn_egg.entity.addon:f4.name=Zero
+
+item.spawn_egg.entity.addon:h1.name=IL-2
+item.spawn_egg.entity.addon:h2.name=Ju87
+item.spawn_egg.entity.addon:h3.name=SBD
+item.spawn_egg.entity.addon:h4.name=Ryuusei
+
+item.item:red=Attack 
+item.item:blue=Follow
+item.item:green=Wait
+item.item:yellow=Take Flag

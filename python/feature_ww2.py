@@ -130,22 +130,22 @@ for row in csv_reader:
             j_text += "entity.gvcww2:flag_usa_{0}.name=§9{1}\n".format(structure_id,row[0].replace("ダンジョン","アメリカ軍拠点"))
             j_text += "entity.gvcww2:flag_jap_{0}.name=§a{1}\n".format(structure_id,row[0].replace("ダンジョン","日本軍拠点"))
             j_text += "entity.gvcww2:flag_eng_{0}.name=§e{1}\n".format(structure_id,row[0].replace("ダンジョン","イギリス軍拠点"))
-            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_sov.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ソ連軍拠点"))
-            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ger.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ドイツ軍拠点"))
-            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_usa.name={1}\n".format(structure_id,row[0].replace("ダンジョン","アメリカ軍拠点"))
-            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_jap.name={1}\n".format(structure_id,row[0].replace("ダンジョン","日本軍拠点"))
-            sj_text += "item.spawn_egg.entity.gvcww2:flag_{0}_eng.name={1}\n".format(structure_id,row[0].replace("ダンジョン","イギリス軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_sov_{0}.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ソ連軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_ger_{0}.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ドイツ軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_usa_{0}.name={1}\n".format(structure_id,row[0].replace("ダンジョン","アメリカ軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_jap_{0}.name={1}\n".format(structure_id,row[0].replace("ダンジョン","日本軍拠点"))
+            sj_text += "item.spawn_egg.entity.gvcww2:flag_eng_{0}.name={1}\n".format(structure_id,row[0].replace("ダンジョン","イギリス軍拠点"))
 
             e_text += "entity.gvcww2:flag_sov_{0}.name=§c{1}\n".format(structure_id,row[1].replace("DDD","Soviet"))
             e_text += "entity.gvcww2:flag_ger_{0}.name=§8{1}\n".format(structure_id,row[1].replace("DDD","German"))
             e_text += "entity.gvcww2:flag_usa_{0}.name=§9{1}\n".format(structure_id,row[1].replace("DDD","US"))
             e_text += "entity.gvcww2:flag_jap_{0}.name=§a{1}\n".format(structure_id,row[1].replace("DDD","Japanese"))
             e_text += "entity.gvcww2:flag_eng_{0}.name=§e{1}\n".format(structure_id,row[1].replace("DDD","British"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_sov.name={1}\n".format(structure_id,row[1].replace("DDD","Soviet"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_ger.name={1}\n".format(structure_id,row[1].replace("DDD","German"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_usa.name={1}\n".format(structure_id,row[1].replace("DDD","US"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_jap.name={1}\n".format(structure_id,row[1].replace("DDD","Japanese"))
-            se_text += "item.spawn_egg.entity.gvcww2:flag_{0}_eng.name={1}\n".format(structure_id,row[1].replace("DDD","British"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_sov_{0}.name={1}\n".format(structure_id,row[1].replace("DDD","Soviet"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_ger_{0}.name={1}\n".format(structure_id,row[1].replace("DDD","German"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_usa_{0}.name={1}\n".format(structure_id,row[1].replace("DDD","US"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_jap_{0}.name={1}\n".format(structure_id,row[1].replace("DDD","Japanese"))
+            se_text += "item.spawn_egg.entity.gvcww2:flag_eng_{0}.name={1}\n".format(structure_id,row[1].replace("DDD","British"))
 
             if structure_loot == "":
                 structure_loot = "flag"
@@ -194,9 +194,9 @@ with open("resource_packs/GVCWW2Bedrock/texts/buildings.txt","w",encoding="utf-8
     f.write(text)
 with open("resource_packs/GVCWW2Bedrock/texts/endtext.txt","w",encoding="utf-8") as f:
     f.write(endtext)
-with open("resource_packs/GVCWW2Bedrock/texts/flag.txt","w",encoding="utf-8") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/eflag.txt","w",encoding="utf-8") as f:
     f.write(e_text)
-with open("resource_packs/GVCWW2Bedrock/texts/flag_s.txt","w",encoding="utf-8") as f:
+with open("resource_packs/GVCWW2Bedrock/texts/eflag_s.txt","w",encoding="utf-8") as f:
     f.write(se_text)
 
 with open("resource_packs/GVCWW2Bedrock/texts/flag.txt","w",encoding="utf-8") as f:

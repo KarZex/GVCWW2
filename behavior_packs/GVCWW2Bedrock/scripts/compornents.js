@@ -6,7 +6,7 @@ function gvcv5SpawnEvent( event ){
         const spawnBlock = event.block;
         const spawnLocation = event.block.location;
         if( spawn.includes(`addon`) ) {
-            spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcv5:`);
+            spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcww2:`);
             /*
             const aboveBlock = spawnBlock.above();
             if( aboveBlock.typeId == `minecraft:chest` ){
@@ -76,7 +76,7 @@ function gvcv5BuildingBlockEvent( event ){
 }
 
 function gvcv5LootBlockEvent( event ){
-    const type = event.block.typeId.replace(`gvcv5:`,``);
+    const type = event.block.typeId.replace(`gvcv5:`,``).replace(`gvcww2:`,``);
     const buildingLocation = event.block.location;
     const face = event.block.permutation.getState('minecraft:cardinal_direction');
     if( face == `north` ){

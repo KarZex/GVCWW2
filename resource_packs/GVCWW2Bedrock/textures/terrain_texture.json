@@ -7,8 +7,47 @@
     "miss": {
       "textures": "textures/ds"
     },
-    "good1": {
-      "textures": "textures/blocks/good1"
+    "radio": {
+      "textures": "textures/blocks/radio"
+    },
+    "gcsov": {
+      "textures": "textures/blocks/gcsov"
+    },
+    "gcger": {
+      "textures": "textures/blocks/gcger"
+    },
+    "gcusa": {
+      "textures": "textures/blocks/gcusa"
+    },
+    "gcjap": {
+      "textures": "textures/blocks/gcjap"
+    },
+    "gceng": {
+      "textures": "textures/blocks/gceng"
+    },
+    "l0": {
+      "textures": "textures/blocks/l0"
+    },
+    "l1": {
+      "textures": "textures/blocks/l1"
+    },
+    "lsov": {
+      "textures": "textures/blocks/lsov"
+    },
+    "lger": {
+      "textures": "textures/blocks/lger"
+    },
+    "lusa": {
+      "textures": "textures/blocks/lusa"
+    },
+    "ljap": {
+      "textures": "textures/blocks/ljap"
+    },
+    "leng": {
+      "textures": "textures/blocks/leng"
+    },
+    "bc": {
+      "textures": "textures/blocks/bc"
     },
     "good2": {
       "textures": "textures/blocks/good2"
@@ -18,6 +57,27 @@
     },
     "good4": {
       "textures": "textures/blocks/good4"
+    },
+    "spawn_addon_ga": {
+      "textures": "textures/blocks/addon_ga"
+    },
+    "spawn_addon_ca": {
+      "textures": "textures/blocks/addon_ca"
+    },
+    "spawn_addon_sov_soldier": {
+      "textures": "textures/blocks/addon_sov_soldier"
+    },
+    "spawn_addon_ger_soldier": {
+      "textures": "textures/blocks/addon_ger_soldier"
+    },
+    "spawn_addon_usa_soldier": {
+      "textures": "textures/blocks/addon_usa_soldier"
+    },
+    "spawn_addon_jap_soldier": {
+      "textures": "textures/blocks/addon_jap_soldier"
+    },
+    "spawn_addon_eng_soldier": {
+      "textures": "textures/blocks/addon_eng_soldier"
     }
   }
 }

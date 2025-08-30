@@ -1,0 +1,9 @@
+addon:ga;r
+addon:ca;r
+addon:sov_soldier;r
+addon:ger_soldier;r
+addon:usa_soldier;r
+addon:jap_soldier;r
+addon:eng_soldier;r
+addon:sov_soldier;r
+addon:pmc;r

@@ -7,15 +7,15 @@
     "damageType": "override"
   },
   "mosin": {
-    "damage": 14,
-    "speed": 3.2,
+    "damage": 16,
+    "speed": 1.6,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "ppsh": {
-    "damage": 5,
+    "damage": 4,
     "speed": 0.7200000000000001,
     "maxGunAmmo": 72,
     "reloadTime": 45,
@@ -31,35 +31,35 @@
     "damageType": "override"
   },
   "tt33": {
-    "damage": 10,
+    "damage": 7,
     "speed": 0.6000000000000001,
-    "maxGunAmmo": 8,
-    "reloadTime": 50,
+    "maxGunAmmo": 9,
+    "reloadTime": 30,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "k98": {
-    "damage": 10,
-    "speed": 3.6,
+    "damage": 16,
+    "speed": 3.2,
     "maxGunAmmo": 5,
-    "reloadTime": 50,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "mp40": {
     "damage": 4,
-    "speed": 0.7200000000000001,
-    "maxGunAmmo": 20,
+    "speed": 0.8,
+    "maxGunAmmo": 32,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "stg44": {
-    "damage": 5,
+    "damage": 6,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m",
+    "bullet": "zex:762m",
     "damageType": "override"
   },
   "mg42": {
@@ -71,23 +71,23 @@
     "damageType": "override"
   },
   "p90": {
-    "damage": 20,
-    "speed": 1.8,
+    "damage": 50,
+    "speed": 0.5,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
   "p38": {
-    "damage": 5,
-    "speed": 0.48,
+    "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "m1": {
-    "damage": 7,
+    "damage": 14,
     "speed": 2.4000000000000004,
     "maxGunAmmo": 8,
     "reloadTime": 60,
@@ -95,58 +95,58 @@
     "damageType": "override"
   },
   "spring": {
-    "damage": 13,
-    "speed": 3.2,
+    "damage": 20,
+    "speed": 1.6,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "bar": {
-    "damage": 6,
-    "speed": 0.7200000000000001,
+    "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
-    "reloadTime": 45,
+    "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "thom": {
-    "damage": 4,
+    "damage": 5,
     "speed": 0.7200000000000001,
-    "maxGunAmmo": 30,
+    "maxGunAmmo": 20,
     "reloadTime": 45,
     "bullet": "zex:556m",
     "damageType": "override"
   },
   "m1911": {
     "damage": 5,
-    "speed": 0.48,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:556m",
     "damageType": "override"
   },
   "m1b": {
-    "damage": 20,
-    "speed": 1.8,
+    "damage": 60,
+    "speed": 0.44000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
   "leemk4": {
-    "damage": 11,
-    "speed": 2.8000000000000003,
-    "maxGunAmmo": 5,
-    "reloadTime": 40,
+    "damage": 16,
+    "speed": 2.4000000000000004,
+    "maxGunAmmo": 10,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "piat": {
-    "damage": 25,
-    "speed": 1.8,
+    "damage": 50,
+    "speed": 0.5,
     "maxGunAmmo": 1,
-    "reloadTime": 60,
+    "reloadTime": 80,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
@@ -160,7 +160,7 @@
   },
   "brengun": {
     "damage": 6,
-    "speed": 1.2000000000000002,
+    "speed": 0.8,
     "maxGunAmmo": 30,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -168,14 +168,14 @@
   },
   "stengun": {
     "damage": 4,
-    "speed": 0.7200000000000001,
-    "maxGunAmmo": 20,
+    "speed": 0.8,
+    "maxGunAmmo": 32,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "t38": {
-    "damage": 13,
+    "damage": 14,
     "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -184,8 +184,8 @@
   },
   "t100": {
     "damage": 4,
-    "speed": 0.7200000000000001,
-    "maxGunAmmo": 20,
+    "speed": 0.8,
+    "maxGunAmmo": 30,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
@@ -199,7 +199,7 @@
     "damageType": "override"
   },
   "t14": {
-    "damage": 5,
+    "damage": 4,
     "speed": 0.48,
     "maxGunAmmo": 8,
     "reloadTime": 30,

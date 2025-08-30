@@ -1,113 +1,116 @@
-item.zex:9m=SMG Bullet
-item.zex:127m=
-item.zex:556m=Ryfle ammo
-item.zex:762m=Rocket
-item.zex:rocketm=Rocket
-item.zex:556p=Pistol ammo
-item.zex:762p=MG ammo
-item.zex:9p=SMG Bullet BOX
+item.zex:km=Calorie Mate
+item.zex:sp=Scrap
+item.gun:tank=Main Gun
+item.gun:mgg=Machine Gun
+item.zex:mm9=9mmHG Ammo
+item.zex:1270m=.50Cal Ammo
+item.zex:12m=12Gauge Ammo
+item.zex:40m=40mm Grenade
+item.zex:556m=.45ACP Ammo
+item.zex:762m=.30Cal Ammo
+item.zex:rocketm=76mmRocket Ammo
+item.zex:missilem=76mmMissile Ammo
+item.gvcv5:bc_item=Ammunition Manufacturing Machine
+tile.gvcv5:bc.name=Ammunition Manufacturing Machine
+tile.gvcv5:gcsov.name=Soviet Gun Manufacturing Machine
+tile.gvcv5:gcger.name=German Gun Manufacturing Machine
+tile.gvcv5:gcusa.name=US Gun Manufacturing Machine
+tile.gvcv5:gcjap.name=Japanese Gun Manufacturing Machine
+tile.gvcv5:gceng.name=British Gun Manufacturing Machine
+script.gvcv5.minecraft:redstone.name=§4RS§r
+script.gvcv5.minecraft:emerald.name=§aEM§r
+script.gvcv5.minecraft:gunpowder.name=§8GP§r
+script.gvcv5.minecraft:iron_ingot.name=§6IR§r
+script.gvcv5.no_ma.name=§cNot enough materials!§r
 
-script.gvcv5:zex:12m.name=§412Gauge§r
-script.gvcv5:zex:556m.name=§6.22Cal§r
-script.gvcv5:zex:762m.name=§3.30Cal§r
-script.gvcv5:zex:mm9.name=§99mmHG§r
-script.gvcv5:ex:btm.name=§aBattery§r
-script.gvcv5:zex:1270m.name=§c.50Cal§r
-script.gvcv5:zex:rocketm.name=§276mmRocket§r
-script.gvcv5:zex:missilem.name=§576mmMissile§r
-script.gvcv5:zex:40m.name=§e40mmGrenade§r
-script.gvcv5:zex:12m.name=§412Gauge§r
+script.gvcww2:zex:12m.name=§412Gauge§r
+script.gvcww2:zex:556m.name=§6.45ACP§r
+script.gvcww2:zex:762m.name=§3.30Cal§r
+script.gvcww2:zex:mm9.name=§99mmHG§r
+script.gvcww2:ex:btm.name=§aBattery§r
+script.gvcww2:zex:1270m.name=§c.50Cal§r
+script.gvcww2:zex:rocketm.name=§276mmRocket§r
+script.gvcww2:zex:missilem.name=§576mmMissile§r
+script.gvcww2:zex:40m.name=§e40mmGrenade§r
+script.gvcww2:zex:12m.name=§412Gauge§r
 
-item.gun:mosin=Mosin Nagant
-item.gun:mosine=Mosin Nagant §4[Empty]
-item.gun:mosina=Mosin Nagant Magazine
+## SOV
+item.gun:mosin=M1891§r
+item.gun:ppsh=PPSh-41§r
+item.gun:dp28=DP-28§r
+item.gun:tt33=TT33§r
 
-item.gun:mosins=Mosin Nagant -Sniper
-item.gun:mosinse=Mosin Nagant -Sniper §4[Empty]
-item.gun:mosinsa=Mosin Nagant -Sniper Magazine
+## GER
+item.gun:k98=Kar98k§r
+item.gun:mp40=MP40§r
+item.gun:stg44=StG44§r
+item.gun:mg42=MG42§r
+item.gun:p90=Panzerfaust§r
+item.gun:p38=P38§r
 
-item.gun:k98=Karabiner 98 Kurz
-item.gun:k98e=Karabiner 98 Kurz §4[Empty]
-item.gun:k98a=Karabiner 98 Kurz Magazine
+## USA
+item.gun:m1=M1Garand§r
+item.gun:spring=M1903Springfield§r
+item.gun:bar=M1918BAR§r
+item.gun:thom=M1A1Thompson§r
+item.gun:m1911=M1911§r
+item.gun:m1b=M1Bazooka§r
 
-item.gun:k98s=Karabiner 98 Kurz -Sniper
-item.gun:k98se=Karabiner 98 Kurz -Sniper §4[Empty]
-item.gun:k98sa=Karabiner 98 Kurz -Sniper Magazine
+## ENG
+item.gun:leemk4=Lee-EnfieldNo.4§r
+item.gun:piat=PIAT§r
+item.gun:lewis=LewisGun§r
+item.gun:brengun=BrenGun§r
+item.gun:stengun=StenGun§r
 
-item.item:e1.name=Soviet Helmet
-item.item:e2.name=German Helmet
-item.item:e3.name=US Helmet
-item.item:e4.name=Japanese Helmet
+## JAP
+item.gun:t38=Type38§r
+item.gun:t100=Type100§r
+item.gun:t99=Type99§r
+item.gun:t14=Type14§r
 
-item.gun:m1=M1 Garand
-item.gun:m1e=M1 Garand §4[Empty]
-item.gun:m1a=M1 Garand Magazine
+#### Entity ####
+entity.gvcww2:flag_sov_barracks.name=§cSoviet_barracks
+entity.gvcww2:flag_ger_barracks.name=§8German_barracks
+entity.gvcww2:flag_usa_barracks.name=§9US_barracks
+entity.gvcww2:flag_jap_barracks.name=§aJapanese_barracks
+entity.gvcww2:flag_eng_barracks.name=§eBritish_barracks
+entity.gvcww2:flag_sov_factory.name=§cSoviet_factory
+entity.gvcww2:flag_ger_factory.name=§8German_factory
+entity.gvcww2:flag_usa_factory.name=§9US_factory
+entity.gvcww2:flag_jap_factory.name=§aJapanese_factory
+entity.gvcww2:flag_eng_factory.name=§eBritish_factory
+entity.gvcww2:flag_sov_airbase.name=§cSoviet_airbase
+entity.gvcww2:flag_ger_airbase.name=§8German_airbase
+entity.gvcww2:flag_usa_airbase.name=§9US_airbase
+entity.gvcww2:flag_jap_airbase.name=§aJapanese_airbase
+entity.gvcww2:flag_eng_airbase.name=§eBritish_airbase
+item.spawn_egg.entity.gvcww2:flag_sov_barracks.name=Soviet_barracks
+item.spawn_egg.entity.gvcww2:flag_ger_barracks.name=German_barracks
+item.spawn_egg.entity.gvcww2:flag_usa_barracks.name=US_barracks
+item.spawn_egg.entity.gvcww2:flag_jap_barracks.name=Japanese_barracks
+item.spawn_egg.entity.gvcww2:flag_eng_barracks.name=British_barracks
+item.spawn_egg.entity.gvcww2:flag_sov_factory.name=Soviet_factory
+item.spawn_egg.entity.gvcww2:flag_ger_factory.name=German_factory
+item.spawn_egg.entity.gvcww2:flag_usa_factory.name=US_factory
+item.spawn_egg.entity.gvcww2:flag_jap_factory.name=Japanese_factory
+item.spawn_egg.entity.gvcww2:flag_eng_factory.name=British_factory
+item.spawn_egg.entity.gvcww2:flag_sov_airbase.name=Soviet_airbase
+item.spawn_egg.entity.gvcww2:flag_ger_airbase.name=German_airbase
+item.spawn_egg.entity.gvcww2:flag_usa_airbase.name=US_airbase
+item.spawn_egg.entity.gvcww2:flag_jap_airbase.name=Japanese_airbase
+item.spawn_egg.entity.gvcww2:flag_eng_airbase.name=British_airbase
+entity.gvcww2:sov_soldier.name=Soviet Soldier
+entity.gvcww2:ger_soldier.name=German Soldier
+entity.gvcww2:usa_soldier.name=US Soldier
+entity.gvcww2:jap_soldier.name=Japanese Soldier
+entity.gvcww2:eng_soldier.name=British Soldier
+item.spawn_egg.entity.gvcww2:sov_soldier.name=Soviet Soldier
+item.spawn_egg.entity.gvcww2:ger_soldier.name=German Soldier
+item.spawn_egg.entity.gvcww2:usa_soldier.name=US Soldier
+item.spawn_egg.entity.gvcww2:jap_soldier.name=Japanese Soldier
+item.spawn_egg.entity.gvcww2:eng_soldier.name=British Soldier
 
-item.gun:spring=SpringField
-item.gun:springe=SpringField §4[Empty]
-item.gun:springa=SpringField Magazine
-
-item.gun:t38=Type 38
-item.gun:t38e=Type 38 §4[Empty]
-item.gun:t38a=Type 38 Magazine
-
-item.gun:t99s=Type 99-Sniper
-item.gun:t99se=Type 99-Sniper §4[Empty]
-item.gun:t99sa=Type 99-Sniper Magazine
-
-item.gun:mp40=MP40
-item.gun:mp40e=MP40 §4[Empty]
-item.gun:mp40a=MP40 Magazine
-
-item.gun:ppsh=PPSh-41
-item.gun:ppshe=PPSh-41 §4[Empty]
-item.gun:ppsha=PPSh-41 Magazine
-
-item.gun:thom=Thompson SMG
-item.gun:thome=Thompson SMG §4[Empty]
-item.gun:thoma=Thompson SMG Magazine
-
-item.gun:t100=Type 100 SMG
-item.gun:t100e=Type 100 SMG §4[Empty]
-item.gun:t100a=Type 100 SMG Magazine
-
-item.gun:fg42=FG-42
-item.gun:fg42e=FG-42 §4[Empty]
-item.gun:fg42a=FG-42 Magazine
-
-item.gun:dp28=DP-28
-item.gun:dp28e=DP-28 §4[Empty]
-item.gun:dp28a=DP-28 Magazine
-
-item.gun:bar=M1918 BAR
-item.gun:bare=M1918 BAR §4[Empty]
-item.gun:bara=M1918 BAR Magazine
-
-item.gun:t99=Type 99 LMG
-item.gun:t99e=Type 99 LMG §4[Empty]
-item.gun:t99a=Type 99 LMG Magazine
-
-item.gun:tt33=TT33
-item.gun:tt33e=TT33 §4[Empty]
-item.gun:tt33a=TT33 Magazine
-
-item.gun:p38=Walther P38
-item.gun:p38e=Walther P38 §4[Empty]
-item.gun:p38a=Walther P38 Magazine
-
-item.gun:m1911=M1911
-item.gun:m1911e=M1911 §4[Empty]
-item.gun:m1911a=M1911 Magazine
-
-item.gun:t14=Type 14 Nambu
-item.gun:t14e=Type 14 Nambu §4[Empty]
-item.gun:t14a=Type 14 Nambu Magazine
-
-item.gun:m1b=M1 Bazooka
-
-item.gun:rpzb=RPzB 54
-
-item.gun:t89=Type 89 Grenade Launcher
 
 item.item:red=Attack 
 item.item:blue=Follow

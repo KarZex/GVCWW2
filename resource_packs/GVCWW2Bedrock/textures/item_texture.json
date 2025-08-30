@@ -2,44 +2,29 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
-    "d4a": {
-      "textures": "textures/items/d4a"
+    "mtype": {
+      "textures": "textures/items/mtype"
     },
-    "d3a": {
-      "textures": "textures/items/d3a"
+    "sp": {
+      "textures": "textures/items/sp"
     },
-    "d2a": {
-      "textures": "textures/items/d2a"
+    "aidkit": {
+      "textures": "textures/items/aidkit"
     },
-    "d1a": {
-      "textures": "textures/items/d1a"
+    "fragment": {
+      "textures": "textures/items/fragment"
     },
-    "d4b": {
-      "textures": "textures/items/d4b"
+    "impact": {
+      "textures": "textures/items/impact"
     },
-    "d3b": {
-      "textures": "textures/items/d3b"
+    "mgg": {
+      "textures": "textures/items/mgg"
     },
-    "d2b": {
-      "textures": "textures/items/d2b"
+    "km": {
+      "textures": "textures/items/km"
     },
-    "d1b": {
-      "textures": "textures/items/d1b"
-    },
-    "d4c": {
-      "textures": "textures/items/d4c"
-    },
-    "d3c": {
-      "textures": "textures/items/d3c"
-    },
-    "d2c": {
-      "textures": "textures/items/d2c"
-    },
-    "d1c": {
-      "textures": "textures/items/d1c"
-    },
-    "bomb": {
-      "textures": "textures/items/bomb"
+    "commandradio": {
+      "textures": "textures/items/commandradio"
     },
     "tbomb": {
       "textures": "textures/items/tbomb"
@@ -56,8 +41,8 @@
     "tank4": {
       "textures": "textures/items/tank4"
     },
-    "b4": {
-      "textures": "textures/items/b4"
+    "bc_item": {
+      "textures": "textures/items/block/bc"
     },
     "b3": {
       "textures": "textures/items/b3"
@@ -67,6 +52,9 @@
     },
     "b1": {
       "textures": "textures/items/b1"
+    },
+    "radio_item": {
+      "textures": "textures/items/block/radio"
     },
     "BLUE": {
       "textures": "textures/flag/blue"
