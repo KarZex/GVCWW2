@@ -126,10 +126,10 @@ for row in csv_reader:
             entext += "tile.gvcww2:structure_end_{0}_{1}.name={1}\n".format(team,structure_id,row[1])
             with open("tool/structure_end.json","r") as f:
                 structure_end_json = json.load(f)
-                structure_end_json["minecraft:block"]["description"]["identifier"] = "gvcv5:structure_end_{}".format(row[2])
+                structure_end_json["minecraft:block"]["description"]["identifier"] = "gvcv5:structure_end_{0}_{1}".format(team,structure_id)
                 
 
-            with open("behavior_packs/GVCWW2Bedrock/blocks/endblock/{}_end.json".format(row[2]),"w") as f:
+            with open("behavior_packs/GVCWW2Bedrock/blocks/endblock/{0}_{1}_end.json".format(team,structure_id),"w") as f:
                 json.dump(structure_end_json,f,indent=2)
             with open("behavior_packs/GVCWW2Bedrock/functions/structure/{0}_{1}.mcfunction".format(team,structure_id),"w") as f:
                 f.write("execute if score {4} building matches 1 run tickingarea add ~~~ ~{0}~63~{1} {2}_{3} true\n".format(structure_loadx+16,structure_loadz+16,team,structure_id,structure_flag_type))
