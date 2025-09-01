@@ -5,11 +5,11 @@ import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
 import "./team";
-/*
+
 world.afterEvents.entityHurt.subscribe( e => {
 	print(`value:${e.damage} at:${e.hurtEntity.typeId} by:${e.damageSource.damagingEntity.typeId} type:${e.damageSource.cause}`)
 } )
-*/
+
 
 world.afterEvents.entitySpawn.subscribe( e => {
 	const entity = e.entity;

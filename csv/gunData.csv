@@ -25,3 +25,4 @@ PIAT,piat,1,zex:rocketm,25,2.5,4,80,1,4,F,0,F,rpgbullet,1,entityExplosion,0,Š®—¹
 ˆêZZ®‹@ŠÖ’Ze,t100,30,zex:mm9,4,4,3,45,0,0,F,0,F,psbullet,1,override,1,Š®—¹,Kar Zex,2,F,,2,4,JAP
 ‹ã‹ã®Œy‹@ŠÖe,t99,30,zex:762m,6,6,4,80,1,0,F,0,F,lmgbullet,1,override,1,Š®—¹,Kar Zex,5,F,,5,4,JAP
 \l”N®Œe,t14,8,zex:mm9,4,2.4,0,30,1,0,F,0,T,psbullet,1,override,0,Š®—¹,Kar Zex,1,F,D,1,4,JAP
+h“Ë”š—‹,lunge,1,zex:rocketm,0,0.1,0,60,19,5,F,0,F,rpgbullet,1,entityExplosion,0,Š®—¹,Kar Zex,4,F,C,4,4,JAP
