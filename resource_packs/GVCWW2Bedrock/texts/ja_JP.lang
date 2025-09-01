@@ -77,6 +77,7 @@ item.gun:t38=三八式歩兵銃§r
 item.gun:t100=一〇〇式機関短銃§r
 item.gun:t99=九九式軽機関銃§r
 item.gun:t14=十四年式拳銃§r
+item.gun:lunge=刺突爆雷§r
 
 #### FLAG ####
 entity.gvcww2:flag_sov_barracks.name=§cソ連軍拠点_兵舎

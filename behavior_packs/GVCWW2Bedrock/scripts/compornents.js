@@ -1,4 +1,4 @@
-import { world, EquipmentSlot, system } from "@minecraft/server";
+import { world, EquipmentSlot, system,EntityDamageCause } from "@minecraft/server";
 
 function gvcv5SpawnEvent( event ){
     if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`)){
@@ -255,6 +255,10 @@ function gvcv5Phone( event ){
     event.source.runCommand(`function noteamphone`);
 }
 
+function gvcv5LungeDamaging( event ){
+    event.source.applyDamage(100,{ cause: EntityDamageCause.entityExplosion });
+}
+
 function gvcv5UseFlag( event ){
     event.source.runCommand(`function flag`);
 }
@@ -374,6 +378,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,{onConsume: gvcv5UseAidKit});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:lunge`,{onUse: gvcv5LungeDamaging});
 });
 
 world.afterEvents.worldLoad.subscribe( async e => {

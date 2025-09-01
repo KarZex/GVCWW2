@@ -529,6 +529,9 @@
     },
     "ptrd": {
       "textures": "textures/items/gun/ptrd"
+    },
+    "lunge": {
+      "textures": "textures/items/gun/lunge"
     }
   }
 }

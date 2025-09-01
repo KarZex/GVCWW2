@@ -69,6 +69,7 @@ item.gun:t38=Type38§r
 item.gun:t100=Type100§r
 item.gun:t99=Type99§r
 item.gun:t14=Type14§r
+item.gun:lunge=Lunge Mine§r
 
 #### Entity ####
 entity.gvcww2:flag_sov_barracks.name=§cSoviet_barracks

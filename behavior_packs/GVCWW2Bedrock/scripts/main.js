@@ -360,7 +360,12 @@ async function airstrike(projectile,level,team){
 }
 
 world.afterEvents.entitySpawn.subscribe( e => {
-	if( e.entity.typeId.includes("fire")  ){
+	if( e.entity.typeId == "fire:lunge"  ){
+		const projectile = e.entity;
+		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
+		player.applyDamage(100,{ cause: EntityDamageCause.entityExplosion });
+	}
+	else if( e.entity.typeId.includes("fire")  ){
 		const projectile = e.entity;
 		let gunName = projectile.typeId
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }

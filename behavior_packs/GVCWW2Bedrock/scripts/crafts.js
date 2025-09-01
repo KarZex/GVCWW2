@@ -51,7 +51,8 @@ export const craftData = {
       { "give":"gun:t38","texture":"textures/items/gun/t38", "count":1, "cost":[ 6, 8, 6 ] },
       { "give":"gun:t100","texture":"textures/items/gun/t100", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"gun:t99","texture":"textures/items/gun/t99", "count":1, "cost":[ 6, 8, 6 ] },
-      { "give":"gun:t14","texture":"textures/items/gun/t14", "count":1, "cost":[ 2, 2, 1 ] }
+      { "give":"gun:t14","texture":"textures/items/gun/t14", "count":1, "cost":[ 2, 2, 1 ] },
+      { "give":"gun:lunge","texture":"textures/items/gun/lunge", "count":1, "cost":[ 6, 8, 6 ] }
     ]
   },
   "gceng": {

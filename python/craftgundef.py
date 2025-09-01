@@ -279,54 +279,55 @@ for row in csv_reader:
           "transitions": [ { "default": "(1.0)"}]
         }
         #Bullet 
-        if gun_special == "H":
-            with open("tool/horming.json".format(gun_id),"r") as f:
-                gun_entity = json.load(f)
-                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
-                gun_entity["minecraft:entity"]["components"]["minecraft:movement"]["value"] = gun_power * 0.2
-    
-                if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
-                gun_entity["minecraft:entity"]["events"] = {}
-                gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
-                gun_entity["minecraft:entity"]["component_groups"] = {}
-                gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+        if gun_special != "C":
+            if gun_special == "H":
+                with open("tool/horming.json".format(gun_id),"r") as f:
+                    gun_entity = json.load(f)
+                    gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                    gun_entity["minecraft:entity"]["components"]["minecraft:movement"]["value"] = gun_power * 0.2
+        
+                    if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
+                    gun_entity["minecraft:entity"]["events"] = {}
+                    gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
+                    gun_entity["minecraft:entity"]["component_groups"] = {}
+                    gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-                if gun_bomb > 0:
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                    if gun_bomb > 0:
+                        gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-                if gun_wallbreak:
-                    del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
-              
-        else:
-            with open("tool/fire.json".format(gun_id),"r") as f:
-                gun_entity = json.load(f)
-                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
-                if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
-                gun_entity["minecraft:entity"]["events"] = {}
-                gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
-                gun_entity["minecraft:entity"]["component_groups"] = {}
-                gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+                    if gun_wallbreak:
+                        del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
 
-                if gun_bomb > 0:
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+            else:
+                with open("tool/fire.json".format(gun_id),"r") as f:
+                    gun_entity = json.load(f)
+                    gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                    if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
+                    gun_entity["minecraft:entity"]["events"] = {}
+                    gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
+                    gun_entity["minecraft:entity"]["component_groups"] = {}
+                    gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-                if gun_wallbreak:
-                    del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
-                   
-        with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}.json".format(gun_id),"w") as f:
-            json.dump(gun_entity,f,indent=2)
+                    if gun_bomb > 0:
+                        gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-        with open("behavior_packs/GVCWW2Bedrock/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
-            if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
-            else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
-            json.dump(gun_entity,f,indent=2)
+                    if gun_wallbreak:
+                        del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
+                    
+            with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}.json".format(gun_id),"w") as f:
+                json.dump(gun_entity,f,indent=2)
+
+            with open("behavior_packs/GVCWW2Bedrock/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
+                if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
+                else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
+                json.dump(gun_entity,f,indent=2)
 
         #function
         with open("behavior_packs/GVCWW2Bedrock/functions/hold/{}h.mcfunction".format(gun_id),"w",encoding="utf-8") as f:

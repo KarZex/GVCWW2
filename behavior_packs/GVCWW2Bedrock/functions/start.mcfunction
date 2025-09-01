@@ -5,6 +5,7 @@ execute as @a[scores={mcool=1..}] run function mcool
 execute as @a[scores={mcooli=1..}] run function mcooli
 execute as @a[scores={mcoolii=1..}] run function mcoolii
 
+playanimation @a[hasitem={item=gun:lunge,location=slot.weapon.mainhand}] animation.item.first none 0 "!query.is_item_equipped"
 
 execute as @a run function scool
 
