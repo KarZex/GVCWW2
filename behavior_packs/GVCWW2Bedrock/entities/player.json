@@ -374,7 +374,8 @@
             "redteam",
             "red",
             "SOVteam",
-            "SOV"
+            "SOV",
+            "allied_soldier"
           ]
         },
         "minecraft:damage_sensor": {
@@ -771,7 +772,8 @@
             "playerp",
             "mod",
             "GERteam",
-            "GER"
+            "GER",
+            "axis_soldier"
           ]
         },
         "minecraft:damage_sensor": {
@@ -953,7 +955,8 @@
             "playerp",
             "mod",
             "USAteam",
-            "USA"
+            "USA",
+            "allied_soldier"
           ]
         },
         "minecraft:damage_sensor": {
@@ -1350,7 +1353,8 @@
             "playerp",
             "mod",
             "JAPteam",
-            "JAP"
+            "JAP",
+            "axis_soldier"
           ]
         },
         "minecraft:damage_sensor": {
@@ -1747,7 +1751,8 @@
             "playerp",
             "mod",
             "ENGteam",
-            "ENG"
+            "ENG",
+            "allied_soldier"
           ]
         },
         "minecraft:damage_sensor": {
@@ -2282,6 +2287,40 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_tt33"
+            }
+          ]
+        }
+      },
+      "fire:ptrd": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_ptrd"
             }
           ]
         }
@@ -3582,21 +3621,6 @@
                 ]
               }
             }
-          },
-          {
-            "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  }
-                ]
-              }
-            }
           }
         ]
       },
@@ -4022,6 +4046,13 @@
         "add": {
           "component_groups": [
             "fire:tt33"
+          ]
+        }
+      },
+      "fire:ptrd": {
+        "add": {
+          "component_groups": [
+            "fire:ptrd"
           ]
         }
       },

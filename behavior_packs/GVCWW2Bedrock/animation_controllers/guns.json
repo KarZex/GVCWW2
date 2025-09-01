@@ -54,6 +54,12 @@
               "tt33_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && (variable.attack_time > 0.0)"
             },
             {
+              "ptrd": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd') && query.is_using_item"
+            },
+            {
+              "ptrd_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd') && (variable.attack_time > 0.0)"
+            },
+            {
               "k98": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:k98') && query.is_using_item"
             },
             {
@@ -355,10 +361,10 @@
           ],
           "transitions": [
             {
-              "ppshii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "ppshii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && query.is_using_item"
             }
           ]
         },
@@ -368,10 +374,10 @@
           ],
           "transitions": [
             {
-              "ppsh": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "ppsh": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && query.is_using_item"
             }
           ]
         },
@@ -441,6 +447,36 @@
             }
           ]
         },
+        "ptrd_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ptrd"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "ptrd": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ptrd"
+          ],
+          "transitions": [
+            {
+              "ptrd_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ptrd_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 38 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
         "k98_reload": {
           "on_entry": [
             "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload k98"
@@ -487,10 +523,10 @@
           ],
           "transitions": [
             {
-              "mp40ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "mp40ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && query.is_using_item"
             }
           ]
         },
@@ -500,10 +536,10 @@
           ],
           "transitions": [
             {
-              "mp40": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "mp40": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && query.is_using_item"
             }
           ]
         },
@@ -979,10 +1015,10 @@
           ],
           "transitions": [
             {
-              "stengunii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "stengunii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stengun') && query.is_using_item"
             }
           ]
         },
@@ -992,10 +1028,10 @@
           ],
           "transitions": [
             {
-              "stengun": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "stengun": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stengun') && query.is_using_item"
             }
           ]
         },
@@ -1045,10 +1081,10 @@
           ],
           "transitions": [
             {
-              "t100ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "t100ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t100') && query.is_using_item"
             }
           ]
         },
@@ -1058,10 +1094,10 @@
           ],
           "transitions": [
             {
-              "t100": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+              "no_use": "!query.is_using_item"
             },
             {
-              "no_use": "(!query.is_using_item)"
+              "t100": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t100') && query.is_using_item"
             }
           ]
         },

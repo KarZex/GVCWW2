@@ -12,11 +12,18 @@ item.zex:rocketm=76mmロケット弾
 item.zex:missilem=76mmミサイル
 item.gvcv5:bc_item=弾薬製造機
 tile.gvcv5:bc.name=弾薬製造機
+tile.gvcv5:gc.name=銃製造機
 tile.gvcv5:gcsov.name=ソ連銃製造機
 tile.gvcv5:gcger.name=ドイツ銃製造機
 tile.gvcv5:gcusa.name=アメリカ銃製造機
 tile.gvcv5:gcjap.name=日本銃製造機
 tile.gvcv5:gceng.name=イギリス銃製造機
+tile.gvcv5:spawn_zzz.name=テレポートブロック
+tile.gvcv5:spawn_sov.name=テレポートブロック ソビエト用
+tile.gvcv5:spawn_ger.name=テレポートブロック ドイツ用
+tile.gvcv5:spawn_usa.name=テレポートブロック アメリカ用
+tile.gvcv5:spawn_jap.name=テレポートブロック 日本用
+tile.gvcv5:spawn_eng.name=テレポートブロック イギリス用
 script.gvcv5.minecraft:redstone.name=§4RS§r
 script.gvcv5.minecraft:emerald.name=§aEM§r
 script.gvcv5.minecraft:gunpowder.name=§8GP§r
@@ -40,6 +47,7 @@ item.gun:mosin=モシン・ナガン§r
 item.gun:ppsh=PPSh-41§r
 item.gun:dp28=DP-28§r
 item.gun:tt33=TT33§r
+item.gun:ptrd=PTRD§r
 
 ## GER
 item.gun:k98=Kar98k§r

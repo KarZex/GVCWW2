@@ -39,6 +39,14 @@ export const gunData = {
     "bullet": "zex:762m",
     "damageType": "override"
   },
+  "ptrd": {
+    "damage": 50,
+    "speed": 3.2,
+    "maxGunAmmo": 1,
+    "reloadTime": 30,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
   "k98": {
     "damage": 16,
     "speed": 3.2,
@@ -72,7 +80,7 @@ export const gunData = {
     "damageType": "override"
   },
   "p90": {
-    "damage": 50,
+    "damage": 25,
     "speed": 0.5,
     "maxGunAmmo": 1,
     "reloadTime": 60,
@@ -128,7 +136,7 @@ export const gunData = {
     "damageType": "override"
   },
   "m1b": {
-    "damage": 60,
+    "damage": 30,
     "speed": 0.44000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 60,
@@ -144,7 +152,7 @@ export const gunData = {
     "damageType": "override"
   },
   "piat": {
-    "damage": 50,
+    "damage": 25,
     "speed": 0.5,
     "maxGunAmmo": 1,
     "reloadTime": 80,

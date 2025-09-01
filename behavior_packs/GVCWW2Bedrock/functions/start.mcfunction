@@ -8,7 +8,7 @@ execute as @a[scores={mcoolii=1..}] run function mcoolii
 
 execute as @a run function scool
 
-execute as @a[tag=!startedv5] run function gunstart
+execute as @a[tag=!startedww2] run function gunstart
 execute as @a[tag=down] run function down
 execute as @a[tag=rise] run function rise
 execute as @e[tag=raid] run function raid/zombietarget

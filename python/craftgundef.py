@@ -350,7 +350,7 @@ for row in csv_reader:
 
 
         a_func += "scoreboard objectives add {} dummy\n".format(gun_id)
-        a_func += "execute as @a[tag=!startedv5] run scoreboard players set @s {0} {1}\n".format(gun_id,gun_maxammo)
+        a_func += "execute as @a[tag=!startedww2] run scoreboard players set @s {0} {1}\n".format(gun_id,gun_maxammo)
 
 
         #item
@@ -788,7 +788,7 @@ with open("behavior_packs/GVCWW2Bedrock/scripts/guns.js","w") as f:
     f.write(export)
 
 
-a_func += "tag @a[tag=!startedv5] add startedv5\n"
+a_func += "tag @a[tag=!startedww2] add startedww2\n"
 with open("behavior_packs/GVCWW2Bedrock/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
 

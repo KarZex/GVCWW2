@@ -48,7 +48,7 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["query.target_x_rotation * 3", 0, 0]
+					"rotation": ["query.target_x_rotation * 3", 0, "query.target_y_rotation"]
 				}
 			}
 		},

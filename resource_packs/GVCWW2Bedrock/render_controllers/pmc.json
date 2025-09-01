@@ -1,14 +1,14 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-    "controller.render.pmc_soldier": {
+    "controller.render.pmc": {
       "arrays": {
         "textures": {
-          "Array.base": [ "Texture.army","Texture.red","Texture.blue","Texture.green","Texture.yellow" ]
+          "Array.base": [ "Texture.free", "Texture.attack", "Texture.wait", "Texture.follow" ]
         }
       },
-      "geometry": "Geometry.default",
-      "materials": [ { "*": "Material.default" } ],
+      "geometry": "Geometry.pmchead",
+      "materials": [ { "*": "Material.pmchead" } ],
       "textures": [ "Array.base[query.skin_id]" ]
     }
   }

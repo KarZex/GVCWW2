@@ -7,8 +7,29 @@
     "miss": {
       "textures": "textures/ds"
     },
+    "spawn_zzz": {
+      "textures": "textures/blocks/spawn_zzz"
+    },
+    "spawn_sov": {
+      "textures": "textures/blocks/spawn_sov"
+    },
+    "spawn_ger": {
+      "textures": "textures/blocks/spawn_ger"
+    },
+    "spawn_usa": {
+      "textures": "textures/blocks/spawn_usa"
+    },
+    "spawn_jap": {
+      "textures": "textures/blocks/spawn_jap"
+    },
+    "spawn_eng": {
+      "textures": "textures/blocks/spawn_eng"
+    },
     "radio": {
       "textures": "textures/blocks/radio"
+    },
+    "gc": {
+      "textures": "textures/blocks/gc"
     },
     "gcsov": {
       "textures": "textures/blocks/gcsov"

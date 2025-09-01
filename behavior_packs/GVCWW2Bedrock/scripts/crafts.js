@@ -5,7 +5,7 @@ export const craftData = {
       { "give":"zex:mm9","texture":"textures/items/9m", "count":32, "cost":[ 1, 1, 0 ] },
       { "give":"zex:556m","texture":"textures/items/556m", "count":32, "cost":[ 2, 2, 0 ] },
       { "give":"zex:762m","texture":"textures/items/762m", "count":16, "cost":[ 2, 2, 0 ] },
-      { "give":"zex:12m","texture":"textures/items/12m", "count":32, "cost":[ 2, 2, 0 ] },
+      { "give":"zex:1270m","texture":"textures/items/127m", "count":1, "cost":[ 16, 16, 0 ] },
       { "give":"zex:40m","texture":"textures/items/40m", "count":16, "cost":[ 2, 4, 0 ] },
       { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
       { "give":"gun:mgg","texture":"textures/items/mgg", "count":1, "cost":[ 1, 0, 0 ] },
@@ -19,7 +19,8 @@ export const craftData = {
       { "give":"gun:mosin","texture":"textures/items/gun/mosin", "count":1, "cost":[ 6, 8, 4 ] },
       { "give":"gun:ppsh","texture":"textures/items/gun/ppsh", "count":1, "cost":[ 4, 6, 2 ] },
       { "give":"gun:dp28","texture":"textures/items/gun/dp28", "count":1, "cost":[ 6, 12, 2 ] },
-      { "give":"gun:tt33","texture":"textures/items/gun/tt33", "count":1, "cost":[ 4, 4, 4 ] }
+      { "give":"gun:tt33","texture":"textures/items/gun/tt33", "count":1, "cost":[ 4, 4, 4 ] },
+      { "give":"gun:ptrd","texture":"textures/items/gun/ptrd", "count":1, "cost":[ 64, 48, 16 ] }
     ]
   },
   "gcger": {
@@ -28,7 +29,7 @@ export const craftData = {
       { "give":"gun:k98","texture":"textures/items/gun/k98", "count":1, "cost":[ 8, 10, 2 ] },
       { "give":"gun:mp40","texture":"textures/items/gun/mp40", "count":1, "cost":[ 4, 4, 2 ] },
       { "give":"gun:stg44","texture":"textures/items/gun/stg44", "count":1, "cost":[ 8, 8, 8 ] },
-      { "give":"gun:mg42","texture":"textures/items/gun/mg42", "count":1, "cost":[ 32, 64, 16 ] },
+      { "give":"gun:mg42","texture":"textures/items/gun/mg42", "count":1, "cost":[ 128, 128, 128 ] },
       { "give":"gun:p90","texture":"textures/items/gun/p90", "count":1, "cost":[ 6, 6, 6 ] },
       { "give":"gun:p38","texture":"textures/items/gun/p38", "count":1, "cost":[ 2, 2, 1 ] }
     ]

@@ -3,6 +3,7 @@ import csv
 import shutil
 
 teams = ["eng", "sov", "ger", "usa", "jap"]
+true_teams = [ "ENG", "SOV", "GER", "USA", "JAP" ]
 
 def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
     interact = {
@@ -120,7 +121,9 @@ for row in csv_reader:
         structure_flag_type = row[8].replace("nf","")
         structure_is_ship = row[9]
         structure_loot = row[10]
-        for team in teams:
+        for i in range(5):
+            team = teams[i]
+            true_team = true_teams[i]
             jptext += "tile.gvcww2:building_{0}_{1}.name={2}\n".format(team,structure_id,row[0])
             jptext += "tile.gvcww2:structure_end_{0}_{1}.name={1}\n".format(team,structure_id,row[0])
             entext += "tile.gvcww2:building_{0}_{1}.name={2}\n".format(team,structure_id,row[1])
@@ -133,11 +136,11 @@ for row in csv_reader:
             with open("behavior_packs/GVCWW2Bedrock/blocks/endblock/{0}_{1}_end.json".format(team,structure_id),"w") as f:
                 json.dump(structure_end_json,f,indent=2)
             with open("behavior_packs/GVCWW2Bedrock/functions/structure/{0}_{1}.mcfunction".format(team,structure_id),"w") as f:
-                f.write("execute if score {4} building matches 1 run tickingarea add ~~~ ~{0}~63~{1} {2}_{3} true\n".format(structure_loadx+16,structure_loadz+16,team,structure_id,structure_flag_type))
-                f.write("execute if score {5} building matches 1 run structure load {3}_{4} ~~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,structure_flag_type))
-                if( structure_loadx > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,structure_flag_type))
-                if( structure_loadz > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,structure_flag_type))
-                if( structure_loadx > 64 and structure_loadz > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,structure_flag_type))
+                f.write("execute if score {4} building matches 1 run tickingarea add ~~~ ~{0}~63~{1} {2}_{3} true\n".format(structure_loadx+16,structure_loadz+16,team,structure_id,true_team))
+                f.write("execute if score {5} building matches 1 run structure load {3}_{4} ~~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,true_team))
+                if( structure_loadx > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,true_team))
+                if( structure_loadz > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,true_team))
+                if( structure_loadx > 64 and structure_loadz > 64 ): f.write("execute if score {5} building matches 1 run structure load {3}_{4}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,team,structure_id,true_team))
                 f.write("fill ~~~ ~~~ minecraft:air\n")
                 
             with open("tool/feature.json","r") as f:

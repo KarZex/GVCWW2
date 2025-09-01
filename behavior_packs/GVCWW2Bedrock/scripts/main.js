@@ -10,6 +10,27 @@ world.afterEvents.entityHurt.subscribe( e => {
 	print(`value:${e.damage} at:${e.hurtEntity.typeId} by:${e.damageSource.damagingEntity.typeId} type:${e.damageSource.cause}`)
 } )
 */
+
+world.afterEvents.entitySpawn.subscribe( e => {
+	const entity = e.entity;
+	if( entity.typeId.split(`:`)[1] == `sov_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnSOV`) ) {
+		entity.remove()
+	}
+	else if( entity.typeId.split(`:`)[1] == `ger_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnGER`) ) {
+		entity.remove()
+	}
+	else if( entity.typeId.split(`:`)[1] == `usa_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnUSA`) ) {
+		entity.remove()
+	}
+	else if( entity.typeId.split(`:`)[1] == `jap_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnJAP`) ) {
+		entity.remove()
+	}
+	else if( entity.typeId.split(`:`)[1] == `eng_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnENG`) ) {
+		entity.remove()
+	}
+
+})
+
 world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
@@ -978,31 +999,37 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		else if( e.message == `building`){
 			const form = new ModalFormData();
 			form.title(`Building Settings`);
-			form.toggle(`Small Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnS`),tooltip:`Small Building Spawn`});
-			form.toggle(`Medium Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnM`),tooltip:`Medium Building Spawn`});
-			form.toggle(`Large Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnL`),tooltip:`Large Building Spawn`});
-			form.toggle(`Allies Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnA`),tooltip:`Allies Building Spawn`});
+			form.toggle(`Soviet Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnSOV`),tooltip:`Soviet Building Spawn`});
+			form.toggle(`German Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnGER`),tooltip:`German Building Spawn`});
+			form.toggle(`US Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnUSA`),tooltip:`US Building Spawn`});
+			form.toggle(`Japanese Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnJAP`),tooltip:`Japanese Building Spawn`});
+			form.toggle(`British Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnENG`),tooltip:`British Building Spawn`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnS`) != Boolean(result.formValues[0]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnS`,Boolean(result.formValues[0]));
-						world.scoreboard.getObjective(`building`).setScore(`S`,Number(result.formValues[0]));
-						world.sendMessage(`Small Building Spawn is now ${result.formValues[0]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnSOV`) != Boolean(result.formValues[0]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnSOV`,Boolean(result.formValues[0]));
+						world.scoreboard.getObjective(`building`).setScore(`SOV`,Number(result.formValues[0]));
+						world.sendMessage(`Soviet Building Spawn is now ${result.formValues[0]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnM`) != Boolean(result.formValues[1]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnM`,Boolean(result.formValues[1]));
-						world.scoreboard.getObjective(`building`).setScore(`M`,Number(result.formValues[1]));
-						world.sendMessage(`Medium Building Spawn is now ${result.formValues[1]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnGER`) != Boolean(result.formValues[1]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnGER`,Boolean(result.formValues[1]));
+						world.scoreboard.getObjective(`building`).setScore(`GER`,Number(result.formValues[1]));
+						world.sendMessage(`German Building Spawn is now ${result.formValues[1]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnL`) != Boolean(result.formValues[2]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnL`,Boolean(result.formValues[2]));
-						world.scoreboard.getObjective(`building`).setScore(`L`,Number(result.formValues[2]));
-						world.sendMessage(`Large Building Spawn is now ${result.formValues[2]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnUSA`) != Boolean(result.formValues[2]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnUSA`,Boolean(result.formValues[2]));
+						world.scoreboard.getObjective(`building`).setScore(`USA`,Number(result.formValues[2]));
+						world.sendMessage(`US Building Spawn is now ${result.formValues[2]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnA`) != Boolean(result.formValues[3]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnA`,Boolean(result.formValues[3]));
-						world.scoreboard.getObjective(`building`).setScore(`A`,Number(result.formValues[3]));
-						world.sendMessage(`Allies Building Spawn is now ${result.formValues[3]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnJAP`) != Boolean(result.formValues[3]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnJAP`,Boolean(result.formValues[3]));
+						world.scoreboard.getObjective(`building`).setScore(`JAP`,Number(result.formValues[3]));
+						world.sendMessage(`Japanese Building Spawn is now ${result.formValues[3]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnENG`) != Boolean(result.formValues[4]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnENG`,Boolean(result.formValues[4]));
+						world.scoreboard.getObjective(`building`).setScore(`ENG`,Number(result.formValues[4]));
+						world.sendMessage(`British Building Spawn is now ${result.formValues[4]}`);
 					}
 				}
 			} )

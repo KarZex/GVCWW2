@@ -119,6 +119,106 @@ function gvcv5UseCrafter( event ){
     player.runCommand(`scriptevent gvcv5:craft ${type}`);
 }
 
+async function gvcv5gunCrafterWhitePlaceEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:gcsov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:gcger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:gcusa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:gcjap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:gceng`);
+    }
+    else{
+        player.sendMessage(`To use gun crafter, you need to join a clan.`);
+    }
+}
+function gvcv5gunCrafterWhiteInteractEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:gcsov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:gcger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:gcusa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:gcjap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:gceng`);
+    }
+    else{
+        player.sendMessage(`To use gun crafter, you need to join a clan.`);
+    }
+}
+
+async function gvcv5TpBlockWhitePlaceEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_sov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_ger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_usa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_jap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_eng`);
+    }
+    else{
+        event.cancel = true;
+        player.sendMessage(`To use teleport block, you need to join a clan.`);
+    }
+}
+function gvcv5TpBlockWhiteInteractEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_sov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_ger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_usa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_jap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:spawn_eng`);
+    }
+    else{
+        player.sendMessage(`To use teleport block, you need to join a clan.`);
+    }
+}
 function gvcv5Scaffold( event ) {
     const L = event.block.location;
     event.block.dimension.runCommand(`fill ${L.x-16} ${L.y-16} ${L.z-16} ${L.x+15} ${L.y+15} ${L.z+15} air replace gvcv5:gvcv5_scaffold`)
@@ -177,10 +277,10 @@ async function setUp(){
         world.setDynamicProperty("gvcv5:doBulletSpend",true);
     }
     if( world.getDynamicProperty("gvcv5:playerDamageCool") == undefined ){
-        world.setDynamicProperty("gvcv5:playerDamageCool",true);
+        world.setDynamicProperty("gvcv5:playerDamageCool",false);
     }
     if( world.getDynamicProperty("gvcv5:nodiein1hit") == undefined ){
-        world.setDynamicProperty("gvcv5:nodiein1hit",true);
+        world.setDynamicProperty("gvcv5:nodiein1hit",false);
     }
     
     if( world.getDynamicProperty("gvcv5:buildingSpawnS") == undefined ){
@@ -194,6 +294,22 @@ async function setUp(){
     }
     if( world.getDynamicProperty("gvcv5:buildingSpawnA") == undefined ){
         world.setDynamicProperty("gvcv5:buildingSpawnA",true);
+    }
+    
+    if( world.getDynamicProperty("gvcv5:buildingSpawnSOV") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnSOV",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnGER") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnGER",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnUSA") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnUSA",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnJAP") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnJAP",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnENG") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnENG",true);
     }
     
     if( world.getDynamicProperty("gvcv5:doSpawnFromBeacon") == undefined ){
@@ -222,12 +338,23 @@ async function setUp(){
     const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
     const buildingL = Number(world.getDynamicProperty(`gvcv5:buildingSpawnL`))
     const buildingA = Number(world.getDynamicProperty(`gvcv5:buildingSpawnA`))
+    const buildingSOV = Number(world.getDynamicProperty(`gvcv5:buildingSpawnSOV`))
+    const buildingGER = Number(world.getDynamicProperty(`gvcv5:buildingSpawnGER`))
+    const buildingUSA = Number(world.getDynamicProperty(`gvcv5:buildingSpawnUSA`))
+    const buildingJAP = Number(world.getDynamicProperty(`gvcv5:buildingSpawnJAP`))
+    const buildingENG = Number(world.getDynamicProperty(`gvcv5:buildingSpawnENG`))
     const Expdamage = Number(world.getDynamicProperty(`gvcv5:nodiein1hit`))
     world.scoreboard.getObjective(`building`).setScore(`P`, Expdamage);
     world.scoreboard.getObjective(`building`).setScore(`S`, buildingS);
     world.scoreboard.getObjective(`building`).setScore(`M`, buildingM);
     world.scoreboard.getObjective(`building`).setScore(`L`, buildingL);
     world.scoreboard.getObjective(`building`).setScore(`A`, buildingA);
+
+    world.scoreboard.getObjective(`building`).setScore(`SOV`, buildingSOV);
+    world.scoreboard.getObjective(`building`).setScore(`GER`, buildingGER);
+    world.scoreboard.getObjective(`building`).setScore(`USA`, buildingUSA);
+    world.scoreboard.getObjective(`building`).setScore(`JAP`, buildingJAP);
+    world.scoreboard.getObjective(`building`).setScore(`ENG`, buildingENG);
 }
 
 
@@ -236,6 +363,8 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:gun_crafter_white`,{beforeOnPlayerPlace: gvcv5gunCrafterWhitePlaceEvent,onPlayerInteract: gvcv5gunCrafterWhiteInteractEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn_zzz`,{beforeOnPlayerPlace: gvcv5TpBlockWhitePlaceEvent,onPlayerInteract: gvcv5TpBlockWhiteInteractEvent});
     e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});

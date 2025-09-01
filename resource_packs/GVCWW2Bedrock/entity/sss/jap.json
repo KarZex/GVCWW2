@@ -4,10 +4,12 @@
     "description": {
       "identifier": "gvcww2:jap_soldier",
       "materials": {
-        "default": "skeleton"
+        "default": "skeleton",
+        "pmchead": "entity_emissive_alpha"
       },
       "textures": {
         "default": "textures/mob/jap_soldier",
+        "no": "textures/mob/pmc/no",
         "attack": "textures/mob/pmc/red",
         "follow": "textures/mob/pmc/blue",
         "wait": "textures/mob/pmc/green",

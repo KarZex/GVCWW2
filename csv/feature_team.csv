@@ -1,5 +1,5 @@
 name,engname,id,old_id,x方向の長さ,z方向の長さ,深さ,確率,旗,船かどうか,占領時コマンド,出現バイオーム,,,,,,,,,,,,,,max
-ダンジョン_兵舎,DDD_barracks,barracks,d1,64,48,5,0.05,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
+ダンジョン_兵舎,DDD_barracks,barracks,d1,64,48,5,0.5,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
 ダンジョン_工場,DDD_factory,factory,d2,,64,10,0.05,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
 ダンジョン_飛行場,DDD_airbase,airbase,d3,,48,32,0.05,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,

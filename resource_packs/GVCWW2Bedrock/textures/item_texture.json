@@ -2,6 +2,18 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
+    "zzz_soldier": {
+      "textures": "textures/items/zzz_soldier"
+    },
+    "ps": {
+      "textures": "textures/items/ps"
+    },
+    "rep": {
+      "textures": "textures/items/rep"
+    },
+    "rocketm": {
+      "textures": "textures/items/rocketm"
+    },
     "mtype": {
       "textures": "textures/items/mtype"
     },
@@ -514,6 +526,9 @@
     },
     "stengun": {
       "textures": "textures/items/gun/stengun"
+    },
+    "ptrd": {
+      "textures": "textures/items/gun/ptrd"
     }
   }
 }

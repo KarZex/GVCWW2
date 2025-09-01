@@ -109,7 +109,7 @@
                           "subject": "other",
                           "value": "noteam"
                         },
-                    {"test": "has_tag","subject": "other","operator": "==","value": "down"}
+                        {"test": "has_tag","subject": "other","operator": "==","value": "down"}
                     ]
                   }
                }
@@ -218,7 +218,7 @@
       },
       "gvcv5:team_SOV": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","redteam","red","SOVteam","SOV" ]
+          "family": [ "player","playerp","mod","redteam","red","SOVteam","SOV","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -413,7 +413,7 @@
       },
       "gvcv5:team_GER": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","GERteam","GER" ]
+          "family": [ "player","playerp","mod","GERteam","GER","axis_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -523,7 +523,7 @@
       },
       "gvcv5:team_USA": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","USAteam","USA" ]
+          "family": [ "player","playerp","mod","USAteam","USA","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -718,7 +718,7 @@
       },
       "gvcv5:team_JAP": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","JAPteam","JAP" ]
+          "family": [ "player","playerp","mod","JAPteam","JAP","axis_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -913,7 +913,7 @@
       },
       "gvcv5:team_ENG": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","ENGteam","ENG" ]
+          "family": [ "player","playerp","mod","ENGteam","ENG","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -1172,21 +1172,6 @@
                 ]
               }
             }
-          },
-          {
-            "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-                  "filters": {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        }
-                      ]
-                  }
-                }
           }
         ]
       },
