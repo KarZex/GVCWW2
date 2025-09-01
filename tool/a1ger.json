@@ -297,16 +297,6 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other","operator":"!=", "value":"allied_soldier" },
-                { "test": "has_tag", "operator":"!=", "subject":"other", "value":"GERSub" }
-              ]
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "all_of": [
                 { "test": "is_family", "subject": "other", "value": "allied_soldier" }
               ]
             },

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "gvcww2:jap_soldier_recipe"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "B",
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:green_dye"
+      },
+      "B": {
+        "item": "minecraft:egg"
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "gvcww2:jap_soldier_spawn_egg"
+    }
+  }
+}

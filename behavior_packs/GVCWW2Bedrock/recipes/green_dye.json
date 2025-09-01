@@ -2,24 +2,23 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:commandradio_recipe"
+    "identifier": "gvcww2:green_dye_vanilla_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "A",
-      "B"
+      "ABC"
     ],
     "key": {
-      "A": {
-        "item": "zex:ps"
-      },
       "B": {
-        "item": "gvcww2:zzz_soldier_spawn_egg"
+        "item": "minecraft:yellow_dye"
+      },
+      "C": {
+        "item": "minecraft:blue_dye"
       }
     },
     "result": {
-      "item": "zex:commandradio",
-      "count": 1
+      "item": "minecraft:green_dye",
+      "count": 2
     }
   }
   

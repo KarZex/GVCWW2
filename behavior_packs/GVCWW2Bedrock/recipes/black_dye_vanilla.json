@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcww2:black_dye_vanilla_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:red_dye"
+      },
+      "B": {
+        "item": "minecraft:yellow_dye"
+      },
+      "C": {
+        "item": "minecraft:blue_dye"
+      }
+    },
+    "result": {
+      "item": "minecraft:black_dye",
+      "count": 3
+    }
+  }
+  
+}

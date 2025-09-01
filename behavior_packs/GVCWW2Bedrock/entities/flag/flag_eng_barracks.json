@@ -333,30 +333,6 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "operator": "!=",
-                  "value": "axis_soldier"
-                },
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "subject": "other",
-                  "value": "ENGSub"
-                }
-              ]
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
                   "value": "axis_soldier"
                 }
               ]
