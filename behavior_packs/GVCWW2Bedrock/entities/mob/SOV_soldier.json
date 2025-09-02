@@ -1073,6 +1073,9 @@
       "minecraft:skin_id": {
         "value": 0
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ga.json"
+      },
       "minecraft:type_family": {
         "family": [
           "SOVteam",
@@ -2123,6 +2126,13 @@
       },
       "gvcv5:order": {
         "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
           {
             "filters": {
               "all_of": [

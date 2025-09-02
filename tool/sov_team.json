@@ -112,6 +112,9 @@
       "minecraft:skin_id": {
         "value": 0
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ga.json"
+      },
       "minecraft:type_family": {
         "family": [ "SOVteam","SOV","playerp","redteam","allied_soldier", "mob" ]
       },
@@ -376,6 +379,13 @@
       },  
       "gvcv5:order": {
         "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
           {
             "filters": {
               "all_of": [

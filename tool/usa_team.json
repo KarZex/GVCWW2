@@ -248,6 +248,9 @@
       "minecraft:equipment": {
         "table": "loot_tables/entities/skeleton_gear.json"
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ga.json"
+      },
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
@@ -387,6 +390,13 @@
       },  
       "gvcv5:order": {
         "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
           {
             "filters": {
               "all_of": [

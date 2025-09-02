@@ -115,6 +115,9 @@
       "minecraft:type_family": {
         "family": [ "ENGteam","ENG","playerp","magentateam","allied_soldier", "mob" ]
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ga.json"
+      },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
@@ -380,6 +383,13 @@
       },  
       "gvcv5:order": {
         "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
           {
             "filters": {
               "all_of": [

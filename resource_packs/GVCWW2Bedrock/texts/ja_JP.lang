@@ -11,8 +11,24 @@ item.zex:762m=.30Cal弾
 item.zex:rocketm=76mmロケット弾
 item.zex:missilem=76mmミサイル
 item.gvcv5:bc_item=弾薬製造機
+item.gvcv5:radio_item=旧式ラジオ
+item.zex:mtype=武装変更キット
+item.gun:camera=乗り物視点変更
+item.gvcv5:flame=火炎手榴弾
+item.gvcv5:fragment=破片手榴弾
+item.gvcv5:impact=衝撃手榴弾
+item.gvcv5:smoke=煙幕手榴弾
+item.zex:ps=プラスチック
+item.zex:aidkit=応急処置キット
+
+item.item:blue=追従
+item.item:green=待機
+item.zex:commandradio=分隊指揮端末
+item.item:yellow=占領
+
 tile.gvcv5:bc.name=弾薬製造機
 tile.gvcv5:gc.name=銃製造機
+tile.gvcv5:radio.name=旧式ラジオ
 tile.gvcv5:gcsov.name=ソ連銃製造機
 tile.gvcv5:gcger.name=ドイツ銃製造機
 tile.gvcv5:gcusa.name=アメリカ銃製造機
@@ -24,11 +40,34 @@ tile.gvcv5:spawn_ger.name=テレポートブロック ドイツ用
 tile.gvcv5:spawn_usa.name=テレポートブロック アメリカ用
 tile.gvcv5:spawn_jap.name=テレポートブロック 日本用
 tile.gvcv5:spawn_eng.name=テレポートブロック イギリス用
+tile.gvcv5:spawn_addon_sov_soldier.name=ソビエト軍兵士
+tile.gvcv5:spawn_addon_ger_soldier.name=ドイツ軍兵士
+tile.gvcv5:spawn_addon_usa_soldier.name=アメリカ軍兵士
+tile.gvcv5:spawn_addon_jap_soldier.name=日本軍兵士
+tile.gvcv5:spawn_addon_eng_soldier.name=イギリス軍兵士
+tile.gvcww2:building_eng_barracks.name=ダンジョン_兵舎
+tile.gvcww2:structure_end_eng_barracks.name=barracks
+tile.gvcww2:building_sov_barracks.name=ダンジョン_兵舎
+tile.gvcww2:structure_end_sov_barracks.name=barracks
+tile.gvcww2:building_ger_barracks.name=ダンジョン_兵舎
+tile.gvcww2:structure_end_ger_barracks.name=barracks
+tile.gvcww2:building_usa_barracks.name=ダンジョン_兵舎
+tile.gvcww2:structure_end_usa_barracks.name=barracks
+tile.gvcww2:building_jap_barracks.name=ダンジョン_兵舎
+tile.gvcww2:structure_end_jap_barracks.name=barracks
 script.gvcv5.minecraft:redstone.name=§4RS§r
 script.gvcv5.minecraft:emerald.name=§aEM§r
 script.gvcv5.minecraft:gunpowder.name=§8GP§r
 script.gvcv5.minecraft:iron_ingot.name=§6IR§r
 script.gvcv5.no_ma.name=§c素材が足りません!§r
+
+tile.gvcv5:l0.name=ダンジョン用_空チェスト
+tile.gvcv5:l1.name=ダンジョン用_食料
+tile.gvcww2:lsov.name=ダンジョン用_銃_ソビエト
+tile.gvcww2:lger.name=ダンジョン用_銃_ドイツ
+tile.gvcww2:lusa.name=ダンジョン用_銃_アメリカ
+tile.gvcww2:ljap.name=ダンジョン用_銃_日本
+tile.gvcww2:leng.name=ダンジョン用_銃_イギリス
 
 script.gvcww2:zex:12m.name=§412Gauge§r
 script.gvcww2:zex:556m.name=§6.45ACP§r
@@ -298,6 +337,11 @@ script.gvcv5.downedbyGER.name=は§8ドイツ§rによってダウンしまし�
 script.gvcv5.downedbyUSA.name=は§9アメリカ§rによってダウンしました
 script.gvcv5.downedbyJAP.name=は§a日本§rによってダウンしました
 script.gvcv5.downedbyENG.name=は§eイギリス§rによってダウンしました
+
+
+gvcv5.order.attack.name=各個迎撃！
+gvcv5.order.wait.name=待機！
+gvcv5.order.follow.name=ついてこい！
 
 item.item:red=Attack 
 item.item:blue=Follow

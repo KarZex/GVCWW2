@@ -391,8 +391,8 @@
       },
       "minecraft:persistent": {},
       "minecraft:physics": {
-        "has_collision": false,
-        "has_gravity": false
+        "has_collision": true,
+        "has_gravity": true
       },
       "minecraft:pushable": {
         "is_pushable": false,

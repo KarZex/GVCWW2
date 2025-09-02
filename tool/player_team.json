@@ -300,7 +300,7 @@
                   "any_of": [
                     {"test": "has_tag","subject": "other","operator": "==","value": "down"},
                     {"test": "is_family","subject": "other","value": "noteam"},
-                    {"test": "has_tag","operator":"==","subject": "other","value": "redSub"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "SOVSub"},
                     {"test": "is_family","subject": "other","value": "SOVteam"}
                   ]
                 }
@@ -399,6 +399,8 @@
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
                     {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "allied_soldier"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "axis_soldier"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -495,7 +497,7 @@
                   "any_of": [
                     {"test": "has_tag","subject": "other","operator": "==","value": "down"},
                     {"test": "is_family","subject": "other","value": "noteam"},
-                    {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "GERSub"},
                     {"test": "is_family","subject": "other","value": "GERteam"}
                   ]
                 }
@@ -509,6 +511,93 @@
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
                     {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    { "test": "is_riding","operator": "not" },
+                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
+                    {"test": "is_family", "subject": "other","operator": "==","value": "SOVteam"},
+                    { "test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:down_by_SOV"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    { "test": "is_riding","operator": "not" },
+                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
+                    {"test": "is_family","subject": "other", "operator": "==","value": "GERteam"},
+                    {"test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:down_by_GER"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    { "test": "is_riding","operator": "not" },
+                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
+                    {"test": "is_family","subject": "other", "operator": "==","value": "USAteam"},
+                    {"test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:down_by_USA"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    { "test": "is_riding","operator": "not" },
+                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
+                    {"test": "is_family","subject": "other", "operator": "==","value": "JAPteam"},
+                    {"test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:down_by_JAP"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    { "test": "is_riding","operator": "not" },
+                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
+                    {"test": "is_family","subject": "other", "operator": "==","value": "ENGteam"},
+                    {"test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:down_by_ENG"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "allied_soldier"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "axis_soldier"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -605,7 +694,7 @@
                   "any_of": [
                     {"test": "has_tag","subject": "other","operator": "==","value": "down"},
                     {"test": "is_family","subject": "other","value": "noteam"},
-                    {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "USASub"},
                     {"test": "is_family","subject": "other","value": "USAteam"}
                   ]
                 }
@@ -704,6 +793,8 @@
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
                     {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "allied_soldier"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "axis_soldier"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -800,7 +891,7 @@
                   "any_of": [
                     {"test": "has_tag","subject": "other","operator": "==","value": "down"},
                     {"test": "is_family","subject": "other","value": "noteam"},
-                    {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "JAPSub"},
                     {"test": "is_family","subject": "other","value": "JAPteam"}
                   ]
                 }
@@ -899,6 +990,8 @@
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
                     {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "allied_soldier"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "axis_soldier"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -995,7 +1088,7 @@
                   "any_of": [
                     {"test": "has_tag","subject": "other","operator": "==","value": "down"},
                     {"test": "is_family","subject": "other","value": "noteam"},
-                    {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "ENGSub"},
                     {"test": "is_family","subject": "other","value": "ENGteam"}
                   ]
                 }
@@ -1095,6 +1188,8 @@
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
                     {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "allied_soldier"},
+                    {"test": "is_family","subject": "other", "operator": "!=","value": "axis_soldier"},
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
                   ]

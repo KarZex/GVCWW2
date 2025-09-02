@@ -300,6 +300,9 @@
       "minecraft:equipment": {
         "table": "loot_tables/entities/skeleton_gear.json"
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ga.json"
+      },
       "minecraft:behavior.look_at_player": {
         "priority": 7,
         "look_distance": 8
@@ -439,6 +442,13 @@
       },  
       "gvcv5:order": {
         "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
           {
             "filters": {
               "all_of": [
