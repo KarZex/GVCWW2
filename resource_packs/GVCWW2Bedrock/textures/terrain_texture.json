@@ -7,6 +7,21 @@
     "miss": {
       "textures": "textures/ds"
     },
+    "sov_building": {
+      "textures": "textures/blocks/sov_building"
+    },
+    "ger_building": {
+      "textures": "textures/blocks/ger_building"
+    },
+    "usa_building": {
+      "textures": "textures/blocks/usa_building"
+    },
+    "jap_building": {
+      "textures": "textures/blocks/jap_building"
+    },
+    "eng_building": {
+      "textures": "textures/blocks/eng_building"
+    },
     "spawn_zzz": {
       "textures": "textures/blocks/spawn_zzz"
     },

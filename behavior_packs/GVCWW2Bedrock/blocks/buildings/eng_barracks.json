@@ -10,7 +10,7 @@
     "components": {
       "minecraft:material_instances": {
         "*": {
-          "texture": "miss",
+          "texture": "eng_building",
           "render_method": "alpha_test",
           "ambient_occlusion": false
         }

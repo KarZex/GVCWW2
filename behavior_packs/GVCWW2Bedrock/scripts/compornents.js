@@ -69,7 +69,7 @@ function gvcv5EndBlockEvent( event ){
 }
 
 function gvcv5BuildingBlockEvent( event ){
-    let building = event.block.typeId.replace(`gvcv5:building_`,``);
+    let building = event.block.typeId.replace(`gvcww2:building_`,``);
     const buildingLocation = event.block.location;
     event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
     event.block.dimension.setBlockType(event.block.location,`minecraft:air`);

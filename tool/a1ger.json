@@ -185,6 +185,26 @@
                 ]
               }
             }
+          },
+          {
+            "hurt_item": 1,
+            "spawn_items": {
+              "table": "loot_tables/entities/flag_.json"
+            },
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                { "test": "is_family","subject": "other","value": "player"},
+                { "test": "is_family","subject": "other","value": "GERteam"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "zex:rep"},
+                { "test": "is_missing_health","operator": "not" }
+                ]
+              },
+              "event": "despawning",
+              "target": "self"
+            }
           }
         ]
       },

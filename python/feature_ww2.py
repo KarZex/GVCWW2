@@ -6,6 +6,11 @@ teams = ["eng", "sov", "ger", "usa", "jap"]
 true_teams = [ "ENG", "SOV", "GER", "USA", "JAP" ]
 
 def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
+    with open("tool/vloot.json","r") as f:
+        loot_table = json.load(f)
+        loot_table["pools"][0]["entries"][0]["functions"][0]["id"] = "gvcww2:flag_{0}_{1}".format(team, structure_id)
+    with open("behavior_packs/GVCWW2Bedrock/loot_tables/flag/flag_{0}_{1}.json".format(team, structure_id),"w") as f:
+        json.dump(loot_table,f,indent=2)
     interact = {
         "on_interact": {
             "filters": {
@@ -31,6 +36,7 @@ def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
         flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "boss.gvcww2:flag{0}_{1}.name".format(team, structure_id)
         flag_json["minecraft:entity"]["description"]["identifier"] = "gvcww2:flag_{0}_{1}".format(team, structure_id)
         flag_json["minecraft:entity"]["components"]["minecraft:behavior.summon_entity"]["summon_choices"][0]["sequence"][0]["entity_type"] = "gvcww2:{}_soldier".format(team)
+        flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/flag/flag_{0}_{1}.json".format(team, structure_id)
         flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(interact)
         flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
             #BB#"say §c{} is spawned".format(structure_id),
@@ -92,7 +98,7 @@ def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
 
     with open("resource_packs/GVCWW2Bedrock/entity/flag/{0}_{1}.json".format(structure_id,team),"w") as f:
         flag_r_json["minecraft:client_entity"]["description"]["identifier"] = "gvcww2:flag_{0}_{1}".format(team,structure_id)
-        flag_r_json["minecraft:client_entity"]["description"]["spawn_egg"]["texture"] = "flag_{0}".format(team)
+        flag_r_json["minecraft:client_entity"]["description"]["spawn_egg"]["texture"] = "{0}_flag".format(team)
         flag_r_json["minecraft:client_entity"]["description"]["textures"]["default"] = "textures/flag/{}team".format(team)
         json.dump(flag_r_json,f,indent=2)
 
@@ -192,7 +198,7 @@ for row in csv_reader:
                 with open("tool/structure_block.json","r") as f:
                     structure_block_json = json.load(f)
                     structure_block_json["minecraft:block"]["description"]["identifier"] = "gvcww2:building_{0}_{1}".format(team,structure_id)
-                    
+                    structure_block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "{}_building".format(team)
 
                 with open("behavior_packs/GVCWW2Bedrock/blocks/buildings/{0}_{1}.json".format(team,structure_id),"w") as f:
                     json.dump(structure_block_json,f,indent=2)

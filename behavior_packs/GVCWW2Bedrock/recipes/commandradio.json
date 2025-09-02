@@ -7,14 +7,11 @@
     "tags": [ "crafting_table" ],
     "pattern": [
       "A",
-      "B"
+      "AA"
     ],
     "key": {
       "A": {
         "item": "zex:ps"
-      },
-      "B": {
-        "item": "gvcww2:zzz_soldier_spawn_egg"
       }
     },
     "result": {
