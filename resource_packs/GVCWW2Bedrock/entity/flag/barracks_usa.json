@@ -13,7 +13,7 @@
         "default": "geometry.flagaa"
       },
       "spawn_egg": {
-        "texture": "a1",
+        "texture": "flag_usa",
         "texture_index": 0
       },
       "render_controllers": [

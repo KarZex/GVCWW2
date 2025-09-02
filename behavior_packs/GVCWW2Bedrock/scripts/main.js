@@ -6,13 +6,21 @@ import { raidData } from "./raid";
 import "./compornents";
 import "./team";
 
+/*
 world.afterEvents.entityHurt.subscribe( e => {
 	print(`value:${e.damage} at:${e.hurtEntity.typeId} by:${e.damageSource.damagingEntity.typeId} type:${e.damageSource.cause}`)
 } )
-
+*/
 
 world.afterEvents.entitySpawn.subscribe( e => {
 	const entity = e.entity;
+	//cant use grenade on downed players
+	if( entity.getComponent(EntityComponentTypes.Projectile) != undefined  ){
+		const player = entity.getComponent(EntityComponentTypes.Projectile).owner;
+		if(player != undefined && player.hasTag(`down`)){
+			entity.remove();
+		}
+	}
 	if( entity.typeId.split(`:`)[1] == `sov_soldier` && !world.getDynamicProperty(`gvcv5:buildingSpawnSOV`) ) {
 		entity.remove()
 	}

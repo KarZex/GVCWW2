@@ -5,6 +5,21 @@
     "zzz_soldier": {
       "textures": "textures/items/zzz_soldier"
     },
+    "sov_flag": {
+      "textures": "textures/items/sov_flag"
+    },
+    "ger_flag": {
+      "textures": "textures/items/ger_flag"
+    },
+    "usa_flag": {
+      "textures": "textures/items/usa_flag"
+    },
+    "jap_flag": {
+      "textures": "textures/items/jap_flag"
+    },
+    "eng_flag": {
+      "textures": "textures/items/eng_flag"
+    },
     "ps": {
       "textures": "textures/items/ps"
     },

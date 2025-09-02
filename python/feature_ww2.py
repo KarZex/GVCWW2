@@ -92,6 +92,7 @@ def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
 
     with open("resource_packs/GVCWW2Bedrock/entity/flag/{0}_{1}.json".format(structure_id,team),"w") as f:
         flag_r_json["minecraft:client_entity"]["description"]["identifier"] = "gvcww2:flag_{0}_{1}".format(team,structure_id)
+        flag_r_json["minecraft:client_entity"]["description"]["spawn_egg"]["texture"] = "flag_{0}".format(team)
         flag_r_json["minecraft:client_entity"]["description"]["textures"]["default"] = "textures/flag/{}team".format(team)
         json.dump(flag_r_json,f,indent=2)
 
