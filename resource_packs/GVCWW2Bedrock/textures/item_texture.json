@@ -547,6 +547,9 @@
     },
     "lunge": {
       "textures": "textures/items/gun/lunge"
+    },
+    "spitfire": {
+      "textures": "textures/items/spitfire"
     }
   }
 }

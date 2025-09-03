@@ -2628,6 +2628,11 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:ju87 no_ride_change summon_enemy"
         }
+      },
+      "vehicle:spitfire": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:spitfire no_ride_change summon_enemy"
+        }
       }
     }
   }

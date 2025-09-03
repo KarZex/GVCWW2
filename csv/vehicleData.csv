@@ -1,3 +1,4 @@
 name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,sub,main1,main2,main3,inventory,id,third_person_camera_radius
-vehicle,bf109,air,100,1,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,10
+vehicle,bf109,air,100,1.2,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,10
 vehicle,ju87,air,100,2,30mmmcair,0,bomb,50,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15
+vehicle,spitfire,air,100,1.1,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,16
