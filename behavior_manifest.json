@@ -1,0 +1,97 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\n\u3044\u306c\u3048\u30e2\u30f3:AWM\n\u3041\u6905\u5b50:Glock17,Glock18c,F-117\nMihono Bourbon:M9,MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust,M79.Mi-24d\n",
+        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon BetaV0.1",
+        "min_engine_version": [
+            1,
+            21,
+            100
+        ],
+        "uuid": "ebd85d04-5d51-41fb-8b21-ec516b200293",
+        "version": [
+            1,
+            21,
+            100
+        ]
+    },
+    "modules": [
+        {
+            "description": "Data Module",
+            "type": "data",
+            "uuid": "fc798456-66c8-47b5-82fe-a21e17c57a74",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "description": "Script API Module",
+            "language": "javascript",
+            "type": "script",
+            "uuid": "5a7923dd-120f-4689-8ba8-0eddec6009d2",
+            "version": [
+                2,
+                0,
+                0
+            ],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "capabilities": [
+        "script_eval"
+    ],
+    "subpacks": [
+        {
+            "folder_name": "0",
+            "memory_tier": 0,
+            "name": "X1"
+        },
+        {
+            "folder_name": "1",
+            "memory_tier": 1,
+            "name": "X0"
+        },
+        {
+            "folder_name": "2",
+            "memory_tier": 2,
+            "name": "X0.25"
+        },
+        {
+            "folder_name": "3",
+            "memory_tier": 3,
+            "name": "X0.5"
+        },
+        {
+            "folder_name": "4",
+            "memory_tier": 4,
+            "name": "X2"
+        },
+        {
+            "folder_name": "5",
+            "memory_tier": 5,
+            "name": "X4"
+        },
+        {
+            "folder_name": "6",
+            "memory_tier": 6,
+            "name": "X8"
+        },
+        {
+            "folder_name": "0",
+            "memory_tier": 7,
+            "name": "X1"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.1.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0"
+        }
+    ]
+}

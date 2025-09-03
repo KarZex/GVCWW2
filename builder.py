@@ -36,10 +36,10 @@ with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest["modules"][0]["uuid"] = generate_uuid()
     behavior_manifest["modules"][1]["uuid"] = generate_uuid()
 
-    behavior_manifest["dependencies"].append({
-        "uuid": resource_uuid,
-        "version": ver
-    })
+    #behavior_manifest["dependencies"].append({
+    #    "uuid": resource_uuid,
+    #    "version": ver
+    #})
 
 with open(behavior, "w") as f:
     json.dump(behavior_manifest, f, indent=4)
@@ -55,11 +55,17 @@ with open(resource, "r",encoding="utf-8") as f:
 
     resource_manifest["modules"][0]["uuid"] = generate_uuid()
 
-    resource_manifest["dependencies"].append({
-        "uuid": behavior_uuid,
-        "version": ver
-    })
+    #resource_manifest["dependencies"].append({
+    #    "uuid": behavior_uuid,
+    #    "version": ver
+    #})
 
 
 with open(resource, "w") as f:
+    json.dump(resource_manifest, f, indent=4)
+
+with open("behavior_manifest.json", "w", encoding="utf-8") as f:
+    json.dump(behavior_manifest, f, indent=4)
+
+with open("resource_manifest.json", "w", encoding="utf-8") as f:
     json.dump(resource_manifest, f, indent=4)
