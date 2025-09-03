@@ -8,6 +8,7 @@ def generate_uuid():
     """Generate a unique identifier."""
     return str(uuid.uuid4())
 
+print("Start!")
 
 data = "manifest.json"
 with open(data, "r", encoding="utf-8") as f:
@@ -41,19 +42,19 @@ with open(behavior, "r",encoding="utf-8") as f:
     #    "version": ver
     #})
 
-with open(behavior, "w") as f:
+with open(behavior, "w", encoding="utf-8") as f:
     json.dump(behavior_manifest, f, indent=4)
 
 
-with open(resource, "r",encoding="utf-8") as f:
+with open(resource, "r", encoding="utf-8") as f:
     resource_manifest = json.load(f)
     resource_manifest["header"]["name"] = name
     resource_manifest["header"]["version"] = ver
-    behavior_manifest["header"]["description"] = description
+    resource_manifest["header"]["description"] = description
     resource_manifest["header"]["min_engine_version"] = min_engine_version
     resource_manifest["header"]["uuid"] = resource_uuid
 
-    resource_manifest["modules"][0]["uuid"] = generate_uuid()
+    #resource_manifest["modules"][0]["uuid"] = generate_uuid()
 
     #resource_manifest["dependencies"].append({
     #    "uuid": behavior_uuid,
@@ -61,7 +62,7 @@ with open(resource, "r",encoding="utf-8") as f:
     #})
 
 
-with open(resource, "w") as f:
+with open(resource, "w", encoding="utf-8") as f:
     json.dump(resource_manifest, f, indent=4)
 
 with open("behavior_manifest.json", "w", encoding="utf-8") as f:
@@ -69,3 +70,5 @@ with open("behavior_manifest.json", "w", encoding="utf-8") as f:
 
 with open("resource_manifest.json", "w", encoding="utf-8") as f:
     json.dump(resource_manifest, f, indent=4)
+
+print("Done!")

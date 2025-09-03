@@ -1,14 +1,14 @@
 {
     "format_version": 2,
     "header": {
-        "description": "created by holy kar zex",
+        "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\n\u3044\u306c\u3048\u30e2\u30f3:AWM\n\u3041\u6905\u5b50:Glock17,Glock18c,F-117\nMihono Bourbon:M9,MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust,M79.Mi-24d\n",
         "name": "\u00a7l\u00a7gGVCBedrock WW2Addon BetaV0.1",
         "min_engine_version": [
             1,
             21,
             100
         ],
-        "uuid": "d461755b-ff10-4a39-ae1f-d2cf346978b3",
+        "uuid": "088a9391-188c-4109-8f41-65dd02abc498",
         "version": [
             1,
             21,
@@ -19,7 +19,7 @@
         {
             "description": "created by holy kar zex",
             "type": "resources",
-            "uuid": "f8a57672-ec57-4e2a-9a98-499720d5ef54",
+            "uuid": "a21964bd-8b9b-4cf7-81dc-97f72f1d9b95",
             "version": [
                 1,
                 0,
