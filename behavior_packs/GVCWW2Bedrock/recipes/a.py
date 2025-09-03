@@ -18,11 +18,11 @@ for i in range(5):
     #blue egg
     with open("{}_soldier_blue.json".format(teams[i]),"w") as f:
         recipe_json["minecraft:recipe_shaped"]["description"]["identifier"] = "gvcww2:{}_soldier_blue_recipe".format(teams[i])
-        recipe_json["minecraft:recipe_shaped"]["key"]["B"]["item"] = "minecraft:egg_blue"
+        recipe_json["minecraft:recipe_shaped"]["key"]["B"]["item"] = "minecraft:blue_egg"
         json.dump(recipe_json, f, indent=2)
         
     #brown egg
     with open("{}_soldier_brown.json".format(teams[i]),"w") as f:
         recipe_json["minecraft:recipe_shaped"]["description"]["identifier"] = "gvcww2:{}_soldier_brown_recipe".format(teams[i])
-        recipe_json["minecraft:recipe_shaped"]["key"]["B"]["item"] = "minecraft:egg_brown"
+        recipe_json["minecraft:recipe_shaped"]["key"]["B"]["item"] = "minecraft:brown_egg"
         json.dump(recipe_json, f, indent=2)
