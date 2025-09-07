@@ -2633,6 +2633,21 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:spitfire no_ride_change summon_enemy"
         }
+      },
+      "vehicle:yak9": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:yak9 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:il2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:il2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:zero": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zero no_ride_change summon_enemy"
+        }
       }
     }
   }

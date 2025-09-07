@@ -2,18 +2,18 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "vehicle:ju87",
+			"identifier": "vehicle:yak9",
 			"materials": {
-				"default": "iron_golem"
+				"default": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/entity/ju87"
+				"default": "textures/entity/yak9"
 			},
 			"geometry": {
-				"default": "geometry.ju87"
+				"default": "geometry.yak9"
 			},
 			"spawn_egg": {
-				"texture": "ju87",
+				"texture": "yak9",
 				"texture_index": 0
 			},
 			"scripts": {

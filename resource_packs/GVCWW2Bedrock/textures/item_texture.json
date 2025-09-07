@@ -550,6 +550,15 @@
     },
     "spitfire": {
       "textures": "textures/items/spitfire"
+    },
+    "yak9": {
+      "textures": "textures/items/yak9"
+    },
+    "il2": {
+      "textures": "textures/items/il2"
+    },
+    "zero": {
+      "textures": "textures/items/zero"
     }
   }
 }

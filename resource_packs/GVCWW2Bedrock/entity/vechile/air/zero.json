@@ -2,18 +2,18 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "vehicle:ju87",
+			"identifier": "vehicle:zero",
 			"materials": {
-				"default": "iron_golem"
+				"default": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/entity/ju87"
+				"default": "textures/entity/zero"
 			},
 			"geometry": {
-				"default": "geometry.ju87"
+				"default": "geometry.zero"
 			},
 			"spawn_egg": {
-				"texture": "ju87",
+				"texture": "zero",
 				"texture_index": 0
 			},
 			"scripts": {
