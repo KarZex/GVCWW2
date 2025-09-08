@@ -1,6 +1,7 @@
 import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
+import { vehicleData } from "./vehicle";
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
@@ -282,7 +283,8 @@ function airCraftlader( player ){
 }
 
 function subWeapon( player,vehicle ){
-	const subWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.subWeapon.name"}`;
+	const subWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`sub`];
+	const subWeaponName = `{"translate":"gvcww2.${subWeapon}.name"}`;
 	const subWeaponScore = world.scoreboard.getObjective(`subWeapon`).getScore(player);
 	const subWeaponScoreMax = world.scoreboard.getObjective(`maxsubcool`).getScore(player);
 	const subWeaponCool = world.scoreboard.getObjective(`scool`).getScore(player);
@@ -297,11 +299,12 @@ function subWeapon( player,vehicle ){
 }
 function mainWeapon0( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main1`];
 	let mainTypeData = ``;
 	if( mtype == 0){
 		mainTypeData = `{"text":"§e"},`;
 	}
-	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeapon.name"}`;
+	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
 	const mainWeaponScore = world.scoreboard.getObjective(`mcool`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
@@ -312,11 +315,12 @@ function mainWeapon0( player,vehicle ){
 
 function mainWeapon1( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main2`];
 	let mainTypeData = ``;
 	if( mtype == 1){
 		mainTypeData = `{"text":"§e"},`;
 	}
-	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeaponi.name"}`;
+	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
 	const mainWeaponScore = world.scoreboard.getObjective(`mcooli`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
@@ -326,11 +330,12 @@ function mainWeapon1( player,vehicle ){
 }
 function mainWeapon2( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main3`];
 	let mainTypeData = ``;
 	if( mtype == 2){
 		mainTypeData = `{"text":"§e"},`;
 	}
-	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeaponii.name"}`;
+	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
 	const mainWeaponScore = world.scoreboard.getObjective(`mcoolii`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
@@ -528,6 +533,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		let v = airCraft.getVelocity();
 		let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+		const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
+		const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
+		const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
 		let r = {
 			x:v.x/abs_v,
 			y:v.y/abs_v,
@@ -543,23 +551,23 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		else{
 			let d = player.getViewDirection();
 			airCraft.clearVelocity();
-			if( Math.asin(d.x) > Math.asin(r.x) + Math.PI/20 ){
-				d.x = r.x + Math.sin(Math.PI/20);
+			if( Math.asin(d.x) > Math.asin(r.x) + turnRad ){
+				d.x = r.x + Math.sin(turnRad);
 			}
-			if( Math.asin(d.x) < Math.asin(r.x) - Math.PI/20 ){
-				d.x = r.x - Math.sin(Math.PI/20);
+			if( Math.asin(d.x) < Math.asin(r.x) - turnRad ){
+				d.x = r.x - Math.sin(turnRad);
 			}
-			if( Math.asin(d.y) > Math.asin(r.y) + Math.PI/20 ){
-				d.y = r.y + Math.sin(Math.PI/20);
+			if( Math.asin(d.y) > Math.asin(r.y) + turnRad ){
+				d.y = r.y + Math.sin(turnRad);
 			}
-			if( Math.asin(d.y) < Math.asin(r.y) - Math.PI/20 ){
-				d.y = r.y - Math.sin(Math.PI/20);
+			if( Math.asin(d.y) < Math.asin(r.y) - turnRad ){
+				d.y = r.y - Math.sin(turnRad);
 			}
-			if( Math.asin(d.z) > Math.asin(r.z) + Math.PI/20 ){
-				d.z = r.z + Math.sin(Math.PI/20);
+			if( Math.asin(d.z) > Math.asin(r.z) + turnRad ){
+				d.z = r.z + Math.sin(turnRad);
 			}
-			if( Math.asin(d.z) < Math.asin(r.z) - Math.PI/20 ){
-				d.z = r.z - Math.sin(Math.PI/20);
+			if( Math.asin(d.z) < Math.asin(r.z) - turnRad ){
+				d.z = r.z - Math.sin(turnRad);
 			}
 			if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
 				
@@ -606,7 +614,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[${airCraftlader(player)},{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,airCraft)},${mainWeapon0(player,airCraft)},${mainWeapon1(player,airCraft)},${mainWeapon2(player,airCraft)}]}`);
+		player.runCommand(`
+			titleraw @s[tag=!reload,tag=!down] 
+			actionbar {"rawtext":[${airCraftlader(player)},
+			{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
+			{"text":"HP:${Math.floor(HP)}/${HPMax}\n"},
+			${subWeapon(player,airCraft)},
+			${mainWeapon0(player,airCraft)},
+			${mainWeapon1(player,airCraft)},
+			${mainWeapon2(player,airCraft)}
+			]}
+		`);
 	
 
 	}
@@ -623,7 +641,16 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( player.typeId == "minecraft:player" ){
 			let v = vehicle.getVelocity();
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
+			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;
+			const HPMax = vehicle.getComponent(EntityComponentTypes.Health).defaultValue;
+			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar 
+				{"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
+				{"text":"HP:${Math.floor(HP)}/${HPMax}\n"},
+				${subWeapon(player,vehicle)},
+				${mainWeapon0(player,vehicle)},
+				${mainWeapon1(player,vehicle)},
+				${mainWeapon2(player,vehicle)}]}`
+			);
 		}
 		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();

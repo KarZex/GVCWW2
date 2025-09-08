@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "airbullet"
+          "hmgbullet"
         ]
       },
       "minecraft:explode": {
@@ -49,7 +49,10 @@
           0
         ]
       },
-      "minecraft:physics": {}
+      "minecraft:physics": {},
+      "minecraft:scale": {
+        "value": 4.0
+      }
     },
     "events": {
       "minecraft:explode": {

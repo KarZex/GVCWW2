@@ -1,7 +1,8 @@
-name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,sub,main1,main2,main3,inventory,id,third_person_camera_radius
-vehicle,bf109,air,100,1.2,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15
-vehicle,ju87,air,100,0.8,30mmmcair,0,bomb,50,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15
-vehicle,spitfire,air,100,1.1,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,16
-vehicle,yak9,air,100,1,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15
-vehicle,il2,air,100,0.8,30mmmcair,0,bomb,50,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15
-vehicle,zero,air,100,1,23mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15
+name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,sub,main1,main2,main3,inventory,id,third_person_camera_radius,maxtuen
+vehicle,bf109,air,90,1.2,20mmmcair,1,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,22.5
+vehicle,ju87,air,100,0.8,7.62mmmgs,0,bomb,50,37mmrocket,50,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15,9
+vehicle,spitfire,air,100,1.1,20mmmcaird,1,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,16,18
+vehicle,yak9,air,100,1,20mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,15
+vehicle,il2,air,140,0.6,20mmmcaird,1,bomb,50,37mmrocket,50,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15,6
+vehicle,zero,air,80,0.85,20mmmcaird,1,,20,,0,,0,F,,4,3,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,30
+vehicle,b7a,air,100,0.75,20mmmcaird,1,bomb,50,,0,,0,F,,5,4,2,F,[ "player"],"[ 0, 1.45, 0.1 ]","[ 0, 1.45, 1.6 ]",,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,9

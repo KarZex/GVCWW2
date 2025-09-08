@@ -166,14 +166,14 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 100,
-        "max": 100
+        "value": 80,
+        "max": 80
       },
       "minecraft:scale": {
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 1.0
+        "value": 0.85
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
@@ -191,8 +191,8 @@
       "minecraft:behavior.player_ride_tamed": {},
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
-        "width": 5.0,
-        "height": 4.0
+        "width": 4.0,
+        "height": 3.0
       },
       "minecraft:damage_sensor": {
         "triggers": [

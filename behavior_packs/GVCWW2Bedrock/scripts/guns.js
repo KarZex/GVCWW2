@@ -267,6 +267,10 @@ export const gunData = {
     "damage": 8,
     "damageType": "override"
   },
+  "37mmrocket": {
+    "damage": 35,
+    "damageType": "entityExplosion"
+  },
   "76mmrocket": {
     "damage": 60,
     "damageType": "entityExplosion"
@@ -300,11 +304,11 @@ export const gunData = {
     "damageType": "override"
   },
   "7.62mmmgsr": {
-    "damage": 4,
+    "damage": 5,
     "damageType": "override"
   },
   "7.62mmmgsl": {
-    "damage": 4,
+    "damage": 5,
     "damageType": "override"
   },
   "7.62mmmg": {
@@ -347,15 +351,19 @@ export const gunData = {
     "damage": 4,
     "damageType": "override"
   },
-  "20mmmcairr": {
-    "damage": 8,
+  "20mmmcairdr": {
+    "damage": 12,
     "damageType": "override"
   },
-  "20mmmcairl": {
-    "damage": 8,
+  "20mmmcairdl": {
+    "damage": 12,
     "damageType": "override"
   },
   "30mmmcair": {
+    "damage": 12,
+    "damageType": "override"
+  },
+  "20mmmcair": {
     "damage": 12,
     "damageType": "override"
   },

@@ -114,6 +114,27 @@
     },
     "spawn_addon_eng_soldier": {
       "textures": "textures/blocks/addon_eng_soldier"
+    },
+    "spawn_vehicle_bf109": {
+      "textures": "textures/blocks/vehicle_bf109"
+    },
+    "spawn_vehicle_ju87": {
+      "textures": "textures/blocks/vehicle_ju87"
+    },
+    "spawn_vehicle_spitfire": {
+      "textures": "textures/blocks/vehicle_spitfire"
+    },
+    "spawn_vehicle_yak9": {
+      "textures": "textures/blocks/vehicle_yak9"
+    },
+    "spawn_vehicle_il2": {
+      "textures": "textures/blocks/vehicle_il2"
+    },
+    "spawn_vehicle_zero": {
+      "textures": "textures/blocks/vehicle_zero"
+    },
+    "spawn_vehicle_b7a": {
+      "textures": "textures/blocks/vehicle_b7a"
     }
   }
 }

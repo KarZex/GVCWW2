@@ -51,7 +51,10 @@
         "catch_fire": false,
         "anchor": 1
       },
-      "minecraft:physics": {}
+      "minecraft:physics": {},
+      "minecraft:scale": {
+        "value": 1.0
+      }
     },
     "events": {
       "minecraft:explode": {

@@ -3483,6 +3483,19 @@
           ]
         }
       },
+      "fire:37mmrocket": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mmrocket"
+            }
+          ]
+        }
+      },
       "fire:76mmrocket": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -3746,7 +3759,7 @@
           ]
         }
       },
-      "fire:20mmmcair": {
+      "fire:20mmmcaird": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3754,14 +3767,14 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:20mmmcairr"
+              "spawn_entity": "fire:20mmmcairdr"
             },
             {
               "max_wait_time": 0,
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:20mmmcairl"
+              "spawn_entity": "fire:20mmmcairdl"
             }
           ]
         }
@@ -3775,6 +3788,19 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:30mmmcair"
+            }
+          ]
+        }
+      },
+      "fire:20mmmcair": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcair"
             }
           ]
         }
@@ -4569,6 +4595,13 @@
           ]
         }
       },
+      "fire:37mmrocket": {
+        "add": {
+          "component_groups": [
+            "fire:37mmrocket"
+          ]
+        }
+      },
       "fire:76mmrocket": {
         "add": {
           "component_groups": [
@@ -4688,10 +4721,10 @@
           ]
         }
       },
-      "fire:20mmmcair": {
+      "fire:20mmmcaird": {
         "add": {
           "component_groups": [
-            "fire:20mmmcair"
+            "fire:20mmmcaird"
           ]
         }
       },
@@ -4699,6 +4732,13 @@
         "add": {
           "component_groups": [
             "fire:30mmmcair"
+          ]
+        }
+      },
+      "fire:20mmmcair": {
+        "add": {
+          "component_groups": [
+            "fire:20mmmcair"
           ]
         }
       },

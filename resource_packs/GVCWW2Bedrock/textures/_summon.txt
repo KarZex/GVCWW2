@@ -6,3 +6,10 @@ addon:usa_soldier;r
 addon:jap_soldier;r
 addon:eng_soldier;r
 addon:sov_soldier;r
+vehicle:bf109;v
+vehicle:ju87;v
+vehicle:spitfire;v
+vehicle:yak9;v
+vehicle:il2;v
+vehicle:zero;v
+vehicle:b7a;v

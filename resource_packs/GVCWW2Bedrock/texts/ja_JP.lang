@@ -87,6 +87,10 @@ item.gun:ppsh=PPSh-41§r
 item.gun:dp28=DP-28§r
 item.gun:tt33=TT33§r
 item.gun:ptrd=PTRD§r
+entity.vehicle:yak9.name=ヤコヴレフ Yak-9
+item.spawn_egg.entity.vehicle:yak9.name=ヤコヴレフ Yak-9
+entity.vehicle:il2.name=イリューシン Il-2
+item.spawn_egg.entity.vehicle:il2.name=イリューシン Il-2
 
 ## GER
 item.gun:k98=Kar98k§r
@@ -95,6 +99,10 @@ item.gun:stg44=StG44§r
 item.gun:mg42=MG42§r
 item.gun:p90=パンツァーファウスト§r
 item.gun:p38=P38§r
+entity.vehicle:bf109.name=メッサーシュミット Bf 109
+item.spawn_egg.entity.vehicle:bf109.name=メッサーシュミット Bf 109
+entity.vehicle:ju87.name=ユンカース Ju 87
+item.spawn_egg.entity.vehicle:ju87.name=ユンカース Ju 87
 
 ## USA
 item.gun:m1=M1ガーランド§r
@@ -110,6 +118,8 @@ item.gun:piat=PIAT§r
 item.gun:lewis=ルイス軽機関銃§r
 item.gun:brengun=ブレン軽機関銃§r
 item.gun:stengun=ステン短機関銃§r
+entity.vehicle:spitfire.name=スーパーマリン スピットファイア
+item.spawn_egg.entity.vehicle:spitfire.name=スーパーマリン スピットファイア
 
 ## JAP
 item.gun:t38=三八式歩兵銃§r
@@ -117,6 +127,10 @@ item.gun:t100=一〇〇式機関短銃§r
 item.gun:t99=九九式軽機関銃§r
 item.gun:t14=十四年式拳銃§r
 item.gun:lunge=刺突爆雷§r
+entity.vehicle:zero.name=三菱 A6M 零式艦上戦闘機
+item.spawn_egg.entity.vehicle:zero.name=三菱 A6M 零式艦上戦闘機
+entity.vehicle:b7a.name=愛知 B7A 流星
+item.spawn_egg.entity.vehicle:b7a.name=愛知 B7A 流星
 
 #### FLAG ####
 entity.gvcww2:flag_sov_barracks.name=§cソ連軍拠点_兵舎

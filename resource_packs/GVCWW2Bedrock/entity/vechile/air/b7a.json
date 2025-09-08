@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:b7a",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+				"default": "textures/entity/b7a"
+			},
+			"geometry": {
+				"default": "geometry.b7a"
+			},
+			"spawn_egg": {
+				"texture": "b7a",
+				"texture_index": 0
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
+					"v.applyRotation = v.rotation;",
+					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
+					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
+				],
+				"animate": [
+					{
+						"look_at_target": "query.has_rider"
+					},
+					{
+						"fly": "query.has_rider"
+					}
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.airmig17",
+				"fly": "animation.herix"
+			},
+			"render_controllers": [
+				"controller.render.iron_golem"
+			]
+		}
+	}
+}

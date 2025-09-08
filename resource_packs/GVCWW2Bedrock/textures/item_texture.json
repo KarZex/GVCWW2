@@ -559,6 +559,9 @@
     },
     "zero": {
       "textures": "textures/items/zero"
+    },
+    "b7a": {
+      "textures": "textures/items/b7a"
     }
   }
 }

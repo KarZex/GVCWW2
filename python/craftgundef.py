@@ -10,6 +10,7 @@ row_count = 0
 text = ""
 
 gundata_json = json.load(open("tool/gundata.json","r"))
+vehicledata_json = {}
 BP_animation = json.load(open("tool/animation_controllers_guns.json","r"))
 BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
 item_json = json.load(open("resource_packs/GVCWW2Bedrock/textures/item_texture.json","r"))
@@ -482,11 +483,13 @@ for row in csv_reader:
 csv_path2 = open("csv/vehiclewData.csv","r")
 csv_reader2 = csv.reader(csv_path2)
 row_count = 0
+vehicle_weapon = ""
 #aasdasd
 for row in csv_reader2:
 
     if( row_count >= 1 ):
         #from CSV
+        gun_name = row[0]
         gun_id = row[1]
         gun_damage = int(row[2])
         gun_power = float(row[3])
@@ -497,7 +500,10 @@ for row in csv_reader2:
         gun_damage_type = row[9]
         gun_offset = row[10]
         bombattack = "bomb"
+        gun_scale = float(row[11])
 
+        vehicle_weapon += "gvcww2.{0}.name={1}\n".format(gun_id,gun_name)
+        
         if(row[7] == "T"):
             gun_break_block = True
         else:
@@ -662,6 +668,7 @@ for row in csv_reader2:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }
                 if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
                 gun_entity["minecraft:entity"]["events"] = {}
                 gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
@@ -679,6 +686,7 @@ for row in csv_reader2:
             if( gun_offset == "D" ):
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
+                gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }
                 with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}r.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
@@ -760,6 +768,14 @@ for row in csv_reader3:
         #from CSV
         v_id = row[1]
         v_type = row[2]
+        v_speed = float(row[4])
+        v_sub = row[5]
+        v_main1 = row[7]
+        v_main2 = row[9]
+        v_main3 = row[11]
+        v_turn = float(row[34])
+
+        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"sub": v_sub,"main1": v_main1,"main2": v_main2,"main3": v_main3,"turn": v_turn }
     
     row_count += 1
 
@@ -767,6 +783,9 @@ for row in csv_reader3:
 
 with open("behavior_packs/GVCWW2Bedrock/scripts/gun.json","w") as f:
     json.dump(gundata_json,f,indent=2)
+
+with open("behavior_packs/GVCWW2Bedrock/scripts/vehicle.json","w") as f:
+    json.dump(vehicledata_json,f,indent=2)
 
 with open("behavior_packs/GVCWW2Bedrock/animation_controllers/guns.json","w") as f:
     json.dump(BP_animation,f,indent=2)
@@ -789,6 +808,16 @@ with open("behavior_packs/GVCWW2Bedrock/scripts/guns.js","w") as f:
     f.write(export)
 
 
+with open("behavior_packs/GVCWW2Bedrock/scripts/vehicle.json","r") as f:
+    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const vehicleData = " 
+    export += f.read()
+    export += ";"
+
+
+with open("behavior_packs/GVCWW2Bedrock/scripts/vehicle.js","w") as f:
+    f.write(export)
+
+
 a_func += "tag @a[tag=!startedww2] add startedww2\n"
 with open("behavior_packs/GVCWW2Bedrock/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
@@ -796,3 +825,7 @@ with open("behavior_packs/GVCWW2Bedrock/functions/gunstart.mcfunction","w") as f
     
 with open("resource_packs/GVCWW2Bedrock/texts/guns.txt","w") as f:
     f.write(text)
+
+
+with open("resource_packs/GVCWW2Bedrock/texts/vehicle_weapon.txt","w") as f:
+    f.write(vehicle_weapon)
