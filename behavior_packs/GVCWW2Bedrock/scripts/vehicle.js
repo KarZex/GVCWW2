@@ -21,7 +21,7 @@ export const vehicleData = {
   "spitfire": {
     "type": "air",
     "speed": 1.1,
-    "sub": "20mmmcaird",
+    "sub": "12.7mmmg",
     "main1": "",
     "main2": "",
     "main3": "",

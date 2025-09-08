@@ -314,8 +314,20 @@
     "damage": 5,
     "damageType": "override"
   },
-  "12.7mmmg": {
-    "damage": 5,
+  "12.7mmmgri": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "12.7mmmgli": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "12.7mmmgrii": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "12.7mmmglii": {
+    "damage": 8,
     "damageType": "override"
   },
   "14.5mmhmg": {

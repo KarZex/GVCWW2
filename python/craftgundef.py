@@ -657,6 +657,11 @@ for row in csv_reader2:
         if( "D" in gun_offset ):
             gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
             gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+        elif( "Q" in gun_offset ):
+            gundata_json["{}ri".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
         else:
             gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
 
@@ -693,13 +698,32 @@ for row in csv_reader2:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.5,0,0 ]
                 with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}l.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
+
+            elif( gun_offset == "Q" ):
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}ri".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
+                gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }
+                with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}ri.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}li".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.5,0,0 ]
+                with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}li.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}rii".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 2,0,0 ]
+                with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}rii.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}lii".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -2,0,0 ]
+                with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}lii.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
             else:
                 with open("behavior_packs/GVCWW2Bedrock/entities/fire/{}.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
         #enemy and allieds
         attack_interval = gun_interval * 0.05
 
-        if( "D" in gun_offset ):
+        if( "D" in gun_offset or "Q" in gun_offset ):
             spawn_entity = {
                 "minecraft:behavior.ranged_attack": {
                     "priority": 3,
@@ -749,6 +773,19 @@ for row in csv_reader2:
                     json.dump(gun_entity,f,indent=2)
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
                 with open("resource_packs/GVCWW2Bedrock/entity/gun/{}l.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+            elif( gun_offset == "Q" ):
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}ri".format(gun_id)
+                with open("resource_packs/GVCWW2Bedrock/entity/gun/{}ri.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}li".format(gun_id)
+                with open("resource_packs/GVCWW2Bedrock/entity/gun/{}li.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}rii".format(gun_id)
+                with open("resource_packs/GVCWW2Bedrock/entity/gun/{}rii.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}lii".format(gun_id)
+                with open("resource_packs/GVCWW2Bedrock/entity/gun/{}lii.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
             else:
                 with open("resource_packs/GVCWW2Bedrock/entity/gun/{}.json".format(gun_id),"w") as f:
