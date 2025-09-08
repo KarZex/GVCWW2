@@ -131,6 +131,9 @@ item.gun:brengun=ブレン軽機関銃§r
 item.gun:stengun=ステン短機関銃§r
 entity.vehicle:spitfire.name=スーパーマリン スピットファイア
 item.spawn_egg.entity.vehicle:spitfire.name=スーパーマリン スピットファイア
+entity.vehicle:battle.name=フェアリー バトル
+item.spawn_egg.entity.vehicle:battle.name=フェアリー バトル
+item.vehicle:battle_spawn_egg=フェアリー バトル
 
 ## JAP
 item.gun:t38=三八式歩兵銃§r
