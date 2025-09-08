@@ -61,6 +61,24 @@
     "gceng": {
       "textures": "textures/blocks/gceng"
     },
+    "vc": {
+      "textures": "textures/blocks/vc"
+    },
+    "vcsov": {
+      "textures": "textures/blocks/vcsov"
+    },
+    "vcger": {
+      "textures": "textures/blocks/vcger"
+    },
+    "vcusa": {
+      "textures": "textures/blocks/vcusa"
+    },
+    "vcjap": {
+      "textures": "textures/blocks/vcjap"
+    },
+    "vceng": {
+      "textures": "textures/blocks/vceng"
+    },
     "l0": {
       "textures": "textures/blocks/l0"
     },

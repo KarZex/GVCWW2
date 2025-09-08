@@ -34,6 +34,12 @@ tile.gvcv5:gcger.name=ドイツ銃製造機
 tile.gvcv5:gcusa.name=アメリカ銃製造機
 tile.gvcv5:gcjap.name=日本銃製造機
 tile.gvcv5:gceng.name=イギリス銃製造機
+tile.gvcv5:vc.name=ビークル製造機
+tile.gvcv5:vcsov.name=ソ連ビークル製造機
+tile.gvcv5:vcger.name=ドイツビークル製造機
+tile.gvcv5:vcusa.name=アメリカビークル製造機
+tile.gvcv5:vcjap.name=日本ビークル製造機
+tile.gvcv5:vceng.name=イギリスビークル製造機
 tile.gvcv5:spawn_zzz.name=テレポートブロック
 tile.gvcv5:spawn_sov.name=テレポートブロック ソビエト用
 tile.gvcv5:spawn_ger.name=テレポートブロック ドイツ用
@@ -79,7 +85,8 @@ script.gvcww2:zex:rocketm.name=§276mmRocket§r
 script.gvcww2:zex:missilem.name=§576mmMissile§r
 script.gvcww2:zex:40m.name=§e40mmGrenade§r
 script.gvcww2:zex:12m.name=§412Gauge§r
-#### Guns ####
+
+### Gun and Vehicle Names
 
 ## SOV
 item.gun:mosin=モシン・ナガン§r
@@ -87,6 +94,10 @@ item.gun:ppsh=PPSh-41§r
 item.gun:dp28=DP-28§r
 item.gun:tt33=TT33§r
 item.gun:ptrd=PTRD§r
+entity.vehicle:t34.name=T-34
+item.spawn_egg.entity.vehicle:t34.name=T-34
+entity.vehicle:kv2.name=KV-2
+item.spawn_egg.entity.vehicle:kv2.name=KV-2
 entity.vehicle:yak9.name=ヤコヴレフ Yak-9
 item.spawn_egg.entity.vehicle:yak9.name=ヤコヴレフ Yak-9
 entity.vehicle:il2.name=イリューシン Il-2

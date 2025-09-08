@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:t34",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/t34"
+      },
+      "geometry": {
+        "default": "geometry.t34"
+      },
+      "animations": {
+        "look_at_target": "animation.tank"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target"
+        ]
+      },
+	  "spawn_egg":{
+	  "texture":"t34",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

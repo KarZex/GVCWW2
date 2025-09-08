@@ -2701,6 +2701,16 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:b7a no_ride_change summon_enemy"
         }
+      },
+      "vehicle:kv2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t34": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
+        }
       }
     }
   }

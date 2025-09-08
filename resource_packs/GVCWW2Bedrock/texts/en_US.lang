@@ -16,11 +16,24 @@ item.zex:ps=Plastic
 item.zex:aidkit=First aid kit
 tile.gvcv5:radio.name=Old Radio
 tile.gvcv5:bc.name=Ammunition Manufacturing Machine
+tile.gvcv5:gc.name=Gun Manufacturing Machine
 tile.gvcv5:gcsov.name=Soviet Gun Manufacturing Machine
 tile.gvcv5:gcger.name=German Gun Manufacturing Machine
 tile.gvcv5:gcusa.name=US Gun Manufacturing Machine
 tile.gvcv5:gcjap.name=Japanese Gun Manufacturing Machine
 tile.gvcv5:gceng.name=British Gun Manufacturing Machine
+tile.gvcv5:vc.name=Vehicle Manufacturing Machine
+tile.gvcv5:vcsov.name=Soviet Vehicle Manufacturing Machine
+tile.gvcv5:vcger.name=German Vehicle Manufacturing Machine
+tile.gvcv5:vcusa.name=US Vehicle Manufacturing Machine
+tile.gvcv5:vcjap.name=Japanese Vehicle Manufacturing Machine
+tile.gvcv5:vceng.name=British Vehicle Manufacturing Machine
+tile.gvcv5:spawn_zzz.name=Teleport Block
+tile.gvcv5:spawn_sov.name=Soviet Teleport Block
+tile.gvcv5:spawn_ger.name=German Teleport Block
+tile.gvcv5:spawn_usa.name=US Teleport Block
+tile.gvcv5:spawn_jap.name=Japanese Teleport Block
+tile.gvcv5:spawn_eng.name=British Teleport Block
 tile.gvcv5:spawn_addon_sov_soldier.name=Soviet Soldier
 tile.gvcv5:spawn_addon_ger_soldier.name=German Soldier
 tile.gvcv5:spawn_addon_usa_soldier.name=US Soldier
@@ -67,18 +80,26 @@ script.gvcww2:zex:missilem.name=§576mmMissile§r
 script.gvcww2:zex:40m.name=§e40mmGrenade§r
 script.gvcww2:zex:12m.name=§412Gauge§r
 
-## SOV
+## SOV - Soviet Union
 item.gun:mosin=M1891§r
 item.gun:ppsh=PPSh-41§r
 item.gun:dp28=DP-28§r
 item.gun:tt33=TT33§r
 item.gun:ptrd=PTRD§r
+entity.vehicle:t34.name=T-34
+item.spawn_egg.entity.vehicle:t34.name=T-34
+item.vehicle:t34_spawn_egg=T-34
+entity.vehicle:kv2.name=KV-2
+item.spawn_egg.entity.vehicle:kv2.name=KV-2
+item.vehicle:kv2_spawn_egg=KV-2
 entity.vehicle:yak9.name=Yakovlev Yak-9
 item.spawn_egg.entity.vehicle:yak9.name=Yakovlev Yak-9
+item.vehicle:yak9_spawn_egg=Yakovlev Yak-9
 entity.vehicle:il2.name=Ilyushin Il-2
 item.spawn_egg.entity.vehicle:il2.name=Ilyushin Il-2
+item.vehicle:il2_spawn_egg=Ilyushin Il-2
 
-## GER
+## GER - Nazi Germany
 item.gun:k98=Kar98k§r
 item.gun:mp40=MP40§r
 item.gun:stg44=StG44§r
@@ -87,10 +108,12 @@ item.gun:p90=Panzerfaust§r
 item.gun:p38=P38§r
 entity.vehicle:bf109.name=Messerchmitt Bf 109
 item.spawn_egg.entity.vehicle:bf109.name=Messerchmitt Bf 109
+item.vehicle:bf109_spawn_egg=Messerchmitt Bf 109
 entity.vehicle:ju87.name=Junkers Ju 87
 item.spawn_egg.entity.vehicle:ju87.name=Junkers Ju 87
+item.vehicle:ju87_spawn_egg=Junkers Ju 87
 
-## USA
+## USA - United States
 item.gun:m1=M1Garand§r
 item.gun:spring=M1903Springfield§r
 item.gun:bar=M1918BAR§r
@@ -98,7 +121,7 @@ item.gun:thom=M1A1Thompson§r
 item.gun:m1911=M1911§r
 item.gun:m1b=M1Bazooka§r
 
-## ENG
+## ENG - United Kingdom
 item.gun:leemk4=Lee-EnfieldNo.4§r
 item.gun:piat=PIAT§r
 item.gun:lewis=LewisGun§r
@@ -106,8 +129,9 @@ item.gun:brengun=BrenGun§r
 item.gun:stengun=StenGun§r
 entity.vehicle:spitfire.name=Supermarine Spitfire
 item.spawn_egg.entity.vehicle:spitfire.name=Supermarine Spitfire
+item.vehicle:spitfire_spawn_egg=Supermarine Spitfire
 
-## JAP
+## JAP - Empire of Japan
 item.gun:t38=Type38§r
 item.gun:t100=Type100§r
 item.gun:t99=Type99§r
@@ -115,11 +139,13 @@ item.gun:t14=Type14§r
 item.gun:lunge=Lunge Mine§r
 entity.vehicle:zero.name=Mitsubishi A6M Zero
 item.spawn_egg.entity.vehicle:zero.name=Mitsubishi A6M Zero
+item.vehicle:zero_spawn_egg=Mitsubishi A6M Zero
 entity.vehicle:b7a.name=Aichi B7A Ryusei
 item.spawn_egg.entity.vehicle:b7a.name=Aichi B7A Ryusei
+item.vehicle:b7a_spawn_egg=Aichi B7A Ryusei
 
 ### Weapons ###
-gvcww2.vmg.name=vmg
+gvcww2.vmg.name=MachineGun
 gvcww2.76mm.name=76mmCannon
 gvcww2.85mm.name=85mmCannon
 gvcww2.100mm.name=100mmCannon

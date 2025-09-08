@@ -146,6 +146,36 @@ async function gvcv5gunCrafterWhitePlaceEvent( event ){
         player.sendMessage(`To use gun crafter, you need to join a clan.`);
     }
 }
+
+async function gvcv5VehicleCrafterWhitePlaceEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:vcsov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:vcger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:vcusa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:vcjap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        await system.waitTicks(1);
+        block.dimension.setBlockType(block.location,`gvcv5:vceng`);
+    }
+    else{
+        event.cancel = true;
+        player.sendMessage(`To use vehicle crafter, you need to join a clan.`);
+    }
+}
+
 function gvcv5gunCrafterWhiteInteractEvent( event ){
     const block = event.block;
     const player = event.player;
@@ -166,6 +196,28 @@ function gvcv5gunCrafterWhiteInteractEvent( event ){
     }
     else{
         player.sendMessage(`To use gun crafter, you need to join a clan.`);
+    }
+}
+function gvcv5VehicleCrafterWhiteInteractEvent( event ){
+    const block = event.block;
+    const player = event.player;
+    if( player.hasTag(`SOV`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:vcsov`);
+    }
+    else if( player.hasTag(`GER`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:vcger`);
+    }
+    else if( player.hasTag(`USA`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:vcusa`);
+    }
+    else if( player.hasTag(`JAP`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:vcjap`);
+    }
+    else if( player.hasTag(`ENG`) ){
+        block.dimension.setBlockType(block.location,`gvcv5:vceng`);
+    }
+    else{
+        player.sendMessage(`To use vehicle crafter, you need to join a clan.`);
     }
 }
 
@@ -368,6 +420,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gun_crafter_white`,{beforeOnPlayerPlace: gvcv5gunCrafterWhitePlaceEvent,onPlayerInteract: gvcv5gunCrafterWhiteInteractEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:vehicle_crafter_white`,{beforeOnPlayerPlace: gvcv5VehicleCrafterWhitePlaceEvent,onPlayerInteract: gvcv5VehicleCrafterWhiteInteractEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn_zzz`,{beforeOnPlayerPlace: gvcv5TpBlockWhitePlaceEvent,onPlayerInteract: gvcv5TpBlockWhiteInteractEvent});
     e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});

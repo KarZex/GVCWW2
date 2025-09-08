@@ -61,5 +61,23 @@
     "main2": "",
     "main3": "",
     "turn": 9.0
+  },
+  "kv2": {
+    "type": "tank",
+    "speed": 0.1,
+    "sub": "",
+    "main1": "152mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "t34": {
+    "type": "tank",
+    "speed": 0.2,
+    "sub": "vmg",
+    "main1": "85mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
   }
 }

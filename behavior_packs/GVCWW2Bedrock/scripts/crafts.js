@@ -64,5 +64,34 @@ export const craftData = {
       { "give":"gun:brengun","texture":"textures/items/gun/brengun", "count":1, "cost":[ 6, 8, 6 ] },
       { "give":"gun:stengun","texture":"textures/items/gun/stengun", "count":1, "cost":[ 4, 4, 2 ] }
     ]
+  },
+  "vcsov": {
+    "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
+    "buy":[ 
+      { "give":"vehicle:t34_spawn_egg","texture":"textures/items/t34", "count":1, "cost":[ 2, 9, 4 ] },
+      { "give":"vehicle:kv2_spawn_egg","texture":"textures/items/kv2", "count":1, "cost":[ 6, 24, 4 ] },
+      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/yak9", "count":1, "cost":[ 10, 16, 16 ] },
+      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/il2", "count":1, "cost":[ 16, 24, 24 ] }
+    ]
+  },
+  "vcger": {
+    "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
+    "buy":[ 
+      { "give":"vehicle:bf109_spawn_egg","texture":"textures/items/bf109", "count":1, "cost":[ 6, 9, 12 ] },
+      { "give":"vehicle:ju87_spawn_egg","texture":"textures/items/ju87", "count":1, "cost":[ 12, 18, 18 ] }
+    ]
+  },
+  "vcjap": {
+    "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
+    "buy":[ 
+      { "give":"vehicle:zero_spawn_egg","texture":"textures/items/zero", "count":1, "cost":[ 6, 6, 8 ] },
+      { "give":"vehicle:b7a_spawn_egg","texture":"textures/items/b7a", "count":1, "cost":[ 8, 10, 12 ] }
+    ]
+  },
+  "vceng": {
+    "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
+    "buy":[ 
+      { "give":"vehicle:spitfire_spawn_egg","texture":"textures/items/spitfire", "count":1, "cost":[ 10, 10, 16 ] }
+    ]
   }
 };

@@ -1,0 +1,121 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.vehicle": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "max": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s remove has.rider"
+          ]
+        },
+        "max": {
+          "transitions": [
+            { "default": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s add has.rider",
+            "/execute as @s[family=heri] run effect @s slow_falling 99999 1 true"
+          ],
+          "on_exit": [
+            "/tag @s remove has.rider",
+            "/execute as @s[family=heri] run effect @s slow_falling 0 0 true",
+            "/execute as @s[family=heri] run effect @s levitation 0 0 true"
+          ]
+        }
+      }
+    },
+    "controller.animation.vtext": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "vtext": "query.has_rider" }
+          ]
+        },
+        "vtext": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtextii": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vtext"
+          ]
+        },
+        "vtextii": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtext": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vtext"
+          ]
+        }
+      }
+    },
+    "controller.animation.vheri": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "vtext": "query.has_rider" }
+          ]
+        },
+        "vtext": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtextii": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vheri"
+          ]
+        },
+        "vtextii": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtext": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vheri"
+          ]
+        }
+      }
+    },
+    "controller.animation.sss": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "max": "(1.0)" }
+          ]
+        },
+        "max": {
+          "on_entry": [
+            "/effect @s levitation 1 4"
+          ]
+        }
+      }
+    },
+    "controller.animation.missile": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tp @s ^ ^ ^0.7 facing @e[family=plate,type=!vehicle:lav25,c=1,r=20]",
+			"/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "max": "(1.0)" }
+          ]
+        },
+        "max": {
+          "on_entry": [
+            "/tp @s ^ ^ ^0.7 facing @e[family=plate,type=!vehicle:lav25,c=1,r=20]",
+			"/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "default": "(1.0)" }
+          ]
+        }
+      }
+    }
+  }
+}
