@@ -562,6 +562,9 @@
     },
     "b7a": {
       "textures": "textures/items/b7a"
+    },
+    "battle": {
+      "textures": "textures/items/battle"
     }
   }
 }

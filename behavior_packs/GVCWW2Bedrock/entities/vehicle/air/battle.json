@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:il2",
+      "identifier": "vehicle:battle",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -48,7 +48,7 @@
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:il2.name",
+        "name": "entity.vehicle:battle.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -67,19 +67,28 @@
         "table": "loot_tables/entities/tank.json"
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 2,
         "family_types": [
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": {
-          "position": [
-            0,
-            1.45,
-            0.1
-          ],
-          "third_person_camera_radius": 15
-        }
+        "seats": [
+          {
+            "position": [
+              0,
+              1.45,
+              0.1
+            ],
+            "third_person_camera_radius": 16
+          },
+          {
+            "position": [
+              0,
+              1.45,
+              2.35
+            ]
+          }
+        ]
       },
       "minecraft:type_family": {
         "family": [
@@ -123,7 +132,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/il2.json"
+              "table": "loot_tables/entities/battle.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -166,14 +175,14 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 360,
-        "max": 360
+        "value": 200,
+        "max": 200
       },
       "minecraft:scale": {
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 0.6
+        "value": 0.8
       },
       "minecraft:knockback_resistance": {
         "value": 1.0

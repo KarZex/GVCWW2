@@ -7,6 +7,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ju87] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entity @s 20mmmcaird
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:battle] run event entity @s bomb
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak9] run event entity @s 20mmmcair
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s bomb

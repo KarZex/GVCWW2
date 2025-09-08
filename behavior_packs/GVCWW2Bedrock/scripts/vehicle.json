@@ -26,6 +26,15 @@
     "main3": "",
     "turn": 18.0
   },
+  "battle": {
+    "type": "air",
+    "speed": 0.8,
+    "sub": "7.62mmmg",
+    "main1": "bomb",
+    "main2": "",
+    "main3": "",
+    "turn": 9.0
+  },
   "yak9": {
     "type": "air",
     "speed": 1.0,

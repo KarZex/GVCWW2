@@ -2675,6 +2675,11 @@
           "command": "ride @s summon_ride vehicle:spitfire no_ride_change summon_enemy"
         }
       },
+      "vehicle:battle": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:battle no_ride_change summon_enemy"
+        }
+      },
       "vehicle:yak9": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:yak9 no_ride_change summon_enemy"

@@ -10,6 +10,7 @@
           "on_entry": [
             "/tag @s remove isRiding",
             "/effect @s resistance 0 7 true",
+            "/hud @s reset horse_health",
             "/replaceitem entity @s[tag=onAir] slot.armor.chest 0 gvcv5:parachute",
             "/clear @s[tag=onAir] gun:mgg",
             "/clear @s[tag=onAir] gun:tank",
@@ -26,6 +27,7 @@
           "on_entry": [
             "/tag @s add isRiding",
             "/effect @s resistance 99999 7 true",
+            "/execute if entity @e[r=4,family=vehicle] run hud @s hide horse_health",
             "/execute if entity @e[r=4,family=heri] run tag @s add heri",
             "/execute if entity @e[r=4,family=heri] run tag @s add air",
             "/execute if entity @e[r=4,family=air] run tag @s add air"

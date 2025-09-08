@@ -217,7 +217,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ text: `§c${Ally.nameTag}§r\n` });
 		}
 		for( const Ally of world.getPlayers({ families: [ "GER" ] }) ){
-			itemRawText.push({ text: `§8${Ally.nameTag}§r\n` });
+			itemRawText.push({ text: `§7${Ally.nameTag}§r\n` });
 		}
 		for( const Ally of world.getPlayers({ families: [ "USA" ] }) ){
 			itemRawText.push({ text: `§9${Ally.nameTag}§r\n` });
@@ -351,6 +351,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.title(`script.gvcv5.phone_noteam.name`);
 		form.button(`script.gvcv5.howToGun.name`);
 		form.button(`script.gvcv5.howToVechile.name`);
+		form.button(`script.gvcv5.howToAir.name`);
 		form.button(`script.gvcv5.phone_howToTeam.name`);
 		if( team == `noteam` ){
 			form.button(`script.gvcv5.select_team.name`);
@@ -411,9 +412,31 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				else if( r.selection == 2 ){
-					user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
+					const form = new ActionFormData();
+					form.title(`script.gvcv5.howToAir.name`);
+					let itemRawText = []
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc0.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc1.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc2.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc3.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc4.name` });
+					itemRawText.push({ text: `\n\n` });
+					form.body({ rawtext: itemRawText});
+					form.button(`script.gvcv5.phone_back.name`);
+					form.show(user).then( result => {
+						if ( !result.canceled ){
+							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
+						}
+					} )
 				}
 				else if( r.selection == 3 ){
+					user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
+				}
+				else if( r.selection == 4 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
 				}
 			}
