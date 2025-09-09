@@ -576,6 +576,21 @@
           "def": "fire:vmg"
         }
       },
+      "47mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:47mm"
+        }
+      },
       "76mm": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -861,6 +876,21 @@
           "def": "fire:bomb"
         }
       },
+      "bombii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombii"
+        }
+      },
       "hmg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1071,7 +1101,7 @@
           "def": "fire:20mmmcair"
         }
       },
-      "bombii": {
+      "bombiii": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1083,7 +1113,7 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:bombii"
+          "def": "fire:bombiii"
         }
       }
     },
@@ -2422,6 +2452,13 @@
           ]
         }
       },
+      "47mm": {
+        "add": {
+          "component_groups": [
+            "47mm"
+          ]
+        }
+      },
       "76mm": {
         "add": {
           "component_groups": [
@@ -2555,6 +2592,13 @@
           ]
         }
       },
+      "bombii": {
+        "add": {
+          "component_groups": [
+            "bombii"
+          ]
+        }
+      },
       "hmg": {
         "add": {
           "component_groups": [
@@ -2653,10 +2697,10 @@
           ]
         }
       },
-      "bombii": {
+      "bombiii": {
         "add": {
           "component_groups": [
-            "bombii"
+            "bombiii"
           ]
         }
       },
@@ -2678,6 +2722,16 @@
       "vehicle:battle": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:battle no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:f4u": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:f4u no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:sbd": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:sbd no_ride_change summon_enemy"
         }
       },
       "vehicle:yak9": {
@@ -2708,6 +2762,21 @@
       "vehicle:t34": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:panzer": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m4": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m4 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t97t": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t97t no_ride_change summon_enemy"
         }
       }
     }

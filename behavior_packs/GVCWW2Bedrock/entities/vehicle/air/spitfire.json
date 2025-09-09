@@ -166,14 +166,14 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 200,
-        "max": 200
+        "value": 240,
+        "max": 240
       },
       "minecraft:scale": {
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 1.1
+        "value": 1.0
       },
       "minecraft:knockback_resistance": {
         "value": 1.0

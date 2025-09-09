@@ -282,6 +282,20 @@ function airCraftlader( player ){
 	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
 }
 
+function vehicleHp( HP,HPMax ){
+	let hpbar = ``;
+	if( HP >= HPMax * 0.5 ){
+		hpbar = `§a${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
+	}
+	else if( HP >= HPMax * 0.25 ){
+		hpbar = `§g${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
+	}
+	else{
+		hpbar = `§4${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
+	}
+	return hpbar;
+}
+
 function subWeapon( player,vehicle ){
 	const subWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`sub`];
 	const subWeaponName = `{"translate":"gvcww2.${subWeapon}.name"}`;
@@ -618,7 +632,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			titleraw @s[tag=!reload,tag=!down] 
 			actionbar {"rawtext":[${airCraftlader(player)},
 			{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-			{"text":"HP:${Math.floor(HP)}/${HPMax}\n"},
+			{"text":"HP: ${vehicleHp(HP,HPMax)}"},
 			${subWeapon(player,airCraft)},
 			${mainWeapon0(player,airCraft)},
 			${mainWeapon1(player,airCraft)},
@@ -645,7 +659,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const HPMax = vehicle.getComponent(EntityComponentTypes.Health).defaultValue;
 			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar 
 				{"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-				{"text":"HP:${Math.floor(HP)}/${HPMax}\n"},
+				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
 				${subWeapon(player,vehicle)},
 				${mainWeapon0(player,vehicle)},
 				${mainWeapon1(player,vehicle)},

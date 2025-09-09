@@ -3327,6 +3327,19 @@
           ]
         }
       },
+      "fire:47mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:47mm"
+            }
+          ]
+        }
+      },
       "fire:76mm": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -3569,6 +3582,26 @@
         }
       },
       "fire:bomb": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:bombir"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:bombil"
+            }
+          ]
+        }
+      },
+      "fire:bombii": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3826,7 +3859,7 @@
           ]
         }
       },
-      "fire:bombii": {
+      "fire:bombiii": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -4532,6 +4565,13 @@
           ]
         }
       },
+      "fire:47mm": {
+        "add": {
+          "component_groups": [
+            "fire:47mm"
+          ]
+        }
+      },
       "fire:76mm": {
         "add": {
           "component_groups": [
@@ -4665,6 +4705,13 @@
           ]
         }
       },
+      "fire:bombii": {
+        "add": {
+          "component_groups": [
+            "fire:bombii"
+          ]
+        }
+      },
       "fire:hmg": {
         "add": {
           "component_groups": [
@@ -4763,10 +4810,10 @@
           ]
         }
       },
-      "fire:bombii": {
+      "fire:bombiii": {
         "add": {
           "component_groups": [
-            "fire:bombii"
+            "fire:bombiii"
           ]
         }
       }

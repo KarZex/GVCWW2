@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:t97t",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/t97t"
+      },
+      "geometry": {
+        "default": "geometry.t97t"
+      },
+      "animations": {
+        "look_at_target": "animation.tank"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target"
+        ]
+      },
+	  "spawn_egg":{
+	  "texture":"t97t",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

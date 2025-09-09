@@ -11,7 +11,7 @@ export const vehicleData = {
   },
   "ju87": {
     "type": "air",
-    "speed": 0.8,
+    "speed": 1.0,
     "sub": "7.62mmmgs",
     "main1": "bomb",
     "main2": "37mmrocket",
@@ -20,7 +20,7 @@ export const vehicleData = {
   },
   "spitfire": {
     "type": "air",
-    "speed": 1.1,
+    "speed": 1.0,
     "sub": "12.7mmmg",
     "main1": "",
     "main2": "",
@@ -31,6 +31,24 @@ export const vehicleData = {
     "type": "air",
     "speed": 0.8,
     "sub": "7.62mmmg",
+    "main1": "bomb",
+    "main2": "",
+    "main3": "",
+    "turn": 9.0
+  },
+  "f4u": {
+    "type": "air",
+    "speed": 1.0,
+    "sub": "12.7mmmg",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 22.5
+  },
+  "sbd": {
+    "type": "air",
+    "speed": 0.8,
+    "sub": "7.62mmmgs",
     "main1": "bomb",
     "main2": "",
     "main3": "",
@@ -49,7 +67,7 @@ export const vehicleData = {
     "type": "air",
     "speed": 0.6,
     "sub": "20mmmcaird",
-    "main1": "bomb",
+    "main1": "bombii",
     "main2": "37mmrocket",
     "main3": "",
     "turn": 6.0
@@ -83,9 +101,36 @@ export const vehicleData = {
   },
   "t34": {
     "type": "tank",
-    "speed": 0.2,
+    "speed": 0.17,
     "sub": "vmg",
     "main1": "85mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "panzer": {
+    "type": "tank",
+    "speed": 0.25,
+    "sub": "vmg",
+    "main1": "76mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "m4": {
+    "type": "tank",
+    "speed": 0.2,
+    "sub": "vmg",
+    "main1": "76mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "t97t": {
+    "type": "tank",
+    "speed": 0.22,
+    "sub": "vmg",
+    "main1": "47mm",
     "main2": "",
     "main3": "",
     "turn": 1.0

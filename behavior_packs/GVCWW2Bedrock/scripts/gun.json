@@ -218,20 +218,24 @@
     "damage": 5,
     "damageType": "override"
   },
-  "76mm": {
+  "47mm": {
     "damage": 60,
     "damageType": "entityExplosion"
   },
-  "85mm": {
+  "76mm": {
     "damage": 80,
     "damageType": "entityExplosion"
   },
-  "100mm": {
+  "85mm": {
     "damage": 100,
     "damageType": "entityExplosion"
   },
+  "100mm": {
+    "damage": 120,
+    "damageType": "entityExplosion"
+  },
   "105mm": {
-    "damage": 100,
+    "damage": 150,
     "damageType": "entityExplosion"
   },
   "120mm": {
@@ -298,36 +302,40 @@
     "damage": 100,
     "damageType": "entityExplosion"
   },
+  "bombii": {
+    "damage": 100,
+    "damageType": "entityExplosion"
+  },
   "hmg": {
     "damage": 8,
     "damageType": "override"
   },
   "7.62mmmgsr": {
-    "damage": 5,
+    "damage": 4,
     "damageType": "override"
   },
   "7.62mmmgsl": {
-    "damage": 5,
+    "damage": 4,
     "damageType": "override"
   },
   "7.62mmmg": {
-    "damage": 5,
+    "damage": 4,
     "damageType": "override"
   },
   "12.7mmmgri": {
-    "damage": 8,
+    "damage": 6,
     "damageType": "override"
   },
   "12.7mmmgli": {
-    "damage": 8,
+    "damage": 6,
     "damageType": "override"
   },
   "12.7mmmgrii": {
-    "damage": 8,
+    "damage": 6,
     "damageType": "override"
   },
   "12.7mmmglii": {
-    "damage": 8,
+    "damage": 6,
     "damageType": "override"
   },
   "14.5mmhmg": {
@@ -378,7 +386,7 @@
     "damage": 12,
     "damageType": "override"
   },
-  "bombii": {
+  "bombiii": {
     "damage": 100,
     "damageType": "entityExplosion"
   }

@@ -9,9 +9,13 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entit
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:battle] run event entity @s bomb
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f4u] run event entity @s 12.7mmmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:sbd] run event entity @s bomb
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak9] run event entity @s 20mmmcair
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s bomb
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s bombii
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zero] run event entity @s 20mmmcaird
 
@@ -20,3 +24,9 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:b7a] run event entity @s 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 152mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t34] run event entity @s 85mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:panzer] run event entity @s 76mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m4] run event entity @s 76mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t97t] run event entity @s 47mm

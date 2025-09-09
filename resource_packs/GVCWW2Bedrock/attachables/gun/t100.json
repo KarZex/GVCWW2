@@ -4,7 +4,7 @@
         "description": {
             "identifier": "gun:t100",
             "materials": {
-                "default": "entity_alphatest",
+                "default": "iron_golem",
                 "enchanted": "armor_enchanted"
             },
             "textures": {

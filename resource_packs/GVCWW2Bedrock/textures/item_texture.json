@@ -565,6 +565,21 @@
     },
     "battle": {
       "textures": "textures/items/battle"
+    },
+    "panzer": {
+      "textures": "textures/items/panzer"
+    },
+    "m4": {
+      "textures": "textures/items/m4"
+    },
+    "t97t": {
+      "textures": "textures/items/t97t"
+    },
+    "f4u": {
+      "textures": "textures/items/f4u"
+    },
+    "sbd": {
+      "textures": "textures/items/sbd"
     }
   }
 }
