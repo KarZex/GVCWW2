@@ -1,10 +1,10 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-   "controller.render.player.mosin": {
-      "geometry": "Geometry.mosin",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.an94" ]
+   "controller.render.planeglass": {
+      "geometry": "Geometry.planeglass",
+      "materials": [ { "*": "Material.planeglass" } ],
+      "textures": [ "Texture.planeglass" ]
     },
    "controller.render.player.k98": {
       "geometry": "Geometry.k98",

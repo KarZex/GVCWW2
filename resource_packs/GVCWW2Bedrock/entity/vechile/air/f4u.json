@@ -4,13 +4,16 @@
 		"description": {
 			"identifier": "vehicle:f4u",
 			"materials": {
-				"default": "iron_golem"
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/entity/f4u"
+				"default": "textures/entity/f4u",
+				"planeglass": "textures/entity/planeglass"
 			},
 			"geometry": {
-				"default": "geometry.f4u"
+				"default": "geometry.f4u",
+				"planeglass": "geometry.f4u_planeglass"
 			},
 			"spawn_egg": {
 				"texture": "f4u",
@@ -37,7 +40,8 @@
 				"fly": "animation.herix"
 			},
 			"render_controllers": [
-				"controller.render.iron_golem"
+				"controller.render.iron_golem",
+				"controller.render.planeglass"
 			]
 		}
 	}

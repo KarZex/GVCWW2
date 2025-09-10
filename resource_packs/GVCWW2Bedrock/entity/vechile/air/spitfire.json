@@ -4,13 +4,16 @@
 		"description": {
 			"identifier": "vehicle:spitfire",
 			"materials": {
-				"default": "entity_alphablend"
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/entity/spitfire"
+				"default": "textures/entity/spitfire",
+				"planeglass": "textures/entity/planeglass"
 			},
 			"geometry": {
-				"default": "geometry.spitfire"
+				"default": "geometry.spitfire",
+				"planeglass": "geometry.spitfire_planeglass"
 			},
 			"spawn_egg": {
 				"texture": "spitfire",
@@ -37,7 +40,7 @@
 				"fly": "animation.herix"
 			},
 			"render_controllers": [
-				"controller.render.iron_golem"
+				"controller.render.iron_golem","controller.render.planeglass"
 			]
 		}
 	}

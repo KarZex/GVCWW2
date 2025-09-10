@@ -4,13 +4,16 @@
 		"description": {
 			"identifier": "vehicle:yak9",
 			"materials": {
-				"default": "entity_alphablend"
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/entity/yak9"
+				"default": "textures/entity/yak9",
+				"planeglass": "textures/entity/planeglass"
 			},
 			"geometry": {
-				"default": "geometry.yak9"
+				"default": "geometry.yak9",
+				"planeglass": "geometry.yak9_planeglass"
 			},
 			"spawn_egg": {
 				"texture": "yak9",
@@ -37,7 +40,8 @@
 				"fly": "animation.herix"
 			},
 			"render_controllers": [
-				"controller.render.iron_golem"
+				"controller.render.iron_golem",
+				"controller.render.planeglass"
 			]
 		}
 	}

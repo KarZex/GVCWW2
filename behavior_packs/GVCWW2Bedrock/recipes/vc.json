@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:vc_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "BDB",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:emerald_block",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:emerald",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "D": {
+        "item": "gvcv5:gc",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "gvcv5:vc",
+      "count": 1
+    }
+  }
+  
+}
