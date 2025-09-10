@@ -199,6 +199,21 @@
           {
             "cause": "fall",
             "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding_self",
+                    "subject": "other",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
         ]
       },
