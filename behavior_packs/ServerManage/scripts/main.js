@@ -15,7 +15,7 @@ world.afterEvents.playerJoin.subscribe(async (arg) => {
 	const playerName = arg.playerName;
 	if( world.getDynamicProperty("ServerMode") == "whitelist" ){
 		if( !whitelist.includes(`${playerName}`) ){
-			world.sendMessage(`§cBanned ${playerName} from this server.`);
+			world.sendMessage(`§a[System]:§cBanned ${playerName} from this server.`);
 			await system.waitTicks(20);
 			world.getDimension("overworld").runCommand(`kick "${playerName}" You are not whitelisted on this server.`);
 		}
