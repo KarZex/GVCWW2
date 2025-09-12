@@ -1,8 +1,9 @@
 name,id,ダメージ,弾速,命中精度,連射間隔(tick),爆発,ブロック破壊,音,ダメージタイプ,offset,scale
-vmg,vmg,4,4,0,1,0,F,mgbullet,override,,1
+7.62mmMG,vmg,4,4,0,1,0,F,mgiibullet,override,,1
 47mmCannon,47mm,60,4,0,60,3,F,tankbullet,entityExplosion,,1
 76mmCannon,76mm,80,4,0,60,3,F,tankbullet,entityExplosion,,1
-85mmCannon,85mm,100,4,0,100,4,F,tankbullet,entityExplosion,,1
+85mmCannon,85mm,100,4,0,100,3,F,tankbullet,entityExplosion,,1
+88mmCannon,88mm,110,4,0,100,4,F,tankbullet,entityExplosion,,1
 100mmCannon,100mm,120,4,0,100,4,F,tankbullet,entityExplosion,,1
 105mmCannon,105mm,150,4,0,100,4,F,tankbullet,entityExplosion,,1
 120mmCannon,120mm,180,4,0,100,5,F,tankbullet,entityExplosion,,1
@@ -31,7 +32,6 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1
 23mmmc,23mmmc,12,4,0,2,1,F,mgiibullet,entityExplosion,,1
 25mmmc,25mmmc,20,4,0,9,1,F,hmgiibullet,entityExplosion,,1
 30mmmc,30mmmc,16,4,0,2,1,F,hmgiibullet,entityExplosion,,1
-vmg,vmg,5,4,0,1,0,F,mgiibullet,override,,1
 23mmMCx2,23mmmcair,4,4,0,1,0,F,hmgbullet,override,D,4
 20mmMCx2,20mmmcaird,12,6,0,0,1,F,hmgbullet,override,D,4
 30mmMC,30mmmcair,12,6,0,0,0,F,hmgbullet,override,,1

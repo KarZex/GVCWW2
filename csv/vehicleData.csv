@@ -9,8 +9,10 @@ vehicle,yak9,air,200,1,20mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 
 vehicle,il2,air,360,0.6,20mmmcaird,1,bombii,50,37mmrocket,50,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15,6
 vehicle,zero,air,160,0.85,20mmmcaird,1,,20,,0,,0,F,,4,3,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,30
 vehicle,b7a,air,200,0.75,20mmmcaird,1,bomb,50,,0,,0,F,,5,4,2,F,[ "player"],"[ 0, 1.45, 0.1 ]","[ 0, 1.45, -1.6 ]",,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,15,9
-vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,3,3,1,F,"[ ""SOVteam"",""player""]","[ 0.0, 2.5, -0.1 ]",,,,,,30,NO,152mmCannon,NO,NO,,kv2,0,1
-vehicle,t34,tank,240,0.17,vmg,1,85mm,70,,0,,0,T,,3,2,1,F,"[ ""SOVteam"",""player""]","[ 0.0, 2.4, -0.1 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
-vehicle,panzer,tank,180,0.25,vmg,1,76mm,45,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.6, -0.1 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
-vehicle,m4,tank,200,0.2,vmg,1,76mm,50,,0,,0,T,,3,2,1,F,"[ ""USAteam"",""player""]","[ 0.0, 2.2, -0.1 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
-vehicle,t97t,tank,160,0.22,vmg,1,47mm,30,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 1.6, -0.1 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,t34,tank,240,0.17,vmg,1,85mm,80,,0,,0,T,,3,2,1,F,"[ ""SOVteam"",""player""]","[ 0.0, 2.4, 0.0 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,panzer,tank,180,0.25,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.8, 0.0]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,m4,tank,200,0.2,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""USAteam"",""player""]","[ 0.0, 2.6, 0.0 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,t97t,tank,160,0.22,vmg,1,47mm,30,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,valentine,tank,280,0.15,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0,1
+vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,4,4,1,F,"[ ""SOVteam"",""player""]","[0, 3.2,0.0 ]",,,,,,30,NO,152mmCannon,NO,NO,,kv2,0,1
+vehicle,tiger,tank,350,0.15,vmg,1,88mm,80,,0,,0,T,,4,4,1,F,"[ ""GERteam"",""player""]","[0, 2.7,0.0 ]",,,,,,30,NO,152mmCannon,NO,NO,,kv2,0,1

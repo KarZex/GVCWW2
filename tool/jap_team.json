@@ -48,7 +48,7 @@
           "damage": 3
         },
         "minecraft:target_nearby_sensor": {
-          "inside_range": 0.5,
+          "inside_range": 4,
           "outside_range": 6.0,
           "must_see": true,
           "on_inside_range": {
@@ -111,7 +111,13 @@
           },
           "minecraft:skin_id": {
             "value": 0
-          }
+          },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        } 
        }
     },
 
@@ -366,6 +372,34 @@
           {
             "weight": 10,
             "trigger": "lunge"
+          }
+        ]
+      },
+      "gvcv5:set_have_gun_tank": {
+        "randomize": [
+          {
+            "weight": 20,
+            "trigger": "t38"
+          },
+          {
+            "weight": 10,
+            "trigger": "t100"
+          },
+          {
+            "weight": 10,
+            "trigger": "t99"
+          },
+          {
+            "weight": 10,
+            "trigger": "t14"
+          },
+          {
+            "weight": 10,
+            "trigger": "lunge"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:t97t"
           }
         ]
       },

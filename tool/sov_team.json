@@ -91,7 +91,13 @@
           },
           "minecraft:skin_id": {
             "value": 0
-          }
+          },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        } 
        }
     },
 
@@ -283,7 +289,7 @@
             "can_despawn"
           ]
         },
-        "trigger": "gvcv5:set_have_gun"
+        "trigger": "gvcv5:set_have_gun_tank"
       },
       "minecraft:spawned_from_block": {
         "add": {
@@ -310,6 +316,30 @@
           {
             "weight": 10,
             "trigger": "tt33"
+          }
+        ]
+      },
+      "gvcv5:set_have_gun_tank": {
+        "randomize": [
+          {
+            "weight": 20,
+            "trigger": "mosin"
+          },
+          {
+            "weight": 10,
+            "trigger": "ppsh"
+          },
+          {
+            "weight": 10,
+            "trigger": "dp28"
+          },
+          {
+            "weight": 10,
+            "trigger": "tt33"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:t34"
           }
         ]
       },

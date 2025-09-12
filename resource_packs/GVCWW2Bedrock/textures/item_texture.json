@@ -580,6 +580,12 @@
     },
     "sbd": {
       "textures": "textures/items/sbd"
+    },
+    "valentine": {
+      "textures": "textures/items/valentine"
+    },
+    "tiger": {
+      "textures": "textures/items/tiger"
     }
   }
 }

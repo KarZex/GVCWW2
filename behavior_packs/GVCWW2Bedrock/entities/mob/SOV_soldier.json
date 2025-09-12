@@ -91,6 +91,12 @@
         },
         "minecraft:skin_id": {
           "value": 0
+        },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
         }
       },
       "mosin": {
@@ -619,6 +625,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:85mm"
+        }
+      },
+      "88mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:88mm"
         }
       },
       "100mm": {
@@ -2090,7 +2111,7 @@
             "can_despawn"
           ]
         },
-        "trigger": "gvcv5:set_have_gun"
+        "trigger": "gvcv5:set_have_gun_tank"
       },
       "minecraft:spawned_from_block": {
         "add": {
@@ -2117,6 +2138,30 @@
           {
             "weight": 10,
             "trigger": "tt33"
+          }
+        ]
+      },
+      "gvcv5:set_have_gun_tank": {
+        "randomize": [
+          {
+            "weight": 20,
+            "trigger": "mosin"
+          },
+          {
+            "weight": 10,
+            "trigger": "ppsh"
+          },
+          {
+            "weight": 10,
+            "trigger": "dp28"
+          },
+          {
+            "weight": 10,
+            "trigger": "tt33"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:t34"
           }
         ]
       },
@@ -2469,6 +2514,13 @@
           ]
         }
       },
+      "88mm": {
+        "add": {
+          "component_groups": [
+            "88mm"
+          ]
+        }
+      },
       "100mm": {
         "add": {
           "component_groups": [
@@ -2750,11 +2802,6 @@
           "command": "ride @s summon_ride vehicle:b7a no_ride_change summon_enemy"
         }
       },
-      "vehicle:kv2": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
-        }
-      },
       "vehicle:t34": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
@@ -2773,6 +2820,21 @@
       "vehicle:t97t": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t97t no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:valentine": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:valentine no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:kv2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:tiger": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:tiger no_ride_change summon_enemy"
         }
       }
     }

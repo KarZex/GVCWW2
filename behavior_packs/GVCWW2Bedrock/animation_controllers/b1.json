@@ -1,0 +1,70 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.riderb1": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "query.is_riding" }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=ride] gvcv5:set_have_gun",
+            "/tag @s remove ride",
+            "/tag @s remove heriRiding",
+            "/tag @s remove HKE",
+            "/tag @s remove air",
+            "/effect @s clear"
+          ]
+        },
+        "riding": {
+          "on_entry": [
+            "/tag @s[tag=!ride] add HKE",
+            "/execute as @s[tag=!ride] run function b1",
+            "/execute if entity @e[r=4,family=heri] run tag @s add air",
+            "/tag @s[tag=!ride] add ride"
+          ],
+          "transitions": [
+            {"target":"query.has_target"},
+            {"default":"!query.is_riding"}
+          ]
+        },
+        "target": {
+          "on_entry": [
+            "/tag @s add has_target"
+          ],
+          "on_exit": [
+            "/tag @s remove has_target"
+          ],
+          "transitions": [
+            {"riding":"!query.has_target"},
+            {"default":"!query.is_riding"}
+          ]
+        }
+      }
+    },
+    "controller.animation.riderunks": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "query.is_riding" }
+          ],
+          "on_entry": [
+            "/event entity @s gunner",
+            "/effect @s resistance 0",
+            "/tag @s remove ride"
+          ]
+        },
+        "riding": {
+          "on_entry": [
+            "/tag @s[tag=!ride] add ride",
+            "/effect @s resistance 99999 255 true",
+            "/event entity @s[tag=ride] rider"
+          ],
+          "transitions": [
+            {"default":"!query.is_riding"}
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
-gvcww2.vmg.name=vmg
+gvcww2.vmg.name=7.62mmMG
 gvcww2.47mm.name=47mmCannon
 gvcww2.76mm.name=76mmCannon
 gvcww2.85mm.name=85mmCannon
+gvcww2.88mm.name=88mmCannon
 gvcww2.100mm.name=100mmCannon
 gvcww2.105mm.name=105mmCannon
 gvcww2.120mm.name=120mmCannon
@@ -30,7 +31,6 @@ gvcww2.20mmmcheri.name=20mmMC
 gvcww2.23mmmc.name=23mmmc
 gvcww2.25mmmc.name=25mmmc
 gvcww2.30mmmc.name=30mmmc
-gvcww2.vmg.name=vmg
 gvcww2.23mmmcair.name=23mmMCx2
 gvcww2.20mmmcaird.name=20mmMCx2
 gvcww2.30mmmcair.name=30mmMC

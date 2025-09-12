@@ -11,11 +11,13 @@
         "default": "geometry.panzer"
       },
       "animations": {
-        "look_at_target": "animation.tank"
+        "look_at_target": "animation.tankaim"
       },
       "scripts": {
         "animate": [
-          "look_at_target"
+					{
+						"look_at_target": "query.has_rider"
+					}
         ]
       },
 	  "spawn_egg":{

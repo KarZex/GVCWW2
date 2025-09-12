@@ -216,7 +216,7 @@ export const gunData = {
     "damageType": "override"
   },
   "vmg": {
-    "damage": 5,
+    "damage": 4,
     "damageType": "override"
   },
   "47mm": {
@@ -229,6 +229,10 @@ export const gunData = {
   },
   "85mm": {
     "damage": 100,
+    "damageType": "entityExplosion"
+  },
+  "88mm": {
+    "damage": 110,
     "damageType": "entityExplosion"
   },
   "100mm": {

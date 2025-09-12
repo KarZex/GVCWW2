@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:valentine",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/valentine"
+      },
+      "geometry": {
+        "default": "geometry.valentine"
+      },
+      "animations": {
+        "look_at_target": "animation.tankaim"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+	  "spawn_egg":{
+	  "texture":"valentine",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

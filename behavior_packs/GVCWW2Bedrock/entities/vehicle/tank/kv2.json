@@ -73,9 +73,9 @@
         "interact_text": "action.interact.ride.horse",
         "seats": {
           "position": [
-            0.0,
-            2.5,
-            -0.1
+            0,
+            3.2,
+            0.0
           ]
         }
       },
@@ -183,8 +183,8 @@
       "minecraft:behavior.player_ride_tamed": {},
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
-        "width": 3.0,
-        "height": 3.0
+        "width": 4.0,
+        "height": 4.0
       },
       "minecraft:damage_sensor": {
         "triggers": [

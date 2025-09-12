@@ -89,15 +89,6 @@
     "main3": "",
     "turn": 9.0
   },
-  "kv2": {
-    "type": "tank",
-    "speed": 0.1,
-    "sub": "",
-    "main1": "152mm",
-    "main2": "",
-    "main3": "",
-    "turn": 1.0
-  },
   "t34": {
     "type": "tank",
     "speed": 0.17,
@@ -130,6 +121,33 @@
     "speed": 0.22,
     "sub": "vmg",
     "main1": "47mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "valentine": {
+    "type": "tank",
+    "speed": 0.15,
+    "sub": "vmg",
+    "main1": "76mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "kv2": {
+    "type": "tank",
+    "speed": 0.1,
+    "sub": "",
+    "main1": "152mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0
+  },
+  "tiger": {
+    "type": "tank",
+    "speed": 0.15,
+    "sub": "vmg",
+    "main1": "88mm",
     "main2": "",
     "main3": "",
     "turn": 1.0
