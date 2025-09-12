@@ -110,6 +110,10 @@ item.gun:stg44=StG44§r
 item.gun:mg42=MG42§r
 item.gun:p90=パンツァーファウスト§r
 item.gun:p38=P38§r
+entity.vehicle:panzer.name=パンツァーIV C
+item.spawn_egg.entity.vehicle:panzer.name=パンツァーIV C
+entity.vehicle:tiger.name=ティーガーI
+item.spawn_egg.entity.vehicle:tiger.name=ティーガーI
 entity.vehicle:bf109.name=メッサーシュミット Bf 109
 item.spawn_egg.entity.vehicle:bf109.name=メッサーシュミット Bf 109
 entity.vehicle:ju87.name=ユンカース Ju 87
@@ -122,6 +126,12 @@ item.gun:bar=ブローニングM1918§r
 item.gun:thom=M1A1トンプソン§r
 item.gun:m1911=M1911§r
 item.gun:m1b=M1バズーカ§r
+entity.vehicle:m4.name=M4シャーマン
+item.spawn_egg.entity.vehicle:m4.name=M4シャーマン
+entity.vehicle:f4u.name=F4U コルセア
+item.spawn_egg.entity.vehicle:f4u.name=F4U コルセア
+entity.vehicle:sbd.name=SBD ドーントレス
+item.spawn_egg.entity.vehicle:sbd.name=SBD ドーントレス
 
 ## ENG
 item.gun:leemk4=リー・エンフィールドNo.4§r
@@ -129,11 +139,12 @@ item.gun:piat=PIAT§r
 item.gun:lewis=ルイス軽機関銃§r
 item.gun:brengun=ブレン軽機関銃§r
 item.gun:stengun=ステン短機関銃§r
+entity.vehicle:valentine.name=バレンタイン歩兵戦車 Mk VIII
+item.spawn_egg.entity.vehicle:valentine.name=バレンタイン歩兵戦車 Mk VIII
 entity.vehicle:spitfire.name=スーパーマリン スピットファイア
 item.spawn_egg.entity.vehicle:spitfire.name=スーパーマリン スピットファイア
 entity.vehicle:battle.name=フェアリー バトル
 item.spawn_egg.entity.vehicle:battle.name=フェアリー バトル
-item.vehicle:battle_spawn_egg=フェアリー バトル
 
 ## JAP
 item.gun:t38=三八式歩兵銃§r
