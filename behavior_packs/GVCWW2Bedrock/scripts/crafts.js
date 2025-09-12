@@ -78,6 +78,7 @@ export const craftData = {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
       { "give":"vehicle:panzer_spawn_egg","texture":"textures/items/panzer", "count":1, "cost":[ 12, 10, 8 ] },
+      { "give":"vehicle:tiger_spawn_egg","texture":"textures/items/tiger", "count":1, "cost":[ 24, 40, 16 ] },
       { "give":"vehicle:bf109_spawn_egg","texture":"textures/items/bf109", "count":1, "cost":[ 6, 12, 18 ] },
       { "give":"vehicle:ju87_spawn_egg","texture":"textures/items/ju87", "count":1, "cost":[ 12, 12, 24 ] }
     ]
@@ -101,6 +102,7 @@ export const craftData = {
   "vceng": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
+      { "give":"vehicle:valentine_spawn_egg","texture":"textures/items/valentine", "count":1, "cost":[ 6, 10, 6 ] },
       { "give":"vehicle:spitfire_spawn_egg","texture":"textures/items/spitfire", "count":1, "cost":[ 18, 16, 32 ] },
       { "give":"vehicle:battle_spawn_egg","texture":"textures/items/battle", "count":1, "cost":[ 24, 24, 32 ] }
     ]
