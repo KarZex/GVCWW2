@@ -2,6 +2,7 @@ import json
 import csv
 import ast
 
+
 item_json = json.load(open("resource_packs/GVCWW2Bedrock/textures/item_texture.json","r"))
 row_count = 0
 
