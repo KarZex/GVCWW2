@@ -7,13 +7,14 @@ const GlobalFlags = [
 ];
 
 const Teams = [
-	//ww2
-	`SOV`, //Soviet
-	`GER`, //Germany
+	//ww2 using Hoi4 country tags
+	`SOV`, //Soviet Union
+	`GER`, //Nazi Germany
 	`USA`, //United States
-	`JAP`, //Japan
-	`ENG` //Britain
+	`JAP`, //Empire of Japan
+	`ENG` //United Kingdom
 ]
+
 
 //1 day
 const CoolTime = 24000;
@@ -53,6 +54,32 @@ function gvcv5GetTime() {
 
     return `${day}:${hour}:${minute}`;
 }
+
+function gvcww2GetYYYYMMDDHHmm(){
+	const startyear = 1942; //Pacific War and Stalingrad start year
+	const endyear = 1946; //Cold War start year
+
+	const allticks = world.getAbsoluteTime();
+
+	const totalMinutes = Math.floor(allticks / 20); // 1 minute = 20 ticks
+	const totalHours = Math.floor(totalMinutes / 60);
+	const totalDays = Math.floor(totalHours / 24);
+	const totalYears = Math.floor(totalDays / 365);
+	const remainingDays = totalDays % 365;
+	const remainingHours = totalHours % 24;
+	const remainingMinutes = totalMinutes % 60;
+
+	const year = startyear + totalYears;
+	const month = Math.floor(remainingDays / 30) + 1; // Approximate month
+	const day = (remainingDays % 30) + 1;
+	const hour = remainingHours;
+	const minute = remainingMinutes;
+	return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+
+
+
+}
+
 async function tpWithDelay( user, location,dimension, delay){
 	user.sendMessage(`you will be teleported in ${delay/20} seconds`);
 	user.runCommand(`inputpermission set @s movement disabled`);

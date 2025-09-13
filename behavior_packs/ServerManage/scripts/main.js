@@ -1,14 +1,22 @@
 import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
-const blacklist = [];
+const blacklist = [
+	"takerumincra123",
+	"kid0116"
+];
 
 const whitelist = [
-	  "Kimekun920",
-	  "KarZex7700XT",
-	  "KUROMU1019",
-	  "MAGINASU",
+	  "Kimekun920", 
+	  "KarZex7700XT", 
+	  "KUROMU1019", 
+	  "MAGINASU", 
 	  "Houndsyuyuy"
+];
+
+const ChatMuteList = [
+	"CagyMovie112339", 
+	"MAGINASU"
 ];
 
 world.afterEvents.playerJoin.subscribe(async (arg) => {
@@ -25,6 +33,13 @@ world.afterEvents.playerJoin.subscribe(async (arg) => {
 			await system.waitTicks(20);
 			world.getDimension("overworld").runCommand(`kick "${playerName}" You are blacklisted on this server.`);
 		}
+	}
+	if( ChatMuteList.includes(playerName) ){
+		const player = world.getPlayers({name:playerName})[0];
+		if( !player ) return;
+		await system.waitTicks(160); //long time to wait until player is fully loaded
+		player.addTag("ChatMute");
+		player.sendMessage("§cYou have been muted and cannot send messages on this server.");
 	}
 });
 
