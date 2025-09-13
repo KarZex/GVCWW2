@@ -12,6 +12,12 @@ world.afterEvents.entityHurt.subscribe( e => {
 	print(`value:${e.damage} at:${e.hurtEntity.typeId} by:${e.damageSource.damagingEntity.typeId} type:${e.damageSource.cause}`)
 } )
 */
+export const tankImmuneEntities = [
+    `armor_stand`,
+    `area_effect_cloud`,
+    `item`,
+    `xp_orb`
+]
 
 world.afterEvents.entitySpawn.subscribe( e => {
 	const entity = e.entity;
@@ -653,6 +659,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
+			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
+			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`tank`]});
+			if( V.length > 0 ){
+				for( let vict of V ){
+					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});
+				}
+			}
 			let v = vehicle.getVelocity();
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
 			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;

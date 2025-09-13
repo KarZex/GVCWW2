@@ -223,6 +223,10 @@ export const gunData = {
     "damage": 60,
     "damageType": "entityExplosion"
   },
+  "57mm": {
+    "damage": 70,
+    "damageType": "entityExplosion"
+  },
   "76mm": {
     "damage": 80,
     "damageType": "entityExplosion"

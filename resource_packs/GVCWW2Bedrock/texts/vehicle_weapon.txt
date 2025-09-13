@@ -1,5 +1,6 @@
 gvcww2.vmg.name=7.62mmMG
 gvcww2.47mm.name=47mmCannon
+gvcww2.57mm.name=57mmCannon
 gvcww2.76mm.name=76mmCannon
 gvcww2.85mm.name=85mmCannon
 gvcww2.88mm.name=88mmCannon

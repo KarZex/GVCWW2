@@ -7,7 +7,8 @@ export const vehicleData = {
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 22.5
+    "turn": 22.5,
+    "gattack": 0
   },
   "ju87": {
     "type": "air",
@@ -16,7 +17,8 @@ export const vehicleData = {
     "main1": "bomb",
     "main2": "37mmrocket",
     "main3": "",
-    "turn": 9.0
+    "turn": 9.0,
+    "gattack": 0
   },
   "spitfire": {
     "type": "air",
@@ -25,7 +27,8 @@ export const vehicleData = {
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 18.0
+    "turn": 18.0,
+    "gattack": 0
   },
   "battle": {
     "type": "air",
@@ -34,7 +37,8 @@ export const vehicleData = {
     "main1": "bomb",
     "main2": "",
     "main3": "",
-    "turn": 9.0
+    "turn": 9.0,
+    "gattack": 0
   },
   "f4u": {
     "type": "air",
@@ -43,7 +47,8 @@ export const vehicleData = {
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 22.5
+    "turn": 22.5,
+    "gattack": 0
   },
   "sbd": {
     "type": "air",
@@ -52,7 +57,8 @@ export const vehicleData = {
     "main1": "bomb",
     "main2": "",
     "main3": "",
-    "turn": 9.0
+    "turn": 9.0,
+    "gattack": 0
   },
   "yak9": {
     "type": "air",
@@ -61,7 +67,8 @@ export const vehicleData = {
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 15.0
+    "turn": 15.0,
+    "gattack": 0
   },
   "il2": {
     "type": "air",
@@ -70,7 +77,8 @@ export const vehicleData = {
     "main1": "bombii",
     "main2": "37mmrocket",
     "main3": "",
-    "turn": 6.0
+    "turn": 6.0,
+    "gattack": 0
   },
   "zero": {
     "type": "air",
@@ -79,7 +87,8 @@ export const vehicleData = {
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 30.0
+    "turn": 30.0,
+    "gattack": 0
   },
   "b7a": {
     "type": "air",
@@ -88,7 +97,8 @@ export const vehicleData = {
     "main1": "bomb",
     "main2": "",
     "main3": "",
-    "turn": 9.0
+    "turn": 9.0,
+    "gattack": 0
   },
   "t34": {
     "type": "tank",
@@ -97,7 +107,8 @@ export const vehicleData = {
     "main1": "85mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 7
   },
   "panzer": {
     "type": "tank",
@@ -106,7 +117,8 @@ export const vehicleData = {
     "main1": "76mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 7
   },
   "m4": {
     "type": "tank",
@@ -115,7 +127,8 @@ export const vehicleData = {
     "main1": "76mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 7
   },
   "t97t": {
     "type": "tank",
@@ -124,16 +137,18 @@ export const vehicleData = {
     "main1": "47mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 7
   },
   "valentine": {
     "type": "tank",
     "speed": 0.15,
     "sub": "vmg",
-    "main1": "76mm",
+    "main1": "57mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 7
   },
   "kv2": {
     "type": "tank",
@@ -142,7 +157,8 @@ export const vehicleData = {
     "main1": "152mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 24
   },
   "tiger": {
     "type": "tank",
@@ -151,6 +167,7 @@ export const vehicleData = {
     "main1": "88mm",
     "main2": "",
     "main3": "",
-    "turn": 1.0
+    "turn": 1.0,
+    "gattack": 12
   }
 };

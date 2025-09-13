@@ -810,9 +810,10 @@ for row in csv_reader3:
         v_main1 = row[7]
         v_main2 = row[9]
         v_main3 = row[11]
+        v_gattack = int(row[27])
         v_turn = float(row[34])
 
-        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"sub": v_sub,"main1": v_main1,"main2": v_main2,"main3": v_main3,"turn": v_turn }
+        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"sub": v_sub,"main1": v_main1,"main2": v_main2,"main3": v_main3,"turn": v_turn,"gattack":v_gattack }
     
     row_count += 1
 

@@ -1,6 +1,7 @@
 name,id,ダメージ,弾速,命中精度,連射間隔(tick),爆発,ブロック破壊,音,ダメージタイプ,offset,scale
 7.62mmMG,vmg,4,4,0,1,0,F,mgiibullet,override,,1
-47mmCannon,47mm,60,4,0,60,3,F,tankbullet,entityExplosion,,1
+47mmCannon,47mm,60,4,0,60,2,F,tankbullet,entityExplosion,,1
+57mmCannon,57mm,70,4,0,60,3,F,tankbullet,entityExplosion,,1
 76mmCannon,76mm,80,4,0,60,3,F,tankbullet,entityExplosion,,1
 85mmCannon,85mm,100,4,0,100,3,F,tankbullet,entityExplosion,,1
 88mmCannon,88mm,110,4,0,100,4,F,tankbullet,entityExplosion,,1
