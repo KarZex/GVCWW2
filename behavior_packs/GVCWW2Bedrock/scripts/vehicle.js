@@ -1,4 +1,5 @@
 import { EntityDamageCause } from "@minecraft/server";
+
 export const vehicleData = {
   "bf109": {
     "type": "air",
