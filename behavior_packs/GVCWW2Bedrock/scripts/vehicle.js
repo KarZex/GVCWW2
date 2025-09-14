@@ -1,5 +1,4 @@
 import { EntityDamageCause } from "@minecraft/server";
-
 export const vehicleData = {
   "bf109": {
     "type": "air",
@@ -170,5 +169,15 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 12
+  },
+  "t98t": {
+    "type": "tank",
+    "speed": 0.28,
+    "sub": "vmg",
+    "main1": "37mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7
   }
 };

@@ -166,7 +166,9 @@ item.vehicle:b7a_spawn_egg=Aichi B7A Ryusei
 
 ### Weapons ###
 gvcww2.vmg.name=7.62mmMG
+gvcww2.37mm.name=37mmCannon
 gvcww2.47mm.name=47mmCannon
+gvcww2.57mm.name=57mmCannon
 gvcww2.76mm.name=76mmCannon
 gvcww2.85mm.name=85mmCannon
 gvcww2.88mm.name=88mmCannon
@@ -203,6 +205,7 @@ gvcww2.20mmmcaird.name=20mmMCx2
 gvcww2.30mmmcair.name=30mmMC
 gvcww2.20mmmcair.name=20mmMC
 gvcww2.bombiii.name=bombii
+
 gvcww2.NO.name=----
 gvcww2..name=----
 

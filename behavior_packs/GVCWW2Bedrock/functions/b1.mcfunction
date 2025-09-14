@@ -34,3 +34,5 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:valentine] run event enti
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 152mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:tiger] run event entity @s 88mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t98t] run event entity @s 37mm

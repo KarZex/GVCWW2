@@ -218,6 +218,10 @@
     "damage": 4,
     "damageType": "override"
   },
+  "37mm": {
+    "damage": 35,
+    "damageType": "entityExplosion"
+  },
   "47mm": {
     "damage": 60,
     "damageType": "entityExplosion"

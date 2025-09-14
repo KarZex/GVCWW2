@@ -53,7 +53,7 @@
       },
       "minecraft:physics": {},
       "minecraft:scale": {
-        "value": 1.0
+        "value": 6.0
       }
     },
     "events": {

@@ -3327,6 +3327,19 @@
           ]
         }
       },
+      "fire:37mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mm"
+            }
+          ]
+        }
+      },
       "fire:47mm": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4588,6 +4601,13 @@
         "add": {
           "component_groups": [
             "fire:vmg"
+          ]
+        }
+      },
+      "fire:37mm": {
+        "add": {
+          "component_groups": [
+            "fire:37mm"
           ]
         }
       },

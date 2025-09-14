@@ -582,6 +582,21 @@
           "def": "fire:vmg"
         }
       },
+      "37mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mm"
+        }
+      },
       "47mm": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -2508,6 +2523,13 @@
           ]
         }
       },
+      "37mm": {
+        "add": {
+          "component_groups": [
+            "37mm"
+          ]
+        }
+      },
       "47mm": {
         "add": {
           "component_groups": [
@@ -2857,6 +2879,11 @@
       "vehicle:tiger": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:tiger no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t98t": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t98t no_ride_change summon_enemy"
         }
       }
     }
