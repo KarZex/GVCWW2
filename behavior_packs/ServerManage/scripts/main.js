@@ -20,6 +20,7 @@ const ChatMuteList = [
 ];
 
 world.afterEvents.playerJoin.subscribe(async (arg) => {
+	
 	const playerName = arg.playerName;
 	if( world.getDynamicProperty("ServerMode") == "whitelist" ){
 		if( !whitelist.includes(`${playerName}`) ){
