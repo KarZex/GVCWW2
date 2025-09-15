@@ -4,8 +4,10 @@ import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
+import { absVector3,isMoving } from "./usefulFunction"
 import "./compornents";
 import "./team";
+
 
 /*
 world.afterEvents.entityHurt.subscribe( e => {
@@ -543,8 +545,45 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 })
 
 system.runInterval( () => {
-	world.getDimension(`minecraft:overworld`).runCommand(`execute as @a[tag=MissileAlert] run function missileAlert`);
-},20)
+	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`tank`]});
+	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`tank`]});
+	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`tank`]});
+	for( let t of overTanks ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of netherTanks ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of endTanks ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+		}
+	}
+},16)
+system.runInterval( () => {
+	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`air`]});
+	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`air`]});
+	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`air`]});
+	for( let t of overAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of netherAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of endAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		}
+	}
+},7)
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:air"){

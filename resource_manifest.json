@@ -2,13 +2,13 @@
     "format_version": 2,
     "header": {
         "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\n\u3044\u306c\u3048\u30e2\u30f3:AWM\n\u3041\u6905\u5b50:Glock17,Glock18c,F-117\nMihono Bourbon:M9,MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust,M79.Mi-24d\n",
-        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon BetaV0.3\u00a7r",
+        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon BetaV0.31\u00a7r",
         "min_engine_version": [
             1,
             21,
             100
         ],
-        "uuid": "ffd149fb-73f1-432b-a189-eda51f7da046",
+        "uuid": "f6510e1a-44bc-47f3-833f-394067c353b4",
         "version": [
             1,
             21,
