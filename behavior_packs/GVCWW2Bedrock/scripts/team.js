@@ -271,17 +271,20 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( player.getSpawnPoint() != undefined  ){
 			player.teleport({ x:location.x,y:location.y,z:location.z },{ dimension:location.dimension } );
 		}
-		else if (player.hasTag(`red`) && world.getDynamicProperty(`redSpawn`) != undefined ){
-			player.teleport(world.getDynamicProperty(`redSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		else if ( player.hasTag(`SOV`) && world.getDynamicProperty(`teamSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`SOVSpawn`),{ dimension:world.getDimension(`overworld`) } );
 		}
-		else if (player.hasTag(`blue`) && world.getDynamicProperty(`blueSpawn`) != undefined ){
-			player.teleport(world.getDynamicProperty(`blueSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		else if ( player.hasTag(`GER`) && world.getDynamicProperty(`teamSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`GERSpawn`),{ dimension:world.getDimension(`overworld`) } );
 		}
-		else if (player.hasTag(`green`) && world.getDynamicProperty(`greenSpawn`) != undefined ){
-			player.teleport(world.getDynamicProperty(`greenSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		else if ( player.hasTag(`USA`) && world.getDynamicProperty(`teamSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`USASpawn`),{ dimension:world.getDimension(`overworld`) } );
 		}
-		else if (player.hasTag(`yellow`) && world.getDynamicProperty(`yellowSpawn`) != undefined ){
-			player.teleport(world.getDynamicProperty(`yellowSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		else if ( player.hasTag(`JAP`) && world.getDynamicProperty(`teamSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`JAPSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		}
+		else if ( player.hasTag(`ENG`) && world.getDynamicProperty(`teamSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`ENGSpawn`),{ dimension:world.getDimension(`overworld`) } );
 		}
 		else{
 			player.teleport( {x:6,y:63,z:0} ,{ dimension:world.getDimension(`the_end`) } );
