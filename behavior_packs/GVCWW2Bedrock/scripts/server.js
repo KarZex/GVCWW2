@@ -1,6 +1,5 @@
 import { world, system } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
-
 system.afterEvents.scriptEventReceive.subscribe(async (event) => {
     if( event.id === "gvcww2:flying" ){
         const player = event.sourceEntity;
