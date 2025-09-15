@@ -36,6 +36,7 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1
 30mmmc,30mmmc,16,4,0,2,1,F,hmgiibullet,entityExplosion,,1
 23mmMCx2,23mmmcair,4,4,0,1,0,F,hmgbullet,override,D,4
 20mmMCx2,20mmmcaird,12,12,0,0,1,F,hmgbullet,override,D,4
+20mmMCx4,20mmmcairw,12,12,0,0,1,F,hmgbullet,override,Qw,4
 30mmMC,30mmmcair,12,12,0,0,0,F,hmgbullet,override,,1
 20mmMC,20mmmcair,12,12,0,0,1,F,hmgbullet,override,,4
 bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1

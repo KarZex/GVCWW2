@@ -375,7 +375,7 @@ for row in csv_reader2:
                     ]
                 }
             }
-        elif(  gun_offset == "Q"  ):
+        elif(  gun_offset == "Q" or gun_offset == "Qw"  ):
             spawn_entity = { 
                 "minecraft:spawn_entity":{
                     "entities": [
