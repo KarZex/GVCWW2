@@ -1,4 +1,5 @@
 import { world, system } from "@minecraft/server";
+import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
 system.afterEvents.scriptEventReceive.subscribe(async (event) => {
     if( event.id === "gvcww2:flying" ){
@@ -17,11 +18,15 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
         form.button("§3SMG Type§r\nPPSh41,TT33");
         form.button("§1Rifle Type§r\nMosin,TT33");
         form.button("§2LMG Type§r\nDP28,TT33");
+        form.button("§4Anti-Tank Type§r\nPTRD,TT33");
         if( world.scoreboard.getObjective("cool").getScore(`SOV`) >= 6000 ){
             form.button("§6Vehicle Option§r");
         }
         form.show(user).then(result => {
             if(!result.canceled){
+                user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
+                user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
+                user.runCommand(`give @s bread 64`);//Aid Kit
                 switch(result.selection){
                     case 0:
                         user.sendMessage("You selected §3SMG Type");
@@ -29,8 +34,6 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                         user.runCommand(`give @s gun:ppsh`);
                         user.runCommand(`give @s gun:tt33`);
                         user.runCommand(`give @s zex:mm9 600`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
-                        user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
                         break;
                     case 1:
                         user.sendMessage("You selected §1Rifle Type");
@@ -38,8 +41,6 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                         user.runCommand(`give @s gun:mosin`);
                         user.runCommand(`give @s gun:tt33`);
                         user.runCommand(`give @s zex:762m 120`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
-                        user.runCommand(`give @s zex:aidkit 2`);//Aid Kitq
                         break;
                     case 2:
                         user.sendMessage("You selected §2LMG Type");
@@ -47,10 +48,16 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                         user.runCommand(`give @s gun:dp28`);
                         user.runCommand(`give @s gun:tt33`);
                         user.runCommand(`give @s zex:762m 240`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);
-                        user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
                         break;
-                    case 3://Tank
+                    case 3:
+                        user.sendMessage("You selected §2LMG Type");
+                        user.runCommand(`give @s minecraft:iron_sword`);
+                        user.runCommand(`give @s gun:ptrd`);
+                        user.runCommand(`give @s gun:tt33`);
+                        user.runCommand(`give @s zex:1270m 16`);
+                        user.runCommand(`give @s zex:762m 240`);
+                        break;
+                    case 4://Tank
                         user.sendMessage("You selected §6Vehicle Option");
                         const vehicle_form = new ActionFormData();
                         vehicle_form.title("Vehicle Selection");
@@ -98,10 +105,15 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
         form.body("Select your weapon type:");
         form.button("§4Assault Type§r\nSTG44,Panzerfaust");
         form.button("§3SMG Type§r\nMP40,Panzerfaust");
-        //form.button("§2LMG Type§r\nMG42,P38");
+        form.button("§2LMG Type§r\nMG42,P38");
         form.button("§1Ryfle Type§r\nKar98k, P38");
-        form.button("§6Vehicle Option§r");
+        if( world.scoreboard.getObjective("cool").getScore(`GER`) >= 6000 ){
+            form.button("§6Vehicle Option§r");
+        }
         form.show(user).then(result => {
+            user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
+            user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
+            user.runCommand(`give @s bread 64`);//Aid Kit
             if(!result.canceled){
                 switch(result.selection){
                     case 0:
@@ -111,8 +123,6 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                         user.runCommand(`give @s gun:p90`);//Panzerfaust
                         user.runCommand(`give @s zex:762m 240`);
                         user.runCommand(`give @s zex:rocketm 4`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
-                        user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
                         break;
                     case 1:
                         user.sendMessage("You selected §3SMG Type");
@@ -121,19 +131,22 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                         user.runCommand(`give @s gun:p90`);
                         user.runCommand(`give @s zex:mm9 320`);
                         user.runCommand(`give @s zex:rocketm 4`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);//Grenade
-                        user.runCommand(`give @s zex:aidkit 2`);//Aid Kit
                         break;
                     case 2: //Sniper
+                        user.sendMessage("You selected §2LMG Type");
+                        user.runCommand(`give @s minecraft:iron_sword`);//Melee Weapon
+                        user.runCommand(`give @s gun:mg42`);
+                        user.runCommand(`give @s gun:p38`);
+                        user.runCommand(`give @s zex:762m 600`);
+                        break;
+                    case 3: //Sniper
                         user.sendMessage("You selected §1Sniper Type");
                         user.runCommand(`give @s minecraft:iron_sword`);//Melee Weapon
                         user.runCommand(`give @s gun:k98`);
                         user.runCommand(`give @s gun:p38`);
                         user.runCommand(`give @s zex:762m 64`);
-                        user.runCommand(`give @s zex:rocketm 4`);
-                        user.runCommand(`give @s gvcv5:fragment 4`);
                         break;
-                    case 3://Tank
+                    case 4://Tank
                         user.sendMessage("You selected §6Vehicle Option");
                         const vehicle_form = new ActionFormData();
                         vehicle_form.title("Vehicle Selection");
@@ -176,3 +189,27 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
         });
     }
 });
+
+world.afterEvents.entityDie.subscribe( e => {
+    if( e.deadEntity.hasTag(`SOV`) ){
+        world.scoreboard.getObjective(`kills`).addScore(`§8Germany`,1);
+    }
+    if( e.deadEntity.hasTag(`GER`) ){
+        world.scoreboard.getObjective(`kills`).addScore(`§4Soviet`,1);
+    }
+} )
+
+world.afterEvents.playerSpawn.subscribe( async e =>{
+    const player = e.player;
+    if( player.hasTag(`SOV`) ){
+        player.runCommand(`scriptevent gvcww2:selectWeaponSOV`);
+        player.teleport({ x:-70,y:30,z:196 })
+    }
+    else if(player.hasTag(`GER`)){
+        player.runCommand(`scriptevent gvcww2:selectWeaponGER`);
+        player.teleport({ x:10,y:30,z:-128 })
+    }
+    else{
+        player.teleport({ x:-303,y:23,z:-303 })
+    }
+} )
