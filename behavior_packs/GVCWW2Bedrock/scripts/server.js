@@ -7,7 +7,6 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
             player.kill();
             player.removeTag(`flying`)
         }
-         
     }
     if( event.id === "gvcww2:selectWeaponSOV" ){
         const user = event.sourceEntity;
