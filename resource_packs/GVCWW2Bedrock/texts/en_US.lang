@@ -74,6 +74,11 @@ script.gvcww2:zex:1270m.name=§c.50Cal§r
 script.gvcww2:zex:rocketm.name=§276mmRocket§r
 script.gvcww2:zex:missilem.name=§576mmMissile§r
 script.gvcww2:zex:40m.name=§e40mmGrenade§r
+script.gvcww2:country_sov.name=§cSoviet Union§r
+script.gvcww2:country_ger.name=§8Nazi Germany§r
+script.gvcww2:country_usa.name=§9United States§r
+script.gvcww2:country_jap.name=§aEmpire of Japan§r
+script.gvcww2.country_eng.name=§eUnited Kingdom§r
 
 ## SOV - Soviet Union
 item.gun:mosin=M1891§r
