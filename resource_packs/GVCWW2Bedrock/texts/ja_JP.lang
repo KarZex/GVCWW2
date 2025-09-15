@@ -96,12 +96,16 @@ item.gun:tt33=TT33§r
 item.gun:ptrd=PTRD§r
 entity.vehicle:t34.name=T-34
 item.spawn_egg.entity.vehicle:t34.name=T-34
+item.vehicle:t34_spawn_egg=T-34
 entity.vehicle:kv2.name=KV-2
 item.spawn_egg.entity.vehicle:kv2.name=KV-2
+item.vehicle:kv2_spawn_egg=KV-2
 entity.vehicle:yak9.name=ヤコヴレフ Yak-9
 item.spawn_egg.entity.vehicle:yak9.name=ヤコヴレフ Yak-9
+item.vehicle:yak9_spawn_egg=ヤコヴレフ Yak-9
 entity.vehicle:il2.name=イリューシン Il-2
 item.spawn_egg.entity.vehicle:il2.name=イリューシン Il-2
+item.vehicle:il2_spawn_egg=イリューシン Il-2
 
 ## GER
 item.gun:k98=Kar98k§r
@@ -112,12 +116,16 @@ item.gun:p90=パンツァーファウスト§r
 item.gun:p38=P38§r
 entity.vehicle:panzer.name=IV号戦車
 item.spawn_egg.entity.vehicle:panzer.name=IV号戦車
+item.vehicle:panzer_spawn_egg=IV号戦車
 entity.vehicle:tiger.name=ティーガーI
 item.spawn_egg.entity.vehicle:tiger.name=ティーガーI
+item.vehicle:tiger_spawn_egg=ティーガーI
 entity.vehicle:bf109.name=メッサーシュミット Bf 109
 item.spawn_egg.entity.vehicle:bf109.name=メッサーシュミット Bf 109
+item.vehicle:bf109_spawn_egg=メッサーシュミット Bf 109
 entity.vehicle:ju87.name=ユンカース Ju 87
 item.spawn_egg.entity.vehicle:ju87.name=ユンカース Ju 87
+item.vehicle:ju87_spawn_egg=ユンカース Ju 87
 
 ## USA
 item.gun:m1=M1ガーランド§r
@@ -128,10 +136,13 @@ item.gun:m1911=M1911§r
 item.gun:m1b=M1バズーカ§r
 entity.vehicle:m4.name=M4シャーマン
 item.spawn_egg.entity.vehicle:m4.name=M4シャーマン
+item.vehicle:m4_spawn_egg=M4シャーマン
 entity.vehicle:f4u.name=F4U コルセア
 item.spawn_egg.entity.vehicle:f4u.name=F4U コルセア
+item.vehicle:f4u_spawn_egg=F4U コルセア
 entity.vehicle:sbd.name=SBD ドーントレス
 item.spawn_egg.entity.vehicle:sbd.name=SBD ドーントレス
+item.vehicle:sbd_spawn_egg=SBD ドーントレス
 
 ## ENG
 item.gun:leemk4=リー・エンフィールドNo.4§r
@@ -141,10 +152,19 @@ item.gun:brengun=ブレン軽機関銃§r
 item.gun:stengun=ステン短機関銃§r
 entity.vehicle:valentine.name=バレンタイン歩兵戦車
 item.spawn_egg.entity.vehicle:valentine.name=バレンタイン歩兵戦車
+item.vehicle:valentine_spawn_egg=バレンタイン歩兵戦車
+entity.vehicle:t17e1.name=T17E1 スタッグハウンド
+item.spawn_egg.entity.vehicle:t17e1.name=T17E1 スタッグハウンド
+item.vehicle:t17e1_spawn_egg=T17E1 スタッグハウンド
+entity.vehicle:t17e2.name=T17E2 スタッグハウンド
+item.spawn_egg.entity.vehicle:t17e2.name=T17E2 スタッグハウンド
+item.vehicle:t17e2_spawn_egg=T17E2 スタッグハウンド
 entity.vehicle:spitfire.name=スーパーマリン スピットファイア
 item.spawn_egg.entity.vehicle:spitfire.name=スーパーマリン スピットファイア
+item.vehicle:spitfire_spawn_egg=スーパーマリン スピットファイア
 entity.vehicle:battle.name=フェアリー バトル
 item.spawn_egg.entity.vehicle:battle.name=フェアリー バトル
+item.vehicle:battle_spawn_egg=フェアリー バトル
 
 ## JAP
 item.gun:t38=三八式歩兵銃§r
@@ -154,10 +174,19 @@ item.gun:t14=十四年式拳銃§r
 item.gun:lunge=刺突爆雷§r
 entity.vehicle:t97t.name=九七式中戦車
 item.spawn_egg.entity.vehicle:t97t.name=九七式中戦車
+item.vehicle:t97t_spawn_egg=九七式中戦車
+entity.vehicle:t98t.name=九八式軽戦車
+item.spawn_egg.entity.vehicle:t98t.name=九八式軽戦車
+item.vehicle:t98t_spawn_egg=九八式軽戦車
+entity.vehicle:t98aa.name=九八式自走高射砲
+item.spawn_egg.entity.vehicle:t98aa.name=九八式自走高射砲
+item.vehicle:t98aa_spawn_egg=九八式自走高射砲
 entity.vehicle:zero.name=三菱 A6M 零式艦上戦闘機
 item.spawn_egg.entity.vehicle:zero.name=三菱 A6M 零式艦上戦闘機
+item.vehicle:zero_spawn_egg=三菱 A6M 零式艦上戦闘機
 entity.vehicle:b7a.name=愛知 B7A 流星
 item.spawn_egg.entity.vehicle:b7a.name=愛知 B7A 流星
+item.vehicle:b7a_spawn_egg=愛知 B7A 流星
 
 #### FLAG ####
 entity.gvcww2:flag_sov_barracks.name=§cソ連軍拠点_兵舎

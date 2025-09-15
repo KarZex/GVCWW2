@@ -140,6 +140,12 @@ item.gun:stengun=StenGun§r
 entity.vehicle:valentine.name=Valentine Tank Mk VIII
 item.spawn_egg.entity.vehicle:valentine.name=Valentine Tank Mk VIII
 item.vehicle:valentine_spawn_egg=Valentine Tank Mk VIII
+entity.vehicle:t17e1.name=T17E1 Staghound
+item.spawn_egg.entity.vehicle:t17e1.name=T17E1 Staghound
+item.vehicle:t17e1_spawn_egg=T17E1 Staghound
+entity.vehicle:t17e2.name=T17E2 Staghound
+item.spawn_egg.entity.vehicle:t17e2.name=T17E2 Staghound
+item.vehicle:t17e2_spawn_egg=T17E2 Staghound
 entity.vehicle:spitfire.name=Supermarine Spitfire
 item.spawn_egg.entity.vehicle:spitfire.name=Supermarine Spitfire
 item.vehicle:spitfire_spawn_egg=Supermarine Spitfire
@@ -148,7 +154,7 @@ item.spawn_egg.entity.vehicle:battle.name=Fairley Battle
 item.vehicle:battle_spawn_egg=Fairley Battle
 
 
-## JAP - Empire of Japan
+##JAP - Empire of Japan
 item.gun:t38=Type38§r
 item.gun:t100=Type100§r
 item.gun:t99=Type99§r
@@ -157,12 +163,19 @@ item.gun:lunge=Lunge Mine§r
 entity.vehicle:t97t.name=Type97 Tank
 item.spawn_egg.entity.vehicle:t97t.name=Type97 Tank
 item.vehicle:t97t_spawn_egg=Type97 Tank
+entity.vehicle:t98t.name=Type 98 Tank
+item.spawn_egg.entity.vehicle:t98t.name=Type 98 Tank
+item.vehicle:t98t_spaen_egg=Type 98 Tank
+entity.vehicle:t98aa.name=Type 98 AA
+item.spawn_egg.entity.vehicle:t98aa.name=Type 98 AA
+item.vehicle:t98aa_spawn_egg=Type 98 AA
 entity.vehicle:zero.name=Mitsubishi A6M Zero
 item.spawn_egg.entity.vehicle:zero.name=Mitsubishi A6M Zero
 item.vehicle:zero_spawn_egg=Mitsubishi A6M Zero
 entity.vehicle:b7a.name=Aichi B7A Ryusei
 item.spawn_egg.entity.vehicle:b7a.name=Aichi B7A Ryusei
 item.vehicle:b7a_spawn_egg=Aichi B7A Ryusei
+
 
 ### Weapons ###
 gvcww2.vmg.name=7.62mmMG
@@ -375,6 +388,12 @@ script.gvcv5.howToVechileDesc0.name=Machine gun fire:  :_input_key.jump: OR Hold
 script.gvcv5.howToVechileDesc1.name=(However, when riding a helicopter,  :_input_key.jump:  cannot be used to fire the machine gun)
 script.gvcv5.howToVechileDesc2.name=Ascend (helicopter):  :_input_key.jump:
 script.gvcv5.howToVechileDesc3.name=Fire main cannon:  :_input_key.attack: OR Hold main cannon:_input_key.use:
+script.gvcv5.howToAir.name=How to use aircraft
+script.gvcv5.howToAirDesc0.name=Ascend:  :_input_key.jump:
+script.gvcv5.howToAirDesc1.name=Descend:  :_input_key.sneak:
+script.gvcv5.howToAirDesc2.name=Fire machine gun:  :_input_key.jump: OR Hold machine gun:_input_key.use:
+script.gvcv5.howToAirDesc3.name=Fire bombs/missiles/rockets: :_input_key.attack: OR Hold main cannon and:_input_key.use:
+script.gvcv5.howToAirDesc4.name=Change Main Weapon: hold Weapon change kit :_input_key.use:
 script.gvcv5.phone_down.name=About Down Status
 script.gvcv5.phone_down0.name=When you join a team, even if your HP reaches 0, you will not die, but will instead enter a down status.
 script.gvcv5.phone_down1.name=You can revive downed teammates by pressing _input_key.attack:.
