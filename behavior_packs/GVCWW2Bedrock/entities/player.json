@@ -3872,6 +3872,40 @@
           ]
         }
       },
+      "fire:20mmmcairw": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairwlii"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairwri"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairwli"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairwrii"
+            }
+          ]
+        }
+      },
       "fire:30mmmcair": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4853,6 +4887,13 @@
         "add": {
           "component_groups": [
             "fire:20mmmcaird"
+          ]
+        }
+      },
+      "fire:20mmmcairw": {
+        "add": {
+          "component_groups": [
+            "fire:20mmmcairw"
           ]
         }
       },

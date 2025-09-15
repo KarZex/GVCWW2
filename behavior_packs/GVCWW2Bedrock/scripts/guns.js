@@ -391,6 +391,22 @@ export const gunData = {
     "damage": 12,
     "damageType": "override"
   },
+  "20mmmcairwri": {
+    "damage": 12,
+    "damageType": "override"
+  },
+  "20mmmcairwli": {
+    "damage": 12,
+    "damageType": "override"
+  },
+  "20mmmcairwrii": {
+    "damage": 12,
+    "damageType": "override"
+  },
+  "20mmmcairwlii": {
+    "damage": 12,
+    "damageType": "override"
+  },
   "30mmmcair": {
     "damage": 12,
     "damageType": "override"

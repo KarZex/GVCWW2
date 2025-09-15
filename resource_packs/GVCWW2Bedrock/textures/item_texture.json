@@ -595,6 +595,9 @@
     },
     "t17e2": {
       "textures": "textures/items/t17e2"
+    },
+    "wirbelwind": {
+      "textures": "textures/items/wirbelwind"
     }
   }
 }

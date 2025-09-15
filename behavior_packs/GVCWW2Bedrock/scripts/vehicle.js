@@ -199,5 +199,15 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7
+  },
+  "wirbelwind": {
+    "type": "tank",
+    "speed": 0.25,
+    "sub": "20mmmcairw",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7
   }
 };

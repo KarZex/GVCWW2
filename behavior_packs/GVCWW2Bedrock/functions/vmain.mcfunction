@@ -45,3 +45,4 @@ execute if entity @e[r=4,type=vehicle:t98t] if entity @s[scores={mcool=0}] run e
 execute if entity @e[r=4,type=vehicle:t98t] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
 
 execute if entity @e[r=4,type=vehicle:t17e1] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:37mm
+execute if entity @e[r=4,type=vehicle:t17e1] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
