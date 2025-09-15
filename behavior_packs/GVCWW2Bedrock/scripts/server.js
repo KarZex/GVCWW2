@@ -1,5 +1,4 @@
 import { world, system } from "@minecraft/server";
-
 system.afterEvents.scriptEventReceive.subscribe(async (event) => {
     if( event.id === "gvcww2:flying" ){
         const player = event.sourceEntity;
