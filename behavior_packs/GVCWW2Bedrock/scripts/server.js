@@ -172,7 +172,7 @@ system.afterEvents.scriptEventReceive.subscribe(async (event) => {
                                         break;
                                     case 2:
                                         user.sendMessage("You selected §2Anti-Air Type");
-                                        user.runCommand(`ride @s summon_ride vehicle:wirblwind`);
+                                        user.runCommand(`ride @s summon_ride vehicle:wirbelwind`);
                                         break;
                                     case 3:
                                         user.sendMessage("You selected §eFighter Type");
