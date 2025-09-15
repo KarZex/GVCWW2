@@ -179,5 +179,25 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7
+  },
+  "t17e1": {
+    "type": "apc",
+    "speed": 0.25,
+    "sub": "vmg",
+    "main1": "37mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7
+  },
+  "t17e2": {
+    "type": "apc",
+    "speed": 0.25,
+    "sub": "20mmmcaird",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7
   }
 };

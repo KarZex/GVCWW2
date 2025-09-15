@@ -720,7 +720,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.button(`script.gvcv5.phone_tp.name`);
 		form.button(`script.gvcv5.phone_tp_block.name`);
 		form.button(`script.gvcv5.phone_teamChat.name`);
-		form.button(`script.gvcv5.phone_password.name`);
 		form.button(`script.gvcv5.phone_leave.name`);
 		form.button(`script.gvcv5.phone_howTo.name`);
 		if( user.hasTag(`${userFamily}leader`) ){
@@ -755,18 +754,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				else if( result.selection == 2 ){
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
-				else if( result.selection == 3 ){
-					const form = new ModalFormData()
-					form.title(`script.gvcv5.phone_password.name`)
-					form.textField(`script.gvcv5.input_password.name`,`${phone.getDynamicProperty("password")}`);
-					form.show(user).then( r => {
-						if (!r.canceled) {
-							phone.setDynamicProperty("password",r.formValues[0]);
-							user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
-						}
-					},)
-				}
-				if( result.selection == 4 ){
+				if( result.selection == 3 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
@@ -794,10 +782,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 5 ){
+				else if( result.selection == 4 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam ${userFamily}`);
 				}
-				else if( result.selection == 6 ){
+				else if( result.selection == 5 ){
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_accept_to_join.name`);
 					for( const myAlly of world.getPlayers({ tags: [ `wantToBe${userFamily}` ],families: [ `noteam` ] }) ){
@@ -835,7 +823,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 7 ){
+				if( result.selection == 6 ){
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_transfer_leader.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -857,7 +845,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 8 ){ 
+				if( result.selection == 7 ){ 
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_kick_member.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){

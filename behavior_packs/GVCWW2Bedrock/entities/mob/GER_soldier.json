@@ -2896,6 +2896,16 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t98t no_ride_change summon_enemy"
         }
+      },
+      "vehicle:t17e1": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t17e1 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t17e2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t17e2 no_ride_change summon_enemy"
+        }
       }
     }
   }

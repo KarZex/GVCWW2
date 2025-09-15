@@ -16,4 +16,6 @@ vehicle,t97t,tank,160,0.22,vmg,1,47mm,30,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""playe
 vehicle,valentine,tank,280,0.15,vmg,1,57mm,40,,0,,0,T,,3,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,85mmAP,NO,NO,,t34,0,1
 vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,4,4,1,F,"[ ""SOVteam"",""player""]","[0, 3.2,0.0 ]",,,,,,30,24,152mmCannon,NO,NO,,kv2,0,1
 vehicle,tiger,tank,350,0.15,vmg,1,88mm,80,,0,,0,T,,4,4,1,F,"[ ""GERteam"",""player""]","[0, 2.7,0.0 ]",,,,,,30,12,152mmCannon,NO,NO,,kv2,0,1
-vehicle,t98t,tank,120,0.28,vmg,1,37mm,20,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 1.4, 0.0 ]",,,,,,30,7,85mmAP,NO,NO,,t34,0,1
+vehicle,t98t,tank,120,0.28,vmg,1,37mm,20,,0,,0,T,,2.5,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 1.4, 0.0 ]",,,,,,30,7,85mmAP,NO,NO,,t34,0,1
+vehicle,t17e1,apc,150,0.25,vmg,1,37mm,0,,0,,0,T,,2.5,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,85mmAP,NO,NO,,t34,0,1
+vehicle,t17e2,apc,150,0.25,20mmmcaird,1,,0,,0,,0,T,,2.5,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 1.5, 0.0 ]",,,,,,30,7,85mmAP,NO,NO,,t34,0,1

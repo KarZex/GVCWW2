@@ -589,6 +589,12 @@
     },
     "t98t": {
       "textures": "textures/items/t98t"
+    },
+    "t17e1": {
+      "textures": "textures/items/t17e1"
+    },
+    "t17e2": {
+      "textures": "textures/items/t17e2"
     }
   }
 }
