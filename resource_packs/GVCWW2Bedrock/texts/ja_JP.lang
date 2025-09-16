@@ -21,6 +21,10 @@ item.gvcv5:smoke=煙幕手榴弾
 item.zex:ps=プラスチック
 item.zex:aidkit=応急処置キット
 
+item.gvcv5:fuel_s=ガソリン 30
+item.gvcv5:fuel_m=ガソリン 360
+item.gvcv5:fuel_l=ガソリン 4800
+
 item.item:blue=追従
 item.item:green=待機
 item.zex:commandradio=分隊指揮端末

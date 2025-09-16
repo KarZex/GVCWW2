@@ -16,7 +16,7 @@
       "minecraft:durability": {
         "max_durability": 4800
       },
-      "minecraft:icon": "rep"
+      "minecraft:icon": "fuel_l"
     }
   }
 }

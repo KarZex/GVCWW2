@@ -2,6 +2,15 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
+    "fuel_s": {
+      "textures": "textures/items/fuel_s"
+    },
+    "fuel_m": {
+      "textures": "textures/items/fuel_m"
+    },
+    "fuel_l": {
+      "textures": "textures/items/fuel_l"
+    },
     "zzz_soldier": {
       "textures": "textures/items/zzz_soldier"
     },

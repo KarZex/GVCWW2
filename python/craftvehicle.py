@@ -105,6 +105,7 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = v_health
         entity_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = v_health
         entity_json["minecraft:entity"]["components"]["minecraft:movement"]["value"] = v_speed 
+        entity_json["minecraft:entity"]["component_groups"]["have_fuel"]["minecraft:movement"]["value"] = v_speed 
         entity_json["minecraft:entity"]["components"]["minecraft:collision_box"]["width"] = v_sizew 
         entity_json["minecraft:entity"]["components"]["minecraft:collision_box"]["height"] = v_sizeh
         if v_water != "":

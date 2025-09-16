@@ -9,7 +9,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 22.5,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 5
   },
   "ju87": {
     "type": "air",
@@ -20,7 +20,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 10
   },
   "spitfire": {
     "type": "air",
@@ -31,7 +31,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 18.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 5
   },
   "battle": {
     "type": "air",
@@ -42,7 +42,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 8
   },
   "f4u": {
     "type": "air",
@@ -53,7 +53,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 22.5,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 5
   },
   "sbd": {
     "type": "air",
@@ -64,7 +64,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 8
   },
   "yak9": {
     "type": "air",
@@ -75,7 +75,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 15.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 5
   },
   "il2": {
     "type": "air",
@@ -86,7 +86,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 6.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 10
   },
   "zero": {
     "type": "air",
@@ -97,7 +97,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 30.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 5
   },
   "b7a": {
     "type": "air",
@@ -108,7 +108,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 8
   },
   "t34": {
     "type": "tank",
@@ -119,7 +119,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 3
   },
   "panzer": {
     "type": "tank",
@@ -130,7 +130,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 3
   },
   "m4": {
     "type": "tank",
@@ -141,7 +141,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 2
   },
   "t97t": {
     "type": "tank",
@@ -152,7 +152,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 2
   },
   "valentine": {
     "type": "tank",
@@ -163,7 +163,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 2
   },
   "kv2": {
     "type": "tank",
@@ -174,7 +174,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 24,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 4
   },
   "tiger": {
     "type": "tank",
@@ -185,7 +185,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 12,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 4
   },
   "t98t": {
     "type": "tank",
@@ -229,6 +229,6 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 7,
-    "FuelPerSecond": 1
+    "FuelPerSecond": 3
   }
 };

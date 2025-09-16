@@ -47,6 +47,11 @@
         "minecraft:movement": {
           "value": 0.0
         }
+      },
+      "have_fuel": {
+        "minecraft:movement": {
+          "value": 0.15
+        }
       }
     },
     "components": {
@@ -244,9 +249,9 @@
         }
       },
       "gvcv5:have_fuel": {
-        "remove": {
+        "add": {
           "component_groups": [
-            "no_fuel"
+            "have_fuel"
           ]
         }
       }

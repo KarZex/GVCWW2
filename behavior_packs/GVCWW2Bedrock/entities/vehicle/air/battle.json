@@ -27,6 +27,11 @@
         "minecraft:movement": {
           "value": 0.0
         }
+      },
+      "have_fuel": {
+        "minecraft:movement": {
+          "value": 0.8
+        }
       }
     },
     "components": {
@@ -234,20 +239,20 @@
           "component_groups": [
             "despawning"
           ]
-        },
-        "gvcv5:no_fuel": {
-          "add": {
-            "component_groups": [
-              "no_fuel"
-            ]
-          }
-        },
-        "gvcv5:have_fuel": {
-          "remove": {
-            "component_groups": [
-              "no_fuel"
-            ]
-          }
+        }
+      },
+      "gvcv5:no_fuel": {
+        "add": {
+          "component_groups": [
+            "no_fuel"
+          ]
+        }
+      },
+      "gvcv5:have_fuel": {
+        "add": {
+          "component_groups": [
+            "have_fuel"
+          ]
         }
       }
     }

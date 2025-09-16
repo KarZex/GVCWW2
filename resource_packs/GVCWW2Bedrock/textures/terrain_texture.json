@@ -153,6 +153,51 @@
     },
     "spawn_vehicle_b7a": {
       "textures": "textures/blocks/vehicle_b7a"
+    },
+    "spawn_addon_pmc": {
+      "textures": "textures/blocks/addon_pmc"
+    },
+    "spawn_vehicle_battle": {
+      "textures": "textures/blocks/vehicle_battle"
+    },
+    "spawn_vehicle_f4u": {
+      "textures": "textures/blocks/vehicle_f4u"
+    },
+    "spawn_vehicle_sbd": {
+      "textures": "textures/blocks/vehicle_sbd"
+    },
+    "spawn_vehicle_t34": {
+      "textures": "textures/blocks/vehicle_t34"
+    },
+    "spawn_vehicle_panzer": {
+      "textures": "textures/blocks/vehicle_panzer"
+    },
+    "spawn_vehicle_m4": {
+      "textures": "textures/blocks/vehicle_m4"
+    },
+    "spawn_vehicle_t97t": {
+      "textures": "textures/blocks/vehicle_t97t"
+    },
+    "spawn_vehicle_valentine": {
+      "textures": "textures/blocks/vehicle_valentine"
+    },
+    "spawn_vehicle_kv2": {
+      "textures": "textures/blocks/vehicle_kv2"
+    },
+    "spawn_vehicle_tiger": {
+      "textures": "textures/blocks/vehicle_tiger"
+    },
+    "spawn_vehicle_t98t": {
+      "textures": "textures/blocks/vehicle_t98t"
+    },
+    "spawn_vehicle_t17e1": {
+      "textures": "textures/blocks/vehicle_t17e1"
+    },
+    "spawn_vehicle_t17e2": {
+      "textures": "textures/blocks/vehicle_t17e2"
+    },
+    "spawn_vehicle_wirbelwind": {
+      "textures": "textures/blocks/vehicle_wirbelwind"
     }
   }
 }

@@ -1,22 +1,22 @@
 name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,attack,Fuel,main2,main3,inventory,id,third_person_camera_radius,maxtuen
-vehicle,bf109,air,180,1.2,20mmmcair,1,,20,,0,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,mig17,15,22.5
-vehicle,ju87,air,180,1,7.62mmmgs,0,bomb,50,37mmrocket,50,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,su27,15,9
-vehicle,spitfire,air,240,1,12.7mmmg,0,,20,,0,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,mig17,16,18
-vehicle,battle,air,200,0.8,7.62mmmg,0,bomb,50,,50,,0,F,,5,4,2,F,"[ ""player""]","[ 0, 1.45, 0.1 ]","[ 0, 1.45, -2.35 ]",,,,,30,0,1,NO,NO,,su27,16,9
-vehicle,f4u,air,200,1,12.7mmmg,0,,20,,0,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,mig17,16,22.5
-vehicle,sbd,air,200,0.8,7.62mmmgs,0,bomb,50,,50,,0,F,,5,4,2,F,"[ ""player""]","[ 0, 1.45, 0.1 ]","[ 0, 1.45, -1.6 ]",,,,,30,0,1,NO,NO,,su27,16,9
-vehicle,yak9,air,200,1,20mmmcair,0,,20,,0,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,mig17,15,15
-vehicle,il2,air,360,0.6,20mmmcaird,1,bombii,50,37mmrocket,50,,0,F,,5,4,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,su27,15,6
-vehicle,zero,air,160,0.85,20mmmcaird,1,,20,,0,,0,F,,4,3,1,F,"[ ""player""]","[ 0, 1.45, 0.1 ]",,,,,,30,0,1,NO,NO,,mig17,15,30
-vehicle,b7a,air,200,0.75,20mmmcaird,1,bomb,50,,0,,0,F,,5,4,2,F,"[ ""player""]","[ 0, 1.45, 0.1 ]","[ 0, 1.45, -1.6 ]",,,,,30,0,1,NO,NO,,mig17,15,9
-vehicle,t34,tank,240,0.17,vmg,1,85mm,80,,0,,0,T,,3,2,1,F,"[ ""SOVteam"",""player""]","[ 0.0, 2.4, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,panzer,tank,180,0.25,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.8, 0.0]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,m4,tank,200,0.2,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""USAteam"",""player""]","[ 0.0, 2.6, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,t97t,tank,160,0.22,vmg,1,47mm,30,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,valentine,tank,280,0.15,vmg,1,57mm,40,,0,,0,T,,3,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,4,4,1,F,"[ ""SOVteam"",""player""]","[0, 3.2,0.0 ]",,,,,,30,24,1,NO,NO,,kv2,0,1
-vehicle,tiger,tank,350,0.15,vmg,1,88mm,80,,0,,0,T,,4,4,1,F,"[ ""GERteam"",""player""]","[0, 2.7,0.0 ]",,,,,,30,12,1,NO,NO,,kv2,0,1
+vehicle,bf109,air,180,1.2,20mmmcair,1,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,5,NO,NO,,mig17,15,22.5
+vehicle,ju87,air,180,1,7.62mmmgs,0,bomb,50,37mmrocket,50,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,10,NO,NO,,su27,15,9
+vehicle,spitfire,air,240,1,12.7mmmg,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,5,NO,NO,,mig17,16,18
+vehicle,battle,air,200,0.8,7.62mmmg,0,bomb,50,,50,,0,F,,5,4,2,F,[ "player"],"[ 0, 1.45, 0.1 ]","[ 0, 1.45, -2.35 ]",,,,,30,0,8,NO,NO,,su27,16,9
+vehicle,f4u,air,200,1,12.7mmmg,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,5,NO,NO,,mig17,16,22.5
+vehicle,sbd,air,200,0.8,7.62mmmgs,0,bomb,50,,50,,0,F,,5,4,2,F,[ "player"],"[ 0, 1.45, 0.1 ]","[ 0, 1.45, -1.6 ]",,,,,30,0,8,NO,NO,,su27,16,9
+vehicle,yak9,air,200,1,20mmmcair,0,,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,5,NO,NO,,mig17,15,15
+vehicle,il2,air,360,0.6,20mmmcaird,1,bombii,50,37mmrocket,50,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,10,NO,NO,,su27,15,6
+vehicle,zero,air,160,0.85,20mmmcaird,1,,20,,0,,0,F,,4,3,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,0,5,NO,NO,,mig17,15,30
+vehicle,b7a,air,200,0.75,20mmmcaird,1,bomb,50,,0,,0,F,,5,4,2,F,[ "player"],"[ 0, 1.45, 0.1 ]","[ 0, 1.45, -1.6 ]",,,,,30,0,8,NO,NO,,mig17,15,9
+vehicle,t34,tank,240,0.17,vmg,1,85mm,80,,0,,0,T,,3,2,1,F,"[ ""SOVteam"",""player""]","[ 0.0, 2.4, 0.0 ]",,,,,,30,7,3,NO,NO,,t34,0,1
+vehicle,panzer,tank,180,0.25,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.8, 0.0]",,,,,,30,7,3,NO,NO,,t34,0,1
+vehicle,m4,tank,200,0.2,vmg,1,76mm,60,,0,,0,T,,3,2,1,F,"[ ""USAteam"",""player""]","[ 0.0, 2.6, 0.0 ]",,,,,,30,7,2,NO,NO,,t34,0,1
+vehicle,t97t,tank,160,0.22,vmg,1,47mm,30,,0,,0,T,,3,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,2,NO,NO,,t34,0,1
+vehicle,valentine,tank,280,0.15,vmg,1,57mm,40,,0,,0,T,,3,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,2,NO,NO,,t34,0,1
+vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,4,4,1,F,"[ ""SOVteam"",""player""]","[0, 3.2,0.0 ]",,,,,,30,24,4,NO,NO,,kv2,0,1
+vehicle,tiger,tank,350,0.15,vmg,1,88mm,80,,0,,0,T,,4,4,1,F,"[ ""GERteam"",""player""]","[0, 2.7,0.0 ]",,,,,,30,12,4,NO,NO,,kv2,0,1
 vehicle,t98t,tank,120,0.28,vmg,1,37mm,20,,0,,0,T,,2.5,2,1,F,"[ ""JAPteam"",""player""]","[ 0.0, 1.4, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
 vehicle,t17e1,apc,150,0.25,vmg,1,37mm,20,,0,,0,T,,2.5,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 2, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
 vehicle,t17e2,apc,150,0.25,20mmmcaird,1,,0,,0,,0,T,,2.5,2,1,F,"[ ""ENGteam"",""player""]","[ 0.0, 1.5, 0.0 ]",,,,,,30,7,1,NO,NO,,t34,0,1
-vehicle,wirbelwind,tank,180,0.25,20mmmcairw,1,,0,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.8, 0.0]",,,,,,30,7,1,NO,NO,,t34,0,1
+vehicle,wirbelwind,tank,180,0.25,20mmmcairw,1,,0,,0,,0,T,,3,2,1,F,"[ ""GERteam"",""player""]","[ 0.0, 1.8, 0.0]",,,,,,30,7,3,NO,NO,,t34,0,1
