@@ -394,6 +394,22 @@ async function airstrike(projectile,level,team){
 	}
 }
 
+function hasFuel(player,vehicle,amount){
+	if( !world.getDynamicProperty(`gvcv5:doFuelConsume`) ){
+		return `{"text":"Fuel:§aInfinite§r\n"}`;
+	}
+	else{
+		if( amount < 600 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerTick`]) ){
+			return `{"text":"Fuel:§4${amount}\n"}`;
+		}
+		else if( amount < 2400 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerTick`]) ){
+			return `{"text":"Fuel:§g${amount}\n"}`;
+		}
+		else{
+			return `{"text":"Fuel:§a${amount}\n"}`;
+		}
+	}
+}
 world.afterEvents.entitySpawn.subscribe( e => {
 	if( e.entity.typeId == "fire:lunge"  ){
 		const projectile = e.entity;
@@ -595,6 +611,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
 		const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
 		const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
+		let fuel = 0;
+		let fuelSpendonThisTick = false;
 		let r = {
 			x:v.x/abs_v,
 			y:v.y/abs_v,
@@ -604,7 +622,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			abs_v = maxSpeed
 		}
 
-		if( abs_v < 0.5 ){
+		if( abs_v < 0.1 ){
 			abs_v = 0
 		}
 		else{
@@ -671,13 +689,44 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 
 			}
-			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+			if( world.getDynamicProperty(`gvcv5:fuelConsume`) ){
+				for(let i = 0; i < 36; i++){
+					let Haditem = player.getComponent("inventory").container.getItem(i);
+					if( Haditem != undefined && Haditem.typeId == `gvcv5:fuel` ){
+						const ItemFuel = Haditem.getComponent(ItemComponentTypes.Durability).maxDurability -  Haditem.getComponent(ItemComponentTypes.Durability).damage
+						if( !fuelSpendonThisTick && ItemFuel > vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["FuelPerTick"] ){
+							Haditem.getComponent(ItemComponentTypes.Durability).damage += vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["FuelPerTick"];
+							player.getComponent("inventory").container.setItem(i,Haditem);
+							fuel = fuel + ItemFuel - vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["FuelPerTick"];
+							fuelSpendonThisTick = true;
+							continue;
+						}
+						else if( !fuelSpendonThisTick ){
+							player.getComponent("inventory").container.setItem(i,undefined);
+							fuelSpendonThisTick = true;
+							fuel = fuel + ItemFuel;
+							continue;
+						}
+						else if( fuelSpendonThisTick ){
+							fuel = fuel + ItemFuel;
+							continue;
+						}
+					}
+				}
+			}
+			if( !world.getDynamicProperty(`gvcv5:fuelConsume`) || fuelSpendonThisTick ){
+				airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+			}
+			else{
+				
+			}
 		}
 		player.runCommand(`
 			titleraw @s[tag=!reload,tag=!down] 
 			actionbar {"rawtext":[${airCraftlader(player)},
 			{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
 			{"text":"HP: ${vehicleHp(HP,HPMax)}"},
+			${hasFuel(player,airCraft,fuel)},
 			${subWeapon(player,airCraft)},
 			${mainWeapon0(player,airCraft)},
 			${mainWeapon1(player,airCraft)},
@@ -1166,6 +1215,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const form = new ModalFormData();
 			form.title(`gameRule Settings`);
 			form.toggle(`Enable WorldLimit`, {defaultValue: world.getDynamicProperty(`gvcv5:worldLimit`),tooltip:`Enable WorldLimit`});
+			form.toggle(`Vehchle Fuel Consumption`, {defaultValue: world.getDynamicProperty(`gvcv5:doFuelConsume`),tooltip:`Vechile Fuel Consumption`});
+			form.toggle.apply(`Vehcle Spend Ammo`, {defaultValue: world.getDynamicProperty(`gvcv5:doVechileAmmoSpend`),tooltip:`Vehcle Spend Ammo`});
 			form.textField(`World Limit O`,`${world.getDynamicProperty(`gvcv5:worldLimitO`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitO`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitO`)}`});
 			form.textField(`World Limit N`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`});
 			form.textField(`World Limit E`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`});
@@ -1175,6 +1226,14 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( world.getDynamicProperty(`gvcv5:worldLimit`) != Boolean(result.formValues[0]) ){
 						world.setDynamicProperty(`gvcv5:worldLimit`,Boolean(result.formValues[0]));
 						world.sendMessage(`World Limit is now ${result.formValues[0]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:doFuelConsume`) != Boolean(result.formValues[1]) ){
+						world.setDynamicProperty(`gvcv5:doFuelConsume`,Boolean(result.formValues[1]));
+						world.sendMessage(`Vechile Fuel Consumption is now ${result.formValues[1]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:doVechileAmmoSpend`) != Boolean(result.formValues[2]) ){
+						world.setDynamicProperty(`gvcv5:doVechileAmmoSpend`,Boolean(result.formValues[2]));
+						world.sendMessage(`Vehcle Spend Ammo is now ${result.formValues[2]}`);
 					}
 					if( world.getDynamicProperty(`gvcv5:worldLimitO`) != Number(result.formValues[1]) ){
 						world.setDynamicProperty(`gvcv5:worldLimitO`,Number(result.formValues[1]));

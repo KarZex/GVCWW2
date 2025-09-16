@@ -377,6 +377,12 @@ async function setUp(){
     if( world.getDynamicProperty("gvcv5:worldLimit") == undefined ){
         world.setDynamicProperty("gvcv5:worldLimit",false);
     }
+    if( world.getDynamicProperty(`gvcv5:doFuelConsume`) == undefined ){
+        world.setDynamicProperty(`gvcv5:doFuelConsume`,true);
+    }
+    if( world.getDynamicProperty(`gvcv5:doVechileAmmoSpend`) == undefined ){
+        world.setDynamicProperty(`gvcv5:doVechileAmmoSpend`,true);
+    }
     if( world.getDynamicProperty(`gvcv5:worldLimitO`) == undefined ){
         world.setDynamicProperty(`gvcv5:worldLimitO`,2048);
     }
