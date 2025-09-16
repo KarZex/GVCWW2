@@ -692,7 +692,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if( world.getDynamicProperty(`gvcv5:fuelConsume`) ){
 				for(let i = 0; i < 36; i++){
 					let Haditem = player.getComponent("inventory").container.getItem(i);
-					if( Haditem != undefined && Haditem.typeId == `gvcv5:fuel` ){
+					if( Haditem != undefined && Haditem.typeId.includes(`gvcv5:fuel`) ){
 						const ItemFuel = Haditem.getComponent(ItemComponentTypes.Durability).maxDurability -  Haditem.getComponent(ItemComponentTypes.Durability).damage
 						if( !fuelSpendonThisTick && ItemFuel > vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["FuelPerTick"] ){
 							Haditem.getComponent(ItemComponentTypes.Durability).damage += vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["FuelPerTick"];
@@ -744,7 +744,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		//player.teleport( player.location, {rotation: {x: Number(rotation[0]), y: Number(rotation[1])} } );
 	}
 	else if( e.id == "zex:vtext"){
-		let vehicle = e.sourceEntity;
+		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
@@ -758,9 +758,40 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
 			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;
 			const HPMax = vehicle.getComponent(EntityComponentTypes.Health).defaultValue;
+			let fuel = 0;
+			let fuelSpendonThisTick = false;
+			if( world.getDynamicProperty(`gvcv5:fuelConsume`) && isMoving(vehicle) ){
+				for(let i = 0; i < 36; i++){
+					let Haditem = player.getComponent("inventory").container.getItem(i);
+					if( Haditem != undefined && Haditem.typeId.includes(`gvcv5:fuel`) ){
+						const ItemFuel = Haditem.getComponent(ItemComponentTypes.Durability).maxDurability -  Haditem.getComponent(ItemComponentTypes.Durability).damage
+						if( !fuelSpendonThisTick && ItemFuel > vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["FuelPerTick"] ){
+							Haditem.getComponent(ItemComponentTypes.Durability).damage += vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["FuelPerTick"];
+							player.getComponent("inventory").container.setItem(i,Haditem);
+							fuel = fuel + ItemFuel - vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["FuelPerTick"];
+							fuelSpendonThisTick = true;
+							continue;
+						}
+						else if( !fuelSpendonThisTick ){
+							player.getComponent("inventory").container.setItem(i,undefined);
+							fuelSpendonThisTick = true;
+							fuel = fuel + ItemFuel;
+							continue;
+						}
+						else if( fuelSpendonThisTick ){
+							fuel = fuel + ItemFuel;
+							continue;
+						}
+					}
+				}
+			}
+			if( world.getDynamicProperty(`gvcv5:fuelConsume`) && !fuelSpendonThisTick ){
+				vehicle.clearVelocity();
+			}
 			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar 
 				{"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
 				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
+				${hasFuel(player,vehicle,fuel)},
 				${subWeapon(player,vehicle)},
 				${mainWeapon0(player,vehicle)},
 				${mainWeapon1(player,vehicle)},

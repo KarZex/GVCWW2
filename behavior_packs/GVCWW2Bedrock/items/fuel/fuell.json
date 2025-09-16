@@ -1,0 +1,22 @@
+{
+
+	"format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "gvcv5:fuel_l",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+
+    "components": {
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": false,
+      "minecraft:durability": {
+        "max_durability": 30000
+      },
+      "minecraft:icon": "rep"
+    }
+  }
+}
