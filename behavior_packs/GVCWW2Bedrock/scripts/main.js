@@ -408,11 +408,11 @@ function hasFuel(player,vehicle){
 			}
 		}
 		//30 second to empty
-		if( fuel < 600 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
+		if( fuel < 30 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
 			return `{"text":"Fuel:§4${fuel}\n"}`;
 		}
 		//120 second to empty
-		else if( fuel < 2400 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
+		else if( fuel < 120 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
 			return `{"text":"Fuel:§g${fuel}\n"}`;
 		}
 		else{
@@ -640,9 +640,14 @@ system.runInterval( () => {
 					}
 				}
 			}
-			if( world.getDynamicProperty(`gvcv5:fuelConsume`) && !fuelSpendonThisTick ){
-				vehicle.clearVelocity();
+			if( world.getDynamicProperty(`gvcv5:fuelConsume`) && !fuelSpendonThisTick && !vehicle.hasTag(`noFuel`) ){
+				vehicle.triggerEvent(`gvcv5:no_fuel`);
+				vehicle.addTag(`noFuel`);
 			}
+			else if( (!world.getDynamicProperty(`gvcv5:fuelConsume`) || fuelSpendonThisTick) && vehicle.hasTag(`noFuel`) ){
+				vehicle.triggerEvent(`gvcv5:have_fuel`);
+				vehicle.removeTag(`noFuel`);
+			}	
 		}
 		else{
 			continue;
