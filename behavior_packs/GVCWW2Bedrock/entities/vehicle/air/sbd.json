@@ -23,26 +23,9 @@
           "into": "addon:des"
         }
       },
-      "firet": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:g12",
-            "num_to_spawn": 1
-          }
-        }
-      },
-      "firett": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:g22",
-            "num_to_spawn": 1
-          }
+      "no_fuel": {
+        "minecraft:movement": {
+          "value": 0.0
         }
       }
     },
@@ -251,6 +234,20 @@
           "component_groups": [
             "despawning"
           ]
+        },
+        "gvcv5:no_fuel": {
+          "add": {
+            "component_groups": [
+              "no_fuel"
+            ]
+          }
+        },
+        "gvcv5:have_fuel": {
+          "remove": {
+            "component_groups": [
+              "no_fuel"
+            ]
+          }
         }
       }
     }

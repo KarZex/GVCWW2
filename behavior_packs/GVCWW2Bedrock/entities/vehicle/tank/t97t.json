@@ -42,6 +42,11 @@
       },
       "despawning": {
         "minecraft:instant_despawn": {}
+      },
+      "no_fuel": {
+        "minecraft:movement": {
+          "value": 0.0
+        }
       }
     },
     "components": {
@@ -228,6 +233,20 @@
         "add": {
           "component_groups": [
             "despawning"
+          ]
+        }
+      },
+      "gvcv5:no_fuel": {
+        "add": {
+          "component_groups": [
+            "no_fuel"
+          ]
+        }
+      },
+      "gvcv5:have_fuel": {
+        "remove": {
+          "component_groups": [
+            "no_fuel"
           ]
         }
       }
