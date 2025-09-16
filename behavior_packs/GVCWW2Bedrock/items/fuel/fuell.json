@@ -14,7 +14,7 @@
       "minecraft:max_stack_size": 1,
       "minecraft:hand_equipped": false,
       "minecraft:durability": {
-        "max_durability": 30000
+        "max_durability": 4800
       },
       "minecraft:icon": "rep"
     }
