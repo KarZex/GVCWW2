@@ -18,6 +18,11 @@
             {
               "test": "has_biome_tag",
               "operator": "!=",
+              "value": "desert"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
               "value": "ocean"
             },
             {
@@ -31,7 +36,7 @@
     },
     "distribution": {
       "iterations": 1,
-      "scatter_chance": 0.05,
+      "scatter_chance": 0.1,
       "x": {
         "distribution": "uniform",
         "extent": [

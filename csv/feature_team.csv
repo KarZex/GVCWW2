@@ -1,7 +1,7 @@
 name,engname,id,old_id,x方向の長さ,z方向の長さ,深さ,確率,旗,船かどうか,占領時コマンド,出現バイオーム,,,,,,,,,,,,,,max
 ダンジョン_兵舎,DDD_barracks,barracks,d1,32,32,5,0.1,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
-ダンジョン_石油採掘所,DDD_oil_factory,oilfactory,d2,32,64,10,0.05,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
-ダンジョン_飛行場,DDD_airport,airport,d3,32,48,32,0.05,M,F,b6,all,;overworld,F;ocean,F;river,,,,,,,,,,,
+ダンジョン_石油採掘所,DDD_oil_factory,oilfactory,d2,32,64,5,0.1,M,F,b6,any,;swamp,;desert,,,,,,,,,,,,
+ダンジョン_飛行場,DDD_airport,airport,d3,32,48,5,0.1,M,F,b6,all,;overworld,F;desert,F;ocean,F;river,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
