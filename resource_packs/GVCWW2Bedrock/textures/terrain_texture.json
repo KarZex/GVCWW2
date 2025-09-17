@@ -198,6 +198,9 @@
     },
     "spawn_vehicle_wirbelwind": {
       "textures": "textures/blocks/vehicle_wirbelwind"
+    },
+    "spawn_vehicle_20mmaa": {
+      "textures": "textures/blocks/vehicle_20mmaa"
     }
   }
 }
