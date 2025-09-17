@@ -64,6 +64,14 @@
             }
           ]
         },
+        "ckg": {
+          "on_entry": [
+            "/execute unless block ~~-1~ minecraft:grass_path unless block ~~-1~ minecraft:water run event entity @s gvcv5:explode"
+          ],
+          "transitions": [
+            { "g": "1.0" }
+          ]
+        },
         "a": {
           "on_entry": [
             "/scriptevent zex:air air"
@@ -71,7 +79,7 @@
           "transitions": [
             { "exit": "!query.has_rider" },
             {
-              "g": "query.is_on_ground && query.is_moving"
+              "ckg": "query.is_on_ground && query.is_moving"
             },
             {
               "a2": "!query.is_on_ground"
@@ -85,7 +93,7 @@
           "transitions": [
             { "exit": "!query.has_rider" },
             {
-              "g": "query.is_on_ground && query.is_moving"
+              "ckg": "query.is_on_ground && query.is_moving"
             },
             {
               "a": "!query.is_on_ground"

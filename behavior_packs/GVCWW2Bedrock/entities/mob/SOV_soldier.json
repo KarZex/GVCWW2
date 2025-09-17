@@ -2922,6 +2922,21 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:wirbelwind no_ride_change summon_enemy"
         }
+      },
+      "vehicle:20mmaa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:flak18": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:flak18 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:pak40": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
+        }
       }
     }
   }

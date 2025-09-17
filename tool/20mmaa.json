@@ -19,7 +19,17 @@
     "component_groups": {
       "despawning": {
         "minecraft:instant_despawn": {}
-      }
+      },
+			"no_fuel": {
+        "minecraft:movement": {
+          "value": 0.0
+        }
+			},
+			"have_fuel": {
+        "minecraft:movement": {
+          "value": 0.0
+        }
+			}
     },
     "components": {
       "minecraft:boss": {

@@ -29,7 +29,7 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1
 7.62mmMG,7.62mmmg,4,4,0,1,0,F,mgiibullet,override,,1
 12.7mmHMGx4,12.7mmmg,6,12,0,1,0,F,hmgbullet,override,Q,1
 14.5mmHMG,14.5mmhmg,6,12,0,2,0,F,hmgbullet,override,,1
-20mmMC,20mmmc,10,4,0,0,1,F,mgiibullet,entityExplosion,,1
+20mmMC,20mmmc,10,4,0,0,1,F,hmgbullet,override,,1
 20mmMC,20mmmcheri,10,4,0,1,1,F,mgiibullet,override,,1
 23mmmc,23mmmc,12,4,0,2,1,F,mgiibullet,entityExplosion,,1
 25mmmc,25mmmc,20,4,0,9,1,F,hmgiibullet,entityExplosion,,1

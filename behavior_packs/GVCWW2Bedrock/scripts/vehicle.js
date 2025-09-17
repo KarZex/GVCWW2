@@ -9,7 +9,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 22.5,
     "gattack": 0,
-    "FuelPerSecond": 5
+    "FuelPerSecond": 6
   },
   "ju87": {
     "type": "air",
@@ -20,7 +20,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 10
+    "FuelPerSecond": 15
   },
   "spitfire": {
     "type": "air",
@@ -31,7 +31,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 18.0,
     "gattack": 0,
-    "FuelPerSecond": 5
+    "FuelPerSecond": 6
   },
   "battle": {
     "type": "air",
@@ -42,7 +42,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 8
+    "FuelPerSecond": 12
   },
   "f4u": {
     "type": "air",
@@ -53,7 +53,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 22.5,
     "gattack": 0,
-    "FuelPerSecond": 5
+    "FuelPerSecond": 6
   },
   "sbd": {
     "type": "air",
@@ -64,7 +64,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 8
+    "FuelPerSecond": 12
   },
   "yak9": {
     "type": "air",
@@ -75,7 +75,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 15.0,
     "gattack": 0,
-    "FuelPerSecond": 5
+    "FuelPerSecond": 6
   },
   "il2": {
     "type": "air",
@@ -86,7 +86,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 6.0,
     "gattack": 0,
-    "FuelPerSecond": 10
+    "FuelPerSecond": 15
   },
   "zero": {
     "type": "air",
@@ -97,7 +97,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 30.0,
     "gattack": 0,
-    "FuelPerSecond": 5
+    "FuelPerSecond": 6
   },
   "b7a": {
     "type": "air",
@@ -108,7 +108,7 @@ export const vehicleData = {
     "main3": "",
     "turn": 9.0,
     "gattack": 0,
-    "FuelPerSecond": 8
+    "FuelPerSecond": 12
   },
   "t34": {
     "type": "tank",
@@ -230,5 +230,38 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 3
+  },
+  "20mmaa": {
+    "type": "set",
+    "speed": 0.0,
+    "sub": "20mmmcair",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 0,
+    "FuelPerSecond": 0
+  },
+  "flak18": {
+    "type": "set",
+    "speed": 0.0,
+    "sub": "",
+    "main1": "125mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 0,
+    "FuelPerSecond": 0
+  },
+  "pak40": {
+    "type": "set",
+    "speed": 0.0,
+    "sub": "",
+    "main1": "105mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 0,
+    "FuelPerSecond": 0
   }
 };

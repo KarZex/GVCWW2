@@ -15,6 +15,16 @@
 	  }
     },
     "component_groups": {
+			"explode": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true,
+          "fuse_lit": true,
+          "power": 5,
+          "breaks_blocks": true
+        }
+			},
 			"despawning": {
         "minecraft:transformation": {
           "into": "addon:des"
@@ -214,6 +224,13 @@
         "add": {
           "component_groups": [
             "have_fuel"
+          ]
+        }
+      },
+      "gvcv5:explode": {
+        "add": {
+          "component_groups": [
+            "explode"
           ]
         }
       }
