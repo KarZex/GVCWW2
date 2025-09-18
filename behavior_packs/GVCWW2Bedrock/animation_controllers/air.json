@@ -77,7 +77,6 @@
             "/scriptevent zex:air air"
           ],
           "transitions": [
-            { "exit": "!query.has_rider" },
             {
               "ckg": "query.is_on_ground && query.is_moving"
             },
@@ -91,7 +90,6 @@
             "/scriptevent zex:air air"
           ],
           "transitions": [
-            { "exit": "!query.has_rider" },
             {
               "ckg": "query.is_on_ground && query.is_moving"
             },
