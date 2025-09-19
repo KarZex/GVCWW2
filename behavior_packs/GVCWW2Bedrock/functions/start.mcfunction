@@ -14,10 +14,13 @@ execute as @a[tag=down] run function down
 execute as @a[tag=rise] run function rise
 execute as @e[tag=raid] run function raid/zombietarget
 
+execute as @a[scores={printDamage=-5..}] run scriptevent gvcv5:printDamage
+scoreboard players remove @a[scores={printDamage=-5..}] printDamage 1
+
 gamemode a @a[m=s,scores={antiMining=1..}]
 execute as @a[m=a,scores={antiMining=1..}] run function antiMining
 
-execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remove @s subWeapon 1
+#execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remove @s subWeapon 1
 
 function sounds
 

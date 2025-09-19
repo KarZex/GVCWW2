@@ -208,7 +208,7 @@ for row in csv_reader:
         if v_sub != "":
             s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{subWeapon=..{2}}}] fire:{1}\n".format(v_id,v_sub,maxsubcool)
             s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{subWeapon=..{2}}}] subWeapon 1\n".format(v_id,v_sub,maxsubcool)
-            s_func += "\nscoreboard players set @s maxsubcool {1}\n".format(v_id,maxsubcool)
+            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s maxsubcool {1}\n".format(v_id,maxsubcool)
             if v_subcool > 0:
                 s_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s scool {1}\n".format(v_id,v_subcool+1)
             if v_main == "":

@@ -38,11 +38,9 @@ for row in csv_reader:
         gun_fullauto = int(row[16])
         gun_break = int(row[19])
         gun_special = row[21]
+        gun_slow = int(row[10])
 
-        if(row[10] == "T"):
-            gun_break_block = True
-        else:
-            gun_break_block = False
+        gun_break_block = False
 
         if(row[12] == "T"):
             gun_onehand = True
@@ -82,7 +80,7 @@ for row in csv_reader:
         text += "item.gun:{0}={2}{1}§r\n".format(gun_id,row[0],Rare)
 
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"speed": gun_power * 0.2, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"slowness": gun_slow,"speed": gun_power * 0.2, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
 
         #player
         spawn_entity = { 

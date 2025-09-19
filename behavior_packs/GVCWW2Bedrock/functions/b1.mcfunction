@@ -1,19 +1,19 @@
 effect @s[tag=!ride] health_boost 99999 70 true
 effect @s[tag=!ride] instant_health 1 255 true
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:bf109] run event entity @s 20mmmcair
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:bf109] run event entity @s 20mmmcaird
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ju87] run event entity @s bomb
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entity @s 12.7mmmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entity @s 20mmmcaird
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:battle] run event entity @s bomb
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f4u] run event entity @s 12.7mmmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f4u] run event entity @s 20mmmcaird
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:sbd] run event entity @s bomb
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak9] run event entity @s 20mmmcair
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak9] run event entity @s 20mmmcaird
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s bombii
 

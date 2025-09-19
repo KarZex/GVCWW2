@@ -9,6 +9,7 @@ export const gunData = {
   },
   "mosin": {
     "damage": 16,
+    "slowness": 0,
     "speed": 1.6,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -17,6 +18,7 @@ export const gunData = {
   },
   "ppsh": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.7200000000000001,
     "maxGunAmmo": 72,
     "reloadTime": 45,
@@ -25,6 +27,7 @@ export const gunData = {
   },
   "dp28": {
     "damage": 8,
+    "slowness": 2,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 47,
     "reloadTime": 80,
@@ -33,6 +36,7 @@ export const gunData = {
   },
   "tt33": {
     "damage": 7,
+    "slowness": 0,
     "speed": 0.6000000000000001,
     "maxGunAmmo": 9,
     "reloadTime": 30,
@@ -41,6 +45,7 @@ export const gunData = {
   },
   "ptrd": {
     "damage": 50,
+    "slowness": 0,
     "speed": 3.2,
     "maxGunAmmo": 1,
     "reloadTime": 30,
@@ -49,6 +54,7 @@ export const gunData = {
   },
   "k98": {
     "damage": 16,
+    "slowness": 0,
     "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -57,6 +63,7 @@ export const gunData = {
   },
   "mp40": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.8,
     "maxGunAmmo": 32,
     "reloadTime": 45,
@@ -65,6 +72,7 @@ export const gunData = {
   },
   "stg44": {
     "damage": 6,
+    "slowness": 0,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 30,
     "reloadTime": 60,
@@ -73,6 +81,7 @@ export const gunData = {
   },
   "mg42": {
     "damage": 8,
+    "slowness": 4,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 75,
     "reloadTime": 100,
@@ -81,6 +90,7 @@ export const gunData = {
   },
   "p90": {
     "damage": 25,
+    "slowness": 0,
     "speed": 0.5,
     "maxGunAmmo": 1,
     "reloadTime": 60,
@@ -89,6 +99,7 @@ export const gunData = {
   },
   "p38": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.68,
     "maxGunAmmo": 8,
     "reloadTime": 30,
@@ -96,7 +107,8 @@ export const gunData = {
     "damageType": "override"
   },
   "m1": {
-    "damage": 14,
+    "damage": 12,
+    "slowness": 0,
     "speed": 2.4000000000000004,
     "maxGunAmmo": 8,
     "reloadTime": 60,
@@ -105,6 +117,7 @@ export const gunData = {
   },
   "spring": {
     "damage": 20,
+    "slowness": 0,
     "speed": 1.6,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -113,6 +126,7 @@ export const gunData = {
   },
   "bar": {
     "damage": 8,
+    "slowness": 1,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
     "reloadTime": 80,
@@ -121,6 +135,7 @@ export const gunData = {
   },
   "thom": {
     "damage": 5,
+    "slowness": 0,
     "speed": 0.7200000000000001,
     "maxGunAmmo": 20,
     "reloadTime": 45,
@@ -129,6 +144,7 @@ export const gunData = {
   },
   "m1911": {
     "damage": 5,
+    "slowness": 0,
     "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 30,
@@ -137,6 +153,7 @@ export const gunData = {
   },
   "m1b": {
     "damage": 30,
+    "slowness": 0,
     "speed": 0.44000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 60,
@@ -145,6 +162,7 @@ export const gunData = {
   },
   "leemk4": {
     "damage": 16,
+    "slowness": 0,
     "speed": 2.4000000000000004,
     "maxGunAmmo": 10,
     "reloadTime": 60,
@@ -153,6 +171,7 @@ export const gunData = {
   },
   "piat": {
     "damage": 25,
+    "slowness": 0,
     "speed": 0.5,
     "maxGunAmmo": 1,
     "reloadTime": 80,
@@ -161,6 +180,7 @@ export const gunData = {
   },
   "lewis": {
     "damage": 8,
+    "slowness": 2,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 47,
     "reloadTime": 80,
@@ -169,6 +189,7 @@ export const gunData = {
   },
   "brengun": {
     "damage": 6,
+    "slowness": 1,
     "speed": 0.8,
     "maxGunAmmo": 30,
     "reloadTime": 80,
@@ -177,6 +198,7 @@ export const gunData = {
   },
   "stengun": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.8,
     "maxGunAmmo": 32,
     "reloadTime": 45,
@@ -185,6 +207,7 @@ export const gunData = {
   },
   "t38": {
     "damage": 14,
+    "slowness": 0,
     "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
@@ -193,6 +216,7 @@ export const gunData = {
   },
   "t100": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.8,
     "maxGunAmmo": 30,
     "reloadTime": 45,
@@ -201,6 +225,7 @@ export const gunData = {
   },
   "t99": {
     "damage": 6,
+    "slowness": 1,
     "speed": 1.2000000000000002,
     "maxGunAmmo": 30,
     "reloadTime": 80,
@@ -209,6 +234,7 @@ export const gunData = {
   },
   "t14": {
     "damage": 4,
+    "slowness": 0,
     "speed": 0.48,
     "maxGunAmmo": 8,
     "reloadTime": 30,

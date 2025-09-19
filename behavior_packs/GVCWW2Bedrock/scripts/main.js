@@ -21,6 +21,34 @@ export const tankImmuneEntities = [
     `xp_orb`
 ]
 
+const headshotTypes = [
+	//2m height entities like player(humanoid)
+	`minecraft:player`,
+	`minecraft:zombie`,
+	`minecraft:skeleton`,
+	`minecraft:creeper`,
+	`minecraft:piglin`,
+	`minecraft:vindicator`,
+	`minecraft:evoker`,
+	`minecraft:witch`,
+	`minecraft:pillager`,
+	`minecraft:zombified_piglin`,
+	`minecraft:husk`,
+	`minecraft:stray`,
+	`minecraft:drowned`,
+	`minecraft:zombie_villager`,
+	`minecraft:wither_skeleton`,
+	`minecraft:villager_v2`,
+	`minecraft:wandering_trader`,
+	`minecraft:blaze`,
+	`minecraft:breeze`,
+	`gvcww2:sov_soldier`,
+	`gvcww2:ger_soldier`,
+	`gvcww2:usa_soldier`,
+	`gvcww2:jap_soldier`,
+	`gvcww2:eng_soldier`
+]
+
 world.afterEvents.entitySpawn.subscribe( e => {
 	const entity = e.entity;
 	//cant use grenade on downed players
@@ -52,6 +80,18 @@ world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
 } )
+
+function printDamage(player,damage,victim){
+	if( player.getDynamicProperty(`gvcww2:hitEntityId`) != victim.id ){
+		player.setDynamicProperty(`gvcww2:hitEntityId`,victim.id)
+		player.setDynamicProperty(`gvcww2:hitdamage`, 0 )
+	}
+	const hitDamage = player.getDynamicProperty(`gvcww2:hitdamage`);
+	if( hitDamage == undefined ){ player.setDynamicProperty(`gvcww2:hitdamage`, 0 ); }
+	player.setDynamicProperty(`gvcww2:hitdamage`, hitDamage + damage);
+	world.scoreboard.getObjective(`printDamage`).setScore(player,40);
+	
+}
 
 function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
@@ -488,18 +528,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) 
 			}
 		}
-		else if( vict.hasTag(`iron`)){
-			def = 0.6;
-		}
-		else if( vict.hasTag(`plastic`)){
-			def = 0.8;
-		}
-		else if( vict.hasTag(`diamond`)){
-			def = 0.9;
-		}
-		else if( vict.hasTag(`netherite`)){
-			def = 1;
-		}
 		if (def > 1){ def = 1 }
 		let damage
 		try{
@@ -508,6 +536,24 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		catch( error ){
 			damage = gunData[`${gunName}`][`damage`];
 		}
+		//headshot (1.5 times)
+		if( e.location.y - vict.location.y > 1.5 && headshotTypes.includes(vict.typeId) ){
+			def = def - 0.5;//armor ignore 50% on headshot
+			if( e.source.typeId == "minecraft:player" ){
+				e.dimension.playSound(`note.bell`,e.source.location,{ volume:1, pitch:2 });
+			}
+			e.source.setDynamicProperty(`gvcww2:headshot`,1);
+			e.source.runCommand(`title @s subtitle §4HEADSHOT§r`);
+		}
+		//feet shot (0.75 times)
+		else if( e.location.y - vict.location.y < 0.75 && headshotTypes.includes(vict.typeId) ){
+			def = def + 0.25;//armor effect 25% more on feet shot
+			e.source.setDynamicProperty(`gvcww2:headshot`,0);
+		}
+		else{
+			e.source.setDynamicProperty(`gvcww2:headshot`,0);
+		}
+
 		if ( vict.typeId == "minecraft:player" ){ 
 			damage = damage * world.getDynamicProperty("gvcv5:playerDamage");
 		}
@@ -516,6 +562,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		}
         if( damageType == `override` && vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
 			damage = damage * (1 - def);
+			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
 			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" && damage > 20 ){
 				vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
 			}
@@ -529,6 +576,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
         }
 		else if( damageType != `override` ){
 			damage = damage * (1 - (def/2));
+			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
 			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" ){
 				if(damage > 20 ){ vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
 				else{ vict.applyDamage(damage/2,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
@@ -970,6 +1018,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let player = e.sourceEntity;
 		const gunName = e.message;
 		const Ammo = gunData[`${gunName}`]["bullet"];
+		const slow = gunData[`${gunName}`]["slowness"];
 		let gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
 		const damage = dmgCom.damage;
@@ -977,6 +1026,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
 		if( usedGun == undefined ){
 			usedGun = 0;
+		}
+		if( slow > 0 ){
+			player.addEffect("slowness", 5,{ amplifier: slow });
 		}
 		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcww2:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
@@ -1084,72 +1136,21 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		} )
 		
 	}
-	else if( e.id == "gvcv5:phone" && !e.sourceEntity.hasTag(`down`) ){
+	else if( e.id == "gvcv5:printDamage" ){
 		const user = e.sourceEntity;
-		const team = e.message;
-		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
-		const form = new ActionFormData();
-		form.title(`script.gvcv5.phone_noteam.name`);
-		form.button(`script.gvcv5.howToGun.name`);
-		form.button(`script.gvcv5.howToVechile.name`);
-		form.button(`script.gvcv5.phone_back.name`);
-		form.show(user).then( r => {
-			if (!r.canceled) {
-				if( r.selection == 0 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToGun.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc0.name` });
-					itemRawText.push({ text: `\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc1.name` });
-					itemRawText.push({ text: `\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc2.name` });
-					itemRawText.push({ text: `\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc3.name` });
-					itemRawText.push({ text: `\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.autoReloadOn.name`);
-					form.button(`script.gvcv5.autoReloadOff.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							if( result.selection == 0 ){
-								user.addTag(`autoReload`)
-								user.sendMessage({ translate: `script.gvcv5.autoReloadOn.name` });
-							}
-							if( result.selection == 1 ){
-								user.removeTag(`autoReload`)
-								user.sendMessage({ translate: `script.gvcv5.autoReloadOff.name` });
-							}
-							user.runCommand(`scriptevent gvcv5:phone`);
-						}
-					} )
-				}
-				else if( r.selection == 1 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToVechile.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc3.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone`);
-						}
-					} )
-				}
-				else if( r.selection == 2 ){
-					user.runCommand(`scriptevent gvcv5:phone`);
-				}
+		if( world.scoreboard.getObjective(`printDamage`).getScore(user) > 0 ){
+			if( user.getDynamicProperty(`gvcww2:headshot`) == 1 ){
+				user.runCommand(`title @s subtitle §4HEADSHOT§r`);
 			}
-		},)
+			else{
+				user.runCommand(`title @s subtitle ""`);
+			}
+			user.runCommand(`titleraw @s title {"rawtext":[{"text":"\n\n\n\n\n§8${user.getDynamicProperty(`gvcww2:hitdamage`)}"}]}`);
+		}
+		else{
+			user.setDynamicProperty(`gvcww2:hitdamage`,0);
+			user.runCommand(`title @s clear`);
+		}
 	}
 	else if( e.id == `gvcv5:admin` ){
 		if( e.message== `guns` ){

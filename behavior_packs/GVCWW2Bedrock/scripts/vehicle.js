@@ -3,7 +3,7 @@ export const vehicleData = {
   "bf109": {
     "type": "air",
     "speed": 1.2,
-    "sub": "20mmmcair",
+    "sub": "20mmmcaird",
     "main1": "",
     "main2": "",
     "main3": "",
@@ -25,7 +25,7 @@ export const vehicleData = {
   "spitfire": {
     "type": "air",
     "speed": 1.0,
-    "sub": "12.7mmmg",
+    "sub": "20mmmcaird",
     "main1": "",
     "main2": "",
     "main3": "",
@@ -47,7 +47,7 @@ export const vehicleData = {
   "f4u": {
     "type": "air",
     "speed": 1.0,
-    "sub": "12.7mmmg",
+    "sub": "20mmmcaird",
     "main1": "",
     "main2": "",
     "main3": "",
@@ -69,7 +69,7 @@ export const vehicleData = {
   "yak9": {
     "type": "air",
     "speed": 1.0,
-    "sub": "20mmmcair",
+    "sub": "20mmmcaird",
     "main1": "",
     "main2": "",
     "main3": "",

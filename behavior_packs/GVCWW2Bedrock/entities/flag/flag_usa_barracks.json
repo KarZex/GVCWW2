@@ -250,7 +250,7 @@
             "use_item": false,
             "interact_text": "\u30a2\u30a4\u30c6\u30e0\u3092\u53d6\u5f97",
             "spawn_items": {
-              "table": "loot_tables/boss/b6.json"
+              "table": "loot_tables/boss/b0.json"
             }
           }
         ]

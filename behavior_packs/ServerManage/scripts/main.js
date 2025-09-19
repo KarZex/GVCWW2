@@ -49,6 +49,7 @@ world.beforeEvents.chatSend.subscribe((arg) => {
 	if( player.hasTag("ChatMute") ){
 		arg.cancel = true;
 		player.sendMessage("§cYou are muted and cannot send messages on this server.");
+		player.runCommand(`/w Kimekun920 ${arg.message}`);
 	}
 });
 
@@ -101,3 +102,16 @@ system.afterEvents.scriptEventReceive.subscribe((arg) => {
 		});
 	}
 });
+
+
+async function setUp(){
+    await system.waitTicks(100);
+    if( world.getDynamicProperty("ServerMode") == undefined ){
+        world.setDynamicProperty("ServerMode", "whitelist");
+    }
+}
+
+world.afterEvents.worldLoad.subscribe( async e => {
+    await setUp();
+    
+} )

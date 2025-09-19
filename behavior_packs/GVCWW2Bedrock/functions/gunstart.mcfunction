@@ -15,6 +15,7 @@ scoreboard objectives add DeathTime dummy
 scoreboard objectives add rise dummy
 scoreboard objectives add out dummy
 scoreboard objectives add building dummy
+scoreboard objectives add printDamage dummy
 #initialize
 execute as @s[tag=!startedww2] run scoreboard players set @s mcool 20
 execute as @s[tag=!startedww2] run scoreboard players set @s mcooli 0
@@ -28,6 +29,7 @@ execute as @s[tag=!startedww2] run scoreboard players set @s out 10
 execute as @s[tag=!startedww2] run scoreboard players set @s antiMining 0
 execute as @s[tag=!startedww2] run scoreboard players set @s DeathTime 0
 execute as @s[tag=!startedww2] run scoreboard players set @s mtype 0
+execute as @s[tag=!startedww2] run scoreboard players set @s printDamage 0
 execute as @s run scoreboard players set @s reloading 0
 scoreboard objectives add fire dummy
 execute as @s[tag=!startedww2] run scoreboard players set @s fire 30
