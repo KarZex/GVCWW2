@@ -28,16 +28,24 @@
 				],
 				"animate": [
 					{
-						"look_at_target": "query.has_rider"
+						"look_at_target": "!query.is_on_ground && query.has_rider"
 					},
 					{
-						"fly": "query.has_rider"
+						"fly": "query.has_rider && query.is_moving"
+					},
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"land": "query.is_on_ground"
 					}
 				]
 			},
 			"animations": {
 				"look_at_target": "animation.airmig17",
-				"fly": "animation.herix"
+				"fly": "animation.herix",
+				"flying": "animation.flying",
+				"land": "animation.land.spitfire"
 			},
 			"render_controllers": [
 				"controller.render.iron_golem","controller.render.planeglass"

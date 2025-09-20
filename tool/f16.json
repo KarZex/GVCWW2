@@ -26,9 +26,7 @@
         }
 			},
 			"despawning": {
-        "minecraft:transformation": {
-          "into": "addon:des"
-        }
+        "minecraft:instant_despawn": {}
 			},
 			"no_fuel": {
         "minecraft:movement": {
@@ -180,6 +178,21 @@
                   }
                 ]
               }
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "gvcv5:explode"
             }
           }
        ]

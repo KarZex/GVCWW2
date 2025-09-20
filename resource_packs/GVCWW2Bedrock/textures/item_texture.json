@@ -377,11 +377,38 @@
     "127m": {
       "textures": "textures/items/127m"
     },
+    "145m": {
+      "textures": "textures/items/145m"
+    },
     "762m": {
       "textures": "textures/items/762m"
     },
-    "762p": {
-      "textures": "textures/items/762p"
+    "20mmc": {
+      "textures": "textures/items/20mmc"
+    },
+    "s37m": {
+      "textures": "textures/items/s37m"
+    },
+    "s47m": {
+      "textures": "textures/items/s47m"
+    },
+    "s57m": {
+      "textures": "textures/items/s57m"
+    },
+    "s75m": {
+      "textures": "textures/items/s75m"
+    },
+    "s85m": {
+      "textures": "textures/items/s85m"
+    },
+    "s88m": {
+      "textures": "textures/items/s88m"
+    },
+    "s105m": {
+      "textures": "textures/items/s105m"
+    },
+    "s152m": {
+      "textures": "textures/items/s152m"
     },
     "9m": {
       "textures": "textures/items/9m"
@@ -389,8 +416,8 @@
     "stand": {
       "textures": "textures/items/stand"
     },
-    "9p": {
-      "textures": "textures/items/9p"
+    "sbombm": {
+      "textures": "textures/items/sbombm"
     },
     "btm": {
       "textures": "textures/items/btm"
@@ -417,7 +444,7 @@
       "textures": "textures/items/btr60"
     },
     "kv2": {
-      "textures": "textures/items/kv2"
+      "textures": "textures/items/vehicle/kv2"
     },
     "m1a2": {
       "textures": "textures/items/m1a2"
@@ -435,7 +462,7 @@
       "textures": "textures/items/pt76"
     },
     "t34": {
-      "textures": "textures/items/t34"
+      "textures": "textures/items/vehicle/t34"
     },
     "t55": {
       "textures": "textures/items/t55"
@@ -465,13 +492,13 @@
       "textures": "textures/items/mi24d"
     },
     "20mmaa": {
-      "textures": "textures/items/20mmaa"
+      "textures": "textures/items/vehicle/20mmaa"
     },
     "flak18": {
-      "textures": "textures/items/flak18"
+      "textures": "textures/items/vehicle/flak18"
     },
     "pak40": {
-      "textures": "textures/items/pak40"
+      "textures": "textures/items/vehicle/pak40"
     },
     "zu23": {
       "textures": "textures/items/zu23"
@@ -522,10 +549,10 @@
       "textures": "textures/items/food/ger_soldier"
     },
     "bf109": {
-      "textures": "textures/items/bf109"
+      "textures": "textures/items/vehicle/bf109"
     },
     "ju87": {
-      "textures": "textures/items/ju87"
+      "textures": "textures/items/vehicle/ju87"
     },
     "stg44": {
       "textures": "textures/items/gun/stg44"
@@ -558,55 +585,55 @@
       "textures": "textures/items/gun/lunge"
     },
     "spitfire": {
-      "textures": "textures/items/spitfire"
+      "textures": "textures/items/vehicle/spitfire"
     },
     "yak9": {
-      "textures": "textures/items/yak9"
+      "textures": "textures/items/vehicle/yak9"
     },
     "il2": {
-      "textures": "textures/items/il2"
+      "textures": "textures/items/vehicle/il2"
     },
     "zero": {
-      "textures": "textures/items/zero"
+      "textures": "textures/items/vehicle/zero"
     },
     "b7a": {
-      "textures": "textures/items/b7a"
+      "textures": "textures/items/vehicle/b7a"
     },
     "battle": {
-      "textures": "textures/items/battle"
+      "textures": "textures/items/vehicle/battle"
     },
     "panzer": {
-      "textures": "textures/items/panzer"
+      "textures": "textures/items/vehicle/panzer"
     },
     "m4": {
-      "textures": "textures/items/m4"
+      "textures": "textures/items/vehicle/m4"
     },
     "t97t": {
-      "textures": "textures/items/t97t"
+      "textures": "textures/items/vehicle/t97t"
     },
     "f4u": {
-      "textures": "textures/items/f4u"
+      "textures": "textures/items/vehicle/f4u"
     },
     "sbd": {
-      "textures": "textures/items/sbd"
+      "textures": "textures/items/vehicle/sbd"
     },
     "valentine": {
-      "textures": "textures/items/valentine"
+      "textures": "textures/items/vehicle/valentine"
     },
     "tiger": {
-      "textures": "textures/items/tiger"
+      "textures": "textures/items/vehicle/tiger"
     },
     "t98t": {
-      "textures": "textures/items/t98t"
+      "textures": "textures/items/vehicle/t98t"
     },
     "t17e1": {
-      "textures": "textures/items/t17e1"
+      "textures": "textures/items/vehicle/t17e1"
     },
     "t17e2": {
-      "textures": "textures/items/t17e2"
+      "textures": "textures/items/vehicle/t17e2"
     },
     "wirbelwind": {
-      "textures": "textures/items/wirbelwind"
+      "textures": "textures/items/vehicle/wirbelwind"
     }
   }
 }

@@ -4,6 +4,17 @@ item.gun:tank=主砲
 item.gun:mgg=機関銃
 item.zex:mm9=9mmHG弾
 item.zex:1270m=.50Cal弾
+item.zex:1450m=.14.5mmHMG弾
+item.zex:20mmc=.20mmMC弾
+item.zex:s37m=37mmCannon砲弾
+item.zex:s47m=47mmCannon砲弾
+item.zex:s57m=57mmCannon砲弾
+item.zex:s76m=76mmCannon砲弾
+item.zex:s85m=85mmCannon砲弾
+item.zex:s88m=88mmCannon砲弾
+item.zex:s105m=105mmCannon砲弾
+item.zex:s152m=152mmCannon砲弾
+item.zex:sbombm=250kg爆弾
 item.zex:12m=12ゲージ弾
 item.zex:40m=40mm擲弾
 item.zex:556m=.45ACP弾
@@ -21,9 +32,9 @@ item.gvcv5:smoke=煙幕手榴弾
 item.zex:ps=プラスチック
 item.zex:aidkit=応急処置キット
 
-item.gvcv5:fuel_s=ガソリン 30
-item.gvcv5:fuel_m=ガソリン 360
-item.gvcv5:fuel_l=ガソリン 4800
+item.gvcv5:fuel_s=ガソリン I
+item.gvcv5:fuel_m=ガソリン II
+item.gvcv5:fuel_l=ガソリン III
 
 item.item:blue=追従
 item.item:green=待機
@@ -89,6 +100,15 @@ script.gvcww2:zex:rocketm.name=§276mmRocket§r
 script.gvcww2:zex:missilem.name=§576mmMissile§r
 script.gvcww2:zex:40m.name=§e40mmGrenade§r
 script.gvcww2:zex:12m.name=§412Gauge§r
+
+### Country Names ###
+script.gvcww2:power_allies.name=§9連合国§r
+script.gvcww2:power_axis.name=§4枢軸国§r
+script.gvcww2:country_sov.name=§cソビエト連邦§r
+script.gvcww2:country_ger.name=§8ナチス・ドイツ§r
+script.gvcww2:country_usa.name=§9アメリカ合衆国§r
+script.gvcww2:country_jap.name=§a日本帝国§r
+script.gvcww2.country_eng.name=§eイギリス§r
 
 ### Gun and Vehicle Names
 

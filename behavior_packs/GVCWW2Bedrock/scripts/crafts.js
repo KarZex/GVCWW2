@@ -2,12 +2,22 @@ export const craftData = {
   "bc": {
     "sell": [ "minecraft:iron_ingot","minecraft:gunpowder","minecraft:redstone" ],
     "buy":[ 
+      { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
       { "give":"zex:mm9","texture":"textures/items/9m", "count":32, "cost":[ 1, 1, 0 ] },
       { "give":"zex:556m","texture":"textures/items/556m", "count":32, "cost":[ 2, 2, 0 ] },
-      { "give":"zex:762m","texture":"textures/items/762m", "count":16, "cost":[ 2, 2, 0 ] },
-      { "give":"zex:1270m","texture":"textures/items/127m", "count":1, "cost":[ 16, 16, 0 ] },
-      { "give":"zex:40m","texture":"textures/items/40m", "count":16, "cost":[ 2, 4, 0 ] },
-      { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
+      { "give":"zex:762m","texture":"textures/items/762m", "count":32, "cost":[ 4, 4, 0 ] },
+      { "give":"zex:1270m","texture":"textures/items/127m", "count":32, "cost":[ 5, 5, 0 ] },
+      { "give":"zex:1450m","texture":"textures/items/145m", "count":32, "cost":[ 6, 6, 0 ] },
+      { "give":"zex:20mmc","texture":"textures/items/20mmc", "count":32, "cost":[ 8, 8, 0 ] },
+      { "give":"zex:s37m","texture":"textures/items/s37m", "count":1, "cost":[ 4, 4, 0 ] },
+      { "give":"zex:s47m","texture":"textures/items/s47m", "count":1, "cost":[ 6, 6, 0 ] },
+      { "give":"zex:s57m","texture":"textures/items/s57m", "count":1, "cost":[ 8, 8, 0 ] },
+      { "give":"zex:s76m","texture":"textures/items/s76m", "count":1, "cost":[ 10, 10, 0 ] },
+      { "give":"zex:s85m","texture":"textures/items/s85m", "count":1, "cost":[ 12, 12, 0 ] },
+      { "give":"zex:s88m","texture":"textures/items/s88m", "count":1, "cost":[ 16, 16, 0 ] },
+      { "give":"zex:s105m","texture":"textures/items/s105m", "count":1, "cost":[ 20, 20, 0 ] },
+      { "give":"zex:s152m","texture":"textures/items/s152m", "count":1, "cost":[ 24, 24, 0 ] },
+      { "give":"zex:sbombm","texture":"textures/items/sbombm", "count":1, "cost":[ 24, 24, 0 ] },
       { "give":"gun:mgg","texture":"textures/items/mgg", "count":1, "cost":[ 1, 0, 0 ] },
       { "give":"gun:camera","texture":"textures/items/camera", "count":1, "cost":[ 1, 0, 0 ] },
       { "give":"gun:tank","texture":"textures/items/tank", "count":1, "cost":[ 1, 0, 0 ] }
@@ -68,43 +78,43 @@ export const craftData = {
   "vcsov": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:t34_spawn_egg","texture":"textures/items/t34", "count":1, "cost":[ 12, 18, 12 ] },
-      { "give":"vehicle:kv2_spawn_egg","texture":"textures/items/kv2", "count":1, "cost":[ 16, 32, 12 ] },
-      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/yak9", "count":1, "cost":[ 14, 16, 24 ] },
-      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/il2", "count":1, "cost":[ 32, 32, 36 ] }
+      { "give":"vehicle:t34_spawn_egg","texture":"textures/items/vehicle/t34", "count":1, "cost":[ 12, 18, 12 ] },
+      { "give":"vehicle:kv2_spawn_egg","texture":"textures/items/vehicle/kv2", "count":1, "cost":[ 16, 32, 12 ] },
+      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 14, 16, 24 ] },
+      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 32, 32, 36 ] }
     ]
   },
   "vcger": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:panzer_spawn_egg","texture":"textures/items/panzer", "count":1, "cost":[ 12, 10, 8 ] },
-      { "give":"vehicle:tiger_spawn_egg","texture":"textures/items/tiger", "count":1, "cost":[ 24, 40, 16 ] },
-      { "give":"vehicle:bf109_spawn_egg","texture":"textures/items/bf109", "count":1, "cost":[ 6, 12, 18 ] },
-      { "give":"vehicle:ju87_spawn_egg","texture":"textures/items/ju87", "count":1, "cost":[ 12, 12, 24 ] }
+      { "give":"vehicle:panzer_spawn_egg","texture":"textures/items/vehicle/panzer", "count":1, "cost":[ 12, 10, 8 ] },
+      { "give":"vehicle:tiger_spawn_egg","texture":"textures/items/vehicle/tiger", "count":1, "cost":[ 24, 40, 16 ] },
+      { "give":"vehicle:bf109_spawn_egg","texture":"textures/items/vehicle/bf109", "count":1, "cost":[ 6, 12, 18 ] },
+      { "give":"vehicle:ju87_spawn_egg","texture":"textures/items/vehicle/ju87", "count":1, "cost":[ 12, 12, 24 ] }
     ]
   },
   "vcusa": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:m4_spawn_egg","texture":"textures/items/m4", "count":1, "cost":[ 14, 14, 12 ] },
-      { "give":"vehicle:f4u_spawn_egg","texture":"textures/items/f4u", "count":1, "cost":[ 10, 16, 24 ] },
-      { "give":"vehicle:sbd_spawn_egg","texture":"textures/items/sbd", "count":1, "cost":[ 12, 12, 24 ] }
+      { "give":"vehicle:m4_spawn_egg","texture":"textures/items/vehicle/m4", "count":1, "cost":[ 14, 14, 12 ] },
+      { "give":"vehicle:f4u_spawn_egg","texture":"textures/items/vehicle/f4u", "count":1, "cost":[ 10, 16, 24 ] },
+      { "give":"vehicle:sbd_spawn_egg","texture":"textures/items/vehicle/sbd", "count":1, "cost":[ 12, 12, 24 ] }
     ]
   },
   "vcjap": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:t97t_spawn_egg","texture":"textures/items/t97t", "count":1, "cost":[ 10, 8, 6 ] },
-      { "give":"vehicle:zero_spawn_egg","texture":"textures/items/zero", "count":1, "cost":[ 12, 14, 18 ] },
-      { "give":"vehicle:b7a_spawn_egg","texture":"textures/items/b7a", "count":1, "cost":[ 16, 16, 24 ] }
+      { "give":"vehicle:t97t_spawn_egg","texture":"textures/items/vehicle/t97t", "count":1, "cost":[ 10, 8, 6 ] },
+      { "give":"vehicle:zero_spawn_egg","texture":"textures/items/vehicle/zero", "count":1, "cost":[ 12, 14, 18 ] },
+      { "give":"vehicle:b7a_spawn_egg","texture":"textures/items/vehicle/b7a", "count":1, "cost":[ 16, 16, 24 ] }
     ]
   },
   "vceng": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:valentine_spawn_egg","texture":"textures/items/valentine", "count":1, "cost":[ 6, 10, 6 ] },
-      { "give":"vehicle:spitfire_spawn_egg","texture":"textures/items/spitfire", "count":1, "cost":[ 18, 16, 32 ] },
-      { "give":"vehicle:battle_spawn_egg","texture":"textures/items/battle", "count":1, "cost":[ 24, 24, 32 ] }
+      { "give":"vehicle:valentine_spawn_egg","texture":"textures/items/vehicle/valentine", "count":1, "cost":[ 6, 10, 6 ] },
+      { "give":"vehicle:spitfire_spawn_egg","texture":"textures/items/vehicle/spitfire", "count":1, "cost":[ 18, 16, 32 ] },
+      { "give":"vehicle:battle_spawn_egg","texture":"textures/items/vehicle/battle", "count":1, "cost":[ 24, 24, 32 ] }
     ]
   }
 };

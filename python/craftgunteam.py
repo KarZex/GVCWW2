@@ -567,7 +567,7 @@ for row in csv_reader2:
                 "charge_shoot_trigger": 0.0,
                 "attack_interval_min": attack_interval,
                 "attack_interval_max": attack_interval,
-                "attack_radius": 20.0
+                "attack_radius": 120.0
             },
             "minecraft:shooter": {
                 "def": "fire:{}".format(gun_id)

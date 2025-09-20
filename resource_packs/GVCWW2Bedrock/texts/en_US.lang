@@ -4,16 +4,33 @@ item.gun:tank=Main Gun
 item.gun:mgg=Machine Gun
 item.zex:mm9=9mmHG Ammo
 item.zex:1270m=.50Cal Ammo
+item.zex:1450m=.14.5mmHMG Ammo
+item.zex:20mmc=.20mmMC Ammo
+item.zex:s37m=37mmCannon Shell
+item.zex:s47m=47mmCannon Shell
+item.zex:s57m=57mmCannon Shell
+item.zex:s76m=76mmCannon Shell
+item.zex:s85m=85mmCannon Shell
+item.zex:s88m=88mmCannon Shell
+item.zex:s105m=105mmCannon Shell
+item.zex:s152m=152mmCannon Shell
+item.zex:sbombm=250kgBomb
 item.zex:12m=12Gauge Ammo
 item.zex:40m=40mm Grenade
 item.zex:556m=.45ACP Ammo
 item.zex:762m=.30Cal Ammo
 item.zex:rocketm=76mmRocket Ammo
 item.zex:missilem=76mmMissile Ammo
+
 item.gvcv5:radio_item=Old Radio
 item.gvcv5:bc_item=Ammunition Manufacturing Machine
 item.zex:ps=Plastic
 item.zex:aidkit=First aid kit
+
+item.gvcv5:fuel_s=Fuel I
+item.gvcv5:fuel_m=Fuel II
+item.gvcv5:fuel_l=Fuel III
+
 tile.gvcv5:radio.name=Old Radio
 tile.gvcv5:bc.name=Ammunition Manufacturing Machine
 tile.gvcv5:gc.name=Gun Manufacturing Machine
@@ -76,7 +93,7 @@ script.gvcww2:zex:missilem.name=§576mmMissile§r
 script.gvcww2:zex:40m.name=§e40mmGrenade§r
 
 ### Country Names ###
-script.gvcww2:power_allies.name=§bAllies§r
+script.gvcww2:power_allies.name=§9Allies§r
 script.gvcww2:power_axis.name=§4Axis§r
 script.gvcww2:country_sov.name=§cSoviet Union§r
 script.gvcww2:country_ger.name=§8Nazi Germany§r
@@ -187,6 +204,7 @@ item.vehicle:zero_spawn_egg=Mitsubishi A6M Zero
 entity.vehicle:b7a.name=Aichi B7A Ryusei
 item.spawn_egg.entity.vehicle:b7a.name=Aichi B7A Ryusei
 item.vehicle:b7a_spawn_egg=Aichi B7A Ryusei
+
 
 
 ### Weapons ###

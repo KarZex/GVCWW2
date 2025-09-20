@@ -2,6 +2,15 @@ import json
 import csv
 import ast
 
+def get_ammo(ammo_str):
+    csv_path_w = open("csv/vehiclewData.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == ammo_str:
+            return row[12]
+    
+    return 0
 
 item_json = json.load(open("resource_packs/GVCWW2Bedrock/textures/item_texture.json","r"))
 row_count = 0
@@ -53,6 +62,11 @@ for row in csv_reader:
         v_inventory = row[31] 
         v_camera = int(row[33])
         
+        v_main1_ammo = get_ammo(v_main)
+        v_main2_ammo = get_ammo(v_main2)
+        v_main3_ammo = get_ammo(v_main3)
+        v_sub_ammo = get_ammo(v_sub)
+
         if( v_type == "stank"):
             f_path = open("tool/fv101.json","r")
             entity_json = json.load(f_path)
@@ -176,45 +190,52 @@ for row in csv_reader:
             json.dump(loot_table,f,indent=2)
 
         if v_main3 != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}}] run event entity @s[scores={{mtype=2..}}] fire:{1}\n".format(v_id,v_main3)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=2..}}] fire:{1}\n".format(v_id,v_main3,v_main3_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=2..}}] {2} 0 1\n".format(v_id,v_main3,v_main3_ammo)
             if v_maincool3 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}}] run scoreboard players set @s[scores={{mtype=2..}}] mcoolii {1}\n".format(v_id,v_maincool3)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=2..}}] mcoolii {1}\n".format(v_id,v_maincool3,v_main3_ammo)
 
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run event entity @s[scores={{mtype=1}}] fire:{1}\n".format(v_id,v_main2)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=1}}] fire:{1}\n".format(v_id,v_main2,v_main2_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=1}}] {2} 0 1\n".format(v_id,v_main2,v_main2_ammo)
             if v_maincool2 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run scoreboard players set @s[scores={{mtype=1}}] mcooli {1}\n".format(v_id,v_maincool2)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=1}}] mcooli {1}\n".format(v_id,v_maincool2,v_main2_ammo)
             
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main,v_main1_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=0}}] {2} 0 1\n".format(v_id,v_main,v_main1_ammo)
             b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
             if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool,v_main1_ammo)
         
         elif v_main2 != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run event entity @s[scores={{mtype=1..}}] fire:{1}\n".format(v_id,v_main2)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=1..}}] fire:{1}\n".format(v_id,v_main2,v_main2_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=1..}}] {2} 0 1\n".format(v_id,v_main2,v_main2_ammo)
             if v_maincool2 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run scoreboard players set @s[scores={{mtype=1..}}] mcooli {1}\n".format(v_id,v_maincool2)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=1..}}] mcooli {1}\n".format(v_id,v_maincool2,v_main2_ammo)
 
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main,v_main1_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=0}}] {2} 0 1\n".format(v_id,v_main,v_main1_ammo)
             b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
             if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool,v_main1_ammo)
 
         elif v_main != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0..}}] fire:{1}\n".format(v_id,v_main)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run event entity @s[scores={{mtype=0..}}] fire:{1}\n".format(v_id,v_main,v_main1_ammo)
+            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run clear @s[scores={{mtype=0..}}] {2} 0 1\n".format(v_id,v_main,v_main1_ammo)
             b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
             if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0..}}] mcool {1}\n".format(v_id,v_maincool)
+                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}},hasitem={{item={2}}}] run scoreboard players set @s[scores={{mtype=0..}}] mcool {1}\n".format(v_id,v_maincool,v_main1_ammo)
                 
         if v_sub != "":
-            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{subWeapon=..{2}}}] fire:{1}\n".format(v_id,v_sub,maxsubcool)
-            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{subWeapon=..{2}}}] subWeapon 1\n".format(v_id,v_sub,maxsubcool)
+            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{subWeapon=..{2}}},hasitem={{item={3}}}] fire:{1}\n".format(v_id,v_sub,maxsubcool,v_sub_ammo)
+            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{subWeapon=..{2}}},hasitem={{item={3}}}] subWeapon 1\n".format(v_id,v_sub,maxsubcool,v_sub_ammo)
+            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run clear @s[scores={{subWeapon=..{2}}},hasitem={{item={3}}}] {3} 0 1\n".format(v_id,v_sub,maxsubcool,v_sub_ammo)
             s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s maxsubcool {1}\n".format(v_id,maxsubcool)
             if v_subcool > 0:
                 s_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s scool {1}\n".format(v_id,v_subcool+1)
             if v_main == "":
                 b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
 
-        item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/{}".format(v_id) }
+        item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/vehicle/{}".format(v_id) }
         print("created {}".format(v_id))
     row_count += 1
 

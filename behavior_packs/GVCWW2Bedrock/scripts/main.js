@@ -711,108 +711,110 @@ system.runInterval( () => {
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:air"){
 		const airCraft = e.sourceEntity;
-		const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-		const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-		let v = airCraft.getVelocity();
-		let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-		const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
-		const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
-		const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
-		let r = {
-			x:v.x/abs_v,
-			y:v.y/abs_v,
-			z:v.z/abs_v
-		}
-		if( abs_v > maxSpeed ){
-			abs_v = maxSpeed
-		}
+		if( airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined ){
+			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
+			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+			let v = airCraft.getVelocity();
+			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+			const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
+			const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
+			const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
+			let r = {
+				x:v.x/abs_v,
+				y:v.y/abs_v,
+				z:v.z/abs_v
+			}
+			if( abs_v > maxSpeed ){
+				abs_v = maxSpeed
+			}
 
-		if( abs_v < 0.1 ){
-			abs_v = 0
-		}
-		else{
-			let d = player.getViewDirection();
-			airCraft.clearVelocity();
-			if( Math.asin(d.x) > Math.asin(r.x) + turnRad ){
-				d.x = r.x + Math.sin(turnRad);
-			}
-			if( Math.asin(d.x) < Math.asin(r.x) - turnRad ){
-				d.x = r.x - Math.sin(turnRad);
-			}
-			if( Math.asin(d.y) > Math.asin(r.y) + turnRad ){
-				d.y = r.y + Math.sin(turnRad);
-			}
-			if( Math.asin(d.y) < Math.asin(r.y) - turnRad ){
-				d.y = r.y - Math.sin(turnRad);
-			}
-			if( Math.asin(d.z) > Math.asin(r.z) + turnRad ){
-				d.z = r.z + Math.sin(turnRad);
-			}
-			if( Math.asin(d.z) < Math.asin(r.z) - turnRad ){
-				d.z = r.z - Math.sin(turnRad);
-			}
-			if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
-				
-				if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x > 0 ){
-					d.x = 0;
-				}
-				if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x < 0 ){
-					d.x = 0;
-				}
-				if( airCraft.location.y > 320 && d.y > 0 ){
-					d.y = 0;
-				}
-				if( airCraft.location.y < -64 && d.y < 0 ){
-					d.y = 0;
-				}
-				if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z > 0 ){
-					d.z = 0;
-				}
-				if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z < 0 ){
-					d.z = 0;
-				}
-
-			}
-			else if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:nether` ){
-				if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x > 0 ){
-					d.x = 0;
-				}
-				if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x < 0 ){
-					d.x = 0;
-				}
-				if( airCraft.location.y > 128 && d.y > 0 ){
-					d.y = 0;
-				}
-				if( airCraft.location.y < 0 && d.y < 0 ){
-					d.y = 0;
-				}
-				if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z > 0 ){
-					d.z = 0;
-				}
-				if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z < 0 ){
-					d.z = 0;
-				}
-
-			}
-			if( !world.getDynamicProperty(`gvcv5:doFuelConsume`) || abs_v > 0 ){
-				airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+			if( abs_v < 0.1 ){
+				abs_v = 0
 			}
 			else{
-				
+				let d = player.getViewDirection();
+				airCraft.clearVelocity();
+				if( Math.asin(d.x) > Math.asin(r.x) + turnRad ){
+					d.x = r.x + Math.sin(turnRad);
+				}
+				if( Math.asin(d.x) < Math.asin(r.x) - turnRad ){
+					d.x = r.x - Math.sin(turnRad);
+				}
+				if( Math.asin(d.y) > Math.asin(r.y) + turnRad ){
+					d.y = r.y + Math.sin(turnRad);
+				}
+				if( Math.asin(d.y) < Math.asin(r.y) - turnRad ){
+					d.y = r.y - Math.sin(turnRad);
+				}
+				if( Math.asin(d.z) > Math.asin(r.z) + turnRad ){
+					d.z = r.z + Math.sin(turnRad);
+				}
+				if( Math.asin(d.z) < Math.asin(r.z) - turnRad ){
+					d.z = r.z - Math.sin(turnRad);
+				}
+				if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
+					
+					if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x > 0 ){
+						d.x = 0;
+					}
+					if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x < 0 ){
+						d.x = 0;
+					}
+					if( airCraft.location.y > 320 && d.y > 0 ){
+						d.y = 0;
+					}
+					if( airCraft.location.y < -64 && d.y < 0 ){
+						d.y = 0;
+					}
+					if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z > 0 ){
+						d.z = 0;
+					}
+					if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z < 0 ){
+						d.z = 0;
+					}
+
+				}
+				else if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:nether` ){
+					if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x > 0 ){
+						d.x = 0;
+					}
+					if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x < 0 ){
+						d.x = 0;
+					}
+					if( airCraft.location.y > 128 && d.y > 0 ){
+						d.y = 0;
+					}
+					if( airCraft.location.y < 0 && d.y < 0 ){
+						d.y = 0;
+					}
+					if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z > 0 ){
+						d.z = 0;
+					}
+					if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z < 0 ){
+						d.z = 0;
+					}
+
+				}
+				if( !world.getDynamicProperty(`gvcv5:doFuelConsume`) || abs_v > 0 ){
+					airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+				}
+				else{
+					
+				}
+				player.runCommand(`
+					titleraw @s[tag=!reload,tag=!down] 
+					actionbar {"rawtext":[${airCraftlader(player)},
+					{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
+					{"text":"HP: ${vehicleHp(HP,HPMax)}"},
+					${hasFuel(player,airCraft)},
+					${subWeapon(player,airCraft)},
+					${mainWeapon0(player,airCraft)},
+					${mainWeapon1(player,airCraft)},
+					${mainWeapon2(player,airCraft)}
+					]}
+				`);
 			}
 		}
-		player.runCommand(`
-			titleraw @s[tag=!reload,tag=!down] 
-			actionbar {"rawtext":[${airCraftlader(player)},
-			{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-			{"text":"HP: ${vehicleHp(HP,HPMax)}"},
-			${hasFuel(player,airCraft)},
-			${subWeapon(player,airCraft)},
-			${mainWeapon0(player,airCraft)},
-			${mainWeapon1(player,airCraft)},
-			${mainWeapon2(player,airCraft)}
-			]}
-		`);
 	
 
 	}
@@ -1145,7 +1147,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			else{
 				user.runCommand(`title @s subtitle ""`);
 			}
-			user.runCommand(`titleraw @s title {"rawtext":[{"text":"\n\n\n\n\n§8${user.getDynamicProperty(`gvcww2:hitdamage`)}"}]}`);
+			user.runCommand(`titleraw @s title {"rawtext":[{"text":"\n\n\n\n\n${user.getDynamicProperty(`gvcww2:hitdamage`)}"}]}`);
 		}
 		else{
 			user.setDynamicProperty(`gvcww2:hitdamage`,0);

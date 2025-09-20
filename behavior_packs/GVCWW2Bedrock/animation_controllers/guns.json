@@ -15,6 +15,33 @@
               "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item"
             },
             {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s37m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s47m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s57m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s76m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s85m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s88m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s105m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s152m') && query.is_using_item"
+            },
+            {
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:sbombm') && query.is_using_item"
+            },
+            {
               "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item"
             },
             {
