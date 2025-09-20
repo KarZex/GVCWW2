@@ -243,83 +243,103 @@ export const gunData = {
   },
   "vmg": {
     "damage": 4,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "37mm": {
     "damage": 35,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
   },
   "47mm": {
     "damage": 60,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s47m"
   },
   "57mm": {
     "damage": 70,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
   },
   "76mm": {
     "damage": 80,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
   },
   "85mm": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s85m"
   },
   "88mm": {
     "damage": 110,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s88m"
   },
   "100mm": {
     "damage": 120,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "105mm": {
     "damage": 150,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "120mm": {
     "damage": 180,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "125mm": {
     "damage": 200,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "152mm": {
     "damage": 250,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "20mm": {
     "damage": 10,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "23mm": {
     "damage": 12,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "ads_dp28": {
     "damage": 8,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "ads_m60": {
     "damage": 8,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "ads_pkm": {
     "damage": 8,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "37mmrocket": {
     "damage": 35,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
   },
   "76mmrocket": {
     "damage": 60,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
   },
   "agmissile": {
     "damage": 120,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "vmgiir": {
     "damage": 8,
@@ -329,25 +349,35 @@ export const gunData = {
     "damage": 8,
     "damageType": "override"
   },
+  "vmgii": {
+    "damage": 8,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
   "vmgi": {
     "damage": 8,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "aamissile": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "bomb": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
   },
   "bombii": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
   },
   "hmg": {
     "damage": 8,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "7.62mmmgsr": {
     "damage": 4,
@@ -357,9 +387,15 @@ export const gunData = {
     "damage": 4,
     "damageType": "override"
   },
+  "7.62mmmgs": {
+    "damage": 4,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
   "7.62mmmg": {
     "damage": 4,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "12.7mmmgri": {
     "damage": 6,
@@ -377,29 +413,56 @@ export const gunData = {
     "damage": 6,
     "damageType": "override"
   },
-  "14.5mmhmg": {
+  "12.7mmmg": {
+    "damage": 6,
+    "damageType": "override",
+    "ammoType": "zex:1270m"
+  },
+  "14.5mmhmgri": {
     "damage": 6,
     "damageType": "override"
   },
+  "14.5mmhmgli": {
+    "damage": 6,
+    "damageType": "override"
+  },
+  "14.5mmhmgrii": {
+    "damage": 6,
+    "damageType": "override"
+  },
+  "14.5mmhmglii": {
+    "damage": 6,
+    "damageType": "override"
+  },
+  "14.5mmhmg": {
+    "damage": 6,
+    "damageType": "override",
+    "ammoType": "zex:1450m"
+  },
   "20mmmc": {
     "damage": 10,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "20mmmcheri": {
     "damage": 10,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "23mmmc": {
     "damage": 12,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "25mmmc": {
     "damage": 20,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "30mmmc": {
     "damage": 16,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "23mmmcairr": {
     "damage": 4,
@@ -409,6 +472,11 @@ export const gunData = {
     "damage": 4,
     "damageType": "override"
   },
+  "23mmmcair": {
+    "damage": 4,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
   "20mmmcairdr": {
     "damage": 12,
     "damageType": "override"
@@ -416,6 +484,11 @@ export const gunData = {
   "20mmmcairdl": {
     "damage": 12,
     "damageType": "override"
+  },
+  "20mmmcaird": {
+    "damage": 12,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "20mmmcairwri": {
     "damage": 12,
@@ -433,16 +506,24 @@ export const gunData = {
     "damage": 12,
     "damageType": "override"
   },
+  "20mmmcairw": {
+    "damage": 12,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
   "30mmmcair": {
     "damage": 12,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "20mmmcair": {
     "damage": 12,
-    "damageType": "override"
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "bombiii": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
   }
 };

@@ -65,7 +65,7 @@
       "minecraft:rideable": {
         "seat_count": 2,
         "family_types": [
-          "player"
+          "JAPplayer"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": [
@@ -75,7 +75,7 @@
               1.45,
               0.1
             ],
-            "third_person_camera_radius": 15
+            "third_person_camera_radius": 16
           },
           {
             "position": [

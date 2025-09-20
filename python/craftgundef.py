@@ -499,6 +499,7 @@ for row in csv_reader2:
         gun_offset = row[10]
         bombattack = "bomb"
         gun_scale = float(row[11])
+        gun_ammo = row[12]
 
         vehicle_weapon += "gvcww2.{0}.name={1}\n".format(gun_id,gun_name)
         
@@ -660,8 +661,8 @@ for row in csv_reader2:
             gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
             gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
             gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
-        else:
-            gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+        
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type),"ammoType": "{}".format(gun_ammo) }
 
         #Bullet 
         if( "H" not in gun_offset ):

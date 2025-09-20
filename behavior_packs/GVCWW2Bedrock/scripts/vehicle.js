@@ -25,11 +25,11 @@ export const vehicleData = {
   "spitfire": {
     "type": "air",
     "speed": 1.0,
-    "sub": "20mmmcaird",
+    "sub": "14.5mmhmg",
     "main1": "",
     "main2": "",
     "main3": "",
-    "turn": 18.0,
+    "turn": 22.5,
     "gattack": 0,
     "FuelPerSecond": 6
   },
@@ -47,7 +47,7 @@ export const vehicleData = {
   "f4u": {
     "type": "air",
     "speed": 1.0,
-    "sub": "20mmmcaird",
+    "sub": "14.5mmhmg",
     "main1": "",
     "main2": "",
     "main3": "",
@@ -102,7 +102,7 @@ export const vehicleData = {
   "b7a": {
     "type": "air",
     "speed": 0.75,
-    "sub": "20mmmcaird",
+    "sub": "7.62mmmg",
     "main1": "bomb",
     "main2": "",
     "main3": "",

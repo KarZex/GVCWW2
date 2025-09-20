@@ -5,11 +5,11 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:bf109] run event entity @
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ju87] run event entity @s bomb
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entity @s 20mmmcaird
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:spitfire] run event entity @s 14.5mmhmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:battle] run event entity @s bomb
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f4u] run event entity @s 20mmmcaird
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f4u] run event entity @s 14.5mmhmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:sbd] run event entity @s bomb
 

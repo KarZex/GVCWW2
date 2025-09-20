@@ -346,13 +346,14 @@ function vehicleHp( HP,HPMax ){
 
 function subWeapon( player,vehicle ){
 	const subWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`sub`];
+	const subWeaponAmmo = gunData[`${subWeapon}`][`ammoType`];
 	const subWeaponName = `{"translate":"gvcww2.${subWeapon}.name"}`;
 	const subWeaponScore = world.scoreboard.getObjective(`subWeapon`).getScore(player);
 	const subWeaponScoreMax = world.scoreboard.getObjective(`maxsubcool`).getScore(player);
 	const subWeaponCool = world.scoreboard.getObjective(`scool`).getScore(player);
-	let subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax}\n"}`;
+	let subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax} ${getInventoryItem(player,subWeaponAmmo)}\n"}`;
 	if( subWeaponCool <= 20 ){
-		subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax}\n"}`;
+		subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax} ${getInventoryItem(player,subWeaponAmmo)}\n"}`;
 	}
 	else if( subWeaponCool > 20 ){
 		subWeaponData = `{"text":": §cCOOL ${subWeaponCool}§r\n"}`;
@@ -362,6 +363,10 @@ function subWeapon( player,vehicle ){
 function mainWeapon0( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
 	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main1`];
+	let mainWeaponAmmo = ``
+	if( mainWeapon != "" ){
+		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
+	}
 	let mainTypeData = ``;
 	if( mtype == 0){
 		mainTypeData = `{"text":"§e"},`;
@@ -370,7 +375,7 @@ function mainWeapon0( player,vehicle ){
 	const mainWeaponScore = world.scoreboard.getObjective(`mcool`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r\n"}`;
+		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
 	}
 	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
 }
@@ -378,6 +383,10 @@ function mainWeapon0( player,vehicle ){
 function mainWeapon1( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
 	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main2`];
+	let mainWeaponAmmo = ``
+	if( mainWeapon != "" ){
+		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
+	}
 	let mainTypeData = ``;
 	if( mtype == 1){
 		mainTypeData = `{"text":"§e"},`;
@@ -386,13 +395,17 @@ function mainWeapon1( player,vehicle ){
 	const mainWeaponScore = world.scoreboard.getObjective(`mcooli`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r\n"}`;
+		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
 	}
 	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
 }
 function mainWeapon2( player,vehicle ){
 	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
 	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main3`];
+	let mainWeaponAmmo = ``
+	if( mainWeapon != "" ){
+		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
+	}
 	let mainTypeData = ``;
 	if( mtype == 2){
 		mainTypeData = `{"text":"§e"},`;
@@ -401,7 +414,7 @@ function mainWeapon2( player,vehicle ){
 	const mainWeaponScore = world.scoreboard.getObjective(`mcoolii`).getScore(player);
 	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
 	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r\n"}`;
+		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
 	}
 	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
 }

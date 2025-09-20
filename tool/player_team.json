@@ -218,7 +218,7 @@
       },
       "gvcv5:team_SOV": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","redteam","red","SOVteam","SOV","allied_soldier" ]
+          "family": [ "player","playerp","mod","redteam","SOVplayer","red","SOVteam","SOV","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -415,7 +415,7 @@
       },
       "gvcv5:team_GER": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","GERteam","GER","axis_soldier" ]
+          "family": [ "player","playerp","mod","GERplayer","GERteam","GER","axis_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -612,7 +612,7 @@
       },
       "gvcv5:team_USA": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","USAteam","USA","allied_soldier" ]
+          "family": [ "player","playerp","mod","USAplayer","USAteam","USA","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -809,7 +809,7 @@
       },
       "gvcv5:team_JAP": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","JAPteam","JAP","axis_soldier" ]
+          "family": [ "player","playerp","mod","JAPplayer","JAPteam","JAP","axis_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -1006,7 +1006,7 @@
       },
       "gvcv5:team_ENG": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","ENGteam","ENG","allied_soldier" ]
+          "family": [ "player","playerp","mod","ENGplayer","ENGteam","ENG","allied_soldier" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [

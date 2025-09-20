@@ -372,6 +372,7 @@
             "playerp",
             "mod",
             "redteam",
+            "SOVplayer",
             "red",
             "SOVteam",
             "SOV",
@@ -783,6 +784,7 @@
             "player",
             "playerp",
             "mod",
+            "GERplayer",
             "GERteam",
             "GER",
             "axis_soldier"
@@ -1193,6 +1195,7 @@
             "player",
             "playerp",
             "mod",
+            "USAplayer",
             "USAteam",
             "USA",
             "allied_soldier"
@@ -1603,6 +1606,7 @@
             "player",
             "playerp",
             "mod",
+            "JAPplayer",
             "JAPteam",
             "JAP",
             "axis_soldier"
@@ -2013,6 +2017,7 @@
             "player",
             "playerp",
             "mod",
+            "ENGplayer",
             "ENGteam",
             "ENG",
             "allied_soldier"
@@ -3762,7 +3767,28 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:14.5mmhmg"
+              "spawn_entity": "fire:14.5mmhmglii"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:14.5mmhmgri"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:14.5mmhmgli"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:14.5mmhmgrii"
             }
           ]
         }

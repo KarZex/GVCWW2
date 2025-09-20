@@ -65,7 +65,7 @@
       "minecraft:rideable": {
         "seat_count": 2,
         "family_types": [
-          "player"
+          "USAplayer"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": [
