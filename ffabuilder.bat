@@ -1,4 +1,6 @@
 @echo off
+./cgun.bat
+python ffa.py
 rd /S /Q output
 mkdir output
 cd behavior_packs

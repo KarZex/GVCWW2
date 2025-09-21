@@ -119,7 +119,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "USAteam","USA","playerp","blueteam","allied_soldier", "mob" ]
+        "family": [ "USAteam","USA","playerp","blueteam","allied_soldier","ww2_soldier", "mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -200,7 +200,8 @@
                   {
                     "all_of": [
                       {"test": "is_family","subject": "other","value": "allied_soldier"},
-                      {"test": "is_family","subject": "other", "value": "USAteam"}
+                      {"test": "is_family","subject": "other", "value": "USAteam"},
+                      {"test": "is_family","subject": "other","operator":"!=","value": "player"}
                     ]
                   },
                   {
@@ -357,8 +358,16 @@
             "trigger": "m1b"
           },
           {
-            "weight": 1,
+            "weight": 5,
             "trigger": "vehicle:m4"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:m13aa"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:m5"
           }
         ]
       },

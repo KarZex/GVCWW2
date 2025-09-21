@@ -119,7 +119,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "ENGteam","ENG","playerp","magentateam","allied_soldier", "mob" ]
+        "family": [ "ENGteam","ENG","playerp","magentateam","allied_soldier","ww2_soldier", "mob" ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/ga.json"
@@ -203,7 +203,8 @@
                   {
                     "all_of": [
                       {"test": "is_family","subject": "other","value": "allied_soldier"},
-                      {"test": "is_family","subject": "other", "value": "ENGteam"}
+                      {"test": "is_family","subject": "other", "value": "ENGteam"},
+                      {"test": "is_family","subject": "other","operator":"!=","value": "player"}
                     ]
                   },
                   {
@@ -344,6 +345,18 @@
           {
             "weight": 10,
             "trigger": "stengun"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:valentine"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:t17e1"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:t17e2"
           }
         ]
       },

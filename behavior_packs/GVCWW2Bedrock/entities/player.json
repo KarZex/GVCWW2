@@ -4019,6 +4019,19 @@
             }
           ]
         }
+      },
+      "fire:37mmrocketkatyusya": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mmrocketkatyusya"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -4941,6 +4954,13 @@
         "add": {
           "component_groups": [
             "fire:bombiii"
+          ]
+        }
+      },
+      "fire:37mmrocketkatyusya": {
+        "add": {
+          "component_groups": [
+            "fire:37mmrocketkatyusya"
           ]
         }
       }

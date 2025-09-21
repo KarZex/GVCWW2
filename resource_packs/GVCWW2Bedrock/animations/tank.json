@@ -91,6 +91,20 @@
 				}
 			}
 		},
+		"animation.bm13aim": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": ["q.rider_head_x_rotation(0) / 2", 0, 0]
+				},
+				"car1": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"car2": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
 		"animation.herix": {
 			"loop": true,
 			"animation_length": 0.1667,

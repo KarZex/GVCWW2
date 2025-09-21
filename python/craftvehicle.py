@@ -88,7 +88,7 @@ for row in csv_reader:
             entity_json = json.load(f_path)
 
         if( v_type == "tank" or v_type == "stank"  ):
-            entity_json["minecraft:entity"]["component_groups"]["summon_enemy"]["minecraft:loot"]["table"] = "loot_tables/entities/{}_enemy.json".format(v_id)
+            entity_json["minecraft:entity"]["component_groups"]["summon_enemy"]["minecraft:loot"]["table"] = "loot_tables/entities/tank.json"
 
         entity_json["minecraft:entity"]["description"]["identifier"] = "vehicle:{}".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.vehicle:{}.name".format(v_id)

@@ -1181,6 +1181,21 @@
         "minecraft:shooter": {
           "def": "fire:bombiii"
         }
+      },
+      "37mmrocketkatyusya": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mmrocketkatyusya"
+        }
       }
     },
     "components": {
@@ -2224,8 +2239,16 @@
             "trigger": "m1b"
           },
           {
-            "weight": 1,
+            "weight": 5,
             "trigger": "vehicle:m4"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:m13aa"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:m5"
           }
         ]
       },
@@ -2837,6 +2860,13 @@
           ]
         }
       },
+      "37mmrocketkatyusya": {
+        "add": {
+          "component_groups": [
+            "37mmrocketkatyusya"
+          ]
+        }
+      },
       "vehicle:bf109": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:bf109 no_ride_change summon_enemy"
@@ -2970,6 +3000,16 @@
       "vehicle:t98taa": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t98taa no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m5": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m5 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:bm13": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:bm13 no_ride_change summon_enemy"
         }
       }
     }

@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:t98t",
+      "identifier": "vehicle:bm13",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -23,7 +23,7 @@
           "despawn_from_distance": {}
         },
         "minecraft:loot": {
-          "table": "loot_tables/entities/tank.json"
+          "table": "loot_tables/entities/t55_enemy.json"
         },
         "minecraft:environment_sensor": {
           "triggers": [
@@ -50,13 +50,13 @@
       },
       "have_fuel": {
         "minecraft:movement": {
-          "value": 0.28
+          "value": 0.25
         }
       }
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:t98t.name",
+        "name": "entity.vehicle:bm13.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -75,19 +75,29 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 2,
         "family_types": [
-          "JAPteam",
-          "JAPplayer"
+          "SOVteam",
+          "SOVplayer"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": {
-          "position": [
-            0.0,
-            1.4,
-            0.0
-          ]
-        }
+        "seats": [
+          {
+            "position": [
+              0.7,
+              1,
+              0.3
+            ],
+            "third_person_camera_radius": 32
+          },
+          {
+            "position": [
+              -0.7,
+              1,
+              0.3
+            ]
+          }
+        ]
       },
       "minecraft:interact": {
         "interactions": [
@@ -120,7 +130,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/t98t.json"
+              "table": "loot_tables/entities/bm13.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -172,14 +182,14 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 120,
-        "max": 120
+        "value": 150,
+        "max": 150
       },
       "minecraft:scale": {
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 0.28
+        "value": 0.25
       },
       "minecraft:knockback_resistance": {
         "value": 1.0

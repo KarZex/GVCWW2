@@ -24,5 +24,7 @@ vehicle,20mmaa,set,50,0,20mmmcair,1,,0,,0,,0,F,,1,1.8,1,F,"[ ""axis_soldier"",""
 vehicle,flak18,set,50,0,,5,125mm,60,,0,,0,F,,2,2,1,F,"[ ""axis_soldier"",""allied_soldier"",""player""]","[ 0.35, 0.25, -0.35 ]",,,,,,20,0,0,,,,flak18,0,1,
 vehicle,pak40,set,50,0,,6,105mm,50,,0,,0,F,,2,2,1,F,"[ ""axis_soldier"",""allied_soldier"",""player""]","[ 0, 0, -0.4 ]",,,,,,20,0,0,,,,pak40,0,1,
 vehicle,m13aa,apc,170,0.25,20mmmcaird,1,,0,,0,,0,T,,2.5,2,1,F,"[ ""USAteam"",""USAplayer""]","[0, 2, -1.8]",,,,,,20,7,0,,,,pak40,0,1,
-vehicle,bm13aa,apc,150,0.25,14.5mmhmg,1,,0,,0,,0,T,,2.5,2,1,F,"[ ""SOVteam"",""SOVplayer""]","[0, 2.1, -3.6]",,,,,,20,7,1,,,,t34,0,1,
+vehicle,bm13aa,apc,150,0.25,14.5mmhmg,1,,0,,0,,0,T,,2.5,2,3,F,"[ ""SOVteam"",""SOVplayer""]","[0, 2.1, -3.6]","[0.7, 1, 0.3]","[-0.7, 1, 0.3]",,,,20,7,1,,,,t34,0,1,
 vehicle,t98taa,tank,120,0.28,20mmmcair,1,,0,,0,,0,T,,2.5,2,1,F,"[ ""JAPteam"",""JAPplayer""]","[0, 1.2, 0]",,,,,,20,7,1,,,,t34,0,1,
+vehicle,m5,tank,160,0.3,vmg,1,37mm,20,,0,,0,T,,3,2,1,F,"[ ""USAteam"",""USAplayer""]","[ 0.0, 2.1, 0.0 ]",,,,,,20,7,2,,,,t34,0,1,
+vehicle,bm13,apc,150,0.25,37mmrocketkatyusya,4,,0,,0,,0,T,,2.5,2,2,F,"[ ""SOVteam"",""SOVplayer""]","[0.7, 1, 0.3]","[-0.7, 1, 0.3]",,,,,6,7,1,,,,t34,32,1,

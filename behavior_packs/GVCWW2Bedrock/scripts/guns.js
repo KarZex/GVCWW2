@@ -525,5 +525,10 @@ export const gunData = {
     "damage": 100,
     "damageType": "entityExplosion",
     "ammoType": "zex:sbombm"
+  },
+  "37mmrocketkatyusya": {
+    "damage": 35,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
   }
 };

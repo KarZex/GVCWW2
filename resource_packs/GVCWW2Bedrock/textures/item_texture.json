@@ -643,6 +643,12 @@
     },
     "t98taa": {
       "textures": "textures/items/vehicle/t98taa"
+    },
+    "m5": {
+      "textures": "textures/items/vehicle/m5"
+    },
+    "bm13": {
+      "textures": "textures/items/vehicle/bm13"
     }
   }
 }

@@ -139,7 +139,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "JAPteam","JAP","playerp","whiteteam","axis_soldier", "mob" ]
+        "family": [ "JAPteam","JAP","playerp","whiteteam","ww2_soldier","axis_soldier", "mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -249,7 +249,8 @@
                   {
                     "all_of": [
                       {"test": "is_family","subject": "other","value": "axis_soldier"},
-                      {"test": "is_family","subject": "other", "value": "JAPteam"}
+                      {"test": "is_family","subject": "other", "value": "JAPteam"},
+                      {"test": "is_family","subject": "other","operator":"!=","value": "player"}
                     ]
                   },
                   {
@@ -398,8 +399,16 @@
             "trigger": "lunge"
           },
           {
-            "weight": 1,
+            "weight": 5,
             "trigger": "vehicle:t97t"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:t98t"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:t98taa"
           }
         ]
       },

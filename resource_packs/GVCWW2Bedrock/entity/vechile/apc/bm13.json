@@ -2,28 +2,28 @@
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
-      "identifier": "vehicle:t98aa",
+      "identifier": "vehicle:bm13",
       "materials": { "default": "iron_golem" },
       "textures": {
-        "default": "textures/entity/t98aa"
+        "default": "textures/entity/bm13"
       },
       "geometry": {
-        "default": "geometry.t98aa"
+        "default": "geometry.bm13"
       },
       "animations": {
-        "look_at_target": "animation.apcgunaim"
+        "look_at_target": "animation.bm13aim"
       },
       "scripts": {
         "animate": [
-            {
-                "look_at_target": "query.has_rider"
-            }
+					{
+						"look_at_target": "query.has_rider"
+					}
         ]
       },
-	  "spawn_egg":{
-	  "texture":"t98aa",
-	  "texture_index":0
-	  },
+      "spawn_egg":{
+      "texture":"bm13",
+      "texture_index":0
+      },
       "render_controllers": [ "controller.render.iron_golem" ]
     }
   }

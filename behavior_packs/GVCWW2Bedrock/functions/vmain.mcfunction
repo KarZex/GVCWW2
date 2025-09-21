@@ -88,3 +88,8 @@ execute if entity @e[r=4,type=vehicle:pak40] if entity @s[scores={mcool=0},hasit
 
 execute if entity @e[r=4,type=vehicle:pak40] if entity @s[scores={mcool=0},hasitem={item=zex:s105m}] run clear @s[scores={mtype=0..}] zex:s105m 0 1
 execute if entity @e[r=4,type=vehicle:pak40] if entity @s[scores={mcool=0},hasitem={item=zex:s105m}] run scoreboard players set @s[scores={mtype=0..}] mcool 50
+
+execute if entity @e[r=4,type=vehicle:m5] if entity @s[scores={mcool=0},hasitem={item=zex:s37m}] run event entity @s[scores={mtype=0..}] fire:37mm
+
+execute if entity @e[r=4,type=vehicle:m5] if entity @s[scores={mcool=0},hasitem={item=zex:s37m}] run clear @s[scores={mtype=0..}] zex:s37m 0 1
+execute if entity @e[r=4,type=vehicle:m5] if entity @s[scores={mcool=0},hasitem={item=zex:s37m}] run scoreboard players set @s[scores={mtype=0..}] mcool 20

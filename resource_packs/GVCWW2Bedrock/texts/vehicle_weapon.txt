@@ -39,3 +39,4 @@ gvcww2.20mmmcairw.name=20mmMCx4
 gvcww2.30mmmcair.name=30mmMC
 gvcww2.20mmmcair.name=20mmMC
 gvcww2.bombiii.name=bombii
+gvcww2.37mmrocketkatyusya.name=37mmRocket

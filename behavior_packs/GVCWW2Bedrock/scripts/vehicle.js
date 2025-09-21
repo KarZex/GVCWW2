@@ -296,5 +296,27 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
+  },
+  "m5": {
+    "type": "tank",
+    "speed": 0.3,
+    "sub": "vmg",
+    "main1": "37mm",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7,
+    "FuelPerSecond": 2
+  },
+  "bm13": {
+    "type": "apc",
+    "speed": 0.25,
+    "sub": "37mmrocketkatyusya",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7,
+    "FuelPerSecond": 1
   }
 };

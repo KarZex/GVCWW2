@@ -1,6 +1,16 @@
 {
     "pools": [
         {
+            "conditions": [
+                {
+                    "condition": "killed_by_player_or_pets"
+                },
+                {
+                    "condition": "random_chance_with_looting",
+                    "chance": 0.5,
+                    "looting_multiplier": 0.01
+                }
+            ],
             "rolls": 2,
             "entries": [
                 {

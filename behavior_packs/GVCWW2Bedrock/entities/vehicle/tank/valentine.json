@@ -23,7 +23,7 @@
           "despawn_from_distance": {}
         },
         "minecraft:loot": {
-          "table": "loot_tables/entities/valentine_enemy.json"
+          "table": "loot_tables/entities/tank.json"
         },
         "minecraft:environment_sensor": {
           "triggers": [

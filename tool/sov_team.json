@@ -122,7 +122,7 @@
         "table": "loot_tables/entities/ga.json"
       },
       "minecraft:type_family": {
-        "family": [ "SOVteam","SOV","playerp","redteam","allied_soldier", "mob" ]
+        "family": [ "SOVteam","SOV","playerp","redteam","allied_soldier","ww2_soldier", "mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -203,7 +203,8 @@
                   {
                     "all_of": [
                       {"test": "is_family","subject": "other","value": "allied_soldier"},
-                      {"test": "is_family","subject": "other", "value": "SOVteam"}
+                      {"test": "is_family","subject": "other", "value": "SOVteam"},
+                      {"test": "is_family","subject": "other","operator":"!=","value": "player"}
                     ]
                   },
                   {
@@ -338,8 +339,16 @@
             "trigger": "tt33"
           },
           {
-            "weight": 1,
+            "weight": 5,
             "trigger": "vehicle:t34"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:kv2"
+          },
+          {
+            "weight": 5,
+            "trigger": "vehicle:bm13aa"
           }
         ]
       },
