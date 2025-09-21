@@ -262,5 +262,38 @@
     "turn": 1.0,
     "gattack": 0,
     "FuelPerSecond": 0
+  },
+  "m13aa": {
+    "type": "apc",
+    "speed": 0.25,
+    "sub": "20mmmcaird",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7,
+    "FuelPerSecond": 0
+  },
+  "bm13aa": {
+    "type": "apc",
+    "speed": 0.25,
+    "sub": "14.5mmhmg",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7,
+    "FuelPerSecond": 1
+  },
+  "t98taa": {
+    "type": "tank",
+    "speed": 0.28,
+    "sub": "20mmmcair",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 1.0,
+    "gattack": 7,
+    "FuelPerSecond": 1
   }
 }

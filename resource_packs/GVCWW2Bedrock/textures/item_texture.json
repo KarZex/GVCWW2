@@ -634,6 +634,15 @@
     },
     "wirbelwind": {
       "textures": "textures/items/vehicle/wirbelwind"
+    },
+    "m13aa": {
+      "textures": "textures/items/vehicle/m13aa"
+    },
+    "bm13aa": {
+      "textures": "textures/items/vehicle/bm13aa"
+    },
+    "t98taa": {
+      "textures": "textures/items/vehicle/t98taa"
     }
   }
 }

@@ -183,3 +183,30 @@ execute if entity @e[r=4,type=vehicle:20mmaa] run clear @s[scores={subWeapon=..2
 
 execute if entity @e[r=4,type=vehicle:20mmaa] run scoreboard players set @s maxsubcool 20
 execute if entity @e[r=4,type=vehicle:20mmaa] run scoreboard players set @s scool 2
+
+execute if entity @e[r=4,type=vehicle:m13aa] run event entity @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] fire:20mmmcaird
+
+execute if entity @e[r=4,type=vehicle:m13aa] run scoreboard players add @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] subWeapon 1
+
+execute if entity @e[r=4,type=vehicle:m13aa] run clear @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] zex:20mmc 0 1
+
+execute if entity @e[r=4,type=vehicle:m13aa] run scoreboard players set @s maxsubcool 20
+execute if entity @e[r=4,type=vehicle:m13aa] run scoreboard players set @s scool 2
+
+execute if entity @e[r=4,type=vehicle:bm13aa] run event entity @s[scores={subWeapon=..20},hasitem={item=zex:1450m}] fire:14.5mmhmg
+
+execute if entity @e[r=4,type=vehicle:bm13aa] run scoreboard players add @s[scores={subWeapon=..20},hasitem={item=zex:1450m}] subWeapon 1
+
+execute if entity @e[r=4,type=vehicle:bm13aa] run clear @s[scores={subWeapon=..20},hasitem={item=zex:1450m}] zex:1450m 0 1
+
+execute if entity @e[r=4,type=vehicle:bm13aa] run scoreboard players set @s maxsubcool 20
+execute if entity @e[r=4,type=vehicle:bm13aa] run scoreboard players set @s scool 2
+
+execute if entity @e[r=4,type=vehicle:t98taa] run event entity @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] fire:20mmmcair
+
+execute if entity @e[r=4,type=vehicle:t98taa] run scoreboard players add @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] subWeapon 1
+
+execute if entity @e[r=4,type=vehicle:t98taa] run clear @s[scores={subWeapon=..20},hasitem={item=zex:20mmc}] zex:20mmc 0 1
+
+execute if entity @e[r=4,type=vehicle:t98taa] run scoreboard players set @s maxsubcool 20
+execute if entity @e[r=4,type=vehicle:t98taa] run scoreboard players set @s scool 2

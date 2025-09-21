@@ -2937,6 +2937,21 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
         }
+      },
+      "vehicle:m13aa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m13aa no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:bm13aa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:bm13aa no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t98taa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t98taa no_ride_change summon_enemy"
+        }
       }
     }
   }
