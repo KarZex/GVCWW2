@@ -8,7 +8,7 @@
             21,
             100
         ],
-        "uuid": "bb1297b9-f378-4b77-be9e-a05a8e9327e6",
+        "uuid": "584f1a6c-2d97-42d6-b53c-4c755afaac6e",
         "version": [
             1,
             21,
@@ -19,7 +19,7 @@
         {
             "description": "Data Module",
             "type": "data",
-            "uuid": "c2e266d5-c7f4-4961-bdff-7b7f57fae185",
+            "uuid": "955d2f97-bdb3-4f3f-8ee1-a0c10c54e995",
             "version": [
                 1,
                 0,
@@ -30,7 +30,7 @@
             "description": "Script API Module",
             "language": "javascript",
             "type": "script",
-            "uuid": "dfb6d1c6-4bdc-4f7b-97e0-1fb773a33434",
+            "uuid": "eced1243-2a09-43c4-b948-41aa1096e8b6",
             "version": [
                 2,
                 0,
