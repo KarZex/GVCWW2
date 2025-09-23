@@ -96,10 +96,15 @@ script.gvcww2:zex:40m.name=§e40mmGrenade§r
 script.gvcww2:power_allies.name=§9Allies§r
 script.gvcww2:power_axis.name=§4Axis§r
 script.gvcww2:country_sov.name=§cSoviet Union§r
+script.gvcww2:country_sov_desc=The Soviet Union, also known as the USSR is Clan that focuses on overwhelming force and armor. They have a variety of tanks and vehicles, making them a formidable opponent on the battlefield. but their mobility is low.
 script.gvcww2:country_ger.name=§8Nazi Germany§r
+script.gvcww2:country_ger_desc=Nazi Germany, is Blitzkrieg clan that is a balanced clan that excels in both offense and defense. They have a variety of tanks and vehicles, making them a formidable opponent on the battlefield. but their armor is average.
 script.gvcww2:country_usa.name=§9United States§r
+script.gvcww2:country_usa_desc=The United States, is Balanced clan is a well-rounded clan that excels in both offense and defense. They have a variety of tanks and vehicles, making them a formidable opponent on the battlefield. but their mobility is average.
 script.gvcww2:country_jap.name=§aEmpire of Japan§r
+script.gvcww2:country_jap.desc=The Empire of Japan, is mobility clan that, specializes in speed and surprise attacks. They have access to unique vehicles and weapons, including kamikaze tactics, making them unpredictable on the battlefield. However, their armor is lighter compared to other clans.
 script.gvcww2.country_eng.name=§eUnited Kingdom§r
+script.gvcww2:country_eng.desc=The United Kingdom, is Defensive clan that, excels in defense and accuracy. They use smaller caliber weapons with high precision and have access to unique vehicles. Their tanks and soldiers are well-protected, but their offensive power is moderate compared to other clans.
 
 ## SOV - Soviet Union
 item.gun:mosin=M1891§r
@@ -107,6 +112,7 @@ item.gun:ppsh=PPSh-41§r
 item.gun:dp28=DP-28§r
 item.gun:tt33=TT33§r
 item.gun:ptrd=PTRD§r
+item:gvcv5:rpg43=RPG-43
 entity.vehicle:t34.name=T-34
 item.spawn_egg.entity.vehicle:t34.name=T-34
 item.vehicle:t34_spawn_egg=T-34
@@ -127,9 +133,12 @@ item.spawn_egg.entity.vehicle:il2.name=Ilyushin Il-2
 item.vehicle:il2_spawn_egg=Ilyushin Il-2
 
 ## GER - Nazi Germany
+## Nazi Germany is Blitzkrieg clan and have Heavy Tank.
+item.gun:gewehr=Gewehr43§r
 item.gun:k98=Kar98k§r
 item.gun:mp40=MP40§r
 item.gun:stg44=StG44§r
+item.gun:fg42=FG42§r
 item.gun:mg42=MG42§r
 item.gun:p90=Panzerfaust§r
 item.gun:p38=P38§r
@@ -150,6 +159,7 @@ item.spawn_egg.entity.vehicle:ju87.name=Junkers Ju 87
 item.vehicle:ju87_spawn_egg=Junkers Ju 87
 
 ## USA - United States
+## United States is Balanced clan and the only clan that has helicopter.
 item.gun:m1=M1Garand§r
 item.gun:spring=M1903Springfield§r
 item.gun:bar=M1918BAR§r
@@ -176,6 +186,7 @@ item.spawn_egg.entity.vehicle:sbd.name=Douglas SBD Dauntless
 item.vehicle:sbd_spawn_egg=Douglas SBD Dauntless
 
 ## ENG - United Kingdom
+## United Kingdom is Defensive clan and smaller bullet but have high accuracy.
 item.gun:leemk4=Lee-EnfieldNo.4§r
 item.gun:piat=PIAT§r
 item.gun:lewis=LewisGun§r
@@ -199,10 +210,12 @@ item.vehicle:battle_spawn_egg=Fairley Battle
 
 
 ##JAP - Empire of Japan
+## Empire of Japan is Fast clan and have Kamikaze attack.
 item.gun:t38=Type38§r
 item.gun:t100=Type100§r
 item.gun:t99=Type99§r
 item.gun:t14=Type14§r
+item.gun:t89=Type89§r
 item.gun:lunge=Lunge Mine§r
 entity.vehicle:t97t.name=Type97 Tank
 item.spawn_egg.entity.vehicle:t97t.name=Type97 Tank
@@ -305,16 +318,16 @@ item.spawn_egg.entity.gvcww2:flag_ger_barracks.name=German_barracks
 item.spawn_egg.entity.gvcww2:flag_usa_barracks.name=US_barracks
 item.spawn_egg.entity.gvcww2:flag_jap_barracks.name=Japanese_barracks
 item.spawn_egg.entity.gvcww2:flag_eng_barracks.name=British_barracks
-item.spawn_egg.entity.gvcww2:flag_sov_factory.name=Soviet_factory
-item.spawn_egg.entity.gvcww2:flag_ger_factory.name=German_factory
-item.spawn_egg.entity.gvcww2:flag_usa_factory.name=US_factory
-item.spawn_egg.entity.gvcww2:flag_jap_factory.name=Japanese_factory
-item.spawn_egg.entity.gvcww2:flag_eng_factory.name=British_factory
-item.spawn_egg.entity.gvcww2:flag_sov_airbase.name=Soviet_airbase
-item.spawn_egg.entity.gvcww2:flag_ger_airbase.name=German_airbase
-item.spawn_egg.entity.gvcww2:flag_usa_airbase.name=US_airbase
-item.spawn_egg.entity.gvcww2:flag_jap_airbase.name=Japanese_airbase
-item.spawn_egg.entity.gvcww2:flag_eng_airbase.name=British_airbase
+item.spawn_egg.entity.gvcww2:flag_sov_oilfactory.name=Soviet_oil_factory
+item.spawn_egg.entity.gvcww2:flag_ger_oilfactory.name=German_oil_factory
+item.spawn_egg.entity.gvcww2:flag_usa_oilfactory.name=US_oil_factory
+item.spawn_egg.entity.gvcww2:flag_jap_oilfactory.name=Japanese_oil_factory
+item.spawn_egg.entity.gvcww2:flag_eng_oilfactory.name=British_oil_factory
+item.spawn_egg.entity.gvcww2:flag_sov_airport.name=Soviet_airport
+item.spawn_egg.entity.gvcww2:flag_ger_airport.name=German_airport
+item.spawn_egg.entity.gvcww2:flag_usa_airport.name=US_airport
+item.spawn_egg.entity.gvcww2:flag_jap_airport.name=Japanese_airport
+item.spawn_egg.entity.gvcww2:flag_eng_airport.name=British_airport
 entity.gvcww2:sov_soldier.name=Soviet Soldier
 entity.gvcww2:ger_soldier.name=German Soldier
 entity.gvcww2:usa_soldier.name=US Soldier

@@ -105,10 +105,15 @@ script.gvcww2:zex:12m.name=§412Gauge§r
 script.gvcww2:power_allies.name=§9連合国§r
 script.gvcww2:power_axis.name=§4枢軸国§r
 script.gvcww2:country_sov.name=§cソビエト連邦§r
+script.gvcww2:country_sov_desc=ソビエト連邦（USSR）は、圧倒的な火力と装甲を重視するクランである。多様な戦車や車両を擁し、戦場では手強い敵となる。ただし機動性は低い。
 script.gvcww2:country_ger.name=§8ナチス・ドイツ§r
+script.gvcww2:country_ger_desc=ナチス・ドイツは、電撃戦クランとして攻守両面に優れたバランスの取れたクランである。多様な戦車や車両を擁し、戦場では手強い敵となる。ただし装甲は平均的である。
 script.gvcww2:country_usa.name=§9アメリカ合衆国§r
-script.gvcww2:country_jap.name=§a日本帝国§r
+script.gvcww2:country_usa_desc=アメリカ合衆国は、攻守両面に優れたバランスの取れたクランである。多様な戦車や車両を擁し、戦場では手強い相手となる。ただし機動性は平均的である。
+script.gvcww2:country_jap.name=§a大日本帝国§r
+script.gvcww2:country_jap.desc=大日本帝国は、信頼性と奇襲攻撃を専門とするクランである。特異な車両や武器、特攻戦術を含む戦術を駆使し、戦場では予測不能な動きを見せる。ただし、他のクランと比較して装甲は軽めである。
 script.gvcww2.country_eng.name=§eイギリス§r
+script.gvcww2:country_eng.desc=イギリスは防御型クランであり、防御力と命中精度に優れている。小口径で高精度の武器を使用し、独自の車両を運用する。戦車と兵士は高い防護力を有するが、他のクランと比較すると攻撃力は中程度である。
 
 ### Gun and Vehicle Names
 
@@ -124,6 +129,7 @@ item.vehicle:t34_spawn_egg=T-34
 entity.vehicle:kv2.name=KV-2
 item.spawn_egg.entity.vehicle:kv2.name=KV-2
 item.vehicle:kv2_spawn_egg=KV-2
+entity.vehicle:bm13.name=BM-13
 entity.vehicle:yak9.name=ヤコヴレフ Yak-9
 item.spawn_egg.entity.vehicle:yak9.name=ヤコヴレフ Yak-9
 item.vehicle:yak9_spawn_egg=ヤコヴレフ Yak-9
