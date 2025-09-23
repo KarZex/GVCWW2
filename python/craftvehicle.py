@@ -17,7 +17,7 @@ row_count = 0
 
 m_func = ""
 s_func = "tag @s add subattack\n"
-b_func = "effect @s[tag=!ride] health_boost 99999 70 true\neffect @s[tag=!ride] instant_health 1 255 true\n"
+b_func = "effect @s[tag=!ride] resistance 99999 70 true\neffect @s[tag=!ride] instant_health 1 255 true\n"
 
 names = ""
 

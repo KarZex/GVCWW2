@@ -1,4 +1,4 @@
-effect @s[tag=!ride] resistance 99999 255 true
+effect @s[tag=!ride] resistance 99999 70 true
 effect @s[tag=!ride] instant_health 1 255 true
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:bf109] run event entity @s 20mmmcaird

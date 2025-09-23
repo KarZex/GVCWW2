@@ -18,7 +18,10 @@
               "dp28": "query.get_equipped_item_name == 'dp28'"
             },
             {
-              "tt33": "query.get_equipped_item_name == 'tt33'"
+              "tt33ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:tt33') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33')"
+            },
+            {
+              "tt33": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:tt33') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33')"
             },
             {
               "ptrd": "query.get_equipped_item_name == 'ptrd'"
@@ -39,7 +42,10 @@
               "p90": "query.get_equipped_item_name == 'p90'"
             },
             {
-              "p38": "query.get_equipped_item_name == 'p38'"
+              "p38ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:p38') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38')"
+            },
+            {
+              "p38": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:p38') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38')"
             },
             {
               "m1": "query.get_equipped_item_name == 'm1'"
@@ -54,7 +60,10 @@
               "thom": "query.get_equipped_item_name == 'thom'"
             },
             {
-              "m1911": "query.get_equipped_item_name == 'm1911'"
+              "m1911ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m1911') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911')"
+            },
+            {
+              "m1911": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m1911') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911')"
             },
             {
               "m1b": "query.get_equipped_item_name == 'm1b'"
@@ -84,7 +93,10 @@
               "t99": "query.get_equipped_item_name == 't99'"
             },
             {
-              "t14": "query.get_equipped_item_name == 't14'"
+              "t14ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:t14') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14')"
+            },
+            {
+              "t14": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:t14') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14')"
             }
           ]
         },
@@ -121,6 +133,16 @@
         "dp28": {
           "on_entry": [
             "/function hold/dp28h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "tt33ii": {
+          "on_entry": [
+            "/function hold/tt33iih"
           ],
           "transitions": [
             {
@@ -198,6 +220,16 @@
             }
           ]
         },
+        "p38ii": {
+          "on_entry": [
+            "/function hold/p38iih"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "p38": {
           "on_entry": [
             "/function hold/p38h"
@@ -241,6 +273,16 @@
         "thom": {
           "on_entry": [
             "/function hold/thomh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m1911ii": {
+          "on_entry": [
+            "/function hold/m1911iih"
           ],
           "transitions": [
             {
@@ -341,6 +383,16 @@
         "t99": {
           "on_entry": [
             "/function hold/t99h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t14ii": {
+          "on_entry": [
+            "/function hold/t14iih"
           ],
           "transitions": [
             {

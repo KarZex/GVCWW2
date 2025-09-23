@@ -398,6 +398,16 @@ script.gvcv5.bannedFromred.name=§cあなたは赤チームから追放されて
 script.gvcv5.bannedFromblue.name=§9あなたは青チームから追放されています§r
 script.gvcv5.bannedFromgreen.name=§aあなたは緑チームから追放されています§r
 script.gvcv5.bannedFromyellow.name=§eあなたは黄チームから追放されています§r
+script.gvcv5.phone_noteam_setting.name=プレイヤー設定
+script.gvcv5.phone_noteam_setting_is_down.name=HPが0の時ダウンする
+script.gvcv5.phone_noteam_setting_do_print_damage.name=ダメージを表示する
+script.gvcv5.phone_noteam_setting_do_autoreload.name=自動リロードを行う
+script.gvcv5.phone_noteam_setting_now_down.name=HPが0になるとダウン状態になります。
+script.gvcv5.phone_noteam_setting_dont_down.name=HPが0になると死亡します。
+script.gvcv5.phone_noteam_setting_now_print.name=攻撃を受けるとダメージが表示されます。
+script.gvcv5.phone_noteam_setting_dont_print.name=ダメージは表示されません
+script.gvcv5.phone_noteam_setting_now_autoreload.name=自動リロードが有効です。
+script.gvcv5.phone_noteam_setting_dont_autoreload.name=自動リロードが無効です。
 
 script.gvcv5.phoneAbuse0.name=警告::
 script.gvcv5.phoneAbuse1.name=にて

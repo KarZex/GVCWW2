@@ -29,7 +29,7 @@
           "min": 0,
           "max": 0
         },
-        "max_durability": 9
+        "max_durability": 5
       },
       "minecraft:use_modifiers": {
         "use_duration": 9999.0,
@@ -37,7 +37,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "fire:ads_ak47"
-      }
+      },
+      "minecraft:allow_off_hand": true
     }
   }
 }

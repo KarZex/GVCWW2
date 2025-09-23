@@ -513,6 +513,16 @@ script.gvcv5.downedbyGER.name=has been downed by §8German Team§r
 script.gvcv5.downedbyUSA.name=has been downed by §9US Team§r
 script.gvcv5.downedbyJAP.name=has been downed by §aJapanese Team§r
 script.gvcv5.downedbyENG.name=has been downed by §eBritish Team§r
+script.gvcv5.phone_noteam_setting.name=Player Settings
+script.gvcv5.phone_noteam_setting_is_down.name=Do down when HP is 0
+script.gvcv5.phone_noteam_setting_do_print_damage.name=Do show damage
+script.gvcv5.phone_noteam_setting_do_autoreload.name=Do auto-reload
+script.gvcv5.phone_noteam_setting_now_down.name=You will enter a downed state when your HP reaches 0.
+script.gvcv5.phone_noteam_setting_dont_down.name=You will die when your HP reaches 0.
+script.gvcv5.phone_noteam_setting_now_print.name=Damage will be displayed when you are attacked.
+script.gvcv5.phone_noteam_setting_dont_print.name=Damage will not be displayed
+script.gvcv5.phone_noteam_setting_now_autoreload.name=Auto-reload is enabled.
+script.gvcv5.phone_noteam_setting_dont_autoreload.name=Auto-reload is disabled.
 
 gvcv5.order.attack.name=Individual Interception!
 gvcv5.order.wait.name=Stand by!

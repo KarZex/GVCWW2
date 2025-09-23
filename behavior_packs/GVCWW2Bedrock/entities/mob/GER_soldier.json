@@ -1221,6 +1221,7 @@
           "playerp",
           "blackteam",
           "axis_soldier",
+          "ww2_soldier",
           "mob"
         ]
       },
@@ -2068,6 +2069,12 @@
                         "test": "is_family",
                         "subject": "other",
                         "value": "GERteam"
+                      },
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "player"
                       }
                     ]
                   },
@@ -2239,7 +2246,7 @@
             "trigger": "vehicle:tiger"
           },
           {
-            "weight": 5,
+            "weight": 1,
             "trigger": "vehicle:wirbelwind"
           }
         ]

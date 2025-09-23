@@ -66,7 +66,7 @@
         },
         "ckg": {
           "on_entry": [
-            "/execute unless block ~~~ minecraft:grass_path unless block ~~-1~ minecraft:water run event entity @s gvcv5:explode"
+            
           ],
           "transitions": [
             { "g": "1.0" }

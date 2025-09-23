@@ -362,7 +362,7 @@
             "trigger": "vehicle:m4"
           },
           {
-            "weight": 5,
+            "weight": 1,
             "trigger": "vehicle:m13aa"
           },
           {

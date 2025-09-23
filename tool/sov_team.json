@@ -347,7 +347,7 @@
             "trigger": "vehicle:kv2"
           },
           {
-            "weight": 5,
+            "weight": 1,
             "trigger": "vehicle:bm13aa"
           }
         ]

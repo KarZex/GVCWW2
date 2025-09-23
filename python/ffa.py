@@ -3,7 +3,7 @@ import csv
 import shutil
 teams = [ "SOV","GER","USA","JAP","ENG" ]
 for team in teams:
-    with open("behavior_packs/GVCWW2Bedrock/entities/mob/{}_soldier".format(team),"r") as f:
+    with open("behavior_packs/GVCWW2Bedrock/entities/mob/{}_soldier.json".format(team),"r") as f:
         team_json = json.load(f)
         team_json["minecraft:entity"]["components"]["minecraft:behavior.nearest_attackable_target"]["entity_types"] = [
             {
@@ -35,7 +35,7 @@ for team in teams:
             }
         ]
     
-    with open("behavior_packs/GVCWW2Bedrock/entities/mob/{}_soldier".format(team),"w") as f:
+    with open("behavior_packs/GVCWW2Bedrock/entities/mob/{}_soldier.json".format(team),"w") as f:
         json.dump(team_json,f,indent=2)
 
         

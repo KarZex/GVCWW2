@@ -355,7 +355,7 @@
             "trigger": "vehicle:t17e1"
           },
           {
-            "weight": 5,
+            "weight": 1,
             "trigger": "vehicle:t17e2"
           }
         ]

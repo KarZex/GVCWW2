@@ -137,6 +137,29 @@ function gvcv5RemoveTeamList( user,team ){
 		world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag}`,"")}`);
 	}
 }
+
+//Colored nameTags
+system.runInterval( () => {
+	const players = world.getAllPlayers();
+	for( const player of players ){
+		if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`SOVteam`) ){
+			player.nameTag = `§c${player.name}`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`GERteam`) ){
+			player.nameTag = `§7${player.name}`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`USAteam`) ){
+			player.nameTag = `§9${player.name}`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`JAPteam`) ){
+			player.nameTag = `§a${player.name}`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`ENGteam`) ){
+			player.nameTag = `§e${player.name}`;
+		}
+	}
+},20 );
+
 /*
 world.afterEvents.playerSpawn.subscribe( e => {
 	const p = e.player;
@@ -366,6 +389,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.button(`script.gvcv5.howToVechile.name`);
 		form.button(`script.gvcv5.howToAir.name`);
 		form.button(`script.gvcv5.phone_howToTeam.name`);
+		form.button(`script.gvcv5.phone_noteam_setting.name`);
 		if( team == `noteam` ){
 			form.button(`script.gvcv5.select_team.name`);
 		}
@@ -384,24 +408,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc3.name` });
 					itemRawText.push({ text: `\n` });
 					form.body({ rawtext: itemRawText});
-					if( user.hasTag(`autoReload`) ){
-						form.button(`script.gvcv5.autoReloadOff.name`);
-					}
-					else{
-						form.button(`script.gvcv5.autoReloadOn.name`);
-					}
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
 						if ( !result.canceled ){
-							
-							if( r.selection == 0 ){
-								if( user.hasTag(`autoReload`) ){
-									user.removeTag(`autoReload`)
-								}
-								else{
-									user.addTag(`autoReload`)
-								}
-							}
 							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
 						}
 					} )
@@ -450,10 +459,49 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
 				}
 				else if( r.selection == 4 ){
+					user.runCommand(`scriptevent gvcv5:phone_noteam_setting ${team}`);
+				}
+				else if( r.selection == 5 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
 				}
 			}
 		},)
+	}
+	else if( e.id == "gvcv5:phone_noteam_setting" && !e.sourceEntity.hasTag(`down`) ){
+		const form = new ModalFormData();
+		const user = e.sourceEntity;
+		form.title(`script.gvcv5.phone_noteam_setting.name`);
+		form.toggle(`script.gvcv5.phone_noteam_setting_is_down.name`, {defaultValue: ( !user.hasTag(`nodownable`) )});
+		form.toggle(`script.gvcv5.phone_noteam_setting_do_print_damage.name`, {defaultValue: ( !user.hasTag(`no_print`) )});
+		form.toggle(`script.gvcv5.phone_noteam_setting_do_autoreload.name`, {defaultValue: ( user.hasTag(`autoReload`) )});
+		form.show(e.sourceEntity).then( result => {
+			if ( !result.canceled ){
+				if( user.hasTag(`nodownable`) && Boolean(result.formValues[0]) == true ){
+					user.removeTag(`nodownable`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_down.name` }]});
+				}
+				if( !user.hasTag(`nodownable`) && Boolean(result.formValues[0]) == false ){
+					user.addTag(`nodownable`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_down.name` }]});
+				}
+				if( user.hasTag(`no_print`) && Boolean(result.formValues[1]) == true ){
+					user.removeTag(`no_print`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_print.name` }]});
+				}
+				if( !user.hasTag(`no_print`) && Boolean(result.formValues[1]) == false ){
+					user.addTag(`no_print`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_print.name` }]});
+				}
+				if( !user.hasTag(`autoReload`) && Boolean(result.formValues[2]) == true ){
+					user.addTag(`autoReload`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_autoreload.name` }]});
+				}
+				if( user.hasTag(`autoReload`) && Boolean(result.formValues[2]) == false ){
+					user.removeTag(`autoReload`);
+					user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_autoreload.name` }]});
+				}
+			}
+		} )
 	}
 	else if( e.id == "gvcv5:phone_howToTeam" && !e.sourceEntity.hasTag(`down`) ){
 		const user = e.sourceEntity;

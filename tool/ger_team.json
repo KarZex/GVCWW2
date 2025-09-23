@@ -358,7 +358,7 @@
             "trigger": "vehicle:tiger"
           },
           {
-            "weight": 5,
+            "weight": 1,
             "trigger": "vehicle:wirbelwind"
           }
         ]

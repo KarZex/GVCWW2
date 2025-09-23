@@ -1,6 +1,8 @@
 @echo off
-./cgun.bat
-python ffa.py
+python python/craftgunteam.py
+python python/craftgundef.py
+python python/craftvehicle.py
+python python/ffa.py
 rd /S /Q output
 mkdir output
 cd behavior_packs

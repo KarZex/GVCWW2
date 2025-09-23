@@ -75,7 +75,10 @@
               "dp28_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:dp28') && (variable.attack_time > 0.0)"
             },
             {
-              "tt33": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && query.is_using_item"
+              "tt33": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:tt33') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && query.is_using_item"
+            },
+            {
+              "tt33ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:tt33') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && query.is_using_item"
             },
             {
               "tt33_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && (variable.attack_time > 0.0)"
@@ -117,7 +120,10 @@
               "p90_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p90') && (variable.attack_time > 0.0)"
             },
             {
-              "p38": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38') && query.is_using_item"
+              "p38": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:p38') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38') && query.is_using_item"
+            },
+            {
+              "p38ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:p38') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38') && query.is_using_item"
             },
             {
               "p38_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p38') && (variable.attack_time > 0.0)"
@@ -147,7 +153,10 @@
               "thom_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:thom') && (variable.attack_time > 0.0)"
             },
             {
-              "m1911": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && query.is_using_item"
+              "m1911": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m1911') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && query.is_using_item"
+            },
+            {
+              "m1911ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m1911') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && query.is_using_item"
             },
             {
               "m1911_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && (variable.attack_time > 0.0)"
@@ -207,7 +216,10 @@
               "t99_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t99') && (variable.attack_time > 0.0)"
             },
             {
-              "t14": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14') && query.is_using_item"
+              "t14": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:t14') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14') && query.is_using_item"
+            },
+            {
+              "t14ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:t14') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14') && query.is_using_item"
             },
             {
               "t14_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14') && (variable.attack_time > 0.0)"
@@ -446,7 +458,8 @@
         },
         "tt33_reload": {
           "on_entry": [
-            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload tt33"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload tt33",
+            "/tag @s add pistolreload"
           ],
           "transitions": [
             {
@@ -455,6 +468,16 @@
           ]
         },
         "tt33": {
+          "on_entry": [
+            "/scriptevent gvcv5:pistolUse tt33"
+          ],
+          "transitions": [
+            {
+              "tt33_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "tt33ii": {
           "on_entry": [
             "/scriptevent gvcv5:gunUse tt33"
           ],
@@ -674,7 +697,8 @@
         },
         "p38_reload": {
           "on_entry": [
-            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload p38"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload p38",
+            "/tag @s add pistolreload"
           ],
           "transitions": [
             {
@@ -683,6 +707,16 @@
           ]
         },
         "p38": {
+          "on_entry": [
+            "/scriptevent gvcv5:pistolUse p38"
+          ],
+          "transitions": [
+            {
+              "p38_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "p38ii": {
           "on_entry": [
             "/scriptevent gvcv5:gunUse p38"
           ],
@@ -836,7 +870,8 @@
         },
         "m1911_reload": {
           "on_entry": [
-            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1911"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1911",
+            "/tag @s add pistolreload"
           ],
           "transitions": [
             {
@@ -845,6 +880,16 @@
           ]
         },
         "m1911": {
+          "on_entry": [
+            "/scriptevent gvcv5:pistolUse m1911"
+          ],
+          "transitions": [
+            {
+              "m1911_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m1911ii": {
           "on_entry": [
             "/scriptevent gvcv5:gunUse m1911"
           ],
@@ -1166,7 +1211,8 @@
         },
         "t14_reload": {
           "on_entry": [
-            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload t14"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload t14",
+            "/tag @s add pistolreload"
           ],
           "transitions": [
             {
@@ -1175,6 +1221,16 @@
           ]
         },
         "t14": {
+          "on_entry": [
+            "/scriptevent gvcv5:pistolUse t14"
+          ],
+          "transitions": [
+            {
+              "t14_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "t14ii": {
           "on_entry": [
             "/scriptevent gvcv5:gunUse t14"
           ],

@@ -336,6 +336,31 @@
 				}
 			}
 		},
+		"animation.offhand.first": {
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"variable.is_first_person?(variable.is_sneaking?0:-6.30085):(query.target_x_rotation - 90.0 + math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"variable.is_first_person?(variable.is_sneaking?0:37.71023):(query.target_y_rotation - 5.73)",
+						"variable.is_first_person?(variable.is_sneaking?0:64.81843):((math.cos(query.life_time * 103.2) * 2.865) + 2.865)"
+					],
+					"position": [
+						"variable.is_first_person?(variable.is_sneaking?0:-3):0",
+						"variable.is_first_person?(variable.is_sneaking?0:8):0",
+						"variable.is_first_person?(variable.is_sneaking?0:-9):0"
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"variable.is_first_person?90.08482:(query.target_x_rotation - 90.0 + math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"variable.is_first_person?4.88119:(query.target_y_rotation - 5.73)",
+						"variable.is_first_person?180.54624:((math.cos(query.life_time * 103.2) * 2.865) + 2.865)"
+					],
+					"position": ["variable.is_first_person?-10.5:0", "variable.is_first_person?-2:0", "variable.is_first_person?4:0"]
+				}
+			}
+		},
 		"animation.mob.third": {
 			"animation_length": 0.5,
 			"loop": true,
@@ -675,16 +700,6 @@
 				}
 			}
 		},
-		"animation.item.third2": {
-			"loop": true,
-			"animation_length": 0.5,
-			"bones": {
-				"gun": {
-					"position": [0.5, -8, -0.5],
-					"scale": 0.3
-				}
-			}
-		},
 		"animation.m1b.third": {
 			"loop": true,
 			"animation_length": 0.5,
@@ -731,6 +746,43 @@
 			"bones": {
 				"gun": {
 					"position": [1.5, -11, 0.5],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.ak47.firstoff": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [13, -7.6, 2],
+					"scale": 0.33
+				},
+				"guncube": {
+					"position": [0, 4, 0]
+				}
+			}
+		},
+		"animation.item.third2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [0.5, -8, -0.5],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.item.thirdoff": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [11.5, -8, -0.5],
 					"scale": 0.3
 				}
 			}
