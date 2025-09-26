@@ -6,7 +6,15 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier": "minecraft:snowball"
+      "runtime_identifier": "minecraft:snowball",
+      "scripts": {
+        "animate": [
+          "walk"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.rocket"
+      }
     },
     "components": {
       "minecraft:type_family": {
@@ -20,6 +28,9 @@
         "fuse_lit": true,
         "power": 0,
         "causes_fire": false
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:collision_box": {
         "width": 0.25,
@@ -40,8 +51,8 @@
             }
           }
         },
-        "power": 0.2,
-        "gravity": 0.05,
+        "power": 0.3,
+        "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 0.0,
         "uncertainty_multiplier": 0,

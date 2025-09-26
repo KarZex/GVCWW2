@@ -1,12 +1,12 @@
 import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
-import { vehicleData } from "./vehicle";
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
-import { absVector3,isMoving } from "./usefulFunction"
+import { absVector3,getVector3E,isMoving,turning2 } from "./usefulFunction"
 import "./compornents";
 import "./team";
+import "./vehicleMain"
 
 
 /*
@@ -108,64 +108,6 @@ function getInventoryItem(player,typeId){
 	return c;
 }
 
-async function RaidSpawner(flag,type,wave) {
-	const R = 64;
-	const thita = Math.PI * 2 * Math.random();
-	const L = flag.location;
-	const baseLocation = { 
-		x:L.x + R * Math.cos(thita),
-		y:L.y,
-		z:L.z + R * Math.sin(thita)
-	}
-	await flag.runCommand(`tickingarea remove raidSpawner`);
-	await flag.runCommand(`tickingarea add circle ${Math.floor(baseLocation.x)} ${Math.floor(baseLocation.y)} ${Math.floor(baseLocation.z)} 1 raidSpawner false`);
-	await system.waitTicks(2);
-	const d = flag.dimension;
-	const raid = raidData[`${type}`][`${wave}`];
-	for( let c of raid ){
-		for( let i = 0; i < c["counts"]; i++ ){
-			let type = c["type"];
-			let gun = c["gun"];
-			let armor = c["armor"];
-			let isBoss = c["isBoss"];
-			let Ench = c["Ench"];
-			const Radius = 8 * Math.random();
-			const thita_i = Math.PI * 2 * Math.random();
-			const summonLocation = { 
-				x:baseLocation.x + Radius * Math.cos(thita_i),
-				y:baseLocation.y + 10,
-				z:baseLocation.z + Radius * Math.sin(thita_i)
-			}
-			const cont = d.spawnEntity(type,summonLocation);
-			cont.triggerEvent(`gvcv5:entity_spawned_raid`);
-			cont.addTag(`raid`);
-			if( gun != undefined ){
-				cont.triggerEvent(gun);
-			}
-			if( armor != undefined ){
-				cont.addTag(armor);
-				cont.runCommand(`function armor/${armor}`);
-			}
-			if( isBoss != undefined ){
-				if( isBoss ){
-					cont.addEffect("health_boost",9999999,{ amplifier: 10 } );
-					cont.addEffect("instant_health",1,{ amplifier: 255 } );
-					cont.nameTag = `Raid Boss`
-				}
-			}
-			if( Ench != undefined ){
-				for( let e of Ench ){
-					let Id = e["id"];
-					let Lv = e["lv"];
-					cont.setDynamicProperty(`Ench_${Id}`,Lv);
-					cont.runCommand(`enchant @s ${Id} ${Lv}`);
-				}
-			}
-		}
-	}
-	await system.waitTicks(2);
-	flag.runCommand(`tickingarea remove raidSpawner`);
-}
 function setArmorValue( itemName ){
 	if( itemName.includes("leather") ){ return 0.05 }
 	else if( itemName.includes("chainmail") ){ return 0.1 }
@@ -182,312 +124,16 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("netherite") ){ return 0.25 }
 	else { return 0 }
 }
-function summonAirbone(projectile,location,Radius,Height,Sigma,team ){
-	const rad = Sigma * Math.PI / 180;
-	const spawnPoint = { 
-		x: location.x + Radius * -Math.sin(rad),
-		y: location.y + Height,
-		z: location.z + Radius * Math.cos(rad) 
-	};
-	const airbone = projectile.dimension.spawnEntity(`gvcv5:ca`,spawnPoint,{ spawnEvent:`minecraft:spawned_from_air`});
-	airbone.teleport( airbone.location, {rotation: projectile.getRotation() } )
-	if( team != `noteam` ){
-		airbone.triggerEvent(`gvcv5:become_${team}team`);
-	}
-	return airbone
-}
-function airbone1( projectile,team ){
-	const owner = projectile.getComponent(`projectile`).owner;
-	const location = projectile.location;
-	const S = owner.getRotation().y;
-	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
-	for( let i = -3; i < 4; i++ ){
-		summonAirbone( projectile,location,i*5,10*i+60,S,team);
-	}
-}
-function airbone2( projectile,team ){
-	const owner = projectile.getComponent(`projectile`).owner;
-	const S = owner.getRotation().y;
-	const rad = S * Math.PI / 180;
-	const location = projectile.location;
-	const location1 = { 
-		x: projectile.location.x + 5 * -Math.sin(rad+Math.PI/2),
-		y: projectile.location.y,
-		z: projectile.location.z + 5 * Math.cos(rad+Math.PI/2) 
-	};
-	const location2 = { 
-		x: projectile.location.x + 5 * -Math.sin(rad-Math.PI/2),
-		y: projectile.location.y,
-		z: projectile.location.z + 5 * Math.cos(rad-Math.PI/2) 
-	};
-	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
-	for( let i = -3; i < 4; i++ ){
-		summonAirbone( projectile,location1,i*5,10*i+60,S,team);
-		summonAirbone( projectile,location2,i*5,10*i+60,S,team);
-	}
-	const ride = summonAirbone( projectile,location,0,60,S,team);
-	ride.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
-}
-function airbone3( projectile,team ){
-	const owner = projectile.getComponent(`minecraft:projectile`).owner;
-	const S = owner.getRotation().y;
-	const rad = S * Math.PI / 180;
-	const location = projectile.location;
-	const location1 = { 
-		x: projectile.location.x + 5 * -Math.sin(rad+Math.PI/2),
-		y: projectile.location.y,
-		z: projectile.location.z + 5 * Math.cos(rad+Math.PI/2) 
-	};
-	const location2 = { 
-		x: projectile.location.x + 5 * -Math.sin(rad-Math.PI/2),
-		y: projectile.location.y,
-		z: projectile.location.z + 5 * Math.cos(rad-Math.PI/2) 
-	};
-	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
-	for( let i = -4; i < 5; i++ ){
-		summonAirbone( projectile,location1,i*5,10*i+80,S,team);
-		summonAirbone( projectile,location,i*5,10*i+80,S,team);
-		summonAirbone( projectile,location2,i*5,10*i+80,S,team);
-	}
-	const ride = summonAirbone( projectile,location,0,80,S,team);
-	ride.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
-	const ride1 = summonAirbone( projectile,location1,-12.5,60,S,team);
-	ride1.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
-	const ride2 = summonAirbone( projectile,location2,12.5,100,S,team);
-	ride2.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
-}
-function missile( projectile,level,team ){
-	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
-	const location = { 
-		x: projectile.location.x,
-		y: 320,
-		z: projectile.location.z
-	};
-	const missile = projectile.dimension.spawnEntity(`gvcv5:drop${level}_${team}`,location);
-}
 
-function airCraftlader( player ){
-	const V = player.getViewDirection();
-	const P0 = player.location;
-	const d0 = Math.atan2(V.z, V.x);
-	let team = `noteam`;
-	let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
-	if( player.hasTag(`red`) ){ team = `red`; }
-	else if( player.hasTag(`blue`) ){ team = `blue`; }
-	else if( player.hasTag(`green`) ){ team = `green`; }
-	else if( player.hasTag(`yellow`) ){ team = `yellow`; }
-	const allPlayers = world.getAllPlayers();
-	for( let i of allPlayers ){
-		const Pi = i.location;
-		if( i.hasTag(`${team}`) || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
-			continue;
-		}
-		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
-		const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
-		const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
-		for( let j = 0; j < 21; j++ ){
-			if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
-				if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
-					print[j] = 1;
-				}
-				else if( (512 <= ri && ri < 1024) && print[j] < 2 ){
-					print[j] = 2;
-				}
-				else if( (256 <= ri && ri < 512) && print[j] < 3 ){
-					print[j] = 3;
-				}
-				else if( (64 <= ri && ri < 256) && print[j] < 4 ){
-					print[j] = 4;
-				}
-				else if( (ri < 64) && print[j] < 5 ){
-					print[j] = 5;
-				}
-
-			}
-		}
-
-	}
-	for( let j = 0; j < 21; j++ ){
-		if( print[j] == 0 ){
-			print[j] = `§7`;
-		}
-		else if( print[j] == 1 ){
-			print[j] = `§f`;
-		}
-		else if( print[j] == 2 ){
-			print[j] = `§e`;
-		}
-		else if( print[j] == 3 ){
-			print[j] = `§g`;
-		}
-		else if( print[j] == 4 ){
-			print[j] = `§6`;
-		}
-		else if( print[j] == 5 ){
-			print[j] = `§4`;
-		}
-	}
-	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
-}
-
-function vehicleHp( HP,HPMax ){
-	let hpbar = ``;
-	if( HP >= HPMax * 0.5 ){
-		hpbar = `§a${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
-	}
-	else if( HP >= HPMax * 0.25 ){
-		hpbar = `§g${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
-	}
-	else{
-		hpbar = `§4${Math.floor(HP)}/${Math.floor(HPMax)}§r\n`;
-	}
-	return hpbar;
-}
-
-function subWeapon( player,vehicle ){
-	const subWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`sub`];
-	const subWeaponAmmo = gunData[`${subWeapon}`][`ammoType`];
-	const subWeaponName = `{"translate":"gvcww2.${subWeapon}.name"}`;
-	const subWeaponScore = world.scoreboard.getObjective(`subWeapon`).getScore(player);
-	const subWeaponScoreMax = world.scoreboard.getObjective(`maxsubcool`).getScore(player);
-	const subWeaponCool = world.scoreboard.getObjective(`scool`).getScore(player);
-	let subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax} ${getInventoryItem(player,subWeaponAmmo)}\n"}`;
-	if( subWeaponCool <= 20 ){
-		subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax} ${getInventoryItem(player,subWeaponAmmo)}\n"}`;
-	}
-	else if( subWeaponCool > 20 ){
-		subWeaponData = `{"text":": §cCOOL ${subWeaponCool}§r\n"}`;
-	}
-	return `${subWeaponName},${subWeaponData}`;
-}
-function mainWeapon0( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
-	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main1`];
-	let mainWeaponAmmo = ``
-	if( mainWeapon != "" ){
-		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
-	}
-	let mainTypeData = ``;
-	if( mtype == 0){
-		mainTypeData = `{"text":"§e"},`;
-	}
-	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
-	const mainWeaponScore = world.scoreboard.getObjective(`mcool`).getScore(player);
-	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
-	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
-	}
-	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
-}
-
-function mainWeapon1( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
-	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main2`];
-	let mainWeaponAmmo = ``
-	if( mainWeapon != "" ){
-		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
-	}
-	let mainTypeData = ``;
-	if( mtype == 1){
-		mainTypeData = `{"text":"§e"},`;
-	}
-	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
-	const mainWeaponScore = world.scoreboard.getObjective(`mcooli`).getScore(player);
-	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
-	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
-	}
-	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
-}
-function mainWeapon2( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
-	const mainWeapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`main3`];
-	let mainWeaponAmmo = ``
-	if( mainWeapon != "" ){
-		mainWeaponAmmo = gunData[`${mainWeapon}`][`ammoType`];
-	}
-	let mainTypeData = ``;
-	if( mtype == 2){
-		mainTypeData = `{"text":"§e"},`;
-	}
-	const mainWeaponName = `{"translate":"gvcww2.${mainWeapon}.name"}`;
-	const mainWeaponScore = world.scoreboard.getObjective(`mcoolii`).getScore(player);
-	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
-	if( mainWeaponScore <= 0 ){
-		mainWeaponData = `{"text":": READY§r ${getInventoryItem(player,mainWeaponAmmo)}\n"}`;
-	}
-	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
-}
-
-async function airstrike(projectile,level,team){
-	const dimension = projectile.dimension;
-	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
-	let Radius = Math.random() * 4 * level * level;
-	let Sigma = Math.random() * 2 * Math.PI;
-	const location = { 
-		x: projectile.location.x,
-		y: 320,
-		z: projectile.location.z
-	}
-	let spawnPointLocation = location;
-	const num = Math.pow(5,level);
-	for( let i = 0; i < num; i++ ){
-		for( let j = 0; j < level; j++ ){
-			dimension.spawnEntity(`gvcv5:airstrike_${team}`,spawnPointLocation);
-			Radius = Math.random() * 4  * level * level;
-			Sigma = Math.random() * 2 * Math.PI;
-			spawnPointLocation = { 
-				x: location.x + Radius * Math.cos(Sigma),
-				y: 320,
-				z: location.z + Radius * Math.sin(Sigma)
-			}
-		}
-		await system.waitTicks((4-level)*(4-level));
-		
-	}
-}
-
-function hasFuel(player,vehicle){
-	if( !world.getDynamicProperty(`gvcv5:doFuelConsume`) ){
-		return `{"text":"Fuel:§aInfinite§r\n"}`;
-	}
-	else{
-		let fuel = 0;
-		for(let i = 0; i < 36; i++){
-			let Haditem = player.getComponent("inventory").container.getItem(i);
-			if( Haditem != undefined && Haditem.typeId.includes(`gvcv5:fuel`) ){
-				const ItemFuel = Haditem.getComponent(ItemComponentTypes.Durability).maxDurability -  Haditem.getComponent(ItemComponentTypes.Durability).damage;
-				fuel = fuel + ItemFuel;
-			}
-		}
-		//30 second to empty
-		if( fuel < 30 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
-			return `{"text":"Fuel:§4${fuel}§r\n"}`;
-		}
-		//120 second to empty
-		else if( fuel < 120 * Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`FuelPerSecond`]) ){
-			return `{"text":"Fuel:§g${fuel}§r\n"}`;
-		}
-		else{
-			return `{"text":"Fuel:§a${fuel}§r\n"}`;
-		}
-	}
-}
 world.afterEvents.entitySpawn.subscribe( e => {
 	if( e.entity.typeId == "fire:lunge"  ){
 		const projectile = e.entity;
 		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
 		player.applyDamage(100,{ cause: EntityDamageCause.entityExplosion });
 	}
+	//set on fire
 	else if( e.entity.typeId.includes("fire")  ){
 		const projectile = e.entity;
-		let gunName = projectile.typeId
-		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
-		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
-		let damageType = gunData[`${gunName}`]["damageType"];
-		const dmg = gunData[`${gunName}`]["damage"];
-		projectile.setDynamicProperty(`damageType`,damageType);
-		projectile.setDynamicProperty(`damage`,dmg);
 		
 		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
 		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") ){
@@ -496,17 +142,24 @@ world.afterEvents.entitySpawn.subscribe( e => {
 			if( ench.hasEnchantment(`minecraft:flame`) ){
 				projectile.setOnFire(10,true);
 			}
-			if( ench.hasEnchantment(`minecraft:power`) ){
-				const level = ench.getEnchantment(`minecraft:power`).level;
-				projectile.setDynamicProperty(`damage`,dmg * 0.25 * (level + 5) );
-			}
 		}
 		else {
 			if( player.getDynamicProperty(`Ench_flame`) != undefined ){
 				projectile.setOnFire(10,true);
 			}
-			if( player.getDynamicProperty(`Ench_power`) != undefined ){
-				projectile.setDynamicProperty(`damage`,dmg * 0.25 * (player.getDynamicProperty(`Ench_power`) + 5) );
+		}
+
+		if( player.typeId != `minecraft:player` ){
+			const ride = player.dimension.getEntities({location:player.location,families:[ `air` ],maxDistance:4,closest:1})[0];
+			if( ride != undefined ){
+				const V = projectile.getVelocity()
+				let vx = turning2( getVector3E(V),getVector3E(ride.getViewDirection()),Math.PI/12 )
+				//print(`a`)
+				projectile.applyImpulse(vx);
+
+			}
+			else{
+				//print(`b`)
 			}
 		}
 	}
@@ -514,41 +167,42 @@ world.afterEvents.entitySpawn.subscribe( e => {
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
-		let vict = e.getEntityHit().entity;
+		const vict = e.getEntityHit().entity;
 		let def = 0;
-		let gunName = e.projectile.typeId
+		let gunName = e.projectile.typeId;
+		const owner = e.source;
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
 		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
-		let damageType;
-		try{
-			damageType = e.projectile.getDynamicProperty(`damageType`);
-		}
-		catch( error ){
-			damageType = "override"
-		}
+
+		const damageType = gunData[`${gunName}`][`damageType`];
+		const damageIgnoreDef = gunData[`${gunName}`][`damageIgnoreDef`];
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
+
 		if( equipmentComp && vict.typeId == "minecraft:player" ){
-			if( equipmentComp.getEquipment(EquipmentSlot.Head) != undefined ){ 
-				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId) 
-			}
-			if( equipmentComp.getEquipment(EquipmentSlot.Chest) != undefined  ){ 
-				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Chest).typeId) 
-			}
-			if( equipmentComp.getEquipment(EquipmentSlot.Legs) != undefined  ){
-				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Legs).typeId) 
+			const slots = [ EquipmentSlot.Head,EquipmentSlot.Chest,EquipmentSlot.Legs,EquipmentSlot.Feet ];
+			for( const slot of slots ){
+				if( equipmentComp.getEquipment(slot) != undefined ){ 
+					def = def + setArmorValue(equipmentComp.getEquipmentSlot(slot).typeId) 
 				}
-			if( equipmentComp.getEquipment(EquipmentSlot.Feet) != undefined  ){
-				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) 
 			}
+		}
+		if( vict.getEffect("resistance") != undefined ){
+			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
+		}
+		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`air`) ){
+			def = def + 1;
+		}
+		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
+			def = def + 2;
+		}
+		if( damageIgnoreDef > 0 ){
+			def = def - damageIgnoreDef
+		}
+		if( damageType != `override` ){
+			def = def/2;
 		}
 		if (def > 1){ def = 1 }
-		let damage
-		try{
-			damage = e.projectile.getDynamicProperty(`damage`);
-		}
-		catch( error ){
-			damage = gunData[`${gunName}`][`damage`];
-		}
+
 		//headshot (1.5 times)
 		if( e.location.y - vict.location.y > 1.5 && headshotTypes.includes(vict.typeId) ){
 			def = def - 0.5;//armor ignore 50% on headshot
@@ -563,18 +217,39 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = def + 0.25;//armor effect 25% more on feet shot
 			e.source.setDynamicProperty(`gvcww2:headshot`,0);
 		}
+		//Body
 		else{
 			e.source.setDynamicProperty(`gvcww2:headshot`,0);
 		}
+		
+		if (def > 1){ def = 1 }
+		
+		//get Damage
+		let damage = gunData[`${gunName}`][`damage`];
 
+		//Ench
+		if( owner.typeId == `minecraft:player` && !owner.hasTag("isRiding") ){
+			const gun = owner.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+			const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
+			if( ench.hasEnchantment(`minecraft:power`) ){
+				const level = ench.getEnchantment(`minecraft:power`).level;
+				damage = damage * 0.25 * (level + 5);
+			}
+		}
+
+		//Damage Ratio
 		if ( vict.typeId == "minecraft:player" ){ 
 			damage = damage * world.getDynamicProperty("gvcv5:playerDamage");
 		}
 		else{
 			damage = damage * world.getDynamicProperty("gvcv5:mobDamage");
 		}
+		//final damage
+		damage = damage * (1 - def);
+
+		//Override
         if( damageType == `override` && vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
-			damage = damage * (1 - def);
+			if (def > 1){ def = 1 }
 			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
 			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" && damage > 20 ){
 				vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
@@ -588,7 +263,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
             vict.applyKnockback({x:0,z:0},0);
         }
 		else if( damageType != `override` ){
-			damage = damage * (1 - (def/2));
 			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
 			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" ){
 				if(damage > 20 ){ vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
@@ -607,362 +281,25 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	}
 })
 
-world.afterEvents.projectileHitBlock.subscribe( e => {
-	const projectile = e.projectile;
-	if( projectile.typeId.includes(`gre`)){
-		if( projectile.getComponent(`projectile`).owner != undefined ){
-			const player = projectile.getComponent(`projectile`).owner
-			let team
-			if( player.hasTag(`red`) ){ team = `red`; }
-			else if( player.hasTag(`blue`) ){ team = `blue`; }
-			else if( player.hasTag(`green`) ){ team = `green`; }
-			else if( player.hasTag(`yellow`) ){ team = `yellow`; }
-			else { team = `noteam`; }
-			if( projectile.typeId == `gre:airborne1` ){ airbone1( projectile,team ); }
-			else if( projectile.typeId == `gre:airborne2` ){ airbone2( projectile,team ); }
-			else if( projectile.typeId == `gre:airborne3` ){ airbone3( projectile,team ); }
-			else if( projectile.typeId == `gre:missile1` ){ missile( projectile,1,team ); }
-			else if( projectile.typeId == `gre:missile2` ){ missile( projectile,2,team ); }
-			else if( projectile.typeId == `gre:missile3` ){ missile( projectile,3,team ); }
-			else if( projectile.typeId == `gre:airstrike1` ){ airstrike( projectile,1,team ); }
-			else if( projectile.typeId == `gre:airstrike2` ){ airstrike( projectile,2,team ); }
-			else if( projectile.typeId == `gre:airstrike3` ){ airstrike( projectile,3,team ); }
-		}
-	}
-})
-
-system.runInterval( () => {
-	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`tank`]});
-	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`tank`]});
-	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`tank`]});
-	for( let t of overTanks ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
-		}
-	}
-	for( let t of netherTanks ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
-		}
-	}
-	for( let t of endTanks ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
-		}
-	}
-},16)
-system.runInterval( () => {
-	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`air`]});
-	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`air`]});
-	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`air`]});
-	for( let t of overAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
-		}
-	}
-	for( let t of netherAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
-		}
-	}
-	for( let t of endAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
-		}
-	}
-},7)
-
-system.runInterval( () => {
-	const VechilesOver = world.getDimension(`overworld`).getEntities({families:[`vehicle`]});
-	const VechilesNether = world.getDimension(`nether`).getEntities({families:[`vehicle`]});
-	const VechilesEnd = world.getDimension(`the_end`).getEntities({families:[`vehicle`]});
-	const Vechiles = VechilesOver.concat(VechilesNether).concat(VechilesEnd);
-	for( let vehicle of Vechiles ){
-		const riders = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders();
-		if( riders.length > 0 && riders[0].typeId == `minecraft:player` ){
-			let fuelSpendonThisTick = false;
-			const player = riders[0];
-			if( world.getDynamicProperty(`gvcv5:doFuelConsume`) ){
-				for(let i = 0; i < 36; i++){
-					const Haditem = player.getComponent("inventory").container.getItem(i);
-					if( Haditem != undefined && Haditem.typeId.includes(`gvcv5:fuel`) ){
-						const ItemFuel = Haditem.getComponent(ItemComponentTypes.Durability).maxDurability -  Haditem.getComponent(ItemComponentTypes.Durability).damage
-						if( !fuelSpendonThisTick && ItemFuel > vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["FuelPerSecond"] ){
-							if(isMoving(vehicle)){
-								Haditem.getComponent(ItemComponentTypes.Durability).damage += vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["FuelPerSecond"];
-								player.getComponent("inventory").container.setItem(i,Haditem)
-							}
-							fuelSpendonThisTick = true;
-							break;
-						}
-						else if( !fuelSpendonThisTick ){
-							if(isMoving(vehicle)){
-								player.getComponent("inventory").container.setItem(i,undefined);
-							}
-							fuelSpendonThisTick = true;
-							break;
-						}
-					}
-				}
-			}
-
-			if( world.getDynamicProperty(`gvcv5:doFuelConsume`) && !fuelSpendonThisTick && vehicle.getComponent(EntityComponentTypes.Movement).currentValue > 0 ){
-				vehicle.triggerEvent(`gvcv5:no_fuel`);
-				vehicle.addTag(`noFuel`);
-			}
-			else if( (!world.getDynamicProperty(`gvcv5:doFuelConsume`) || fuelSpendonThisTick) && vehicle.getComponent(EntityComponentTypes.Movement).currentValue <= 0 ){
-				vehicle.triggerEvent(`gvcv5:have_fuel`);
-				vehicle.removeTag(`noFuel`);
-			}	
-		}
-		else{
-			continue;
-		}
-	}
-},20)
-
 system.afterEvents.scriptEventReceive.subscribe( async e => {
-	if( e.id == "zex:air"){
-		const airCraft = e.sourceEntity;
-		if( airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined ){
-			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-			let v = airCraft.getVelocity();
-			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
-			const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
-			const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
-			let r = {
-				x:v.x/abs_v,
-				y:v.y/abs_v,
-				z:v.z/abs_v
-			}
-			if( abs_v > maxSpeed ){
-				abs_v = maxSpeed
-			}
-
-			if( abs_v < 0.1 ){
-				abs_v = 0
-			}
-			else{
-				let d = player.getViewDirection();
-				airCraft.clearVelocity();
-				if( Math.asin(d.x) > Math.asin(r.x) + turnRad ){
-					d.x = r.x + Math.sin(turnRad);
-				}
-				if( Math.asin(d.x) < Math.asin(r.x) - turnRad ){
-					d.x = r.x - Math.sin(turnRad);
-				}
-				if( Math.asin(d.y) > Math.asin(r.y) + turnRad ){
-					d.y = r.y + Math.sin(turnRad);
-				}
-				if( Math.asin(d.y) < Math.asin(r.y) - turnRad ){
-					d.y = r.y - Math.sin(turnRad);
-				}
-				if( Math.asin(d.z) > Math.asin(r.z) + turnRad ){
-					d.z = r.z + Math.sin(turnRad);
-				}
-				if( Math.asin(d.z) < Math.asin(r.z) - turnRad ){
-					d.z = r.z - Math.sin(turnRad);
-				}
-				if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
-					
-					if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x > 0 ){
-						d.x = 0;
-					}
-					if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x < 0 ){
-						d.x = 0;
-					}
-					if( airCraft.location.y > 320 && d.y > 0 ){
-						d.y = 0;
-					}
-					if( airCraft.location.y < -64 && d.y < 0 ){
-						d.y = 0;
-					}
-					if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z > 0 ){
-						d.z = 0;
-					}
-					if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z < 0 ){
-						d.z = 0;
-					}
-
-				}
-				else if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:nether` ){
-					if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x > 0 ){
-						d.x = 0;
-					}
-					if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x < 0 ){
-						d.x = 0;
-					}
-					if( airCraft.location.y > 128 && d.y > 0 ){
-						d.y = 0;
-					}
-					if( airCraft.location.y < 0 && d.y < 0 ){
-						d.y = 0;
-					}
-					if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z > 0 ){
-						d.z = 0;
-					}
-					if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z < 0 ){
-						d.z = 0;
-					}
-
-				}
-				if( !world.getDynamicProperty(`gvcv5:doFuelConsume`) || abs_v > 0 ){
-					airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
-				}
-				else{
-					
-				}
-				player.runCommand(`
-					titleraw @s[tag=!reload,tag=!down] 
-					actionbar {"rawtext":[${airCraftlader(player)},
-					{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-					{"text":"HP: ${vehicleHp(HP,HPMax)}"},
-					${hasFuel(player,airCraft)},
-					${subWeapon(player,airCraft)},
-					${mainWeapon0(player,airCraft)},
-					${mainWeapon1(player,airCraft)},
-					${mainWeapon2(player,airCraft)}
-					]}
-				`);
-			}
-		}
-	
-
+	if (e.id === "gvcv5:test"){
+		const user = e.sourceEntity;
+		user.lookAt({ x:0,y:2200,z:0 })
 	}
-	else if( e.id == "zex:playerRotation" ){
-		let player = e.sourceEntity;
-		let rotation = e.message.split(" ");
-		world.sendMessage(`§aX:${rotation[0]} Y:${rotation[1]}`);
-		player.setRotation({x: Number(rotation[0]), y: Number(rotation[1])});
-		//player.teleport( player.location, {rotation: {x: Number(rotation[0]), y: Number(rotation[1])} } );
-	}
-	else if( e.id == "zex:vtext"){
-		const vehicle = e.sourceEntity;
-		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-		if( player.typeId == "minecraft:player" ){
-			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
-			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`tank`]});
-			if( V.length > 0 ){
-				for( let vict of V ){
-					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});
-				}
-			}
-			let v = vehicle.getVelocity();
-			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;
-			const HPMax = vehicle.getComponent(EntityComponentTypes.Health).defaultValue;
-			let fuel = 0;
-			let fuelSpendonThisTick = false;
-			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar 
-				{"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
-				${hasFuel(player,vehicle)},
-				${subWeapon(player,vehicle)},
-				${mainWeapon0(player,vehicle)},
-				${mainWeapon1(player,vehicle)},
-				${mainWeapon2(player,vehicle)}]}`
-			);
-		}
-		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-		}
-		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-			player.removeTag(`cantriding`);
+	if (e.id === "gvcv5:rocket_first"){
+		const projectile = e.sourceEntity;
+		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
+		if( player.getRotation().x > 0 ){
+			const V = projectile.getVelocity();
+			projectile.clearVelocity()
+			projectile.applyImpulse({ x:V.x,y:-V.y,z:V.z });
 		}
 	}
-	else if( e.id == "zex:vheri"){
-		let vehicle = e.sourceEntity;
-		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-		if( player.typeId == "minecraft:player" ){
-			let v = vehicle.getVelocity();
-			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
-		}
-		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-		}
-		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-			player.removeTag(`cantriding`);
-		}
-		else if( player.target != undefined ){
-			let abs_v = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
-			vehicle.clearVelocity();
-			const P_t = player.target.location;
-			const P_v = vehicle.location;
-			const target = {
-				x: P_t.x - P_v.x,
-				y: P_t.y - P_v.y,
-				z: P_t.z - P_v.z
-			}
-			const distance = Math.sqrt(target.x*target.x + target.y*target.y + target.z*target.z);
-			const E_target = {
-				x: (P_t.x - P_v.x)/distance,
-				y: (P_t.y - P_v.y)/distance,
-				z: (P_t.z - P_v.z)/distance
-			}
-			const H = Math.sqrt(E_target.x*E_target.x + E_target.z*E_target.z);
-			const rotate = {
-				x: -Math.asin(E_target.y) * 180 / Math.PI,
-				y: Math.atan2(E_target.z/H, E_target.x/H) * 180 / Math.PI
-			}
-			player.setRotation({x: rotate.x, y: rotate.y-90});
-			if( distance > 16 ){
-				let fly = 0.25;
-				if( vehicle.isOnGround ){ fly = 10; }
-				vehicle.applyImpulse({x:E_target.x*abs_v,y:E_target.y*abs_v+fly,z:E_target.z*abs_v});
-			}
-
-		}
-		else if( player.target == undefined ){
-			vehicle.clearVelocity();
-			let fly = 0;
-			if( vehicle.isOnGround ){ fly = 10; }
-			vehicle.applyImpulse({x:0,y:fly,z:0});
-		}
-	}
-	else if( e.id == "zex:test" ){
-		const player = e.sourceEntity;
-		const a = Infinity;
-		player.setDynamicProperty(`gvcv5:gunUsed`,0);
-	}
-	else if( e.id == "zex:chkride"){
-		if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) ){
-			const airCraft = e.sourceEntity;
-			const p = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-			let noItem = true;
-			for(let i = 0; i < 36; i++){
-				let Haditem = p.getComponent("inventory").container.getItem(i);
-				if( Haditem != undefined && Haditem.typeId != "minecraft:air" ){
-					airCraft.runCommand(`ride @s evict_riders`);
-					noItem = false;
-					p.sendMessage(`§cYou can't ride this vehicle with items!`);
-					p.runCommand(`clear @s minecraft:barrier`);
-					break;
-				}
-			}
-			if( noItem ){
-				for(let i = 0; i < 36; i++){
-					p.runCommand(`replaceitem entity @s slot.inventory ${i} gun:no 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				}
-				p.addTag(`onAir`);
-				p.runCommand(`give @s gun:mgg 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				p.runCommand(`give @s gun:tank 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				p.runCommand(`give @s gun:camera 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				p.runCommand(`give @s zex:mtype 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				p.runCommand(`give @s spyglass 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-				p.runCommand(`give @s gun:no 4 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			}
-		}
-	}
-	else if (e.id === "gvcv5:raid"){
-		const type = e.message.split(` `)[0];
-		const wave = e.message.split(` `)[1];
-		const flag = e.sourceEntity;
-		RaidSpawner(flag,type,wave);
+	if (e.id === "gvcv5:gravity"){
+		try{
+			const projectile = e.sourceEntity;
+			projectile.applyImpulse({ x:0,y:-0.05,z:0 });
+		}catch{}
 	}
 
 	else if( e.id == "zex:start" ){
@@ -1063,12 +400,14 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			player.getComponent("minecraft:inventory").container.setItem(player.selectedSlotIndex, gun);
 			player.setDynamicProperty(`gvcv5:gunUsed`,newDamage - maxAmmo);
 		}
-		if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
-			let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
-			gunOff.getComponent(ItemComponentTypes.Durability).damage = gun.getComponent(ItemComponentTypes.Durability).damage;
-			await system.waitTicks(2);
-			player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
-		}
+		try{
+			if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+				let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+				gunOff.getComponent(ItemComponentTypes.Durability).damage = gun.getComponent(ItemComponentTypes.Durability).damage;
+				await system.waitTicks(2);
+				player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
+			}
+		}catch{}
 	}
 	else if (e.id === "gvcv5:vgun"){
 		//tag=!reload,tag=!down

@@ -2211,19 +2211,19 @@
       "gvcv5:set_have_gun_tank": {
         "randomize": [
           {
-            "weight": 20,
+            "weight": 200,
             "trigger": "mosin"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "ppsh"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "dp28"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "tt33"
           },
           {

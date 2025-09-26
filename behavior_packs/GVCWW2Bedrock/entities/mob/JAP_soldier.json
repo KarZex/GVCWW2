@@ -2267,23 +2267,23 @@
       "gvcv5:set_have_gun_tank": {
         "randomize": [
           {
-            "weight": 20,
+            "weight": 200,
             "trigger": "t38"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "t100"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "t99"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "t14"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "lunge"
           },
           {

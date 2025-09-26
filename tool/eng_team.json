@@ -327,23 +327,23 @@
       "gvcv5:set_have_gun_tank": {
         "randomize": [
           {
-            "weight": 20,
+            "weight": 200,
             "trigger": "leemk4"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "piat"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "lewis"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "brengun"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "stengun"
           },
           {

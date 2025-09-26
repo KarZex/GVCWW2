@@ -80,6 +80,8 @@ export const craftData = {
     "buy":[ 
       { "give":"vehicle:t34_spawn_egg","texture":"textures/items/vehicle/t34", "count":1, "cost":[ 12, 18, 12 ] },
       { "give":"vehicle:kv2_spawn_egg","texture":"textures/items/vehicle/kv2", "count":1, "cost":[ 16, 32, 12 ] },
+      { "give":"vehicle:bm13aa_spawn_egg","texture":"textures/items/vehicle/bm13aa", "count":1, "cost":[ 16, 32, 12 ] },
+      { "give":"vehicle:bm13_spawn_egg","texture":"textures/items/vehicle/bm13", "count":1, "cost":[ 16, 32, 12 ] },
       { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 14, 16, 24 ] },
       { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 32, 32, 36 ] }
     ]
@@ -89,6 +91,7 @@ export const craftData = {
     "buy":[ 
       { "give":"vehicle:panzer_spawn_egg","texture":"textures/items/vehicle/panzer", "count":1, "cost":[ 12, 10, 8 ] },
       { "give":"vehicle:tiger_spawn_egg","texture":"textures/items/vehicle/tiger", "count":1, "cost":[ 24, 40, 16 ] },
+      { "give":"vehicle:wirbelwind_spawn_egg","texture":"textures/items/vehicle/wirbelwind", "count":1, "cost":[ 12, 40, 16 ] },
       { "give":"vehicle:bf109_spawn_egg","texture":"textures/items/vehicle/bf109", "count":1, "cost":[ 6, 12, 18 ] },
       { "give":"vehicle:ju87_spawn_egg","texture":"textures/items/vehicle/ju87", "count":1, "cost":[ 12, 12, 24 ] }
     ]
@@ -96,7 +99,9 @@ export const craftData = {
   "vcusa": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:m4_spawn_egg","texture":"textures/items/vehicle/m4", "count":1, "cost":[ 14, 14, 12 ] },
+      { "give":"vehicle:m4_spawn_egg","texture":"textures/items/vehicle/m4", "count":1, "cost":[ 24, 24, 12 ] },
+      { "give":"vehicle:m5_spawn_egg","texture":"textures/items/vehicle/m5", "count":1, "cost":[ 14, 14, 12 ] },
+      { "give":"vehicle:m13aa_spawn_egg","texture":"textures/items/vehicle/m13aa", "count":1, "cost":[ 14, 14, 12 ] },
       { "give":"vehicle:f4u_spawn_egg","texture":"textures/items/vehicle/f4u", "count":1, "cost":[ 10, 16, 24 ] },
       { "give":"vehicle:sbd_spawn_egg","texture":"textures/items/vehicle/sbd", "count":1, "cost":[ 12, 12, 24 ] }
     ]
@@ -104,7 +109,9 @@ export const craftData = {
   "vcjap": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:t97t_spawn_egg","texture":"textures/items/vehicle/t97t", "count":1, "cost":[ 10, 8, 6 ] },
+      { "give":"vehicle:t97t_spawn_egg","texture":"textures/items/vehicle/t97t", "count":1, "cost":[ 10, 18, 6 ] },
+      { "give":"vehicle:t98t_spawn_egg","texture":"textures/items/vehicle/t98t", "count":1, "cost":[ 10, 8, 6 ] },
+      { "give":"vehicle:t98taa_spawn_egg","texture":"textures/items/vehicle/t98taa", "count":1, "cost":[ 10, 8, 6 ] },
       { "give":"vehicle:zero_spawn_egg","texture":"textures/items/vehicle/zero", "count":1, "cost":[ 12, 14, 18 ] },
       { "give":"vehicle:b7a_spawn_egg","texture":"textures/items/vehicle/b7a", "count":1, "cost":[ 16, 16, 24 ] }
     ]
@@ -112,7 +119,9 @@ export const craftData = {
   "vceng": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"vehicle:valentine_spawn_egg","texture":"textures/items/vehicle/valentine", "count":1, "cost":[ 6, 10, 6 ] },
+      { "give":"vehicle:valentine_spawn_egg","texture":"textures/items/vehicle/valentine", "count":1, "cost":[ 16, 20, 16 ] },
+      { "give":"vehicle:t17e1_spawn_egg","texture":"textures/items/vehicle/t17e1", "count":1, "cost":[ 6, 10, 6 ] },
+      { "give":"vehicle:t17e2_spawn_egg","texture":"textures/items/vehicle/t17e2", "count":1, "cost":[ 6, 10, 6 ] },
       { "give":"vehicle:spitfire_spawn_egg","texture":"textures/items/vehicle/spitfire", "count":1, "cost":[ 18, 16, 32 ] },
       { "give":"vehicle:battle_spawn_egg","texture":"textures/items/vehicle/battle", "count":1, "cost":[ 24, 24, 32 ] }
     ]

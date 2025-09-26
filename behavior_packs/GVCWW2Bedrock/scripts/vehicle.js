@@ -156,7 +156,7 @@ export const vehicleData = {
   },
   "valentine": {
     "type": "tank",
-    "speed": 0.15,
+    "speed": 0.2,
     "sub": "vmg",
     "main1": "57mm",
     "main2": "",
@@ -167,7 +167,7 @@ export const vehicleData = {
   },
   "kv2": {
     "type": "tank",
-    "speed": 0.1,
+    "speed": 0.15,
     "sub": "",
     "main1": "152mm",
     "main2": "",
@@ -178,7 +178,7 @@ export const vehicleData = {
   },
   "tiger": {
     "type": "tank",
-    "speed": 0.15,
+    "speed": 0.2,
     "sub": "vmg",
     "main1": "88mm",
     "main2": "",

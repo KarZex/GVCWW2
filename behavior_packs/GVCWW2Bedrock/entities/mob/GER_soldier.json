@@ -2218,19 +2218,19 @@
       "gvcv5:set_have_gun_tank": {
         "randomize": [
           {
-            "weight": 20,
+            "weight": 200,
             "trigger": "mp40"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "stg44"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "k98"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "p90"
           },
           {

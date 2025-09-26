@@ -1,0 +1,110 @@
+
+            else if( !player.hasTag(`has_target`) ){
+                player.setDynamicProperty(`PreY`,undefined);
+                let v = airCraft.getVelocity();
+                let abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
+                let r = getVector3E(v);
+                if( absVector3(v) < 0.01 ){
+                    v = player.getViewDirection();
+                    r = v;
+                }
+                const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
+                if( airCraft.getDynamicProperty(`gvcww2:Origin`) == undefined ){
+                    airCraft.setDynamicProperty(`gvcww2:Origin`,airCraft.location);
+                }
+                const P_0 = airCraft.getDynamicProperty(`gvcww2:Origin`);
+                const P = airCraft.location;
+                if( DistanceVector3(P_0,P) <= 36 ){
+                    let d = player.getViewDirection();
+                    const b = airCraft.getViewDirection();
+                    d = turning(d,r,Math.PI/36);
+                    const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,24,`minecraft:air`);
+                    if( underBlocksRatio < 1 ){
+                        d.y = 1-underBlocksRatio;
+                    }
+                    //rotate.y = setTruedeg(rotate.y);
+                    airCraft.clearVelocity();
+                    airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+                }
+                else if( DistanceVector3(P_0,P) > 36 ){
+                    player.setDynamicProperty(`gvcww2:rotatey`,undefined)
+                    const b = airCraft.getViewDirection();
+                    const P_target = Vector3Sub(P,P_0);
+                    const P_target_E = getVector3E(P_target);
+                    print( `Px:${Math.floor(100*P_target_E.x)}% Py:${Math.floor(100*P_target_E.y)} Pz:${Math.floor(100*P_target_E.z)}` )
+                    print( `Rx:${Math.floor(100*r.x)}% Ry:${Math.floor(100*r.y)} Rz:${Math.floor(100*r.z)}` )
+                    let d = turning(P_target_E,r,turnRad);
+                    print( `dx:${Math.floor(100*d.x)}% dy:${Math.floor(100*d.y)} dz:${Math.floor(100*d.z)}` )
+                    const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,24,`minecraft:air`);
+                    if( underBlocksRatio < 1 ){
+                        d.y = 1-underBlocksRatio;
+                    }
+                    //rotate.y = setTruedeg(rotate.y);
+                    player.lookAt(P_0);
+                    airCraft.clearVelocity();
+                    airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+                }
+
+                //search target
+                const target1 = player.dimension.getEntities({ excludeGameModes:["Spectator","Creative"],type:`player`,families:[ `SOVteam` ],closest:1,location:player.location,maxDistance:120 });
+                const target2 = player.dimension.getEntities({ excludeTypes:[`player`],families:[ `SOVteam` ],closest:1,location:player.location,maxDistance:120 });
+                const target = target1.concat(target2)[0];
+                if( target != undefined ){
+                    //print(`Find target! ${target.id}`)
+                    player.applyDamage(1,{ cause:EntityDamageCause.entityAttack,damagingEntity:target });
+                    player.setDynamicProperty(`targetId`,target.id);
+                }
+                
+
+            }
+            else if( player.hasTag(`has_target`) ){
+                let v = airCraft.getVelocity();
+                let abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
+                let r = {
+                    x:v.x/abs_v,
+                    y:v.y/abs_v,
+                    z:v.z/abs_v
+                }
+                if( absVector3(v) < 0.01 ){
+                    v = player.getViewDirection();
+                    r = v;
+                }
+                const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
+                const P = airCraft.location;
+                
+                if( player.getDynamicProperty(`targetId`) != undefined ){
+                    const target = world.getEntity(player.getDynamicProperty(`targetId`));
+                    if( target != undefined ){
+                        const P_0 = target.location;
+                        const P_target = Vector3Sub(P,P_0);
+                        const P_target_E = getVector3E(P_target);
+                        const H = Math.sqrt(P_0.x*P_0.x + P_0.z*P_0.z);
+                        
+                        if( DistanceVector3(P_0,P) <= 36 ){
+                            const b = airCraft.getViewDirection();
+                            let d = turning(P_target_E,r,Math.PI/36);
+                            const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,12,`minecraft:air`);
+                            if( underBlocksRatio < 1 ){
+                                d.y = 1-underBlocksRatio;
+                            }
+                            //rotate.y = setTruedeg(rotate.y);
+                            airCraft.clearVelocity();
+                            airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+                        }
+                        else if( DistanceVector3(P_0,P) > 36 ){
+                            player.setDynamicProperty(`gvcww2:rotatey`,undefined)
+                            const b = airCraft.getViewDirection();
+                            let d = turning(P_target_E,r,turnRad);
+                            const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,12,`minecraft:air`);
+                            if( underBlocksRatio < 1 ){
+                                d.y = 1-underBlocksRatio;
+                            }
+                            //rotate.y = setTruedeg(rotate.y);
+                            player.lookAt(P_0);
+                            airCraft.clearVelocity();
+                            airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+                        }
+                    }
+                }
+
+            }

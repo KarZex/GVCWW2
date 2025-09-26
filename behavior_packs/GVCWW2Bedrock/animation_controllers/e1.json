@@ -143,6 +143,41 @@
           ]
         }
       }
+    },
+    "controller.animation.rocket": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "first": "(1.0)" }
+          ]
+        },
+        "first": {
+          "on_entry": [
+            "/scriptevent gvcv5:rocket_first"
+          ],
+          "transitions": [
+            { "bbb": "(1.0)" }
+          ]
+        },
+        "bbb": {
+          "on_entry": [
+            "/scriptevent gvcv5:gravity",
+			      "/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "aaa": "(1.0)" }
+          ]
+        },
+        "aaa": {
+          "on_entry": [
+            "/scriptevent gvcv5:gravity",
+			      "/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "bbb": "(1.0)" }
+          ]
+        }
+      }
     }
   }
 }

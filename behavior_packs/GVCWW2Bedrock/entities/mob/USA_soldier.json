@@ -2222,27 +2222,27 @@
       "gvcv5:set_have_gun_tank": {
         "randomize": [
           {
-            "weight": 20,
+            "weight": 200,
             "trigger": "m1"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "thom"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "m1911"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "spring"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "bar"
           },
           {
-            "weight": 10,
+            "weight": 100,
             "trigger": "m1b"
           },
           {

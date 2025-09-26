@@ -79,8 +79,13 @@ for row in csv_reader:
             
         text += "item.gun:{0}={2}{1}§r\n".format(gun_id,row[0],Rare)
 
+        gun_ignore = 0
+        if( gun_damage_type != "override" ):
+            gun_ignore = 1
+        
+
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"slowness": gun_slow,"speed": gun_power * 0.2,"fireOnReload": bool( "P" in gun_special ), "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef":gun_ignore, "slowness": gun_slow,"speed": gun_power * 0.2,"fireOnReload": bool( "P" in gun_special ), "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
 
         #player
         spawn_entity = { 
@@ -583,6 +588,7 @@ for row in csv_reader2:
         bombattack = "bomb"
         gun_scale = float(row[11])
         gun_ammo = row[12]
+        gun_ignore = float(row[13])
 
         vehicle_weapon += "gvcww2.{0}.name={1}\n".format(gun_id,gun_name)
         
@@ -737,15 +743,15 @@ for row in csv_reader2:
         
         #Gundata fot JS
         if( "D" in gun_offset ):
-            gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
         elif( "Q" in gun_offset ):
-            gundata_json["{}ri".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}ri".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
         
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type),"ammoType": "{}".format(gun_ammo) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type),"ammoType": "{}".format(gun_ammo) }
 
         #Bullet 
         if( "H" not in gun_offset ):
