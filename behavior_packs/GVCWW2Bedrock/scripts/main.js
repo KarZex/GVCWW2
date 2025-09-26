@@ -423,10 +423,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
 		if( gunSlot.getDynamicProperty("attach_scope") != undefined ){
 			const scope = gunSlot.getDynamicProperty("attach_scope");
-			player.setProperty(`zex:scope`,scope);
+			player.setProperty(`zex:sights`,scope);
 		}
 		else{
-			player.setProperty(`zex:scope`,0);
+			player.setProperty(`zex:sights`,0);
 		}
 		
 		try{

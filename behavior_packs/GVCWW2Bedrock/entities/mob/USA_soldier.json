@@ -13,6 +13,22 @@
       },
       "animations": {
         "walk": "controller.animation.riderb1"
+      },
+      "properties": {
+        "zex:is_scoping": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "zex:sights": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        }
       }
     },
     "component_groups": {

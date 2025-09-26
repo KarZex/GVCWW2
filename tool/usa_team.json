@@ -1,515 +1,567 @@
 {
-  "format_version": "1.21.0",
-  "minecraft:entity": {
-    "description": {
-      "identifier": "gvcww2:usa_soldier",
-      "spawn_category": "creature",
-      "is_spawnable": true,
-      "is_summonable": true,
-      "scripts": {
-        "animate": [
-          "walk"
-        ]
-      },
-      "animations": {
-        "walk": "controller.animation.riderb1"
-      }
-    },
-    "component_groups": {
-      "can_despawn": {
-        "minecraft:despawn": {
-          "despawn_from_distance": {}
-        }
-      },
-      "lunge": {
-        "minecraft:behavior.melee_attack": {
-          "priority": 4,
-          "speed_multiplier": 1.25,
-          "track_target": false,
-          "reach_multiplier":  0.0 
-        },
-        "minecraft:target_nearby_sensor": {
-          "inside_range": 2.5,
-          "outside_range": 6.0,
-          "must_see": true,
-          "on_inside_range": {
-            "event": "minecraft:start_exploding",
-            "target": "self"
-          }
-        }
-      },
-      "minecraft:charged_exploding": {
-        "minecraft:explode": {
-          "fuse_length": 0,
-          "fuse_lit": true,
-          "power": 6,
-          "causes_fire": false,
-          "destroy_affected_by_griefing": true
-        }
-      },
-      "attack": {
-        "minecraft:movement": {
-          "value": 0.25
-        },
-        "minecraft:skin_id": {
-          "value": 1
-        },
-        "minecraft:behavior.find_mount": {
-          "priority": 1,
-          "within_radius": 16,
-          "start_delay": 15,
-          "max_failed_attempts": 20
-        } 
-     },
-    "wait": {
-        "minecraft:movement": {
-          "value": 0
-        },
-          "minecraft:skin_id": {
-            "value": 2
-          }
-     },
-    "follow": {
-        "minecraft:movement": {
-          "value": 0.25
-        },
-         "minecraft:behavior.tempt": {
-            "priority": 0,
-            "speed_multiplier": 1.2,
-            "within_radius": 16,
-            "items": [
-                "zex:commandradio"
-            ]
-         },
-          "minecraft:skin_id": {
-            "value": 3
-          }
-     },
-      "default": {
-          "minecraft:movement": {
-            "value": 0.25
-          },
-          "minecraft:skin_id": {
-            "value": 0
-          },
-        "minecraft:behavior.find_mount": {
-          "priority": 1,
-          "within_radius": 16,
-          "start_delay": 15,
-          "max_failed_attempts": 20
-        } 
-       }
-    },
-
-    "components": {
-      "minecraft:is_hidden_when_invisible": {
-      },
-      "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
-      },
-      "minecraft:follow_range": {
-        "value": 48,
-        "max": 48
-      },
-      "minecraft:collision_box": {
-        "width": 0.5,
-        "height": 1.8
-      },
-      "minecraft:skin_id": {
-        "value": 0
-      },
-      "minecraft:type_family": {
-        "family": [ "USAteam","USA","playerp","blueteam","allied_soldier","ww2_soldier", "mob" ]
-      },
-      "minecraft:breathable": {
-        "total_supply": 15,
-        "suffocate_time": 0,
-        "breathes_water": true
-      },
-
-      "minecraft:health": {
-        "value": 20,
-        "max": 20
-      },
-      "minecraft:hurt_on_condition": {
-        "damage_conditions": [
-          {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
-            "cause": "lava",
-            "damage_per_tick": 4
-          }
-        ]
-      },
-      "minecraft:interact": {
-        "interactions": [
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvc.item",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_sneaking",
-                    "subject": "other",
-                    "value": false
-                  },
-                  { "test": "is_family","subject": "other","value": "USAteam"}
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "gvcww2:usa_soldier",
+            "spawn_category": "creature",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "scripts": {
+                "animate": [
+                    "walk"
                 ]
-              },
-              "event": "gvcv5:order",
-              "target": "self"
-            }
-          }
-        ]
-      },
-      "minecraft:movement": {
-        "value": 0.25
-      },
-      "minecraft:navigation.walk": {
-        "is_amphibious": false,
-        "avoid_sun": false,
-        "avoid_water": true
-      },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
-      "minecraft:shooter": {
-        "def": "minecraft:arrow"
-      },
-      "minecraft:behavior.ranged_attack": {
-        "priority": 0,
-        "attack_interval_min": 1.0,
-        "attack_interval_max": 3.0,
-        "attack_radius": 15.0
-      },
-
-      "minecraft:damage_sensor": {
-        "triggers": [
-          {
-            "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-              "filters": {
-                "any_of":[
-                  {
-                    "all_of": [
-                      {"test": "is_family","subject": "other","value": "allied_soldier"},
-                      {"test": "is_family","subject": "other", "value": "USAteam"},
-                      {"test": "is_family","subject": "other","operator":"!=","value": "player"}
-                    ]
-                  },
-                  {
-                    "all_of": [
-                      {"test": "is_family","subject": "other","value": "player"},
-                      {"test": "has_tag","operator":"==","subject": "other","value": "USASub"}
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "USAteam"
-            }
-          }
-        ]
-      },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "must_see": true,
-        "reselect_targets": true,
-        "entity_types": [
-          {
-            "filters": {
-              "all_of": [
-                { "test": "is_family", "subject": "other", "value": "axis_soldier" }
-              ]
             },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "any_of": [
-                { "test": "is_family", "subject": "other", "value": "monster" }
-              ]
+            "animations": {
+                "walk": "controller.animation.riderb1"
             },
-            "max_dist": 42
-          }
-        ]
-      },
-      "minecraft:equipment": {
-        "table": "loot_tables/entities/skeleton_gear.json"
-      },
-      "minecraft:loot": {
-        "table": "loot_tables/entities/ga.json"
-      },
-      "minecraft:behavior.equip_item": {
-        "priority": 3
-      },
-      "minecraft:behavior.look_at_player": {
-        "priority": 7,
-        "look_distance": 8
-      },
-      "minecraft:behavior.random_look_around": {
-        "priority": 8
-      },
-      "minecraft:physics": {
-      },
-      "minecraft:pushable": {
-        "is_pushable": true,
-        "is_pushable_by_piston": true
-      },
-      "minecraft:conditional_bandwidth_optimization": {
-      }
-    },
-
-    "events": {
-      "minecraft:start_exploding": {
-        "add": {
-          "component_groups": [
-            "minecraft:charged_exploding"
-          ]
-        }
-      },
-      "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "default",
-            "can_despawn"
-          ]
-        },
-        "trigger": "gvcv5:set_have_gun_tank"
-      },
-      "minecraft:spawned_from_block": {
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        },
-        "trigger": "gvcv5:set_have_gun"
-      },
-      "gvcv5:set_have_gun": {
-        "randomize": [
-          {
-            "weight": 20,
-            "trigger": "m1"
-          },
-          {
-            "weight": 10,
-            "trigger": "thom"
-          },
-          {
-            "weight": 10,
-            "trigger": "m1911"
-          },
-          {
-            "weight": 10,
-            "trigger": "spring"
-          },
-          {
-            "weight": 10,
-            "trigger": "bar"
-          },
-          {
-            "weight": 10,
-            "trigger": "m1b"
-          }
-        ]
-      },
-      "gvcv5:set_have_gun_tank": {
-        "randomize": [
-          {
-            "weight": 200,
-            "trigger": "m1"
-          },
-          {
-            "weight": 100,
-            "trigger": "thom"
-          },
-          {
-            "weight": 100,
-            "trigger": "m1911"
-          },
-          {
-            "weight": 100,
-            "trigger": "spring"
-          },
-          {
-            "weight": 100,
-            "trigger": "bar"
-          },
-          {
-            "weight": 100,
-            "trigger": "m1b"
-          },
-          {
-            "weight": 5,
-            "trigger": "vehicle:m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m13aa"
-          },
-          {
-            "weight": 5,
-            "trigger": "vehicle:m5"
-          }
-        ]
-      },
-      "minecraft:entity_transformed": {
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        },
-        "trigger": "gvcv5:set_have_gun"
-      },
-      "attack": {
-        "remove": {
-          "component_groups": [
-            "wait",
-            "follow",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "attack"
-          ]
-        }
-      },
-      "wait": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "follow",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "wait"
-          ]
-        }
-      },
-      "follow": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "follow"
-          ]
-        }
-      },
-      "free": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-            "follow"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        }
-      },  
-      "gvcv5:order": {
-        "sequence": [
-          {
-            "remove": {
-              "component_groups": [
-                "can_despawn"
-              ]
-            }
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_skin_id",
-                  "subject": "self",
-                  "operator": "equals",
-                  "value": 0
+            "properties": {
+                "zex:is_scoping": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "zex:sights": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
-              ]
-            },
-            "trigger": "attack",
-            "queue_command": {
-              "command": [
-                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
-              ],
-              "target": "other"
             }
-          },
-          {
-            "filters": {
-              "test": "is_skin_id",
-              "subject": "self",
-              "operator": "equals",
-              "value": 3
+        },
+        "component_groups": {
+            "can_despawn": {
+                "minecraft:despawn": {
+                    "despawn_from_distance": {}
+                }
             },
-            "trigger": "attack",
-            "queue_command": {
-              "command": [
-                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
-              ],
-              "target": "other"
-            }
-          },
-          {
-            "filters": {
-              "test": "is_skin_id",
-              "subject": "self",
-              "operator": "equals",
-              "value": 1
+            "lunge": {
+                "minecraft:behavior.melee_attack": {
+                    "priority": 4,
+                    "speed_multiplier": 1.25,
+                    "track_target": false,
+                    "reach_multiplier": 0.0
+                },
+                "minecraft:target_nearby_sensor": {
+                    "inside_range": 2.5,
+                    "outside_range": 6.0,
+                    "must_see": true,
+                    "on_inside_range": {
+                        "event": "minecraft:start_exploding",
+                        "target": "self"
+                    }
+                }
             },
-            "trigger": "wait",
-            "queue_command": {
-              "command": [
-                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
-              ],
-              "target": "other"
-            }
-          },
-          {
-            "filters": {
-              "test": "is_skin_id",
-              "subject": "self",
-              "operator": "equals",
-              "value": 2
+            "minecraft:charged_exploding": {
+                "minecraft:explode": {
+                    "fuse_length": 0,
+                    "fuse_lit": true,
+                    "power": 6,
+                    "causes_fire": false,
+                    "destroy_affected_by_griefing": true
+                }
             },
-            "trigger": "follow",
-            "queue_command": {
-              "command": [
-                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
-              ],
-              "target": "other"
+            "attack": {
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:skin_id": {
+                    "value": 1
+                },
+                "minecraft:behavior.find_mount": {
+                    "priority": 1,
+                    "within_radius": 16,
+                    "start_delay": 15,
+                    "max_failed_attempts": 20
+                }
+            },
+            "wait": {
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:skin_id": {
+                    "value": 2
+                }
+            },
+            "follow": {
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:behavior.tempt": {
+                    "priority": 0,
+                    "speed_multiplier": 1.2,
+                    "within_radius": 16,
+                    "items": [
+                        "zex:commandradio"
+                    ]
+                },
+                "minecraft:skin_id": {
+                    "value": 3
+                }
+            },
+            "default": {
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:skin_id": {
+                    "value": 0
+                },
+                "minecraft:behavior.find_mount": {
+                    "priority": 1,
+                    "within_radius": 16,
+                    "start_delay": 15,
+                    "max_failed_attempts": 20
+                }
             }
-          }
-        ]
-      }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
+            },
+            "minecraft:follow_range": {
+                "value": 48,
+                "max": 48
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 1.8
+            },
+            "minecraft:skin_id": {
+                "value": 0
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "USAteam",
+                    "USA",
+                    "playerp",
+                    "blueteam",
+                    "allied_soldier",
+                    "ww2_soldier",
+                    "mob"
+                ]
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0,
+                "breathes_water": true
+            },
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "use_item": false,
+                        "play_sounds": "enderchest.open",
+                        "interact_text": "action.gvc.item",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "USAteam"
+                                    }
+                                ]
+                            },
+                            "event": "gvcv5:order",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:navigation.walk": {
+                "is_amphibious": false,
+                "avoid_sun": false,
+                "avoid_water": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:nameable": {},
+            "minecraft:shooter": {
+                "def": "minecraft:arrow"
+            },
+            "minecraft:behavior.ranged_attack": {
+                "priority": 0,
+                "attack_interval_min": 1.0,
+                "attack_interval_max": 3.0,
+                "attack_radius": 15.0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false,
+                        "on_damage": {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "all_of": [
+                                            {
+                                                "test": "is_family",
+                                                "subject": "other",
+                                                "value": "allied_soldier"
+                                            },
+                                            {
+                                                "test": "is_family",
+                                                "subject": "other",
+                                                "value": "USAteam"
+                                            },
+                                            {
+                                                "test": "is_family",
+                                                "subject": "other",
+                                                "operator": "!=",
+                                                "value": "player"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "all_of": [
+                                            {
+                                                "test": "is_family",
+                                                "subject": "other",
+                                                "value": "player"
+                                            },
+                                            {
+                                                "test": "has_tag",
+                                                "operator": "==",
+                                                "subject": "other",
+                                                "value": "USASub"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "USAteam"
+                        }
+                    }
+                ]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "reselect_targets": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "axis_soldier"
+                                }
+                            ]
+                        },
+                        "max_dist": 42
+                    },
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "monster"
+                                }
+                            ]
+                        },
+                        "max_dist": 42
+                    }
+                ]
+            },
+            "minecraft:equipment": {
+                "table": "loot_tables/entities/skeleton_gear.json"
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/ga.json"
+            },
+            "minecraft:behavior.equip_item": {
+                "priority": 3
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 8
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "minecraft:start_exploding": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:charged_exploding"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "default",
+                        "can_despawn"
+                    ]
+                },
+                "trigger": "gvcv5:set_have_gun_tank"
+            },
+            "minecraft:spawned_from_block": {
+                "add": {
+                    "component_groups": [
+                        "default"
+                    ]
+                },
+                "trigger": "gvcv5:set_have_gun"
+            },
+            "gvcv5:set_have_gun": {
+                "randomize": [
+                    {
+                        "weight": 20,
+                        "trigger": "m1"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "thom"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "m1911"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "spring"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "bar"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "m1b"
+                    }
+                ]
+            },
+            "gvcv5:set_have_gun_tank": {
+                "randomize": [
+                    {
+                        "weight": 200,
+                        "trigger": "m1"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "thom"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "m1911"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "spring"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "bar"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "m1b"
+                    },
+                    {
+                        "weight": 5,
+                        "trigger": "vehicle:m4"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:m13aa"
+                    },
+                    {
+                        "weight": 5,
+                        "trigger": "vehicle:m5"
+                    }
+                ]
+            },
+            "minecraft:entity_transformed": {
+                "add": {
+                    "component_groups": [
+                        "default"
+                    ]
+                },
+                "trigger": "gvcv5:set_have_gun"
+            },
+            "attack": {
+                "remove": {
+                    "component_groups": [
+                        "wait",
+                        "follow",
+                        "default"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack"
+                    ]
+                }
+            },
+            "wait": {
+                "remove": {
+                    "component_groups": [
+                        "attack",
+                        "follow",
+                        "default"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "wait"
+                    ]
+                }
+            },
+            "follow": {
+                "remove": {
+                    "component_groups": [
+                        "attack",
+                        "wait",
+                        "default"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "follow"
+                    ]
+                }
+            },
+            "free": {
+                "remove": {
+                    "component_groups": [
+                        "attack",
+                        "wait",
+                        "follow"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "default"
+                    ]
+                }
+            },
+            "gvcv5:order": {
+                "sequence": [
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "can_despawn"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_skin_id",
+                                    "subject": "self",
+                                    "operator": "equals",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        "trigger": "attack",
+                        "queue_command": {
+                            "command": [
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+                            ],
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_skin_id",
+                            "subject": "self",
+                            "operator": "equals",
+                            "value": 3
+                        },
+                        "trigger": "attack",
+                        "queue_command": {
+                            "command": [
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+                            ],
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_skin_id",
+                            "subject": "self",
+                            "operator": "equals",
+                            "value": 1
+                        },
+                        "trigger": "wait",
+                        "queue_command": {
+                            "command": [
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
+                            ],
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_skin_id",
+                            "subject": "self",
+                            "operator": "equals",
+                            "value": 2
+                        },
+                        "trigger": "follow",
+                        "queue_command": {
+                            "command": [
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
+                            ],
+                            "target": "other"
+                        }
+                    }
+                ]
+            }
+        }
     }
-  }
 }

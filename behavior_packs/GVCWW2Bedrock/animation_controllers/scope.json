@@ -5,11 +5,27 @@
         "states": {
           "default": {
             "transitions": [
-              { "x6": "query.property('zex:scope') == 1 && query.is_sneaking" },
+              { "x6": "query.property('zex:sights') == 1 && query.is_sneaking" },
+              { "x2": "query.property('zex:sights') == 2 && query.is_sneaking" },
 				      { "scopeing": "query.is_sneaking" }
             ]
           },
           "x6": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/effect @s slowness 1000 36 true",
+              "/event entity @s gvcv5:start_scope",
+              "/tag @s add scope"
+            ],
+            "on_exit": [
+              "/effect @s slowness 0 0 true",
+              "/event entity @s gvcv5:stop_scope",
+              "/tag @s remove scope"
+            ]
+          },
+          "x2": {
             "transitions": [
                 {"default":"!query.is_sneaking"}
             ],
@@ -21,19 +37,6 @@
             "on_exit": [
               "/effect @s slowness 0 0 true",
               "/event entity @s gvcv5:stop_scope",
-              "/tag @s remove scope"
-            ]
-          },
-          "x3": {
-            "transitions": [
-                {"default":"!query.is_sneaking"}
-            ],
-            "on_entry": [
-              "/effect @s slowness 1000 6 true",
-              "/tag @s add scope"
-            ],
-            "on_exit": [
-              "/effect @s slowness 0 0 true",
               "/tag @s remove scope"
             ]
           },
