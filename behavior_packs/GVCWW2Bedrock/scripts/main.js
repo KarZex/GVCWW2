@@ -284,7 +284,8 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 system.afterEvents.scriptEventReceive.subscribe( async e => {
 	if (e.id === "gvcv5:test"){
 		const user = e.sourceEntity;
-		user.lookAt({ x:0,y:2200,z:0 })
+		const gunSlot = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		gunSlot.setDynamicProperty(`attach_scope`,1);
 	}
 	if (e.id === "gvcv5:rocket_first"){
 		const projectile = e.sourceEntity;
@@ -410,18 +411,24 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		}catch{}
 	}
 	else if (e.id === "gvcv5:vgun"){
-		//tag=!reload,tag=!down
-		//titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}
-		//f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
 		let player = e.sourceEntity;
 		const gunName = e.message;
 		const Ammo = gunData[`${gunName}`]["bullet"];
 		const slow = gunData[`${gunName}`]["slowness"];
+		const gunSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 		let gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
 		let damage = dmgCom.damage;
 		let maxAmmo = dmgCom.maxDurability;
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		if( gunSlot.getDynamicProperty("attach_scope") != undefined ){
+			const scope = gunSlot.getDynamicProperty("attach_scope");
+			player.setProperty(`zex:scope`,scope);
+		}
+		else{
+			player.setProperty(`zex:scope`,0);
+		}
+		
 		try{
 			if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
 				let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);

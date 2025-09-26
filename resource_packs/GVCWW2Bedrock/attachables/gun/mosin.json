@@ -12,7 +12,7 @@
 				"scope": "textures/models/scope.png"
 			},
 			"geometry": {
-				"default": "geometry.mosin",//create by KUROMU1019. thanks
+				"default": "geometry.mosin",
 				"scope": "geometry.scope"
 			},
 			"animations": {

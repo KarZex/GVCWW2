@@ -5,18 +5,24 @@
             "identifier": "gun:leemk4",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+				"scope": "entity_alphablend"
             },
             "textures": {
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "default": "textures/models/leemk4.png"
+                "default": "textures/models/leemk4.png",
+                "sniper": "textures/models/leemk4.png",
+				"scope": "textures/models/scope.png"
             },
             "geometry": {
-                "default": "geometry.leemk4"
+                "default": "geometry.leemk4",
+				"scope": "geometry.scope",
+                "sniper":"geometry.sniperscope"
             },
             "animations": {
                 "first": "animation.ak47.first2",
                 "ads": "animation.m16a4.ads",
+                "ads_scope": "animation.mosin.ads",
                 "third": "animation.item.third2"
             },
             "scripts": {
@@ -28,15 +34,20 @@
                         "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
                     },
                     {
-                        "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                        "ads": "!query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
                     },
+					{
+						"ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+					},
                     {
                         "third": "v.main_hand && !c.is_first_person"
                     }
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+				{"controller.render.armor":"(!query.property('zex:is_scoping') || !c.is_first_person)"},
+				{ "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" },
+                { "controller.render.sights":"query.property('zex:scope') != 0 && ((!query.property('zex:is_scoping') || !c.is_first_person))" }
             ]
         }
     }

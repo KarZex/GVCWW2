@@ -26,6 +26,13 @@
         "ads": "controller.animation.ads",
         "camera": "controller.animation.camera",
         "heri": "controller.animation.heri"
+      },
+      "properties": {
+        "zex:scope":{
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
       }
     },
     "component_groups": {
@@ -4211,6 +4218,16 @@
       }
     },
     "events": {
+      "gvcv5:start_scope":{
+        "set_property": {
+          "zex:is_scoping": true
+        }
+      },
+      "gvcv5:stop_scope":{
+        "set_property": {
+          "zex:is_scoping": false
+        }
+      },
       "minecraft:gain_raid_omen": {
         "add": {
           "component_groups": [

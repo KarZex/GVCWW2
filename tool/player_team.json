@@ -26,6 +26,13 @@
         "ads": "controller.animation.ads",
         "camera": "controller.animation.camera",
         "heri": "controller.animation.heri"
+      },
+      "properties": {
+        "zex:is_scoping":{
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
       }
     },
 
@@ -1629,6 +1636,16 @@
             "tag @s remove downedbyJAP",
             "tag @s remove downedbyENG"
           ]
+        }
+      },
+      "gvcv5:start_scope":{
+        "set_property": {
+          "zex:is_scoping": true
+        }
+      },
+      "gvcv5:stop_scope":{
+        "set_property": {
+          "zex:is_scoping": false
         }
       },
       "gvcv5:become_rise": {
