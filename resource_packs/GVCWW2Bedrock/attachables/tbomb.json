@@ -2,22 +2,20 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:lunge",
+            "identifier": "gvcv5:tbomb",
             "materials": {
-                "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "default": "iron_golem"
             },
             "textures": {
-                "enchanted": "textures/misc/enchanted_item_glint",
-                "default": "textures/models/lunge.png"
+                "default": "textures/models/tbomb.png"
             },
             "geometry": {
-                "default": "geometry.lunge"
+                "default": "geometry.tbomb"
             },
             "animations": {
-                "first": "animation.ptrd.first",
-                "ads": "animation.ak47.ads2",
-                "third": "animation.ptrd.third"
+                "first": "animation.rpg.first",
+                "ads": "animation.ak47.ads3",
+                "third": "animation.item.third2"
             },
             "scripts": {
                 "pre_animation": [
@@ -36,7 +34,7 @@
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                "controller.render.default"
             ]
         }
     }

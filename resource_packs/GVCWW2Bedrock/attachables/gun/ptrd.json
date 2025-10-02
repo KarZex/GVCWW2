@@ -5,14 +5,20 @@
             "identifier": "gun:ptrd",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "default": "textures/models/ptrd.png"
+                "default": "textures/models/ptrd.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x_scope": "textures/models/scope.png",
+                "undefined": "textures/models/leemk4.png"
             },
             "geometry": {
-                "default": "geometry.ptrd"
+                "default": "geometry.ptrd",
+                "scope": "geometry.scope",
+                "undefined": "geometry.sniperscope"
             },
             "animations": {
                 "first": "animation.ptrd.first",
@@ -36,7 +42,9 @@
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                {
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd')"
+                }
             ]
         }
     }

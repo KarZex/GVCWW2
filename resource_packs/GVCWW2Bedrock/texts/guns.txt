@@ -24,3 +24,4 @@ item.gun:t38=˜dO”ª®•à•ºe˜r
 item.gun:t100=˜dˆêZZ®‹@ŠÖ’Ze˜r
 item.gun:t99=˜d‹ã‹ã®Œy‹@ŠÖe˜r
 item.gun:t14=˜d\l”N®Œe˜r
+item.gun:t89g=˜d”ª‹ã®d±’e“›˜r

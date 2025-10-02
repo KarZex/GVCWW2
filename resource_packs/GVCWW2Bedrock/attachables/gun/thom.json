@@ -5,14 +5,22 @@
             "identifier": "gun:thom",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "default": "textures/models/thom.png"
+                "default": "textures/models/thom.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x_scope": "textures/models/scope.png",
+                "bayonet1": "textures/models/bayonet1.png",
+                "undefined": "textures/models/leemk4.png"
             },
             "geometry": {
-                "default": "geometry.thom"
+                "default": "geometry.thom",
+                "scope": "geometry.scope",
+                "bayonet1": "geometry.bayonet1",
+                "undefined": "geometry.sniperscope"
             },
             "animations": {
                 "first": "animation.ak47.first2",
@@ -36,7 +44,12 @@
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                {
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:thom')"
+                },
+                {
+                    "controller.render.bayonet": "query.property('zex:bayonet') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                }
             ]
         }
     }

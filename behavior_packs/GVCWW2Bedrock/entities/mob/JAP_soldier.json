@@ -28,6 +28,15 @@
             255
           ],
           "default": 0
+        },
+        "zex:bayonet": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
         }
       }
     },
@@ -157,7 +166,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -247,7 +256,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -445,7 +454,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.0,
+          "burst_interval": 0.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -517,7 +526,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -601,6 +610,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/t14.json"
+        }
+      },
+      "t89g": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:t89g"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/t89g.json"
         }
       },
       "vmg": {
@@ -2091,6 +2118,35 @@
               "event": "t14",
               "target": "self"
             }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "JAPteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:t89g"
+                  }
+                ]
+              },
+              "event": "t89g",
+              "target": "self"
+            }
           }
         ]
       },
@@ -2276,6 +2332,10 @@
           },
           {
             "weight": 10,
+            "trigger": "t89g"
+          },
+          {
+            "weight": 10,
             "trigger": "lunge"
           }
         ]
@@ -2297,6 +2357,10 @@
           {
             "weight": 100,
             "trigger": "t14"
+          },
+          {
+            "weight": 100,
+            "trigger": "t89g"
           },
           {
             "weight": 100,
@@ -2641,6 +2705,13 @@
         "add": {
           "component_groups": [
             "t14"
+          ]
+        }
+      },
+      "t89g": {
+        "add": {
+          "component_groups": [
+            "t89g"
           ]
         }
       },

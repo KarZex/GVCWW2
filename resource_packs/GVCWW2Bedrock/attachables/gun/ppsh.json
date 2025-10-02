@@ -5,19 +5,28 @@
             "identifier": "gun:ppsh",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "default": "textures/models/ppsh.png"
+                "default": "textures/models/ppsh.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x_scope": "textures/models/scope.png",
+                "bayonet1": "textures/models/bayonet1.png",
+                "undefined": "textures/models/leemk4.png"
             },
             "geometry": {
-                "default": "geometry.ppsh"
+                "default": "geometry.ppsh",
+                "scope": "geometry.scope",
+                "bayonet1": "geometry.bayonet1",
+                "undefined": "geometry.sniperscope"
             },
             "animations": {
                 "first": "animation.ak47.first2",
                 "ads": "animation.ak47.ads2",
-                "third": "animation.item.third2"
+                "third": "animation.item.third2",
+                "def_bayonet": "animation.ppsh.bayonet"
             },
             "scripts": {
                 "pre_animation": [
@@ -32,11 +41,19 @@
                     },
                     {
                         "third": "v.main_hand && !c.is_first_person"
+                    },
+                    {
+                        "def_bayonet": "query.property('zex:bayonet') != 0"
                     }
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                {
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh')"
+                },
+                {
+                    "controller.render.bayonet": "query.property('zex:bayonet') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                }
             ]
         }
     }

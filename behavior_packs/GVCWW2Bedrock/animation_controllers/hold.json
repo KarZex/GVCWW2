@@ -97,6 +97,9 @@
             },
             {
               "t14": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:t14') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14')"
+            },
+            {
+              "t89g": "query.get_equipped_item_name == 't89g'"
             }
           ]
         },
@@ -403,6 +406,16 @@
         "t14": {
           "on_entry": [
             "/function hold/t14h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "t89g": {
+          "on_entry": [
+            "/function hold/t89gh"
           ],
           "transitions": [
             {

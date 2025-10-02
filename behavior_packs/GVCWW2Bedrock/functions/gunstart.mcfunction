@@ -91,4 +91,6 @@ scoreboard objectives add t99 dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s t99 30
 scoreboard objectives add t14 dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s t14 8
+scoreboard objectives add t89g dummy
+execute as @a[tag=!startedww2] run scoreboard players set @s t89g 1
 tag @a[tag=!startedww2] add startedww2

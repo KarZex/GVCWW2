@@ -8,7 +8,7 @@ export const gunData = {
     "damageType": "override"
   },
   "mosin": {
-    "damage": 16,
+    "damage": 32,
     "damageIgnoreDef": 0,
     "slowness": 0,
     "speed": 1.6,
@@ -63,7 +63,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "k98": {
-    "damage": 16,
+    "damage": 28,
     "damageIgnoreDef": 0,
     "slowness": 0,
     "speed": 3.2,
@@ -140,7 +140,7 @@ export const gunData = {
     "damageType": "override"
   },
   "spring": {
-    "damage": 20,
+    "damage": 30,
     "damageIgnoreDef": 0,
     "slowness": 0,
     "speed": 1.6,
@@ -250,7 +250,7 @@ export const gunData = {
     "damageType": "override"
   },
   "t38": {
-    "damage": 14,
+    "damage": 24,
     "damageIgnoreDef": 0,
     "slowness": 0,
     "speed": 3.2,
@@ -292,6 +292,17 @@ export const gunData = {
     "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
+  },
+  "t89g": {
+    "damage": 25,
+    "damageIgnoreDef": 1,
+    "slowness": 0,
+    "speed": 0.5,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
   },
   "vmg": {
     "damage": 4,

@@ -223,6 +223,12 @@
             },
             {
               "t14_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t14') && (variable.attack_time > 0.0)"
+            },
+            {
+              "t89g": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t89g') && query.is_using_item"
+            },
+            {
+              "t89g_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t89g') && (variable.attack_time > 0.0)"
             }
           ]
         },
@@ -400,10 +406,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "ppshii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "ppshii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -413,10 +419,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "ppsh": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "ppsh": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -573,10 +579,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "mp40ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "mp40ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -586,10 +592,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "mp40": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "mp40": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -965,7 +971,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1087,10 +1093,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "stengunii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "stengunii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stengun') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1100,10 +1106,10 @@
           ],
           "transitions": [
             {
-              "no_use": "!query.is_using_item"
+              "stengun": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
-              "stengun": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stengun') && query.is_using_item"
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1241,6 +1247,36 @@
           ]
         },
         "t14_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "t89g_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload t89g"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "t89g": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse t89g"
+          ],
+          "transitions": [
+            {
+              "t89g_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "t89g_after": {
           "on_entry": [
             "/scriptevent gvcv5:gunapply"
           ],

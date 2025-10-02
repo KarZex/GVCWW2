@@ -15,7 +15,7 @@
                 {"default":"!query.is_sneaking"}
             ],
             "on_entry": [
-              "/effect @s slowness 1000 36 true",
+              "/effect @s slowness 1000 8 true",
               "/event entity @s gvcv5:start_scope",
               "/tag @s add scope"
             ],

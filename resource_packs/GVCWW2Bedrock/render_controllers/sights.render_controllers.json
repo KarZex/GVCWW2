@@ -14,14 +14,16 @@
             "arrays": {
                 "geometries": {
                     "Array.item_geo": [
-                        "geometry.none",
-                        "geometry.sniperscope"
+                        "geometry.undefined",
+                        "geometry.scope6x",
+                        "geometry.scope2x"
                     ]
                 },
                 "textures": {
                     "Array.item_texture": [
-                        "texture.none",
-                        "texture.sniperscope"
+                        "texture.undefined",
+                        "texture.scope6x",
+                        "texture.scope2x"
                     ]
                 }
             }

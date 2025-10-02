@@ -1,0 +1,30 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.bayonet": {
+            "geometry": "Array.item_geo[query.property('zex:bayonet')]",
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": [
+                "Array.item_texture[query.property('zex:bayonet')]"
+            ],
+            "arrays": {
+                "geometries": {
+                    "Array.item_geo": [
+                        "geometry.undefined",
+                        "geometry.bayonet1"
+                    ]
+                },
+                "textures": {
+                    "Array.item_texture": [
+                        "texture.undefined",
+                        "texture.bayonet1"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -7,50 +7,6 @@ function gvcv5SpawnEvent( event ){
         const spawnLocation = event.block.location;
         if( spawn.includes(`addon`) ) {
             spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcww2:`);
-            /*
-            const aboveBlock = spawnBlock.above();
-            if( aboveBlock.typeId == `minecraft:chest` ){
-                try{
-                    const mainHand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(0).getItem().typeId;
-                    if( mainHand.includes(`gun:`) ){
-                        const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`${mainHand.replace(`gun:`,``)}`});
-                        spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-                        world.sendMessage(`${mainHand}`)
-                    }
-                    else{
-                        const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`melee`});
-                        spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-                        spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
-                    }
-                    try{
-                        const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
-                        spawner.runCommand(`replaceitem entity @s slot.armor.head 0 ${armorHead}`);
-                    }
-                    catch{}
-                    try{
-                        const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
-                        spawner.runCommand(`replaceitem entity @s slot.armor.chest 0 ${armorChest}`);
-                    }
-                    catch{}
-                    try{
-                        const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
-                        spawner.runCommand(`replaceitem entity @s slot.armor.legs 0 ${armorLegs}`);
-                    }
-                    catch{}
-                    try{
-                        const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
-                        spawner.runCommand(`replaceitem entity @s slot.armor.feet 0 ${armorFeet}`);
-                    }
-                    catch{}
-                }
-                catch{}
-                aboveBlock.dimension.setBlockType(aboveBlock.location,`minecraft:air`);
-            }
-            else{
-                const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
-                spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-            }
-            */
             const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
             spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
         }
@@ -117,6 +73,10 @@ function gvcv5UseCrafter( event ){
     const type = event.block.typeId.replace(`gvcv5:`,``);
     const player = event.player;
     player.runCommand(`scriptevent gvcv5:craft ${type}`);
+}
+function gvcv5Attachtable( event ){
+    const player = event.player;
+    player.runCommand(`scriptevent gvcv5:attach_table`);
 }
 
 async function gvcv5gunCrafterWhitePlaceEvent( event ){
@@ -433,6 +393,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerBreak: gvcv5GasEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,{onStepOn: gvcv5MineEvent,onPlayerBreak: gvcv5MineEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,{onUse: gvcv5Phone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});

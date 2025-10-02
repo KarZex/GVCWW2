@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gre:tbomb",
+      "materials": {
+        "default": "iron_golem"
+      },
+      "textures": {
+        "default": "textures/models/tbomb.png"
+      },
+      "geometry": {
+        "default": "geometry.tbombfly"
+      },
+      "animations": {
+        "look_at_target": "animation.tbombfly.fly"
+      },
+      "scripts": {
+        "animate": [
+					"look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.iron_golem"
+      ]
+    }
+  }
+}

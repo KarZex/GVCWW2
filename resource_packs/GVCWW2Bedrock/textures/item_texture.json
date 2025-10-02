@@ -50,6 +50,9 @@
     "sp": {
       "textures": "textures/items/sp"
     },
+    "40m": {
+      "textures": "textures/items/40m"
+    },
     "aidkit": {
       "textures": "textures/items/aidkit"
     },
@@ -92,8 +95,8 @@
     "phone_eng": {
       "textures": "textures/items/phone_eng"
     },
-    "tank4": {
-      "textures": "textures/items/tank4"
+    "rpg43": {
+      "textures": "textures/items/rpg43"
     },
     "bc_item": {
       "textures": "textures/items/block/bc"
@@ -649,6 +652,18 @@
     },
     "bm13": {
       "textures": "textures/items/vehicle/bm13"
+    },
+    "scope6x": {
+      "textures": "textures/items/attachment/scope6x"
+    },
+    "scope2x": {
+      "textures": "textures/items/attachment/scope2x"
+    },
+    "bayonet1": {
+      "textures": "textures/items/attachment/bayonet1"
+    },
+    "t89g": {
+      "textures": "textures/items/gun/t89g"
     }
   }
 }

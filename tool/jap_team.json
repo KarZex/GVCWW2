@@ -28,6 +28,15 @@
                         255
                     ],
                     "default": 0
+                },
+                "zex:bayonet": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
             }
         },
@@ -424,6 +433,10 @@
                     },
                     {
                         "weight": 10,
+                        "trigger": "t89g"
+                    },
+                    {
+                        "weight": 10,
                         "trigger": "lunge"
                     }
                 ]
@@ -445,6 +458,10 @@
                     {
                         "weight": 100,
                         "trigger": "t14"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "t89g"
                     },
                     {
                         "weight": 100,

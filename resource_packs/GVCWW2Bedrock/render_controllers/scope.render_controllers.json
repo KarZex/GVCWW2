@@ -6,7 +6,8 @@
                 "textures": {
                     "Array.base": [
                         "Texture.scope",
-                        "Texture.sniperscope_scope"
+                        "Texture.scope6x_scope",
+                        "Texture.scope2x_scope"
                     ]
                 }
             },

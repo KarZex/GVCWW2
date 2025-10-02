@@ -7,6 +7,8 @@ import { absVector3,getVector3E,isMoving,turning2 } from "./usefulFunction"
 import "./compornents";
 import "./team";
 import "./vehicleMain"
+import { attachmentData } from "./attach";
+import { gunAttach } from "./gunAttach"
 
 
 /*
@@ -284,8 +286,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 system.afterEvents.scriptEventReceive.subscribe( async e => {
 	if (e.id === "gvcv5:test"){
 		const user = e.sourceEntity;
-		const gunSlot = user.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-		gunSlot.setDynamicProperty(`attach_scope`,1);
+		user.lookAt({x:0,y:0,z:0})
 	}
 	if (e.id === "gvcv5:rocket_first"){
 		const projectile = e.sourceEntity;
@@ -421,13 +422,16 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		let damage = dmgCom.damage;
 		let maxAmmo = dmgCom.maxDurability;
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
-		if( gunSlot.getDynamicProperty("attach_scope") != undefined ){
-			const scope = gunSlot.getDynamicProperty("attach_scope");
-			player.setProperty(`zex:sights`,scope);
+		for( const attachment of attachmentData[`attachTypes`] ){
+			if( gunSlot.getDynamicProperty(`zex:${attachment}`) != undefined ){
+				const scope = gunSlot.getDynamicProperty(`zex:${attachment}`);
+				player.setProperty(`zex:${attachment}`,scope);
+			}
+			else{
+				player.setProperty(`zex:${attachment}`,0);
+			}
 		}
-		else{
-			player.setProperty(`zex:sights`,0);
-		}
+
 		
 		try{
 			if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
@@ -442,14 +446,17 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			usedGun = 0;
 		}
 		if( slow > 0 ){
-			player.addEffect("slowness", 5,{ amplifier: slow });
+			player.addEffect("slowness", 20,{ amplifier: slow });
+		}
+		if( gunSlot.getDynamicProperty(`zex:bayonet`) == 1 ){
+			player.addEffect("strength", 20,{ amplifier: 3 });
 		}
 		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcww2:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
 		}
 		if( damage >= maxAmmo && gunData[`${gunName}`]["fireOnReload"] == true ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
-			player.addTag(`pistolreload`);
+			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run tag @s add pistolreload`);
 		}
 		else if( damage >= maxAmmo ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
@@ -482,6 +489,11 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				p.addTag("reload")
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+				if( isOffhand &&p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+					let gunOff = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+					gunOff.getComponent(ItemComponentTypes.Durability).damage = gun.getComponent(ItemComponentTypes.Durability).damage;
+					p.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
+				}
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
@@ -490,6 +502,11 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				p.addTag("reload")
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+				if( isOffhand &&p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+					let gunOff = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+					gunOff.getComponent(ItemComponentTypes.Durability).damage = gun.getComponent(ItemComponentTypes.Durability).damage;
+					p.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
+				}
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
@@ -571,6 +588,70 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				player.runCommand(`scriptevent gvcv5:craft ${craftType}`);
 			}
 		} )
+		
+	}
+	else if( e.id == "gvcv5:attach_table" ){
+		const player = e.sourceEntity;
+		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		if( gun.typeId.includes(`gun:`) ){
+			const gunId = gun.typeId.split(`:`)[1];
+			let attachTypes2 = []
+			const attachTypes = attachmentData[`attachTypes`];
+			const Iform = new ActionFormData();
+			Iform.title(`Attachment Table`);
+			Iform.body(`Attachment Table body`);
+			for( const attachType of attachTypes ){
+				if(Array.isArray(gunAttach[`${gunId}`][`${attachType}`])){
+					Iform.button(`${attachType}`,`textures/items/attachment/${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`);
+				}
+				else{
+					Iform.button(`${attachType}`,`textures/items/attachment/not`);
+				}
+				attachTypes2.push(attachType)
+			}
+			Iform.show(player).then( r => {
+				if ( !r.canceled ){
+					const attachType = attachTypes2[r.selection];
+					if( Array.isArray(gunAttach[`${gunId}`][`${attachType}`]) ){
+						let phoneArray = [  ]
+						let phoneArray2 = [  ]
+						const form = new ActionFormData();
+						form.title(`${attachType} Table`);
+						form.body(`${attachType} Table body`);
+						form.button(`none`);
+						phoneArray2.push(0);
+						for( let i = 1; i < attachmentData[`${attachType}`].length; i++ ){
+							if( getInventoryItem(player,`zex:${attachmentData[`${attachType}`][i]}`) > 0 && gun.getDynamicProperty(`zex:${attachType}`) != i ){
+								form.button(`item.zex:${attachmentData[`${attachType}`][i]}`,`textures/items/attachment/${attachmentData[`${attachType}`][i]}`);
+								phoneArray.push(attachmentData[`${attachType}`][i])
+								phoneArray2.push(i);
+							}
+						}
+						form.show(player).then( result => {
+							if ( !result.canceled ){
+								if( result.selection != 0 ){
+									//print(`${phoneArray2[result.selection]}`)
+									player.runCommand(`clear @s zex:${phoneArray[result.selection-1]} 0 1` )
+								}
+								if( gun.getDynamicProperty(`zex:${attachType}`) != undefined && gun.getDynamicProperty(`zex:${attachType}`) != 0 ){
+									player.runCommand(`give @s zex:${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`)
+								}
+								gun.setDynamicProperty(`zex:${attachType}`,phoneArray2[result.selection]);
+								player.runCommand(`scriptevent gvcv5:attach_table` )
+							}
+						})
+					}
+					else{
+						player.sendMessage(`this gun can not apply this attachment!`);
+						player.runCommand(`scriptevent gvcv5:attach_table` );
+					}
+				}
+			})
+
+		}
+		else{
+			player.sendMessage(`Hold Gun!`)
+		}
 		
 	}
 	else if( e.id == "gvcv5:printDamage" && !e.sourceEntity.hasTag(`no_print`) ){

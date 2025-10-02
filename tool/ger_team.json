@@ -28,6 +28,15 @@
                         255
                     ],
                     "default": 0
+                },
+                "zex:bayonet": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
             }
         },
@@ -406,7 +415,7 @@
                         "trigger": "vehicle:panzer"
                     },
                     {
-                        "weight": 5,
+                        "weight": 1,
                         "trigger": "vehicle:tiger"
                     },
                     {
