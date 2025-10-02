@@ -210,6 +210,24 @@
     },
     "spawn_vehicle_20mmaa": {
       "textures": "textures/blocks/vehicle_20mmaa"
+    },
+    "spawn_vehicle_m13aa": {
+      "textures": "textures/blocks/vehicle_m13aa"
+    },
+    "spawn_vehicle_bm13aa": {
+      "textures": "textures/blocks/vehicle_bm13aa"
+    },
+    "spawn_vehicle_t98taa": {
+      "textures": "textures/blocks/vehicle_t98taa"
+    },
+    "spawn_vehicle_m5": {
+      "textures": "textures/blocks/vehicle_m5"
+    },
+    "spawn_vehicle_bm13": {
+      "textures": "textures/blocks/vehicle_bm13"
+    },
+    "spawn_": {
+      "textures": "textures/blocks/"
     }
   }
 }
