@@ -6,9 +6,10 @@ import { raidData } from "./raid";
 import { absVector3,getVector3E,isMoving,turning2 } from "./usefulFunction"
 import "./compornents";
 import "./team";
-import "./vehicleMain"
+import "./vehicleMain";
 import { attachmentData } from "./attach";
-import { gunAttach } from "./gunAttach"
+import { gunAttach } from "./gunAttach";
+import "./test";
 
 
 /*
@@ -598,14 +599,14 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			let attachTypes2 = []
 			const attachTypes = attachmentData[`attachTypes`];
 			const Iform = new ActionFormData();
-			Iform.title(`Attachment Table`);
-			Iform.body(`Attachment Table body`);
+			Iform.title(`script.gvcww2.attachment_table.name`);
+			Iform.body(`script.gvcww2.attachment_table.body.name`);
 			for( const attachType of attachTypes ){
 				if(Array.isArray(gunAttach[`${gunId}`][`${attachType}`])){
-					Iform.button(`${attachType}`,`textures/items/attachment/${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`);
+					Iform.button(`script.gvcww2.${attachType}.name`,`textures/items/attachment/${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`);
 				}
 				else{
-					Iform.button(`${attachType}`,`textures/items/attachment/not`);
+					Iform.button(`script.gvcww2.${attachType}.name`,`textures/items/attachment/not`);
 				}
 				attachTypes2.push(attachType)
 			}
@@ -616,9 +617,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						let phoneArray = [  ]
 						let phoneArray2 = [  ]
 						const form = new ActionFormData();
-						form.title(`${attachType} Table`);
-						form.body(`${attachType} Table body`);
-						form.button(`none`);
+						form.title(`script.gvcww2.${attachType}.name`);
+						form.body(`script.gvcww2.${attachType}.body.name`);
+						form.button(`script.gvcww2.remove_attach.name`);
 						phoneArray2.push(0);
 						for( let i = 1; i < attachmentData[`${attachType}`].length; i++ ){
 							if( getInventoryItem(player,`zex:${attachmentData[`${attachType}`][i]}`) > 0 && gun.getDynamicProperty(`zex:${attachType}`) != i ){
@@ -642,7 +643,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						})
 					}
 					else{
-						player.sendMessage(`this gun can not apply this attachment!`);
+						player.sendMessage({translate:`script.gvcww2.cant_attach.name`});
 						player.runCommand(`scriptevent gvcv5:attach_table` );
 					}
 				}
@@ -650,7 +651,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 
 		}
 		else{
-			player.sendMessage(`Hold Gun!`)
+			player.sendMessage({ translate:`script.gvcww2.hold_gun.name`})
 		}
 		
 	}

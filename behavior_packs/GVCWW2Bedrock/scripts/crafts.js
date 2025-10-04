@@ -31,6 +31,7 @@ export const craftData = {
       { "give":"gun:ppsh","texture":"textures/items/gun/ppsh", "count":1, "cost":[ 4, 6, 2 ] },
       { "give":"gun:dp28","texture":"textures/items/gun/dp28", "count":1, "cost":[ 6, 12, 2 ] },
       { "give":"gun:tt33","texture":"textures/items/gun/tt33", "count":1, "cost":[ 4, 4, 4 ] },
+      { "give":"gvcv5:rpg43","texture":"textures/items/rpg43", "count":1, "cost":[ 6, 6, 6 ] },
       { "give":"gun:ptrd","texture":"textures/items/gun/ptrd", "count":1, "cost":[ 64, 48, 16 ] }
     ]
   },
@@ -63,6 +64,7 @@ export const craftData = {
       { "give":"gun:t100","texture":"textures/items/gun/t100", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"gun:t99","texture":"textures/items/gun/t99", "count":1, "cost":[ 6, 8, 6 ] },
       { "give":"gun:t14","texture":"textures/items/gun/t14", "count":1, "cost":[ 2, 2, 1 ] },
+      { "give":"gun:t89g","texture":"textures/items/gun/t14", "count":1, "cost":[ 4, 4, 1 ] },
       { "give":"gun:lunge","texture":"textures/items/gun/lunge", "count":1, "cost":[ 6, 8, 6 ] }
     ]
   },

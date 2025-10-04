@@ -98,13 +98,21 @@
                 "minecraft:movement": {
                     "value": 0.25
                 },
-                "minecraft:behavior.tempt": {
+                "minecraft:behavior.follow_mob": {
                     "priority": 0,
+                    "search_range": 16,
+                    "stop_distance": 1,
                     "speed_multiplier": 1.2,
-                    "within_radius": 16,
-                    "items": [
-                        "zex:commandradio"
-                    ]
+                    "use_home_position_restriction": false,
+                    "preferred_actor_type": "player",
+                    "filters": {
+                        "all_of": [
+                            { "test": "is_underwater", "subject": "other", "value": false },
+                            { "test": "is_baby", "subject": "other", "value": false },
+                            { "test": "is_family", "subject": "other", "value": "player" },
+                            { "test": "is_family", "subject": "other", "value": "GERteam" }
+                        ]
+                    }
                 },
                 "minecraft:skin_id": {
                     "value": 3
@@ -511,7 +519,7 @@
                         "trigger": "attack",
                         "queue_command": {
                             "command": [
-                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.ger.attack.name\"}]}"
                             ],
                             "target": "other"
                         }
@@ -526,7 +534,7 @@
                         "trigger": "attack",
                         "queue_command": {
                             "command": [
-                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.ger.attack.name\"}]}"
                             ],
                             "target": "other"
                         }
@@ -541,7 +549,7 @@
                         "trigger": "wait",
                         "queue_command": {
                             "command": [
-                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.ger.wait.name\"}]}"
                             ],
                             "target": "other"
                         }
@@ -556,7 +564,7 @@
                         "trigger": "follow",
                         "queue_command": {
                             "command": [
-                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
+                                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.ger.follow.name\"}]}"
                             ],
                             "target": "other"
                         }

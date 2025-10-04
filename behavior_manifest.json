@@ -2,13 +2,13 @@
     "format_version": 2,
     "header": {
         "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\n\u3044\u306c\u3048\u30e2\u30f3:AWM\n\u3041\u6905\u5b50:Glock17,Glock18c,F-117\nMihono Bourbon:M9,MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust,M79.Mi-24d\n",
-        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon BetaV0.4\u00a7r",
+        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon V1.0\u00a7r",
         "min_engine_version": [
             1,
             21,
             100
         ],
-        "uuid": "c1d0c465-e3a4-4cfb-b7c1-b2c67e43c60c",
+        "uuid": "bf2e0f26-ec79-42d2-a26e-6cd84a50f5d7",
         "version": [
             1,
             21,
@@ -19,7 +19,7 @@
         {
             "description": "Data Module",
             "type": "data",
-            "uuid": "99723430-be13-48fd-9e2e-4d5efea00f75",
+            "uuid": "373abba8-8b82-4b1f-9f7c-1393f4968818",
             "version": [
                 1,
                 0,
@@ -30,7 +30,7 @@
             "description": "Script API Module",
             "language": "javascript",
             "type": "script",
-            "uuid": "17d9db7b-75ae-43fe-8954-49030a85d71c",
+            "uuid": "b363d915-7ae0-4a51-b601-a5d7d18bb5d5",
             "version": [
                 2,
                 0,
