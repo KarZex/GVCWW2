@@ -423,13 +423,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					form.title(`script.gvcv5.howToGun.name`);
 					let itemRawText = []
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc0.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc1.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc2.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc3.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
@@ -443,11 +443,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					form.title(`script.gvcv5.howToVechile.name`);
 					let itemRawText = []
 					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc0.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc1.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc2.name` });
-					itemRawText.push({ text: `\n` });
+					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
