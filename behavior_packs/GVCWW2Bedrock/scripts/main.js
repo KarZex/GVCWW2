@@ -9,7 +9,6 @@ import "./team";
 import "./vehicleMain";
 import { attachmentData } from "./attach";
 import { gunAttach } from "./gunAttach";
-import "./test";
 
 
 /*
