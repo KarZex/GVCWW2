@@ -4,7 +4,7 @@
     "description": {
       "identifier": "gvcv5:spawn_addon_sov_soldier",
       "menu_category": {
-        "category": "construction"
+        "category": "none"
       }
     },
     "components": {
