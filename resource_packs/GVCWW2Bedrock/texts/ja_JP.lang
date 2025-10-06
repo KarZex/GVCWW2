@@ -31,6 +31,9 @@ item.gvcv5:impact=衝撃手榴弾
 item.gvcv5:smoke=煙幕手榴弾
 item.zex:ps=プラスチック
 item.zex:aidkit=応急処置キット
+item.zex:rep=修理用レンチ
+item.gun:mgg=機銃
+item.gun:tank=主砲
 
 item.gvcv5:fuel_s=ガソリン I
 item.gvcv5:fuel_m=ガソリン II

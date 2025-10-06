@@ -21,6 +21,9 @@ item.zex:556m=.45ACP Ammo
 item.zex:762m=.30Cal Ammo
 item.zex:rocketm=76mmRocket Ammo
 item.zex:missilem=76mmMissile Ammo
+item.zex:rep=Repair Wrench
+item.gun:mgg=Machine Gun
+item.gun:tank=Main Cannon
 
 item.gvcv5:radio_item=Old Radio
 item.gvcv5:bc_item=Ammunition Manufacturing Machine

@@ -841,12 +841,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 								user.kill();
 								world.sendMessage([{text: `${user.name}`},{ translate: `script.gvcv5.phone_left_${userFamily}.name`}]);
 								if( user.hasTag(`${userFamily}Leader`) ){
-									world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_${userFamily}.name`}]);
-									for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
-										myAlly.removeTag(`${userFamily}Leader`);
-										myAlly.triggerEvent(`gvcv5:become_noteam`);
-										myAlly.runCommand(`clear @s zex:phone_${userFamily}`);
-									}
+									gvcv5RemoveTeam(userFamily)
 								}
 							}
 							else{

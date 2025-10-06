@@ -40,7 +40,7 @@
           "$title_panel": "common_dialogs.standard_title_label",
           "$title_size": [ "100% - 15px", 10 ],
           "size": [300, 300],
-          "$text_name": "#title_text",
+          "$text_name": "#title_text - '.debug'",
           "$title_text_binding_type": "none",
           "$child_control": "server_form.my_super_custom_panel_main",
           "layer": 2,

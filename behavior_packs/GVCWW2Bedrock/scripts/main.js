@@ -195,7 +195,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = def + 1;
 		}
 		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
-			def = def + 2;
+			def = def + 1;
 		}
 		if( damageIgnoreDef > 0 ){
 			def = def - damageIgnoreDef
@@ -454,11 +454,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcww2:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
 		}
-		if( damage >= maxAmmo && gunData[`${gunName}`]["fireOnReload"] == true ){
-			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
-			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run tag @s add pistolreload`);
-		}
-		else if( damage >= maxAmmo ){
+		if( damage >= maxAmmo  ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
 		}
 	}
@@ -486,7 +482,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 
 			if( world.getDynamicProperty(`gvcv5:doBulletSpend`) == false ){
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
-				p.addTag("reload")
+				p.addTag("reload");
+				if( gunData[`${gunName}`]["fireOnReload"] == true ){
+					p.addTag("pistolreload");
+				}
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
 				if( isOffhand &&p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
@@ -500,6 +499,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			if( ench.hasEnchantment(`minecraft:infinity`) ){
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
 				p.addTag("reload")
+				if( gunData[`${gunName}`]["fireOnReload"] == true ){
+					p.addTag("pistolreload");
+				}
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
 				if( isOffhand &&p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
@@ -537,6 +539,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
 				p.addTag("reload")
+				if( gunData[`${gunName}`]["fireOnReload"] == true ){
+					p.addTag("pistolreload");
+				}
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
