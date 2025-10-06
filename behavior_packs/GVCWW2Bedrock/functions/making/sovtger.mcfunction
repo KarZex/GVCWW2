@@ -1,0 +1,9 @@
+fill ~~~ ~20~20~20 minecraft:gray_wool replace minecraft:red_wool
+fill ~~~ ~20~20~20 gvcv5:spawn_addon_ger_soldier replace gvcv5:spawn_addon_sov_soldier
+fill ~~~ ~20~20~20 gvcv5:spawn_vehicle_ju87 replace gvcv5:spawn_vehicle_il2
+fill ~~~ ~20~20~20 gvcv5:spawn_vehicle_bf109 replace gvcv5:spawn_vehicle_yak9
+fill ~~~ ~20~20~20 gvcv5:spawn_vehicle_wirbelwind replace gvcv5:spawn_vehicle_bm13
+fill ~~~ ~20~20~20 gvcv5:spawn_vehicle_tiger replace gvcv5:spawn_vehicle_kv2
+fill ~~~ ~20~20~20 gvcv5:spawn_vehicle_panzer replace gvcv5:spawn_vehicle_t34
+fill ~~~ ~20~20~20 gvcv5:gcger replace gvcv5:gcsov
+fill ~~~ ~20~20~20 gvcv5:vcger replace gvcv5:vcsov
