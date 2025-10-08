@@ -12,7 +12,7 @@ playanimation @a[hasitem={item=gvcv5:rpg43,location=slot.weapon.mainhand}] anima
 execute as @a run function scool
 
 
-
+tag @a[scores={reloading=0}] remove pistolreload
 execute as @a[tag=!startedww2] run function gunstart
 execute as @a[tag=down] run function down
 execute as @a[tag=rise] run function rise

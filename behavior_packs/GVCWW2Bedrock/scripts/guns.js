@@ -46,9 +46,9 @@ export const gunData = {
     "slowness": 0,
     "speed": 0.6000000000000001,
     "fireOnReload": true,
-    "maxGunAmmo": 5,
+    "maxGunAmmo": 8,
     "reloadTime": 30,
-    "bullet": "zex:762m",
+    "bullet": "zex:mm9",
     "damageType": "override"
   },
   "ptrd": {
@@ -129,7 +129,7 @@ export const gunData = {
     "damageType": "override"
   },
   "m1": {
-    "damage": 12,
+    "damage": 13,
     "damageIgnoreDef": 0,
     "slowness": 0,
     "speed": 2.4000000000000004,
@@ -246,6 +246,17 @@ export const gunData = {
     "fireOnReload": false,
     "maxGunAmmo": 32,
     "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "welrod": {
+    "damage": 14,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
+    "speed": 0.48,
+    "fireOnReload": true,
+    "maxGunAmmo": 6,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },

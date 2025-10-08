@@ -564,6 +564,24 @@
           "table": "loot_tables/gun/stengun.json"
         }
       },
+      "welrod": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.7500000000000001,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:welrod"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/welrod.json"
+        }
+      },
       "t38": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -2048,6 +2066,35 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
+                    "value": "gun:welrod"
+                  }
+                ]
+              },
+              "event": "welrod",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "JAPteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
                     "value": "gun:t38"
                   }
                 ]
@@ -2701,6 +2748,13 @@
         "add": {
           "component_groups": [
             "stengun"
+          ]
+        }
+      },
+      "welrod": {
+        "add": {
+          "component_groups": [
+            "welrod"
           ]
         }
       },

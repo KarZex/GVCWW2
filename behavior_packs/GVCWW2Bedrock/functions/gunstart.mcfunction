@@ -46,7 +46,7 @@ execute as @a[tag=!startedww2] run scoreboard players set @s ppsh 72
 scoreboard objectives add dp28 dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s dp28 47
 scoreboard objectives add tt33 dummy
-execute as @a[tag=!startedww2] run scoreboard players set @s tt33 5
+execute as @a[tag=!startedww2] run scoreboard players set @s tt33 8
 scoreboard objectives add ptrd dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s ptrd 1
 scoreboard objectives add k98 dummy
@@ -83,6 +83,8 @@ scoreboard objectives add brengun dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s brengun 30
 scoreboard objectives add stengun dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s stengun 32
+scoreboard objectives add welrod dummy
+execute as @a[tag=!startedww2] run scoreboard players set @s welrod 6
 scoreboard objectives add t38 dummy
 execute as @a[tag=!startedww2] run scoreboard players set @s t38 5
 scoreboard objectives add t100 dummy

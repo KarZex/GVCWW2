@@ -84,6 +84,12 @@
               "stengun": "query.get_equipped_item_name == 'stengun'"
             },
             {
+              "welrodii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:welrod') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:welrod')"
+            },
+            {
+              "welrod": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:welrod') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:welrod')"
+            },
+            {
               "t38": "query.get_equipped_item_name == 't38'"
             },
             {
@@ -356,6 +362,26 @@
         "stengun": {
           "on_entry": [
             "/function hold/stengunh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "welrodii": {
+          "on_entry": [
+            "/function hold/welrodiih"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "welrod": {
+          "on_entry": [
+            "/function hold/welrodh"
           ],
           "transitions": [
             {

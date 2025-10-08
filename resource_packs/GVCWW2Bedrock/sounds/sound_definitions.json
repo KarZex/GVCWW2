@@ -16,6 +16,14 @@
 			   "sounds/sound_tank"
 		   ]
 	   },
+		"fire.supu": {
+			"category": "player",
+			"min_distance": 1,
+			"max_distance": 8,
+			"sounds": [
+				"sounds/fire_supu"
+			]
+		},
 		"sound.gvcww2.air": {
          "__use_legacy_max_distance" : true,
          "category" : "player",

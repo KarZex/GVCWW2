@@ -3208,6 +3208,40 @@
           ]
         }
       },
+      "fire:welrod": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:welrod"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_welrod"
+            }
+          ]
+        }
+      },
       "fire:t38": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4708,6 +4742,13 @@
         "add": {
           "component_groups": [
             "fire:stengun"
+          ]
+        }
+      },
+      "fire:welrod": {
+        "add": {
+          "component_groups": [
+            "fire:welrod"
           ]
         }
       },

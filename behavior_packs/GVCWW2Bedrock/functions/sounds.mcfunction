@@ -8,6 +8,7 @@ execute at @e[family=railbullet, tag=!sound] run playsound fire.rail @a ~ ~ ~ 0.
 execute at @e[family=sgbullet, tag=!sound,c=1] run playsound fire.sg @a ~ ~ ~ 0.8
 execute at @e[family=psbullet, tag=!sound] run playsound fire.hg @a ~ ~ ~ 0.8
 execute at @e[family=gbullet, tag=!sound] run playsound fire.famas @a ~ ~ ~ 0.8
+execute at @e[family=supubullet, tag=!sound] run playsound fire.supu @a[r=8] ~ ~ ~ 0.8
 execute at @e[family=mgiibullet, tag=!sound] run playsound fire.mgii @a ~ ~ ~ 0.8
 execute at @e[family=mgbullet, tag=!sound] run playsound fire.mg2 @a ~ ~ ~ 0.8
 execute at @e[family=smgbullet, tag=!sound] run playsound fire.smg @a ~ ~ ~ 0.8
@@ -19,3 +20,4 @@ execute at @e[family=hmgiibullet, tag=!sound] run playsound fire.hmgii @a ~ ~ ~ 
 execute at @e[family=airbullet, tag=!sound] run playsound fire.air @a ~ ~ ~ 0.8
 execute at @e[family=missilebullet, tag=!sound] run playsound fire.missile @a ~ ~ ~ 0.8
 tag @e[family=bullet, tag=!sound] add sound
+#fire.supu

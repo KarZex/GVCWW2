@@ -20,6 +20,7 @@ item.gun:piat=˜dPIAT˜r
 item.gun:lewis=˜dƒ‹ƒCƒXŒy‹@ŠÖe˜r
 item.gun:brengun=˜dƒuƒŒƒ“Œy‹@ŠÖe˜r
 item.gun:stengun=˜dƒXƒeƒ“’Z‹@ŠÖe˜r
+item.gun:welrod=˜dƒEƒFƒ‹ƒƒbƒh˜r
 item.gun:t38=˜dO”ª®•à•ºe˜r
 item.gun:t100=˜dˆêZZ®‹@ŠÖ’Ze˜r
 item.gun:t99=˜d‹ã‹ã®Œy‹@ŠÖe˜r

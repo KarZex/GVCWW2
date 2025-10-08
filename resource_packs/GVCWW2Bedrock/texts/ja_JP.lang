@@ -237,6 +237,7 @@ item.gun:piat=PIAT§r
 item.gun:lewis=ルイス軽機関銃§r
 item.gun:brengun=ブレン軽機関銃§r
 item.gun:stengun=ステン短機関銃§r
+item.gun:welrod=ウェルロッド§r
 entity.vehicle:valentine.name=バレンタイン歩兵戦車
 item.spawn_egg.entity.vehicle:valentine.name=バレンタイン歩兵戦車
 item.vehicle:valentine_spawn_egg=バレンタイン歩兵戦車

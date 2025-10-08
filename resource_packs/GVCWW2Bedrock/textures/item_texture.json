@@ -664,6 +664,9 @@
     },
     "t89g": {
       "textures": "textures/items/gun/t89g"
+    },
+    "welrod": {
+      "textures": "textures/items/gun/welrod"
     }
   }
 }

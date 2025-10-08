@@ -198,6 +198,15 @@
               "stengun_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stengun') && (variable.attack_time > 0.0)"
             },
             {
+              "welrod": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:welrod') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:welrod') && query.is_using_item"
+            },
+            {
+              "welrodii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:welrod') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:welrod') && query.is_using_item"
+            },
+            {
+              "welrod_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:welrod') && (variable.attack_time > 0.0)"
+            },
+            {
               "t38": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:t38') && query.is_using_item"
             },
             {
@@ -1110,6 +1119,47 @@
             },
             {
               "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "welrod_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload welrod",
+            "/tag @s add pistolreload"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "welrod": {
+          "on_entry": [
+            "/scriptevent gvcv5:pistolUse welrod"
+          ],
+          "transitions": [
+            {
+              "welrod_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "welrodii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse welrod"
+          ],
+          "transitions": [
+            {
+              "welrod_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "welrod_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 13 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

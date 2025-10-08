@@ -257,6 +257,7 @@ item.gun:piat=PIAT§r
 item.gun:lewis=LewisGun§r
 item.gun:brengun=BrenGun§r
 item.gun:stengun=StenGun§r
+item.gun:welrod=Welrod§r
 entity.vehicle:valentine.name=Valentine Tank Mk VIII
 item.spawn_egg.entity.vehicle:valentine.name=Valentine Tank Mk VIII
 item.vehicle:valentine_spawn_egg=Valentine Tank Mk VIII
