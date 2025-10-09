@@ -99,7 +99,7 @@ function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
 }
 
-function getInventoryItem(player,typeId){
+export function getInventoryItem(player,typeId){
 	let c = 0
 	for(let j = 0; j < 36; j++){
 		let Haditem = player.getComponent("inventory").container.getItem(j);

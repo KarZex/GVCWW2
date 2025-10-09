@@ -2266,7 +2266,37 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "allied_soldier"
+                  "value": "ww2_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "GERteam"
+                }
+              ]
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "GERteam"
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "GERSub"
                 }
               ]
             },

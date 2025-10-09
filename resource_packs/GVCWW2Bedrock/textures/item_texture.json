@@ -2,6 +2,9 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
+    "jailphone": {
+      "textures": "textures/items/jailphone"
+    },
     "fuel_s": {
       "textures": "textures/items/fuel_s"
     },

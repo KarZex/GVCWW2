@@ -391,6 +391,10 @@
                     {
                         "weight": 10,
                         "trigger": "stengun"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "welrod"
                     }
                 ]
             },
@@ -415,6 +419,10 @@
                     {
                         "weight": 100,
                         "trigger": "stengun"
+                    },
+                    {
+                        "weight": 100,
+                        "trigger": "welrod"
                     },
                     {
                         "weight": 5,

@@ -543,6 +543,12 @@ script.gvcv5.downedbyUSA.name=は§9アメリカ§rによってダウンしま�
 script.gvcv5.downedbyJAP.name=は§a日本§rによってダウンしました
 script.gvcv5.downedbyENG.name=は§eイギリス§rによってダウンしました
 
+item.zex:jailphone=捕虜端末
+script.gvcv5.howTojail.name=刑務所について
+script.gvcv5.howTojail_desc.name=あなたは敵チームにダウンさせられたため、刑務所に収容されました。刑務所から脱獄するには、味方に助けてもらうか、100分間(120000Ticks)待つ必要があります。刑務所から脱獄した場合、あなたは無防備な状態で刑務所の外に出ます。敵チームに見つからないように注意してください。
+script.gvcv5.howTojail2.name=抜け出す方法
+script.gvcv5.howTojail2_desc.name=刑務所に収容されたプレイヤーは、一定時間経過後に解放されます。鉱山で労働することで、解放までの時間を短縮することも可能です。
+script.gvcv5.goToWork.name=労働する
 
 gvcv5.order.attack.name=各個迎撃！
 gvcv5.order.wait.name=待機！

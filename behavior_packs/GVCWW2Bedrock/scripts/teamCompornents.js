@@ -9,11 +9,33 @@ function gvcv5TeamSpawn( event ){
     event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
 }
 
-function gvcv5JailSpawn( event ){
-    let building = event.block.typeId.replace(`gvcv5:building_`,``);
+async function gvcv5JailSpawn( event ){
+    const blockId = event.block.typeId;
+    let building = blockId.replace(`gvcv5:building_`,``);
     const buildingLocation = event.block.location;
-    event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
-    event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
+    world.sendMessage(`Placing Building. To stop, break building block.`);
+    let i = 20;
+    event.block.dimension.runCommand(`structure load placer ~~1~`);
+    while( true ){
+        await system.waitTicks(20); 
+        if( world.getDimension(`overworld`).getBlock(buildingLocation).typeId != blockId || event.block.dimension.id != "minecraft:overworld" ){
+            world.sendMessage(`Placing Building canceled`);
+            break
+        }
+        else if( i > 0 ){
+            world.sendMessage(`Placing Building...${i}`);
+            i = i - 1
+        }
+        else if( i <= 0 ){
+            event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
+            //event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
+            break;
+        }
+    }
+}
+function gvcv5JailBreak( event ){
+    world.sendMessage(`Placing Building canceled`);
+    event.block.dimension.runCommand(`fill ~~~ ~~1~ air`)
 }
 
 function gvcv5UsePhone( event ){
@@ -24,6 +46,10 @@ function gvcv5UseTeamPhone( event ){
     const team = event.itemStack.typeId.replace(`zex:phone_`,``);
     event.source.runCommand(`scriptevent gvcv5:phone_locked ${team}`);
 }
+function gvcv5UseJailPhone( event ){
+    event.source.runCommand(`scriptevent gvcv5:jail_phone`);
+}
+
 
 function gvcv5UseTPBlock( event ){
     const type = event.block.typeId.replace(`gvcv5:spawn_`,``);
@@ -52,11 +78,12 @@ async function setUp(){
 }
 
 system.beforeEvents.startup.subscribe( e => {
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn,onPlayerBreak:gvcv5JailBreak});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawnpoint`,{onPlace: gvcv5TeamSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:tpblock`,{onPlayerInteract: gvcv5UseTPBlock});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:usephone`,{onUse: gvcv5UsePhone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:teamphone`,{onUse: gvcv5UseTeamPhone});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:jailphone`,{onUse: gvcv5UseJailPhone});
 });
 
 world.afterEvents.worldLoad.subscribe( async e => {

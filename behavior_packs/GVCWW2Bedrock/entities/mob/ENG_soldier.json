@@ -2269,7 +2269,37 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "axis_soldier"
+                  "value": "ww2_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "ENGteam"
+                }
+              ]
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "ENGteam"
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "ENGSub"
                 }
               ]
             },
@@ -2352,6 +2382,10 @@
           {
             "weight": 10,
             "trigger": "stengun"
+          },
+          {
+            "weight": 10,
+            "trigger": "welrod"
           }
         ]
       },
@@ -2376,6 +2410,10 @@
           {
             "weight": 100,
             "trigger": "stengun"
+          },
+          {
+            "weight": 100,
+            "trigger": "welrod"
           },
           {
             "weight": 5,

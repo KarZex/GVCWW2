@@ -1,6 +1,7 @@
 import { world, system, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import "./teamCompornents";
+import { getInventoryItem } from "./main";
 
 const GlobalFlags = [ 
 	`redmainbase`,`bluemainbase`,`greenmainbase`,`airbase`,`airbaseii`,`city`,`cityii`,`abandoned_factory`,`abandoned_factoryii`,`ruins`,`ruinsii`,`reichstag`,`reichstagii`,`triumphal_arch`,`triumphal_archii`,`cv`,`cvii`
@@ -182,75 +183,75 @@ system.runInterval( () => {
 	}
 },20 );
 
-/*
+
 world.afterEvents.playerSpawn.subscribe( e => {
 	const p = e.player;
-	const redJail = world.getDynamicProperty(`redJail`); 
-	const blueJail = world.getDynamicProperty(`blueJail`); 
-	const greenJail = world.getDynamicProperty(`greenJail`);
-	const yellowJail = world.getDynamicProperty(`yellowJail`);
-	let team = `noteam`;
-	if( p.hasTag(`red`) ){
-		team = `§cRED`;
+	const SOVJail = world.getDynamicProperty(`SOVJail`);
+	const GERJail = world.getDynamicProperty(`GERJail`);
+	const USAJail = world.getDynamicProperty(`USAJail`);
+	const JAPJail = world.getDynamicProperty(`JAPJail`);
+	const ENGJail = world.getDynamicProperty(`ENGJail`);
+
+
+	if( ( p.hasTag(`downedbySOV`) || p.hasTag(`SOVSub`) ) && world.getDynamicProperty(`teamJail`) ){
+		p.teleport(SOVJail);
+		if(  p.hasTag(`downedbySOV`) ){
+			world.scoreboard.getObjective("DeathTime").setScore(p,120000);
+			p.addTag(`SOVSub`);
+			p.addTag(`onDeath`);
+			p.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s rotten_flesh 4`);
+		}
 	}
-	else if( p.hasTag(`blue`) ){
-		team = `§9BLUE`;
+	else if( ( p.hasTag(`downedbyGER`) || p.hasTag(`GERSub`) ) && world.getDynamicProperty(`teamJail`) ){
+		p.teleport(GERJail);
+		if(  p.hasTag(`downedbyGER`) ){
+			world.scoreboard.getObjective("DeathTime").setScore(p,120000);
+			p.addTag(`GERSub`);
+			p.addTag(`onDeath`);
+			p.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s rotten_flesh 4`);
+		}
 	}
-	else if( p.hasTag(`green`) ){
-		team = `§aGREEN`;
+	else if( ( p.hasTag(`downedbyUSA`) || p.hasTag(`USASub`) ) && world.getDynamicProperty(`teamJail`) ){
+		p.teleport(USAJail);
+		if(  p.hasTag(`downedbyUSA`) ){
+			world.scoreboard.getObjective("DeathTime").setScore(p,120000);
+			p.addTag(`USASub`);
+			p.addTag(`onDeath`);
+			p.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s rotten_flesh 4`);
+		}
 	}
-	else if( p.hasTag(`yellow`) ){
-		team = `§eYELLOW`;
+	else if( ( p.hasTag(`downedbyJAP`) || p.hasTag(`JAPSub`) ) && world.getDynamicProperty(`teamJail`) ){
+		p.teleport(JAPJail);
+		if(  p.hasTag(`downedbyJAP`) ){
+			world.scoreboard.getObjective("DeathTime").setScore(p,120000);
+			p.addTag(`JAPSub`);
+			p.addTag(`onDeath`);
+			p.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s rotten_flesh 4`);
+		}
+	}
+	else if( ( p.hasTag(`downedbyENG`) || p.hasTag(`ENGSub`) ) && world.getDynamicProperty(`teamJail`) ){
+		p.teleport(ENGJail);
+		if(  p.hasTag(`downedbyENG`) ){
+			world.scoreboard.getObjective("DeathTime").setScore(p,120000);
+			p.addTag(`ENGSub`);
+			p.addTag(`onDeath`);
+			p.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s rotten_flesh 4`);
+		}
 	}
 
-	if( ( p.hasTag(`downedbyred`) || p.hasTag(`redSub`) ) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(redJail);
-		if(  p.hasTag(`downedbyred`) ){
-			world.scoreboard.getObjective("ALLFlags").addScore(team,-1);
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`redSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-
-	else if(( p.hasTag(`downedbyblue`) || p.hasTag(`blueSub`) ) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(blueJail);
-		if(  p.hasTag(`downedbyblue`) ){
-			world.scoreboard.getObjective("ALLFlags").addScore(team,-1);
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`blueSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-	else if( (p.hasTag(`downedbygreen`) || p.hasTag(`greenSub`)) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(greenJail);
-		if(  p.hasTag(`downedbygreen`) ){
-			world.scoreboard.getObjective("ALLFlags").addScore(team,-1);
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`greenSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-	else if( (p.hasTag(`downedbyyellow`) || p.hasTag(`yellowSub`)) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(yellowJail);
-		if(  p.hasTag(`downedbyyellow`) ){
-			world.scoreboard.getObjective("ALLFlags").addScore(team,-1);
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`yellowSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
 	p.runCommand(`inputpermission set @s movement enabled`);
-	p.removeTag(`downedbyred`);
-	p.removeTag(`downedbyblue`);
-	p.removeTag(`downedbygreen`);
-	p.removeTag(`downedbyyellow`);
+	p.removeTag(`downedbySOV`);
+	p.removeTag(`downedbyGER`);
+	p.removeTag(`downedbyUSA`);
+	p.removeTag(`downedbyJAP`);
+	p.removeTag(`downedbyENG`);
 } )
-*/
+
 world.beforeEvents.playerLeave.subscribe( e => {
 	if( e.player.hasTag(`onDeath`) ){
 		e.player.setDynamicProperty(`cTime`,world.getAbsoluteTime());
@@ -264,8 +265,41 @@ world.afterEvents.playerJoin.subscribe( e => {
 	}
 } )
 
+world.beforeEvents.playerBreakBlock.subscribe( e => {
+	const player = e.player;
+	const P = e.block.location;
+	if( player.hasTag(`working`) ){
+		let team;
+		if( player.hasTag(`SOVSub`) ){
+			team = `SOV`
+		}
+		else if( player.hasTag(`GERSub`) ){
+			team = `GER`
+		}
+		else if( player.hasTag(`USASub`) ){
+			team = `USA`
+		}
+		else if( player.hasTag(`JAPSub`) ){
+			team = `JAP`
+		}
+		else if( player.hasTag(`ENGSub`) ){
+			team = `ENG`
+		}
 
-system.afterEvents.scriptEventReceive.subscribe( e => {
+		const O = world.getDynamicProperty(`${team}Jail`);
+		if( O.x - 30 < P.x && P.x < O.x + 34 && O.z - 34 < P.z && P.z < O.z + 30 && P.y < O.y - 5 ){
+			//in_working
+		}
+		else{
+			player.sendMessage(`you cant break this block`)
+			e.cancel = true;
+		}
+	}
+
+
+} )
+
+system.afterEvents.scriptEventReceive.subscribe( async e => {
 	if( e.id === "gvcv5:TeamList" ){
 		let itemRawText = []
 		for( const Ally of world.getPlayers({ families: [ "SOV" ] }) ){
@@ -292,10 +326,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const player = e.sourceEntity;
 		const location = player.getSpawnPoint();
 		const O = world.getDefaultSpawnLocation();
-		player.removeTag(`redSub`);
-		player.removeTag(`blueSub`);
-		player.removeTag(`greenSub`);
-		player.removeTag(`yellowSub`);
+		player.runCommand(`clear @s zex:jailphone`);
+		player.removeTag(`working`);
+		player.removeTag(`SOVSub`);
+		player.removeTag(`GERSub`);
+		player.removeTag(`USASub`);
+		player.removeTag(`JAPSub`);
+		player.removeTag(`ENGSub`);
 		if( player.getSpawnPoint() != undefined  ){
 			player.teleport({ x:location.x,y:location.y,z:location.z },{ dimension:location.dimension } );
 		}
@@ -315,7 +352,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			player.teleport(world.getDynamicProperty(`ENGSpawn`),{ dimension:world.getDimension(`overworld`) } );
 		}
 		else{
-			player.teleport( {x:6,y:63,z:0} ,{ dimension:world.getDimension(`the_end`) } );
+			player.teleport( {x:O.x,y:320,z:O.z} ,{ dimension:world.getDimension(`the_end`) } );
 			player.addEffect(`resistance`,600,{ amplifier:255 } );
 		}
 	}
@@ -350,6 +387,102 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const team = e.message;
 		world.setDynamicProperty(`${team}Jail`,location);
 		dimension.setBlockType(location, "minecraft:air");
+	}
+	else if( e.id === `zex:startwork` ){
+		const player = e.sourceEntity;
+		const P = player.location;
+		player.teleport({ x:P.x - 1,y:P.y - 5,z:P.z });
+		player.addTag(`working`);
+		player.runCommand(`give @s iron_pickaxe`);
+		player.runCommand(`give @s rotten_flesh 16`);
+		player.runCommand(`give @s poisonous_potato 16`);
+		player.runCommand(`give @s torch 256`);
+		player.runCommand(`give @s ladder 64`);
+	}
+	else if( e.id === `zex:endwork` ){
+		const player = e.sourceEntity;
+		const P = player.location;
+		let cancel = false;
+		if( getInventoryItem(player,`minecraft:coal`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:raw_iron`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:raw_copper`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:raw_gold`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:lapis_lazuli`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:redstone`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:emerald`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( getInventoryItem(player,`minecraft:diamond`) > 0 ){
+			player.sendMessage(`Please submit your ores`);
+			cancel = true;
+		}
+		if( !cancel ){
+			player.teleport({ x:P.x - 1,y:P.y + 6,z:P.z });
+			player.runCommand(`replaceitem entity @s slot.hotbar 0 zex:jailphone 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			player.removeTag(`working`);
+			player.runCommand(`clear @s`);
+		}
+
+
+	}
+	else if( e.id === `zex:jailwork` && e.sourceEntity.getDynamicProperty(`jailwork`) == true ){
+		const player = e.sourceEntity;
+		const team = e.message;
+		const O = world.getDynamicProperty(`${team}Jail`);
+		const P = player.location;
+		if( O.x - 30 < P.x && P.x < O.x + 34 && O.z - 34 < P.z && P.z < O.z + 30  ){
+			//in_working
+		}
+		else{
+			player.setDynamicProperty(`jailwork`,false);
+			let i = 10; //10 second
+			while( true ){
+				player.sendMessage(`Go Back Jail..${i}`);
+				await system.waitTicks(20);
+				let P = player.location;
+				if( O.x - 30 < P.x && P.x < O.x + 34 && O.z - 34 < P.z && P.z < O.z + 30  ){
+					//in_working
+					player.setDynamicProperty(`jailwork`,true);
+					break;
+				}
+				else{
+					i = i - 1;
+					if( i <= 0 ){
+						player.removeTag(`working`);
+						player.runCommand(`gamemode a @s`);
+						player.teleport({ x:O.x + 12,y:O.y+1,z:O.z-28 });
+						player.runCommand(`clear @s zex:jailphone`);
+						player.setDynamicProperty(`jailwork`,true);
+						break
+					}
+				}
+			}
+		}
+	}
+	else if( e.id === `zex:jailwork` && e.sourceEntity.getDynamicProperty(`jailwork`) != true ){
+		//print(`${e.sourceEntity.getDynamicProperty(`jailwork`)}`);
+		if( e.sourceEntity.getDynamicProperty(`jailwork`) == undefined ){
+			e.sourceEntity.setDynamicProperty(`jailwork`,true);
+		}
 	}
 	else if( e.id === `zex:execution` ){
 		const user = e.sourceEntity;
@@ -401,7 +534,80 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		gvcv5AddTeamList(user,to);
 
-	}	else if( e.id == "gvcv5:phone_noteam" && !e.sourceEntity.hasTag(`down`) ){
+	}
+	else if( e.id == "gvcv5:jail_phone" && !e.sourceEntity.hasTag(`down`) ){
+		const user = e.sourceEntity;		
+		let team;
+		if( user.hasTag(`SOVSub`) ){
+			team = `SOV`
+		}
+		else if( user.hasTag(`GERSub`) ){
+			team = `GER`
+		}
+		else if( user.hasTag(`USASub`) ){
+			team = `USA`
+		}
+		else if( user.hasTag(`JAPSub`) ){
+			team = `JAP`
+		}
+		else if( user.hasTag(`ENGSub`) ){
+			team = `ENG`
+		}
+		const O = world.getDynamicProperty(`${team}Jail`);
+		const form = new ActionFormData();
+		form.title(`Jail Mode`);
+		form.button(`script.gvcv5.howTojail.name`,`textures/ui/phone/mp40`);
+		form.button(`script.gvcv5.howTojail2.name`,`textures/ui/phone/t34`);
+		form.button(`script.gvcv5.goToWork.name`,`textures/ui/phone/zero`);
+		if( team == `noteam` ){
+			form.button(`script.gvcv5.select_team.name`,`textures/ui/phone/team`);
+		}
+		form.show(user).then( r => {
+			if (!r.canceled) {
+				if( r.selection == 0 ){
+					const form = new ActionFormData();
+					form.title(`script.gvcv5.howTojail.name`);
+					let itemRawText = []
+					itemRawText.push({ translate: `script.gvcv5.howTojail_desc.name` });
+					itemRawText.push({ text: `\n\n` });
+					form.button(`script.gvcv5.phone_back.name`);
+					form.show(user).then( result => {
+						if ( !result.canceled ){
+							user.runCommand(`scriptevent gvcv5:jail_phone`);
+						}
+					} )
+				}
+				else if( r.selection == 1 ){
+					const form = new ActionFormData();
+					form.title(`script.gvcv5.howTojail2.name`);
+					let itemRawText = []
+					itemRawText.push({ translate: `script.gvcv5.howTojail2_desc.name` });
+					itemRawText.push({ text: `\n\n` });
+					form.body({ rawtext: itemRawText});
+					form.button(`script.gvcv5.phone_back.name`);
+					form.show(user).then( result => {
+						if ( !result.canceled ){
+							user.runCommand(`scriptevent gvcv5:jail_phone`);
+						}
+					} )
+				}
+				else if( r.selection == 2 && !user.hasTag(`working`) ){
+					user.addTag(`working`);
+					user.runCommand(`give @s iron_pickaxe`);
+					user.runCommand(`give @s rotten_flesh 16`);
+					user.runCommand(`give @s poisonous_potato 16`);
+					user.runCommand(`give @s torch 256`);
+					user.runCommand(`give @s ladder 64`);
+					user.teleport({
+						x:O.x+25,
+						y:O.y-5,
+						z:O.z
+					})
+				}
+			}
+		},)
+	}
+	else if( e.id == "gvcv5:phone_noteam" && !e.sourceEntity.hasTag(`down`) ){
 		const user = e.sourceEntity;
 		const team = e.message;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
@@ -773,6 +979,25 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const user = e.sourceEntity;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		let phoneArray = [];
+		if( world.scoreboard.getObjective("DeathTime").getScore(user) > 0 ){
+			let itemRawText = []
+			let jail = `noteam`
+			if( user.hasTag(`SOVSub`) ){ jail = `SOV`; }
+			else if( user.hasTag(`GERSub`) ){ jail = `GER`; }
+			else if( user.hasTag(`USASub`) ){ jail = `USA`; }
+			else if( user.hasTag(`JAPSub`) ){ jail = `JAP`; }
+			else if( user.hasTag(`ENGSub`) ){ jail = `ENG`; }
+			//release from jail
+			world.scoreboard.getObjective("DeathTime").setScore(user,0);
+			itemRawText.push({ translate: `script.gvcv5.newMessage_${jail}.name` });
+			itemRawText.push({ translate: `script.gvcv5.phoneAbuse0.name` }); //warning
+			itemRawText.push({ text: `${user.nameTag}` });
+			itemRawText.push({ translate: `script.gvcv5.releasedJail0.name` }); //is released
+			for( const myAlly of world.getPlayers({ families: [ jail ] }) ){
+				myAlly.sendMessage({ rawtext: itemRawText });
+			}
+			user.sendMessage({ translate: `script.gvcv5.youreleased.name` })
+		}
 		const form = new ActionFormData();
 		print(`${world.getDynamicProperty(`${userFamily}Leader`)}`)
 		form.title(`.debug Home Menu`);
