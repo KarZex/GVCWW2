@@ -556,9 +556,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const O = world.getDynamicProperty(`${team}Jail`);
 		const form = new ActionFormData();
 		form.title(`Jail Mode`);
-		form.button(`script.gvcv5.howTojail.name`,`textures/ui/phone/mp40`);
-		form.button(`script.gvcv5.howTojail2.name`,`textures/ui/phone/t34`);
-		form.button(`script.gvcv5.goToWork.name`,`textures/ui/phone/zero`);
+		form.button(`script.gvcv5.howTojail.name`,`textures/ui/phone/jail`);
+		form.button(`script.gvcv5.howTojail2.name`,`textures/ui/phone/jailre`);
+		form.button(`script.gvcv5.goToWork.name`,`textures/ui/phone/icon_iron_pickaxe`);
 		if( team == `noteam` ){
 			form.button(`script.gvcv5.select_team.name`,`textures/ui/phone/team`);
 		}
@@ -1004,6 +1004,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		form.button(`script.gvcv5.phone_tp.name`,`textures/ui/phone/icon_alex`);
 		form.button(`script.gvcv5.phone_tp_block.name`,`textures/ui/phone/spawn_zzz`);
 		form.button(`script.gvcv5.phone_teamChat.name`,`textures/ui/phone/message`);
+		form.button(`script.gvcv5.phone_menber_list.name`,`textures/ui/phone/jail`);
 		form.button(`script.gvcv5.phone_password.name`,`textures/ui/phone/icon_lock`);
 		form.button(`script.gvcv5.phone_leave.name`,`textures/ui/phone/crossout`);
 		form.button(`script.gvcv5.phone_howTo.name`,`textures/ui/phone/missing_item`);
@@ -1041,7 +1042,37 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				else if( result.selection == 2 ){
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
-				else if( result.selection == 3 ){ //change password
+				else if( result.selection == 3 ){ //menber list
+					const form_tp = new ActionFormData();
+					form_tp.title(`script.gvcv5.phone_menber_list.name`);
+					for( const myAlly of world.getPlayers({ tags:[ `${userFamily}Sub` ] }) ){
+						phoneArray.push( myAlly );
+						form_tp.button(`${myAlly.nameTag}`);
+					}
+					form_tp.button(`script.gvcv5.phone_back.name`);
+					form_tp.show(user).then( r => {
+						if( r.selection < phoneArray.length ){
+							const form_jail = new ActionFormData();
+							form_jail.title(`script.gvcv5.phone_menber_list.name`);
+							form_jail.button(`script.gvcv5.phone_release_menber.name`);
+							form_jail.show(user).then( re => {
+								if( re.selection == 0 ){ 
+									world.scoreboard.getObjective("DeathTime").setScore(phoneArray[r.selection],0); 
+									world.sendMessage([
+										{text:`${phoneArray[r.selection].nameTag}`},
+										{ translate:`script.gvcv5.released0.name` },
+										{text:`${user.nameTag}`},
+										{ translate:`script.gvcv5.released1.name` }
+									])
+								}
+							} )
+						}
+						else{
+							user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
+						}
+					} )
+				}
+				else if( result.selection == 4 ){ //change password
 					const form = new ModalFormData()
 					form.title(`script.gvcv5.phone_password.name`)
 					form.textField(`script.gvcv5.input_password.name`,`${phone.getDynamicProperty("password")}`);
@@ -1052,7 +1083,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						}
 					},)
 				}
-				else if( result.selection == 4 ){
+				else if( result.selection == 5 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
@@ -1075,10 +1106,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						}
 					} )
 				}
-				else if( result.selection == 5 ){
+				else if( result.selection == 6 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam ${userFamily}`);
 				}
-				else if( result.selection == 6 ){
+				else if( result.selection == 7 ){
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_accept_to_join.name`);
 					for( const myAlly of world.getPlayers({ tags: [ `wantToBe${userFamily}` ],families: [ `noteam` ] }) ){
@@ -1116,7 +1147,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						}
 					} )
 				}
-				else if( result.selection == 7 ){ 
+				else if( result.selection == 8 ){ 
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_kick_member.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -1141,7 +1172,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						}
 					} )
 				}
-				else if( result.selection == 8 ){ //transfer leader
+				else if( result.selection == 9 ){ //transfer leader
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_transfer_leader.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){

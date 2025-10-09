@@ -5,7 +5,7 @@ import shutil
 teams = ["eng", "sov", "ger", "usa", "jap"]
 true_teams = [ "ENG", "SOV", "GER", "USA", "JAP" ]
 
-def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
+def create_flag_json( team,teamTrue,structure_id, structure_loot,family,can_flag):
     with open("tool/vloot.json","r") as f:
         loot_table = json.load(f)
         loot_table["pools"][0]["entries"][0]["functions"][0]["id"] = "gvcww2:flag_{0}_{1}".format(team, structure_id)
@@ -36,7 +36,10 @@ def create_flag_json( team,teamTrue,structure_id, structure_loot,family):
         flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "boss.gvcww2:flag{0}_{1}.name".format(team, structure_id)
         flag_json["minecraft:entity"]["description"]["identifier"] = "gvcww2:flag_{0}_{1}".format(team, structure_id)
         flag_json["minecraft:entity"]["components"]["minecraft:behavior.summon_entity"]["summon_choices"][0]["sequence"][0]["entity_type"] = "gvcww2:{}_soldier".format(team)
-        flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/flag/flag_{0}_{1}.json".format(team, structure_id)
+        if can_flag:
+            flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/flag/flag_{0}_{1}.json".format(team, structure_id)
+        else:
+            del flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]
         flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(interact)
         flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
             #BB#"say §c{} is spawned".format(structure_id),
@@ -126,8 +129,12 @@ for row in csv_reader:
         structure_loady = int(row[6])
         structure_chance = float(row[7])
         structure_flag_type = row[8].replace("nf","")
-        structure_is_ship = row[9]
+        structure_can_flag_item = row[9]
         structure_loot = row[10]
+        if( structure_can_flag_item == "T" ):
+            structure_can_flag = True
+        else:
+            structure_can_flag = False
         for i in range(5):
             team = teams[i]
             true_team = true_teams[i]
@@ -154,8 +161,7 @@ for row in csv_reader:
                 feature_json = json.load(f)
                 feature_json["minecraft:structure_template_feature"]["description"]["identifier"] = "gvcww2:{0}_{1}".format(team,structure_id)
                 feature_json["minecraft:structure_template_feature"]["structure_name"] = "mystructure:f_{0}_{1}".format(team,structure_id)
-                if structure_is_ship == "T": feature_json["minecraft:structure_template_feature"]["constraints"] = { "unburied":{} }
-                else: feature_json["minecraft:structure_template_feature"]["constraints"] = { "grounded":{} }
+                feature_json["minecraft:structure_template_feature"]["constraints"] = { "grounded":{} }
 
             with open("behavior_packs/GVCWW2Bedrock/features/{0}_{1}.json".format(team,structure_id),"w") as f:
                 json.dump(feature_json,f,indent=2)
@@ -245,7 +251,7 @@ for row in csv_reader:
 
         #SOV - Soviet Union
         sov_family = [ "SOVflag","flag","redteam","SOVteam","allied_soldier","inanimate" ]
-        create_flag_json("sov","SOV",structure_id,structure_loot,sov_family)
+        create_flag_json("sov","SOV",structure_id,structure_loot,sov_family,structure_can_flag)
 
         #%COLOR% = blue
         
@@ -254,19 +260,19 @@ for row in csv_reader:
 
         #GER - Nazi Germany
         ger_family = [ "GERflag","flag","grayteam","GERteam","axis_soldier","inanimate" ]
-        create_flag_json("ger","GER",structure_id,structure_loot,ger_family)
+        create_flag_json("ger","GER",structure_id,structure_loot,ger_family,structure_can_flag)
 
         #USA - United States
         usa_family = [ "USAflag","flag","blueteam","USAteam","allied_soldier","inanimate" ]
-        create_flag_json("usa","USA",structure_id,structure_loot,usa_family)
+        create_flag_json("usa","USA",structure_id,structure_loot,usa_family,structure_can_flag)
 
         #JAP - Imperial Japan
         jap_family = [ "JAPflag","flag","greenteam","JAPteam","axis_soldier","inanimate" ]
-        create_flag_json("jap","JAP",structure_id,structure_loot,jap_family)
+        create_flag_json("jap","JAP",structure_id,structure_loot,jap_family,structure_can_flag)
 
         #ENG - United Kingdom
         eng_family = [ "ENGflag","flag","yellowteam","ENGteam","allied_soldier","inanimate" ]
-        create_flag_json("eng","ENG",structure_id,structure_loot,eng_family)
+        create_flag_json("eng","ENG",structure_id,structure_loot,eng_family,structure_can_flag)
 
         for i in teams:
             with open("behavior_packs/GVCWW2Bedrock/functions/flag/{0}_{1}.mcfunction".format(i,structure_id),"w") as f:

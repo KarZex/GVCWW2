@@ -2,7 +2,7 @@
   "format_version": "1.20.60",
   "minecraft:block": {
     "description": {
-      "identifier": "gvcv5:building_sovjail_b",
+      "identifier": "gvcv5:building_japjail_b",
       "menu_category": {
         "category": "construction"
       }
@@ -10,7 +10,7 @@
     "components": {
       "minecraft:material_instances": {
         "*": {
-          "texture": "sov_building",
+          "texture": "jap_building",
           "render_method": "alpha_test",
           "ambient_occlusion": false
         }

@@ -518,6 +518,11 @@ tile.gvcv5:building_redjail_b.name=§c赤チームの収容所
 tile.gvcv5:building_bluejail_b.name=§9青チームの収容所
 tile.gvcv5:building_greenjail_b.name=§a緑チームの収容所
 tile.gvcv5:building_yellowjail_b.name=§e黄チームの収容所
+tile.gvcv5:building_sovjail_b.name=§cソビエトの収容所
+tile.gvcv5:building_gerjail_b.name=§8ドイツの収容所
+tile.gvcv5:building_usajail_b.name=§9アメリカの収容所
+tile.gvcv5:building_japjail_b.name=§a日本の収容所
+tile.gvcv5:building_engjail_b.name=§eイギリスの収容所
 
 tile.gvcv5:redspawn.name=§c赤チームのスポーン地点
 tile.gvcv5:bluespawn.name=§9青チームのスポーン地点
