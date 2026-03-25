@@ -351,7 +351,6 @@ gvcww2.30mmmcair.name=30mmMC
 gvcww2.20mmmcair.name=20mmMC
 gvcww2.bombiii.name=bombii
 gvcww2.37mmrocketkatyusya.name=37mmRocket
-
 gvcww2.NO.name=----
 gvcww2..name=----
 
@@ -584,11 +583,26 @@ script.gvcv5.redteam.name=§cRed Team§r
 script.gvcv5.blueteam.name=§9Blue Team§r
 script.gvcv5.greenteam.name=§aGreen Team§r
 script.gvcv5.yellowteam.name=§eYellow Team§r
+script.gvcv5.SOV.name=§cSoviet Team§r
+script.gvcv5.GER.name=§8German Team§r
+script.gvcv5.USA.name=§9US Team§r
+script.gvcv5.JAP.name=§aJapanese Team§r
+script.gvcv5.ENG.name=§eBritish Team§r
 script.gvcv5.SOVteam.name=§cSoviet Team§r
 script.gvcv5.GERteam.name=§8German Team§r
 script.gvcv5.USAteam.name=§9US Team§r
 script.gvcv5.JAPteam.name=§aJapanese Team§r
 script.gvcv5.ENGteam.name=§eBritish Team§r
+script.gvcv5.SOVteam2.name=§cSoviet§r
+script.gvcv5.GERteam2.name=§8German§r
+script.gvcv5.USAteam2.name=§9US§r
+script.gvcv5.JAPteam2.name=§aJapanese§r
+script.gvcv5.ENGteam2.name=§eBritish§r
+script.gvcv5.SOVteam3.name=§cSoviet Base§r
+script.gvcv5.GERteam3.name=§8German Base§r
+script.gvcv5.USAteam3.name=§9US Base§r
+script.gvcv5.JAPteam3.name=§aJapanese Base§r
+script.gvcv5.ENGteam3.name=§eBritish Base§r
 script.gvcv5.defenced.name=has
 script.gvcv5.defenced2.name=successfully defended the flag from attack
 script.gvcv5.occupied.name=captured the flag
@@ -607,6 +621,9 @@ script.gvcv5.phone_to_menber.name=Teleport to detainees
 script.gvcv5.phone_from_menber.name=Teleport detainees here
 script.gvcv5.phone_release_menber.name=Release detainees
 script.gvcv5.phoneAbuse.name=§cTeleporting with an enemy terminal will destroy the terminal.§r
+
+script.gvcv5.phone_tp_block_team.name=Main Base
+
 action.gvcv5.team.dye=Dye
 tile.gvcv5:building_redjail_b.name=§cRed Team Detention Center
 tile.gvcv5:building_bluejail_b.name=§9Blue Team Detention Center

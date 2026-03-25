@@ -204,7 +204,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -247,7 +247,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -290,7 +290,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -333,7 +333,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -376,7 +376,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -567,7 +567,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -610,7 +610,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -653,7 +653,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -696,7 +696,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -739,7 +739,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -761,18 +761,6 @@
                                             "subject": "self",
                                             "operator": "!=",
                                             "value": "down"
-                                        },
-                                        {
-                                            "test": "has_tag",
-                                            "subject": "self",
-                                            "operator": "!=",
-                                            "value": "nodownable"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "allied_soldier"
                                         },
                                         {
                                             "test": "is_family",
@@ -978,7 +966,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1021,7 +1009,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1064,7 +1052,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1107,7 +1095,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1150,7 +1138,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1178,18 +1166,6 @@
                                             "subject": "self",
                                             "operator": "!=",
                                             "value": "nodownable"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "allied_soldier"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "axis_soldier"
                                         },
                                         {
                                             "test": "is_riding",
@@ -1389,7 +1365,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1432,7 +1408,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1475,7 +1451,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1518,7 +1494,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1561,7 +1537,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1589,18 +1565,6 @@
                                             "subject": "self",
                                             "operator": "!=",
                                             "value": "nodownable"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "allied_soldier"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "axis_soldier"
                                         },
                                         {
                                             "test": "is_riding",
@@ -1800,7 +1764,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1843,7 +1807,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1886,7 +1850,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1929,7 +1893,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -1972,7 +1936,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2000,18 +1964,6 @@
                                             "subject": "self",
                                             "operator": "!=",
                                             "value": "nodownable"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "allied_soldier"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "axis_soldier"
                                         },
                                         {
                                             "test": "is_riding",
@@ -2211,7 +2163,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "SOVteam"
+                                            "value": "SOVplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2254,7 +2206,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "GERteam"
+                                            "value": "GERplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2297,7 +2249,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "USAteam"
+                                            "value": "USAplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2340,7 +2292,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "JAPteam"
+                                            "value": "JAPplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2383,7 +2335,7 @@
                                             "test": "is_family",
                                             "subject": "other",
                                             "operator": "==",
-                                            "value": "ENGteam"
+                                            "value": "ENGplayer"
                                         },
                                         {
                                             "test": "has_damage",
@@ -2415,18 +2367,6 @@
                                         {
                                             "test": "is_riding",
                                             "operator": "not"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "allied_soldier"
-                                        },
-                                        {
-                                            "test": "is_family",
-                                            "subject": "other",
-                                            "operator": "!=",
-                                            "value": "axis_soldier"
                                         },
                                         {
                                             "test": "has_mob_effect",

@@ -5,20 +5,22 @@
       "states": {
         "default": {
           "on_entry": [
-            "/tag @s remove subattack"
+            "/tag @s remove weaponiattack",
+            "/tag @s remove weaponiiattack",
+            "/tag @s remove weaponiiiattack",
+            "/tag @s remove weaponivattack"
           ],
           "transitions": [
-            { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s37m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s47m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s57m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s76m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s85m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s88m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s105m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s152m') && query.is_using_item" },
-            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:sbombm') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s37m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s47m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s57m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s76m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s85m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s88m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s105m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:s152m') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'zex:sbombm') && query.is_using_item" },
             { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item" },
             { "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'" },
             { "shield": "query.is_sneaking && query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:shield')" },
@@ -46,42 +48,54 @@
         },
         "mgg_1": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
-
+            "/scriptevent zex:playerVfire"
           ],
-          "transitions": [ 
-            {"default":"!query.is_using_item || !query.is_riding"},
-            {"mgg_2": "query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
+          "transitions": [
+            {
+              "default": "!query.is_using_item || !query.is_riding"
+            },
+            {
+              "mgg_2": "query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"
+            }
           ]
         },
         "mgg_2": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
-
+            "/scriptevent zex:playerVfire"
           ],
-          "transitions": [ 
-            {"default":"!query.is_using_item || !query.is_riding"},
-            {"mgg_1":"query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
+          "transitions": [
+            {
+              "default": "!query.is_using_item || !query.is_riding"
+            },
+            {
+              "mgg_1": "query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"
+            }
           ]
         },
         "mgj_1": {
           "on_entry": [
-            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
-
+            "/scriptevent zex:playerVfire"
           ],
-          "transitions": [ 
-            {"default":"!query.is_jumping || !query.is_riding"},
-            {"mgj_2":"query.is_jumping && query.is_riding"}
+          "transitions": [
+            {
+              "default": "!query.is_jumping || !query.is_riding"
+            },
+            {
+              "mgj_2": "query.is_jumping && query.is_riding"
+            }
           ]
         },
         "mgj_2": {
           "on_entry": [
-            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
-
+            "/scriptevent zex:playerVfire"
           ],
-          "transitions": [ 
-            {"default":"!query.is_jumping || !query.is_riding"},
-            {"mgj_1":"query.is_jumping && query.is_riding"}
+          "transitions": [
+            {
+              "default": "!query.is_jumping || !query.is_riding"
+            },
+            {
+              "mgj_1": "query.is_jumping && query.is_riding"
+            }
           ]
         },
         "shield": {

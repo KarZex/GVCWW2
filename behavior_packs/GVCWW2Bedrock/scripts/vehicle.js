@@ -3,10 +3,10 @@ export const vehicleData = {
   "bf109": {
     "type": "air",
     "speed": 1.2,
-    "sub": "20mmmcaird",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 22.5,
     "gattack": 0,
     "FuelPerSecond": 6
@@ -14,10 +14,10 @@ export const vehicleData = {
   "ju87": {
     "type": "air",
     "speed": 1.0,
-    "sub": "7.62mmmgs",
-    "main1": "bomb",
-    "main2": "37mmrocket",
-    "main3": "",
+    "Weapon1": "7.62mmmgs",
+    "Weapon2": "bomb",
+    "Weapon3": "37mmrocket",
+    "Weapon4": "",
     "turn": 9.0,
     "gattack": 0,
     "FuelPerSecond": 15
@@ -25,10 +25,10 @@ export const vehicleData = {
   "spitfire": {
     "type": "air",
     "speed": 1.0,
-    "sub": "14.5mmhmg",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "14.5mmhmg",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 22.5,
     "gattack": 0,
     "FuelPerSecond": 6
@@ -36,10 +36,10 @@ export const vehicleData = {
   "battle": {
     "type": "air",
     "speed": 0.8,
-    "sub": "7.62mmmg",
-    "main1": "bomb",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "7.62mmmg",
+    "Weapon2": "bomb",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 9.0,
     "gattack": 0,
     "FuelPerSecond": 12
@@ -47,10 +47,10 @@ export const vehicleData = {
   "f4u": {
     "type": "air",
     "speed": 1.0,
-    "sub": "14.5mmhmg",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "14.5mmhmg",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 22.5,
     "gattack": 0,
     "FuelPerSecond": 6
@@ -58,10 +58,10 @@ export const vehicleData = {
   "sbd": {
     "type": "air",
     "speed": 0.8,
-    "sub": "7.62mmmgs",
-    "main1": "bomb",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "7.62mmmgs",
+    "Weapon2": "bomb",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 9.0,
     "gattack": 0,
     "FuelPerSecond": 12
@@ -69,10 +69,10 @@ export const vehicleData = {
   "yak9": {
     "type": "air",
     "speed": 1.0,
-    "sub": "20mmmcaird",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 15.0,
     "gattack": 0,
     "FuelPerSecond": 6
@@ -80,21 +80,21 @@ export const vehicleData = {
   "il2": {
     "type": "air",
     "speed": 0.6,
-    "sub": "20mmmcaird",
-    "main1": "bombii",
-    "main2": "37mmrocket",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "bomb",
+    "Weapon3": "37mmrocket",
+    "Weapon4": "",
     "turn": 6.0,
     "gattack": 0,
-    "FuelPerSecond": 15
+    "FuelPerSecond": 12
   },
   "zero": {
     "type": "air",
     "speed": 0.85,
-    "sub": "20mmmcaird",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 30.0,
     "gattack": 0,
     "FuelPerSecond": 6
@@ -102,10 +102,10 @@ export const vehicleData = {
   "b7a": {
     "type": "air",
     "speed": 0.75,
-    "sub": "7.62mmmg",
-    "main1": "bomb",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "7.62mmmg",
+    "Weapon2": "bomb",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 9.0,
     "gattack": 0,
     "FuelPerSecond": 12
@@ -113,10 +113,10 @@ export const vehicleData = {
   "t34": {
     "type": "tank",
     "speed": 0.17,
-    "sub": "vmg",
-    "main1": "85mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "85mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 3
@@ -124,10 +124,10 @@ export const vehicleData = {
   "panzer": {
     "type": "tank",
     "speed": 0.25,
-    "sub": "vmg",
-    "main1": "76mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "76mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 3
@@ -135,10 +135,10 @@ export const vehicleData = {
   "m4": {
     "type": "tank",
     "speed": 0.2,
-    "sub": "vmg",
-    "main1": "76mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "76mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 2
@@ -146,10 +146,10 @@ export const vehicleData = {
   "t97t": {
     "type": "tank",
     "speed": 0.22,
-    "sub": "vmg",
-    "main1": "47mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "47mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 2
@@ -157,10 +157,10 @@ export const vehicleData = {
   "valentine": {
     "type": "tank",
     "speed": 0.2,
-    "sub": "vmg",
-    "main1": "57mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "57mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 2
@@ -168,10 +168,10 @@ export const vehicleData = {
   "kv2": {
     "type": "tank",
     "speed": 0.15,
-    "sub": "",
-    "main1": "152mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "152mm",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 24,
     "FuelPerSecond": 4
@@ -179,10 +179,10 @@ export const vehicleData = {
   "tiger": {
     "type": "tank",
     "speed": 0.2,
-    "sub": "vmg",
-    "main1": "88mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "88mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 12,
     "FuelPerSecond": 4
@@ -190,10 +190,10 @@ export const vehicleData = {
   "t98t": {
     "type": "tank",
     "speed": 0.28,
-    "sub": "vmg",
-    "main1": "37mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "37mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
@@ -201,10 +201,10 @@ export const vehicleData = {
   "t17e1": {
     "type": "apc",
     "speed": 0.25,
-    "sub": "vmg",
-    "main1": "37mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "37mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
@@ -212,10 +212,10 @@ export const vehicleData = {
   "t17e2": {
     "type": "apc",
     "speed": 0.25,
-    "sub": "20mmmcaird",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
@@ -223,10 +223,10 @@ export const vehicleData = {
   "wirbelwind": {
     "type": "tank",
     "speed": 0.25,
-    "sub": "20mmmcairw",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcairw",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 3
@@ -234,10 +234,10 @@ export const vehicleData = {
   "20mmaa": {
     "type": "set",
     "speed": 0.0,
-    "sub": "20mmmcair",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcair",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 0,
     "FuelPerSecond": 0
@@ -245,10 +245,10 @@ export const vehicleData = {
   "flak18": {
     "type": "set",
     "speed": 0.0,
-    "sub": "",
-    "main1": "125mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "125mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 0,
     "FuelPerSecond": 0
@@ -256,10 +256,10 @@ export const vehicleData = {
   "pak40": {
     "type": "set",
     "speed": 0.0,
-    "sub": "",
-    "main1": "105mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "105mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 0,
     "FuelPerSecond": 0
@@ -267,10 +267,10 @@ export const vehicleData = {
   "m13aa": {
     "type": "apc",
     "speed": 0.25,
-    "sub": "20mmmcaird",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcaird",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 0
@@ -278,10 +278,10 @@ export const vehicleData = {
   "bm13aa": {
     "type": "apc",
     "speed": 0.25,
-    "sub": "14.5mmhmg",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "14.5mmhmg",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
@@ -289,10 +289,10 @@ export const vehicleData = {
   "t98taa": {
     "type": "tank",
     "speed": 0.28,
-    "sub": "20mmmcair",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "20mmmcair",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1
@@ -300,10 +300,10 @@ export const vehicleData = {
   "m5": {
     "type": "tank",
     "speed": 0.3,
-    "sub": "vmg",
-    "main1": "37mm",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "37mm",
+    "Weapon2": "vmg",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 2
@@ -311,10 +311,10 @@ export const vehicleData = {
   "bm13": {
     "type": "apc",
     "speed": 0.25,
-    "sub": "37mmrocketkatyusya",
-    "main1": "",
-    "main2": "",
-    "main3": "",
+    "Weapon1": "37mmrocketkatyusya",
+    "Weapon2": "",
+    "Weapon3": "",
+    "Weapon4": "",
     "turn": 1.0,
     "gattack": 7,
     "FuelPerSecond": 1

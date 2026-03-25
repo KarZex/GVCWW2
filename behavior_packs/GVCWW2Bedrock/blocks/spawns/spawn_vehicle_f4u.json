@@ -4,7 +4,7 @@
     "description": {
       "identifier": "gvcv5:spawn_vehicle_f4u",
       "menu_category": {
-        "category": "none"
+        "category": "construction"
       }
     },
     "components": {

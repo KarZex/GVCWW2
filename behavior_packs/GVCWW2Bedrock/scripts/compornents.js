@@ -355,6 +355,9 @@ async function setUp(){
     if( world.getDynamicProperty("gvcv5:airCraftWithItem") == undefined ){
         world.setDynamicProperty("gvcv5:airCraftWithItem",false);
     }
+    if( world.getDynamicProperty("gvcv5:isBossFlag") == undefined ){
+        world.setDynamicProperty("gvcv5:isBossFlag",true);
+    }
     await system.waitTicks(1);
     const buildingS = Number(world.getDynamicProperty(`gvcv5:buildingSpawnS`))
     const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))

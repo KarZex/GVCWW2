@@ -5,6 +5,14 @@ execute as @a[scores={mcool=1..}] run function mcool
 execute as @a[scores={mcooli=1..}] run function mcooli
 execute as @a[scores={mcoolii=1..}] run function mcoolii
 
+execute as @a run function weaponi_cool
+execute as @a run function weaponii_cool
+execute as @a run function weaponiii_cool
+execute as @a run function weaponiv_cool
+
+execute if score Prepare ALLFlags matches 1.. run scoreboard players remove Prepare ALLFlags 1
+execute if score Battle ALLFlags matches -99.. run function battle
+
 playanimation @a[hasitem={item=gun:lunge,location=slot.weapon.mainhand}] animation.item.first none 0 "!query.is_item_equipped"
 playanimation @a[hasitem={item=gvcv5:tbomb,location=slot.weapon.mainhand}] animation.onehand.first none 0 "!query.is_item_equipped"
 playanimation @a[hasitem={item=gvcv5:rpg43,location=slot.weapon.mainhand}] animation.onehand.first none 0 "!query.is_item_equipped"

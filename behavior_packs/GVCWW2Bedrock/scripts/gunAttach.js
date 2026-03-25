@@ -151,5 +151,9 @@ export const gunAttach = {
   "tt33": {
     "sights": 0,
     "bayonet": 0
+  },
+  "welrod": {
+    "sights": 0,
+    "bayonet": 0
   }
 };

@@ -107,10 +107,26 @@
                     "preferred_actor_type": "player",
                     "filters": {
                         "all_of": [
-                            { "test": "is_underwater", "subject": "other", "value": false },
-                            { "test": "is_baby", "subject": "other", "value": false },
-                            { "test": "is_family", "subject": "other", "value": "player" },
-                            { "test": "is_family", "subject": "other", "value": "GERteam" }
+                            {
+                                "test": "is_underwater",
+                                "subject": "other",
+                                "value": false
+                            },
+                            {
+                                "test": "is_baby",
+                                "subject": "other",
+                                "value": false
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "GERteam"
+                            }
                         ]
                     }
                 },

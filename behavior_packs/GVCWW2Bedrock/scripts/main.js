@@ -188,15 +188,19 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 				}
 			}
 		}
+		else if( vict.getProperty(`zex:anti_bullet`) != undefined ){
+			def += vict.getProperty(`zex:anti_bullet`);
+			//print(`${vict.getProperty(`zex:anti_bullet`)}`)
+		}
+
+
 		if( vict.getEffect("resistance") != undefined ){
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}
-		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`air`) ){
-			def = def + 1;
+		if( vict.getProperty(`zex:tank`) > damageIgnoreDef ){
+			def = 999;
 		}
-		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
-			def = def + 1;
-		}
+
 		if( damageIgnoreDef > 0 ){
 			def = def - damageIgnoreDef
 		}
@@ -210,6 +214,9 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = def - 0.5;//armor ignore 50% on headshot
 			if( e.source.typeId == "minecraft:player" ){
 				e.dimension.playSound(`note.bell`,e.source.location,{ volume:1, pitch:2 });
+			}
+			if(  vict.typeId == "minecraft:player" ){
+				def = def + (1.8*setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId)); //head armor effect
 			}
 			e.source.setDynamicProperty(`gvcww2:headshot`,1);
 			e.source.runCommand(`title @s subtitle §4HEADSHOT§r`);
@@ -250,33 +257,22 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		damage = damage * (1 - def);
 
 		//Override
-        if( damageType == `override` && vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
-			if (def > 1){ def = 1 }
-			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
-			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" && damage > 20 ){
-				vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
-			}
-			else if( world.getDynamicProperty("gvcv5:playerDamageCool") && vict.typeId == "minecraft:player" ){
-				vict.applyDamage(damage,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
-			}
-			else{
-				vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
-			}
-            vict.applyKnockback({x:0,z:0},0);
-        }
-		else if( damageType != `override` ){
-			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
-			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" ){
-				if(damage > 20 ){ vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
-				else{ vict.applyDamage(damage/2,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
-			}
-			else{
-				vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
-			}
-            vict.applyKnockback({x:0,z:0},0);
+		if (def > 1){ def = 1 }
+		if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
+		if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" && damage > 20 ){
+			vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
 		}
+		else if( damageType == `override` && world.getDynamicProperty("gvcv5:playerDamageCool") && vict.typeId == "minecraft:player" ){
+			vict.applyDamage(damage,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
+		}
+		else{
+			vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+		}
+		vict.applyKnockback({x:0,z:0},0);
 		try{
+			e.projectile.teleport(vict.location);
 			e.projectile.triggerEvent("minecraft:explode");
+			e.projectile.remove();
 		}
 		catch( error ){
 		}
@@ -457,6 +453,12 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( damage >= maxAmmo  ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
 		}
+	}
+	else if( e.id == "gvcv5:startReloading" ){
+		const player = e.sourceEntity;
+		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const gunName = gun.typeId.split(`:`)[1];
+		player.runCommand(`scriptevent gvcv5:reload ${gunName}`);
 	}
 	else if (e.id === "gvcv5:reload"){
 		const p = e.sourceEntity;

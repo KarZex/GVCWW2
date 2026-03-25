@@ -81,7 +81,7 @@ for row in csv_reader:
 
         gun_ignore = 0
         if( gun_damage_type != "override" ):
-            gun_ignore = 1
+            gun_ignore = 3
         
 
         #Gundata fot JS
@@ -918,26 +918,7 @@ for row in csv_reader2:
     row_count += 1
 
 
-csv_path3 = open("csv/vehicleData.csv","r")
-csv_reader3 = csv.reader(csv_path3)
-row_count = 0
-for row in csv_reader3:
-    if( row_count >= 1 ):
-        #from CSV
-        v_id = row[1]
-        v_type = row[2]
-        v_speed = float(row[4])
-        v_sub = row[5]
-        v_main1 = row[7]
-        v_main2 = row[9]
-        v_main3 = row[11]
-        v_gattack = int(row[27])
-        v_fuelPerSec = int(row[28])
-        v_turn = float(row[34])
 
-        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"sub": v_sub,"main1": v_main1,"main2": v_main2,"main3": v_main3,"turn": v_turn,"gattack":v_gattack,"FuelPerSecond":v_fuelPerSec }
-    
-    row_count += 1
 
 
 
@@ -967,15 +948,6 @@ with open("behavior_packs/GVCWW2Bedrock/scripts/gun.json","r") as f:
 with open("behavior_packs/GVCWW2Bedrock/scripts/guns.js","w") as f:
     f.write(export)
 
-
-with open("behavior_packs/GVCWW2Bedrock/scripts/vehicle.json","r") as f:
-    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const vehicleData = " 
-    export += f.read()
-    export += ";"
-
-
-with open("behavior_packs/GVCWW2Bedrock/scripts/vehicle.js","w") as f:
-    f.write(export)
 
 
 a_func += "tag @a[tag=!startedww2] add startedww2\n"

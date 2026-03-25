@@ -10,14 +10,34 @@ function gvcv5TeamSpawn( event ){
 }
 
 async function gvcv5JailSpawn( event ){
-    const blockId = event.block.typeId;
-    let building = blockId.replace(`gvcv5:building_`,``);
+    let building = `;`
     const buildingLocation = event.block.location;
+    let blockId = event.block.typeId;
     world.sendMessage(`Placing Building. To stop, break building block.`);
     let i = 20;
-    event.block.dimension.runCommand(`structure load placer ~~1~`);
+    system.runTimeout( async () => {
+        blockId = event.block.typeId;
+        building = blockId.replace(`gvcv5:building_`,``);
+        world.getDimension(`overworld`).runCommand(`structure load placer ~~1~`);
+    },1 )
+    //event.block.dimension.runCommand(`structure load placer ~~1~`);
     while( true ){
         await system.waitTicks(20); 
+        //Particle
+        try{
+            const n = 3;
+            for( let x = 0; x < 64/n; x++ ){
+                world.getDimension(`overworld`).spawnParticle(`zex:wire_dust_particle`,{ x: buildingLocation.x + 0.5 + x*10, y: buildingLocation.y+0.5, z: buildingLocation.z + 0.5 });
+            }
+            for( let y = 0; y < 10/n; y++ ){
+                world.getDimension(`overworld`).spawnParticle(`zex:wire_dust_particle`,{ x: buildingLocation.x + 0.5, y: buildingLocation.y+0.5 + y*10, z: buildingLocation.z + 0.5 });
+            }
+            for( let z = 0; z < 64/n; z++ ){
+                world.getDimension(`overworld`).spawnParticle(`zex:wire_dust_particle`,{ x: buildingLocation.x + 0.5, y: buildingLocation.y+0.5, z: buildingLocation.z + 0.5 + z*10  });
+            }  
+        }catch{}
+
+        //print(`${world.getDimension(`overworld`).getBlock(buildingLocation).typeId} ${blockId}`)
         if( world.getDimension(`overworld`).getBlock(buildingLocation).typeId != blockId || event.block.dimension.id != "minecraft:overworld" ){
             world.sendMessage(`Placing Building canceled`);
             break
@@ -26,16 +46,26 @@ async function gvcv5JailSpawn( event ){
             world.sendMessage(`Placing Building...${i}`);
             i = i - 1
         }
+
+
+
         else if( i <= 0 ){
-            event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
+        
+            system.runTimeout( async () => {
+                //world.getDimension(`overworld`).runCommand(`structure load placer ~~1~`);
+                world.getDimension(`overworld`).runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
+            } )
+            //event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
             //event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
             break;
         }
     }
 }
 function gvcv5JailBreak( event ){
+    print(`${event.block.typeId}`)
     world.sendMessage(`Placing Building canceled`);
-    event.block.dimension.runCommand(`fill ~~~ ~~1~ air`)
+    event.block.dimension.runCommand(`fill ~~~ ~~1~ air`);
+    event.player.runCommand(`give @s ${event.block.typeId}`);
 }
 
 function gvcv5UsePhone( event ){
@@ -69,16 +99,24 @@ async function setUp(){
     world.setDynamicProperty(`gvcv5:flagDefender`,undefined);
     world.setDynamicProperty(`gvcv5:flagDimension`,undefined);
     world.setDynamicProperty(`gvcv5:flagAttackFlag`,undefined);
-    world.setDynamicProperty(`gvcv5:red_attackCool`,0);
-    world.setDynamicProperty(`gvcv5:blue_attackCool`,0);
-    world.setDynamicProperty(`gvcv5:green_attackCool`,0);
-    world.setDynamicProperty(`gvcv5:yellow_attackCool`,0);
+    
+    world.setDynamicProperty(`SOVUnderAttackFlag`,undefined);
+    world.setDynamicProperty(`GERUnderAttackFlag`,undefined);
+    world.setDynamicProperty(`USAUnderAttackFlag`,undefined);
+    world.setDynamicProperty(`JAPUnderAttackFlag`,undefined);
+    world.setDynamicProperty(`ENGUnderAttackFlag`,undefined);
+
+    world.setDynamicProperty(`gvcv5:SOV_attackCool`,0);
+    world.setDynamicProperty(`gvcv5:GER_attackCool`,0);
+    world.setDynamicProperty(`gvcv5:USA_attackCool`,0);
+    world.setDynamicProperty(`gvcv5:JAP_attackCool`,0);
+    world.setDynamicProperty(`gvcv5:ENG_attackCool`,0);
     world.setDynamicProperty(`gvcv5:flagAttackStart`,false);
     await system.waitTicks(1);
 }
 
 system.beforeEvents.startup.subscribe( e => {
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn,onPlayerBreak:gvcv5JailBreak});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{beforeOnPlayerPlace: gvcv5JailSpawn,onPlayerBreak:gvcv5JailBreak});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawnpoint`,{onPlace: gvcv5TeamSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:tpblock`,{onPlayerInteract: gvcv5UseTPBlock});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:usephone`,{onUse: gvcv5UsePhone});

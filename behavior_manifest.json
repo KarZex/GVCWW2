@@ -2,13 +2,13 @@
     "format_version": 2,
     "header": {
         "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:,Mosin-Nagant,PPSh-41,TT33\nMihono Bourbon:MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust\n",
-        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon V1.0\u00a7r",
+        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon V2.0 For GVCW\u00a7r",
         "min_engine_version": [
             1,
             21,
             111
         ],
-        "uuid": "5e36525d-f1f5-4961-b210-706ed82518cb",
+        "uuid": "c0d7e5d4-fa86-4ff5-bff3-9fa66503ff81",
         "version": [
             1,
             0,
@@ -19,7 +19,7 @@
         {
             "description": "Data Module",
             "type": "data",
-            "uuid": "28cd895c-d4d5-48a5-a2f3-0fd177c07e35",
+            "uuid": "32e76247-7d7c-45c0-8a18-ba804d15d828",
             "version": [
                 1,
                 0,
@@ -30,7 +30,7 @@
             "description": "Script API Module",
             "language": "javascript",
             "type": "script",
-            "uuid": "c679cca1-e43b-41d2-b327-9b5f440664f7",
+            "uuid": "768e212b-0273-4769-bca3-7a7fc912158d",
             "version": [
                 2,
                 0,

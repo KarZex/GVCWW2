@@ -53,7 +53,7 @@ export const gunData = {
   },
   "ptrd": {
     "damage": 50,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "slowness": 0,
     "speed": 3.2,
     "fireOnReload": false,
@@ -108,7 +108,7 @@ export const gunData = {
   },
   "p90": {
     "damage": 25,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "slowness": 0,
     "speed": 0.5,
     "fireOnReload": false,
@@ -185,7 +185,7 @@ export const gunData = {
   },
   "m1b": {
     "damage": 30,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "slowness": 0,
     "speed": 0.44000000000000006,
     "fireOnReload": false,
@@ -207,7 +207,7 @@ export const gunData = {
   },
   "piat": {
     "damage": 25,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "slowness": 0,
     "speed": 0.5,
     "fireOnReload": false,
@@ -306,7 +306,7 @@ export const gunData = {
   },
   "t89g": {
     "damage": 25,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "slowness": 0,
     "speed": 0.5,
     "fireOnReload": false,
@@ -335,67 +335,67 @@ export const gunData = {
   },
   "57mm": {
     "damage": 70,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s57m"
   },
   "76mm": {
     "damage": 80,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s76m"
   },
   "85mm": {
     "damage": 100,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s85m"
   },
   "88mm": {
     "damage": 110,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s88m"
   },
   "100mm": {
     "damage": 120,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
   "105mm": {
     "damage": 150,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
   "120mm": {
     "damage": 180,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
   "125mm": {
     "damage": 200,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
   "152mm": {
     "damage": 250,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s152m"
   },
   "20mm": {
     "damage": 10,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
   "23mm": {
     "damage": 12,
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
@@ -505,53 +505,53 @@ export const gunData = {
   },
   "12.7mmmgri": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "12.7mmmgli": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "12.7mmmgrii": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "12.7mmmglii": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "12.7mmmg": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override",
     "ammoType": "zex:1270m"
   },
   "14.5mmhmgri": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "14.5mmhmgli": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "14.5mmhmgrii": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "14.5mmhmglii": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "14.5mmhmg": {
     "damage": 6,
-    "damageIgnoreDef": 0.5,
+    "damageIgnoreDef": 0.0,
     "damageType": "override",
     "ammoType": "zex:1450m"
   },

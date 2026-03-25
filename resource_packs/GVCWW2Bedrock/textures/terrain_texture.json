@@ -143,91 +143,97 @@
       "textures": "textures/blocks/addon_eng_soldier"
     },
     "spawn_vehicle_bf109": {
-      "textures": "textures/blocks/vehicle_bf109"
+      "textures": "textures/spawn/vehicle_bf109"
     },
     "spawn_vehicle_ju87": {
-      "textures": "textures/blocks/vehicle_ju87"
+      "textures": "textures/spawn/vehicle_ju87"
     },
     "spawn_vehicle_spitfire": {
-      "textures": "textures/blocks/vehicle_spitfire"
+      "textures": "textures/spawn/vehicle_spitfire"
     },
     "spawn_vehicle_yak9": {
-      "textures": "textures/blocks/vehicle_yak9"
+      "textures": "textures/spawn/vehicle_yak9"
     },
     "spawn_vehicle_il2": {
-      "textures": "textures/blocks/vehicle_il2"
+      "textures": "textures/spawn/vehicle_il2"
     },
     "spawn_vehicle_zero": {
-      "textures": "textures/blocks/vehicle_zero"
+      "textures": "textures/spawn/vehicle_zero"
     },
     "spawn_vehicle_b7a": {
-      "textures": "textures/blocks/vehicle_b7a"
+      "textures": "textures/spawn/vehicle_b7a"
     },
     "spawn_addon_pmc": {
       "textures": "textures/blocks/addon_pmc"
     },
     "spawn_vehicle_battle": {
-      "textures": "textures/blocks/vehicle_battle"
+      "textures": "textures/spawn/vehicle_battle"
     },
     "spawn_vehicle_f4u": {
-      "textures": "textures/blocks/vehicle_f4u"
+      "textures": "textures/spawn/vehicle_f4u"
     },
     "spawn_vehicle_sbd": {
-      "textures": "textures/blocks/vehicle_sbd"
+      "textures": "textures/spawn/vehicle_sbd"
     },
     "spawn_vehicle_t34": {
-      "textures": "textures/blocks/vehicle_t34"
+      "textures": "textures/spawn/vehicle_t34"
     },
     "spawn_vehicle_panzer": {
-      "textures": "textures/blocks/vehicle_panzer"
+      "textures": "textures/spawn/vehicle_panzer"
     },
     "spawn_vehicle_m4": {
-      "textures": "textures/blocks/vehicle_m4"
+      "textures": "textures/spawn/vehicle_m4"
     },
     "spawn_vehicle_t97t": {
-      "textures": "textures/blocks/vehicle_t97t"
+      "textures": "textures/spawn/vehicle_t97t"
     },
     "spawn_vehicle_valentine": {
-      "textures": "textures/blocks/vehicle_valentine"
+      "textures": "textures/spawn/vehicle_valentine"
     },
     "spawn_vehicle_kv2": {
-      "textures": "textures/blocks/vehicle_kv2"
+      "textures": "textures/spawn/vehicle_kv2"
     },
     "spawn_vehicle_tiger": {
-      "textures": "textures/blocks/vehicle_tiger"
+      "textures": "textures/spawn/vehicle_tiger"
     },
     "spawn_vehicle_t98t": {
-      "textures": "textures/blocks/vehicle_t98t"
+      "textures": "textures/spawn/vehicle_t98t"
     },
     "spawn_vehicle_t17e1": {
-      "textures": "textures/blocks/vehicle_t17e1"
+      "textures": "textures/spawn/vehicle_t17e1"
     },
     "spawn_vehicle_t17e2": {
-      "textures": "textures/blocks/vehicle_t17e2"
+      "textures": "textures/spawn/vehicle_t17e2"
     },
     "spawn_vehicle_wirbelwind": {
-      "textures": "textures/blocks/vehicle_wirbelwind"
+      "textures": "textures/spawn/vehicle_wirbelwind"
     },
     "spawn_vehicle_20mmaa": {
-      "textures": "textures/blocks/vehicle_20mmaa"
+      "textures": "textures/spawn/vehicle_20mmaa"
     },
     "spawn_vehicle_m13aa": {
-      "textures": "textures/blocks/vehicle_m13aa"
+      "textures": "textures/spawn/vehicle_m13aa"
     },
     "spawn_vehicle_bm13aa": {
-      "textures": "textures/blocks/vehicle_bm13aa"
+      "textures": "textures/spawn/vehicle_bm13aa"
     },
     "spawn_vehicle_t98taa": {
-      "textures": "textures/blocks/vehicle_t98taa"
+      "textures": "textures/spawn/vehicle_t98taa"
     },
     "spawn_vehicle_m5": {
-      "textures": "textures/blocks/vehicle_m5"
+      "textures": "textures/spawn/vehicle_m5"
     },
     "spawn_vehicle_bm13": {
-      "textures": "textures/blocks/vehicle_bm13"
+      "textures": "textures/spawn/vehicle_bm13"
     },
     "spawn_": {
       "textures": "textures/blocks/"
+    },
+    "spawn_vehicle_flak18": {
+      "textures": "textures/spawn/vehicle_flak18"
+    },
+    "spawn_vehicle_pak40": {
+      "textures": "textures/spawn/vehicle_pak40"
     }
   }
 }

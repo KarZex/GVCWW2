@@ -98,7 +98,6 @@
                 "minecraft:movement": {
                     "value": 0.25
                 },
-
                 "minecraft:behavior.follow_mob": {
                     "priority": 0,
                     "search_range": 16,
@@ -108,10 +107,26 @@
                     "preferred_actor_type": "player",
                     "filters": {
                         "all_of": [
-                            { "test": "is_underwater", "subject": "other", "value": false },
-                            { "test": "is_baby", "subject": "other", "value": false },
-                            { "test": "is_family", "subject": "other", "value": "player" },
-                            { "test": "is_family", "subject": "other", "value": "ENGteam" }
+                            {
+                                "test": "is_underwater",
+                                "subject": "other",
+                                "value": false
+                            },
+                            {
+                                "test": "is_baby",
+                                "subject": "other",
+                                "value": false
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "ENGteam"
+                            }
                         ]
                     }
                 },

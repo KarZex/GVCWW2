@@ -15,6 +15,17 @@
       "animations": {
         "walk": "controller.animation.vehicle",
         "vtext": "controller.animation.vtext"
+      },
+      "properties": {
+        "zex:tank": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 2
+        }
       }
     },
     "component_groups": {
@@ -42,6 +53,22 @@
       },
       "despawning": {
         "minecraft:instant_despawn": {}
+      },
+      "gvcv5:vehicle_lock": {
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [
+              0.0,
+              2,
+              0.0
+            ]
+          }
+        }
       },
       "no_fuel": {
         "minecraft:movement": {
@@ -91,6 +118,33 @@
       },
       "minecraft:interact": {
         "interactions": [
+          {
+            "interact_text": "action.gvc.lock",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "operator": "not",
+                    "value": "vehicle_lock"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "has.rider"
+                  }
+                ]
+              },
+              "event": "vehicle_lock",
+              "target": "self"
+            }
+          },
           {
             "hurt_item": 1,
             "play_sounds": "irongolem.repair",
@@ -234,13 +288,6 @@
           ]
         }
       },
-      "despawning": {
-        "add": {
-          "component_groups": [
-            "despawning"
-          ]
-        }
-      },
       "gvcv5:no_fuel": {
         "add": {
           "component_groups": [
@@ -253,6 +300,33 @@
           "component_groups": [
             "have_fuel"
           ]
+        }
+      },
+      "despawning": {
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
+      "vehicle_lock": {
+        "remove": {
+          "component_groups": [
+            "summon_enemy"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:vehicle_lock"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tellraw @a[r=16] {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
+            "ride @s evict_riders",
+            "tag @s add vehicle_lock"
+          ],
+          "target": "self"
         }
       }
     }

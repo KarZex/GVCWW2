@@ -2,13 +2,13 @@
     "format_version": 2,
     "header": {
         "description": "\n\u4f5c\u8005:Kar Zex\n\u30e2\u30c7\u30eb\u63d0\u4f9b\u8005\nkusnek:,Mosin-Nagant,PPSh-41,TT33\nMihono Bourbon:MG42\n\u30d7\u30c1\u30cd\u30b3:Panzerfaust\n",
-        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon V1.0\u00a7r",
+        "name": "\u00a7l\u00a7gGVCBedrock WW2Addon V2.0 For GVCW\u00a7r",
         "min_engine_version": [
             1,
             21,
             111
         ],
-        "uuid": "cd010105-055d-4ae5-ac0c-ade04602475f",
+        "uuid": "d03409f9-924c-4b95-a6d5-ed07cc688451",
         "version": [
             1,
             0,
